@@ -39,5 +39,10 @@ namespace Proyecto_AdministracionOrgDatos
             string Correo_ESA = txtCorreo_ESA.Text;
             txtRegistroClientes_ESA.AppendText(Nombre_ESA + "\t" + Correo_ESA + "\r\n");
         }
+
+        private void frmRegistrarBecarios_ESA_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

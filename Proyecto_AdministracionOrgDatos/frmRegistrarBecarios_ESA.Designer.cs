@@ -47,7 +47,7 @@
             this.btnLimpiar_ESA.Font = new System.Drawing.Font("Bell MT", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnLimpiar_ESA.Location = new System.Drawing.Point(369, 424);
-            this.btnLimpiar_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiar_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiar_ESA.Name = "btnLimpiar_ESA";
             this.btnLimpiar_ESA.Size = new System.Drawing.Size(169, 51);
             this.btnLimpiar_ESA.TabIndex = 59;
@@ -73,7 +73,7 @@
             this.btnAgregar_ESA.Font = new System.Drawing.Font("Bell MT", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnAgregar_ESA.Location = new System.Drawing.Point(593, 157);
-            this.btnAgregar_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar_ESA.Name = "btnAgregar_ESA";
             this.btnAgregar_ESA.Size = new System.Drawing.Size(233, 44);
             this.btnAgregar_ESA.TabIndex = 57;
@@ -86,7 +86,7 @@
             this.txtRegistroClientes_ESA.Enabled = false;
             this.txtRegistroClientes_ESA.Font = new System.Drawing.Font("Bell MT", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistroClientes_ESA.Location = new System.Drawing.Point(11, 214);
-            this.txtRegistroClientes_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRegistroClientes_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegistroClientes_ESA.Multiline = true;
             this.txtRegistroClientes_ESA.Name = "txtRegistroClientes_ESA";
             this.txtRegistroClientes_ESA.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -97,7 +97,7 @@
             // 
             this.txtCorreo_ESA.Font = new System.Drawing.Font("Bell MT", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreo_ESA.Location = new System.Drawing.Point(324, 159);
-            this.txtCorreo_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCorreo_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.txtCorreo_ESA.Name = "txtCorreo_ESA";
             this.txtCorreo_ESA.Size = new System.Drawing.Size(266, 41);
             this.txtCorreo_ESA.TabIndex = 55;
@@ -118,7 +118,7 @@
             // 
             this.txtNombre_ESA.Font = new System.Drawing.Font("Bell MT", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre_ESA.Location = new System.Drawing.Point(11, 159);
-            this.txtNombre_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre_ESA.Name = "txtNombre_ESA";
             this.txtNombre_ESA.Size = new System.Drawing.Size(309, 41);
             this.txtNombre_ESA.TabIndex = 53;
@@ -129,7 +129,7 @@
             this.btnRegresarMenu_ESA.Font = new System.Drawing.Font("Bell MT", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresarMenu_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnRegresarMenu_ESA.Location = new System.Drawing.Point(551, 424);
-            this.btnRegresarMenu_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegresarMenu_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresarMenu_ESA.Name = "btnRegresarMenu_ESA";
             this.btnRegresarMenu_ESA.Size = new System.Drawing.Size(275, 51);
             this.btnRegresarMenu_ESA.TabIndex = 52;
@@ -190,9 +190,10 @@
             this.Controls.Add(this.lblFecha_ESA);
             this.Controls.Add(this.lblNombreProyecto_ESA);
             this.Controls.Add(this.lblTitulo_ESA);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRegistrarBecarios_ESA";
             this.Text = "frmRegistrarCliente_ACO";
+            this.Load += new System.EventHandler(this.frmRegistrarBecarios_ESA_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
