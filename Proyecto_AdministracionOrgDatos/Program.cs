@@ -10,6 +10,8 @@ namespace Proyecto_AdministracionOrgDatos
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.
+        /// 
+        /// no cambios de fichero.
         /// </summary>
         [STAThread]
         static void Main()
