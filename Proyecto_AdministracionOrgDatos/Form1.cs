@@ -54,7 +54,13 @@ namespace Proyecto_AdministracionOrgDatos
         {
             
         }
-    
+
+        //Aqui estan las propiedades para agregar la fecha y la hora al programa
+        private void HoraFecha_Tick(object sender, EventArgs e)
+        {
+            HoraC.Text = DateTime.Now.ToShortTimeString();
+            FechaC.Text = DateTime.Now.ToShortDateString();
+        }
     }
 }
 
