@@ -102,7 +102,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            
         }
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
