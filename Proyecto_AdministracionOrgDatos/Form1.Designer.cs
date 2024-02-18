@@ -47,7 +47,7 @@
             this.imgLogin_ESA.Image = ((System.Drawing.Image)(resources.GetObject("imgLogin_ESA.Image")));
             this.imgLogin_ESA.InitialImage = null;
             this.imgLogin_ESA.Location = new System.Drawing.Point(290, 89);
-            this.imgLogin_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgLogin_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.imgLogin_ESA.Name = "imgLogin_ESA";
             this.imgLogin_ESA.Size = new System.Drawing.Size(274, 258);
             this.imgLogin_ESA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -61,7 +61,7 @@
             this.btnSalir_ESA.Font = new System.Drawing.Font("Bell MT", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnSalir_ESA.Location = new System.Drawing.Point(631, 450);
-            this.btnSalir_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir_ESA.Name = "btnSalir_ESA";
             this.btnSalir_ESA.Size = new System.Drawing.Size(188, 44);
             this.btnSalir_ESA.TabIndex = 15;
@@ -75,7 +75,7 @@
             this.btnInicioSesion_ESA.Font = new System.Drawing.Font("Bell MT", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicioSesion_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnInicioSesion_ESA.Location = new System.Drawing.Point(260, 450);
-            this.btnInicioSesion_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInicioSesion_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnInicioSesion_ESA.Name = "btnInicioSesion_ESA";
             this.btnInicioSesion_ESA.Size = new System.Drawing.Size(324, 44);
             this.btnInicioSesion_ESA.TabIndex = 14;
@@ -87,7 +87,7 @@
             // 
             this.txtContraseña_ESA.Font = new System.Drawing.Font("Bell MT", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña_ESA.Location = new System.Drawing.Point(260, 397);
-            this.txtContraseña_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContraseña_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseña_ESA.Name = "txtContraseña_ESA";
             this.txtContraseña_ESA.PasswordChar = '*';
             this.txtContraseña_ESA.Size = new System.Drawing.Size(325, 41);
@@ -97,7 +97,7 @@
             // 
             this.txtUsuario_ESA.Font = new System.Drawing.Font("Bell MT", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario_ESA.Location = new System.Drawing.Point(260, 353);
-            this.txtUsuario_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuario_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario_ESA.Name = "txtUsuario_ESA";
             this.txtUsuario_ESA.Size = new System.Drawing.Size(325, 41);
             this.txtUsuario_ESA.TabIndex = 12;
@@ -153,9 +153,10 @@
             this.Controls.Add(this.lblFecha_ESA);
             this.Controls.Add(this.lblNombreAlumno_ESA);
             this.Controls.Add(this.lblTitulo_ESA);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLogin_ESA";
             this.Text = "21u";
+            this.Load += new System.EventHandler(this.FormLogin_ESA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogin_ESA)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

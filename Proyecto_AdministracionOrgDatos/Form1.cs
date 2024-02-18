@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +35,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnInicioSesion_ESA_Click(object sender, EventArgs e)
         {
-            if (txtUsuario_ESA.Text == "HijosTrueno" && txtContraseña_ESA.Text == "rode2024")
+            if (txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1")
             {
                 Form objMenu_ACO = new frmMenu_ESA();
                 objMenu_ACO.Show();
@@ -48,6 +49,12 @@ namespace Proyecto_AdministracionOrgDatos
                 txtUsuario_ESA.Focus();
             }
         }
+
+        private void FormLogin_ESA_Load(object sender, EventArgs e)
+        {
+            
+        }
+    
     }
 }
 
