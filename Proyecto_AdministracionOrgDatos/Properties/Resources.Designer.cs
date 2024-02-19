@@ -63,6 +63,16 @@ namespace Proyecto_AdministracionOrgDatos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ajolote {
+            get {
+                object obj = ResourceManager.GetObject("Ajolote", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap basura {
             get {
                 object obj = ResourceManager.GetObject("basura", resourceCulture);
@@ -85,6 +95,22 @@ namespace Proyecto_AdministracionOrgDatos.Properties {
         internal static string Impresion {
             get {
                 return ResourceManager.GetString("Impresion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///  &lt;head&gt;
+        ///    &lt;title&gt;Título de ejemplo&lt;/title&gt;
+        ///  &lt;/head&gt;
+        ///  &lt;body&gt;
+        ///  &lt;/body&gt;
+        ///&lt;/html&gt;.
+        /// </summary>
+        internal static string plantilla {
+            get {
+                return ResourceManager.GetString("plantilla", resourceCulture);
             }
         }
     }

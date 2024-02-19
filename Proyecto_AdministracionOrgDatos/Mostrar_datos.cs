@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
 
 namespace Proyecto_AdministracionOrgDatos
 {
@@ -102,7 +107,70 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
+            //Empleo de clase para guardar el archivo mediante ubicacion
+            SaveFileDialog guardar = new SaveFileDialog();
+
+            //Despliega el explorador de archivos para guardar el archivo, de nombre toma la fecha actual
+            guardar.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
+
+            //Se pasa el formato del HTML como texto
+            string paginahtml_texto = Properties.Resources.plantilla.ToString();
+
+            //Se reemplaza el texto "@FECHA" para colocar la fecha actual
+            paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
+
+
+            string filas = string.Empty;//Crear cadena de texto vacia
+
+            //Se recorre el DataGridViewRow por filas
+            foreach (DataGridViewRow row in dgvMostrar.Rows)
+            {
+                //Se guarda en formato HTML el valor de las columnas del DataGridViewRow
+                filas += "<tr>";
+                filas += "<td>" + row.Cells["Nombre"].Value.ToString() + "</td>";
+                filas += "<td>" + row.Cells["Telefono"].Value.ToString() + "</td>";
+                filas += "<td>" + row.Cells["Correo"].Value.ToString() + "</td>";
+                filas += "<td>" + row.Cells["Estado"].Value.ToString() + "</td>";
+                filas += "</tr>";
+            }
+
+            //Se reemplaza el texto "@FILAS" del HTML para colocar las filas obtenidas del DataGridViewRow
+            paginahtml_texto = paginahtml_texto.Replace("@FILAS", filas);
+
+
+             //Se evalua que en el explorador de archivos, se presione guardar para
+            //iniciar con la configuracion de guardado del PDF
+            if (guardar.ShowDialog() == DialogResult.OK)
+            {
+                //Creacion del documento para leer o escribir
+                using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
+                {
+                    //Creacion del documento PDF especificando tipo de hoja y margenes
+                    Document pdfDoc = new Document(PageSize.A4, 25, 25, 25, 25);
+
+                    //Guardado de los cambios del PDF al documento
+                    PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+
+                    pdfDoc.Open();
+                    pdfDoc.Add(new Phrase(""));
+
+                    //Almacenar la imagen del logo en la variable img
+                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.Ajolote, System.Drawing.Imaging.ImageFormat.Png);
+                    img.ScaleToFit(80, 60); //Tamaño
+                    img.Alignment = iTextSharp.text.Image.UNDERLYING; //Alineacion en el documento
+                    img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top-60); //Posicion
+                    pdfDoc.Add(img);//Agregar imagen al PDF
+
+                    //Creacion de objeto para realizar la lectura del HTML para pasarlo al PDF
+                    using (StringReader reader = new StringReader(paginahtml_texto))
+                    {   
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, reader);
+                    }
+
+                    pdfDoc.Close();
+                    stream.Close();
+                }
+            }
         }
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
@@ -110,6 +178,11 @@ namespace Proyecto_AdministracionOrgDatos
         {
             HoraC.Text = DateTime.Now.ToShortTimeString();
             FechaC.Text = DateTime.Now.ToShortDateString();
+        }
+
+       private void button1_Click_2(object sender, EventArgs e)
+        {
+
         }
     }
 }
