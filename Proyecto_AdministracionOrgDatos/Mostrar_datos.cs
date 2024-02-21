@@ -119,7 +119,6 @@ namespace Proyecto_AdministracionOrgDatos
             //Se reemplaza el texto "@FECHA" para colocar la fecha actual
             paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
 
-
             string filas = string.Empty;//Crear cadena de texto vacia
 
             //Se recorre el DataGridViewRow por filas
@@ -136,7 +135,6 @@ namespace Proyecto_AdministracionOrgDatos
 
             //Se reemplaza el texto "@FILAS" del HTML para colocar las filas obtenidas del DataGridViewRow
             paginahtml_texto = paginahtml_texto.Replace("@FILAS", filas);
-
 
              //Se evalua que en el explorador de archivos, se presione guardar para
             //iniciar con la configuracion de guardado del PDF
@@ -166,7 +164,6 @@ namespace Proyecto_AdministracionOrgDatos
                     {   
                         XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, reader);
                     }
-
                     pdfDoc.Close();
                     stream.Close();
                 }
@@ -180,7 +177,31 @@ namespace Proyecto_AdministracionOrgDatos
             FechaC.Text = DateTime.Now.ToShortDateString();
         }
 
-       private void button1_Click_2(object sender, EventArgs e)
+        private void filtroTextBox_TextChanged_1(object sender, EventArgs e)
+        {
+            if (filtroTextBox.Text != null)
+            {
+                dgvMostrar.CurrentCell = null;
+                foreach (DataGridViewRow row in dgvMostrar.Rows)
+                {
+                    row.Visible = false;
+                }
+
+                foreach (DataGridViewRow row in dgvMostrar.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.Value.ToString().ToUpper().IndexOf(filtroTextBox.Text.ToUpper()) == 0)
+                        {
+                            row.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
         {
 
         }

@@ -46,6 +46,7 @@
             this.HoraC = new System.Windows.Forms.Label();
             this.FechaHora3 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.filtroTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -61,11 +62,11 @@
             this.Telefono,
             this.Correo,
             this.Estado});
-            this.dgvMostrar.Location = new System.Drawing.Point(363, 16);
+            this.dgvMostrar.Location = new System.Drawing.Point(363, 60);
             this.dgvMostrar.Name = "dgvMostrar";
             this.dgvMostrar.ReadOnly = true;
             this.dgvMostrar.RowHeadersWidth = 51;
-            this.dgvMostrar.Size = new System.Drawing.Size(444, 377);
+            this.dgvMostrar.Size = new System.Drawing.Size(444, 333);
             this.dgvMostrar.TabIndex = 61;
             this.dgvMostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Agregar_CellContentClick);
             // 
@@ -221,11 +222,20 @@
             this.pictureBox3.TabIndex = 71;
             this.pictureBox3.TabStop = false;
             // 
+            // filtroTextBox
+            // 
+            this.filtroTextBox.Location = new System.Drawing.Point(363, 28);
+            this.filtroTextBox.Name = "filtroTextBox";
+            this.filtroTextBox.Size = new System.Drawing.Size(180, 20);
+            this.filtroTextBox.TabIndex = 72;
+            this.filtroTextBox.TextChanged += new System.EventHandler(this.filtroTextBox_TextChanged_1);
+            // 
             // Mostrar_datos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 450);
+            this.Controls.Add(this.filtroTextBox);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.HoraC);
             this.Controls.Add(this.FechaC);
@@ -267,5 +277,6 @@
         private System.Windows.Forms.Label HoraC;
         private System.Windows.Forms.Timer FechaHora3;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.TextBox filtroTextBox;
     }
 }
