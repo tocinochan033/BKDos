@@ -28,9 +28,6 @@ namespace Proyecto_AdministracionOrgDatos
             string carrera, periodo, promedio, cct, modelo;
             int indicieNuevoRenglon;
 
-
-            //Se cargan las variables del archivo de texto
-
             //Abrimos el archivo de texto en modo lectura
             FileStream becados = new FileStream("Becados.txt", FileMode.OpenOrCreate, FileAccess.Read);
 
