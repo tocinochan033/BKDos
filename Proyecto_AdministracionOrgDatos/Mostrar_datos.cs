@@ -23,8 +23,11 @@ namespace Proyecto_AdministracionOrgDatos
             InitializeComponent();
 
             //Se inicializan variables 
-            string nombre, telefono, correo, estado;
-            int auxiliar;
+            string aPaterno, aMaterno, nombres, fechanac, edad, curp, genero, estado_civil;
+            string domicilio, codigo_postal, nacionalidad, estado_nacimiento, municipio, correo_electronico, telefono;
+            string carrera, periodo, promedio, cct, modelo;
+            int indicieNuevoRenglon;
+
 
             //Se cargan las variables del archivo de texto
 
@@ -41,19 +44,54 @@ namespace Proyecto_AdministracionOrgDatos
                     string[] datos = renglon.Split(',');
 
                     //Adicionamos nuevo renglon y regresamos su indice
-                    auxiliar = dgvMostrar.Rows.Add();
+                    indicieNuevoRenglon = dgvMostrar.Rows.Add();
 
                     //Asignamos el valor a las variables
-                    nombre = datos[0];
-                    telefono = datos[1];
-                    correo = datos[2];
-                    estado = datos[3];
+                    aPaterno = datos[0];
+                    aMaterno = datos[1];
+                    nombres = datos[2];
+                    fechanac = datos[3];
+                    edad = datos[4];
+                    curp = datos[5];
+                    genero = datos[6];
+                    estado_civil = datos[7];
+                    domicilio = datos[8];
+                    codigo_postal = datos[9];
+                    nacionalidad = datos[10];
+                    estado_nacimiento = datos[11];
+                    municipio = datos[12];
+                    correo_electronico = datos[13];
+                    telefono = datos[14];
+                    carrera = datos[15];
+                    periodo = datos[16];
+                    promedio = datos[17];
+                    cct = datos[18];
+                    modelo = datos[19];
+
 
                     //Colocamos la informacion en el datagridview
-                    dgvMostrar.Rows[auxiliar].Cells[0].Value = nombre;
-                    dgvMostrar.Rows[auxiliar].Cells[1].Value = telefono;
-                    dgvMostrar.Rows[auxiliar].Cells[2].Value = correo;
-                    dgvMostrar.Rows[auxiliar].Cells[3].Value = estado;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[0].Value = aPaterno;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[1].Value = aMaterno;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[2].Value = nombres;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[3].Value = fechanac;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[4].Value = edad;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[5].Value = curp;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[6].Value = genero;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[7].Value = estado_civil;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[8].Value = domicilio;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[9].Value = codigo_postal;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[10].Value = nacionalidad;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[11].Value = estado_nacimiento;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[12].Value = municipio;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[13].Value = correo_electronico;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[14].Value = telefono;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[15].Value = carrera;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[16].Value = periodo;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[17].Value = promedio;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[18].Value = cct;
+                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[19].Value = modelo;
+
+
 
                     renglon = lector.ReadLine();
                 }
@@ -90,7 +128,12 @@ namespace Proyecto_AdministracionOrgDatos
                 //Se recorren todas las filas del datagridview
                 foreach (DataGridViewRow row in dgvMostrar.Rows)
                 {
-                    writer.WriteLine($"{row.Cells[0].Value},{row.Cells[1].Value},{row.Cells[2].Value},{row.Cells[3].Value}");
+                    writer.WriteLine($"{row.Cells[0].Value},{row.Cells[1].Value},{row.Cells[2].Value},{row.Cells[3].Value}," +
+                     $"{row.Cells[4].Value},{row.Cells[5].Value},{row.Cells[6].Value},{row.Cells[7].Value}," +
+                     $"{row.Cells[8].Value},{row.Cells[9].Value},{row.Cells[10].Value},{row.Cells[11].Value}," +
+                     $"{row.Cells[12].Value},{row.Cells[13].Value},{row.Cells[14].Value},{row.Cells[15].Value}," +
+                     $"{row.Cells[16].Value},{row.Cells[17].Value},{row.Cells[18].Value},{row.Cells[19].Value}");
+
                 }
             }
             //Se terminan de guardar los datos y se cierra el archivo
