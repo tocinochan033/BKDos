@@ -17,6 +17,53 @@ namespace Proyecto_AdministracionOrgDatos
         {
             InitializeComponent();
 
+            //Inicialiazcion de combo box de CCT
+            cmbCCT.Items.Add("02DIT0021M ITT");
+            cmbCCT.Items.Add("02PBH0079C UABC");
+            cmbCCT.Items.Add("U602000    UNAM");
+            cmbCCT.Items.Add("09PBH0056L ITESM");
+            cmbCCT.Items.Add("19USU3353S UANL");
+            cmbCCT.Items.Add("19USU3353S UANL");
+
+            //Inicializacion de combo box del modelo 
+            txtModelo.Items.Add("Semestre");
+            txtModelo.Items.Add("Cuatrimestre");
+
+            //Inicializacion de los estados de la republica
+            txtEstadoNac.Items.Add("Aguascalientes");
+            txtEstadoNac.Items.Add("Baja California");
+            txtEstadoNac.Items.Add("Baja California Sur");
+            txtEstadoNac.Items.Add("Campeche");
+            txtEstadoNac.Items.Add("Chiapas");
+            txtEstadoNac.Items.Add("Chihuahua");
+            txtEstadoNac.Items.Add("Coahuila");
+            txtEstadoNac.Items.Add("Colima");
+            txtEstadoNac.Items.Add("Durango");
+            txtEstadoNac.Items.Add("Estado de México");
+            txtEstadoNac.Items.Add("Guanajuato");
+            txtEstadoNac.Items.Add("Guerrero");
+            txtEstadoNac.Items.Add("Hidalgo");
+            txtEstadoNac.Items.Add("Jalisco");
+            txtEstadoNac.Items.Add("Michoacán");
+            txtEstadoNac.Items.Add("Morelos");
+            txtEstadoNac.Items.Add("Nayarit");
+            txtEstadoNac.Items.Add("Nuevo León");
+            txtEstadoNac.Items.Add("Oaxaca");
+            txtEstadoNac.Items.Add("Puebla");
+            txtEstadoNac.Items.Add("Querétaro");
+            txtEstadoNac.Items.Add("Quintana Roo");
+            txtEstadoNac.Items.Add("San Luis Potosí");
+            txtEstadoNac.Items.Add("Sinaloa");
+            txtEstadoNac.Items.Add("Sonora");
+            txtEstadoNac.Items.Add("Tabasco");
+            txtEstadoNac.Items.Add("Tamaulipas");
+            txtEstadoNac.Items.Add("Tlaxcala");
+            txtEstadoNac.Items.Add("Veracruz ");
+            txtEstadoNac.Items.Add("Yucatán");
+            txtEstadoNac.Items.Add("Zacatecas");
+            txtEstadoNac.Items.Add("CDMX");
+
+
             string aPaterno, aMaterno, nombres, fechanac, edad, curp, genero, estado_civil;
             string domicilio, codigo_postal, nacionalidad, estado_nacimiento, municipio, correo_electronico, telefono;
             string carrera, periodo, promedio, cct, modelo;
@@ -336,6 +383,11 @@ namespace Proyecto_AdministracionOrgDatos
                 txtModelo.Text = "Semestral".ToString();
             else if (cmbCCT.Text == "CETIS" && cmbCCT.Text == "UVM" && cmbCCT.Text == "ZOCHICALCO")
                 txtModelo.Text = "Cuatrimestral".ToString();
+
+        }
+
+        private void txtModelo_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

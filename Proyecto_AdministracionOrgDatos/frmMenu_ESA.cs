@@ -60,5 +60,36 @@ namespace Proyecto_AdministracionOrgDatos
             HoraC.Text = DateTime.Now.ToShortTimeString();
             FechaC.Text = DateTime.Now.ToShortDateString();
         }
+
+        //Aqui esta el codigo de deslizamiento de la barra de menu
+        bool sidebarExpand;
+        private void SideBarTimer_Tick(object sender, EventArgs e)
+        {
+
+            if (sidebarExpand)
+            {
+                
+                sidebar.Width -= 10;
+                if (sidebar.Width == sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    SideBarTimer.Stop();
+                }
+            }else
+            {
+                sidebar.Width += 10;
+                if (sidebar.Width == sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    SideBarTimer.Stop();
+                }
+            }
+        }
+
+        //Boton del menu
+        private void menuButton_Click(object sender, EventArgs e)
+        {
+            SideBarTimer.Start();
+        }
     }
 }
