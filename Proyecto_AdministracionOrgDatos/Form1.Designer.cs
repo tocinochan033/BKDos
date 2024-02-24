@@ -191,9 +191,11 @@
             // errorLogin
             // 
             this.errorLogin.AutoSize = true;
-            this.errorLogin.Location = new System.Drawing.Point(454, 325);
+            this.errorLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLogin.ForeColor = System.Drawing.Color.Red;
+            this.errorLogin.Location = new System.Drawing.Point(446, 326);
             this.errorLogin.Name = "errorLogin";
-            this.errorLogin.Size = new System.Drawing.Size(169, 13);
+            this.errorLogin.Size = new System.Drawing.Size(210, 16);
             this.errorLogin.TabIndex = 20;
             this.errorLogin.Text = "Usuario y/o Contraseña incorrecto";
             this.errorLogin.UseWaitCursor = true;

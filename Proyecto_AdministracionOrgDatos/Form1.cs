@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,9 +14,17 @@ namespace Proyecto_AdministracionOrgDatos
 {
     public partial class FormLogin_ESA : Form
     {
+        /// <summary>
+        /// LOGIN EN HIATUS
+        /// </summary>
+        private string[] usuario = { "manolo", "jose", "felipe" };
+        private string[] contraseña = { "12345", "jacobo", "contraseña" };
+        FileStream login = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+
         public FormLogin_ESA()
         {
             InitializeComponent();
+            guardado();
         }
 
         private void btnSalir_ESA_Click(object sender, EventArgs e)
@@ -24,8 +33,8 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
         private void btnInicioSesion_ESA_Click(object sender, EventArgs e)
-        {
-            if (txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1")
+        {            
+            if (archivoAdmin(usuario, contraseña) || txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1")
             {
                 Form objMenu_ACO = new frmMenu_ESA();
                 objMenu_ACO.Show();
@@ -33,10 +42,25 @@ namespace Proyecto_AdministracionOrgDatos
             }
             else
             {
-                MessageBox.Show("Datos Invalidos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtUsuario_ESA.Text = "";
-                txtContraseña_ESA.Text = "";
+                errorLogin.Visible = true;
                 txtUsuario_ESA.Focus();
+                SystemSounds.Exclamation.Play();
+            }
+        }
+
+        public bool archivoAdmin(string[] usuario, string[] contraseña)
+        {
+            return true;
+        }
+
+        private void guardado()
+        {
+            using (StreamWriter writer = new StreamWriter(login))
+            {
+                for (int i = 0; i < usuario.Length; i++)
+                {
+                    writer.WriteLine($"{usuario[i]},{contraseña[i]}");
+                }
             }
         }
 
@@ -60,11 +84,6 @@ namespace Proyecto_AdministracionOrgDatos
         private void FormLogin_ESA_Load(object sender, EventArgs e)
         {
 
-        }
-
-        public void metodo()
-        {
-            errorLogin.Visible = true;
         }
     }
 }
