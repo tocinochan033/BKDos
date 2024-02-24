@@ -18,16 +18,6 @@ namespace Proyecto_AdministracionOrgDatos
             InitializeComponent();
         }
 
-        private void lblTitulo_ACO_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void imgLogin_ACO_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSalir_ESA_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -50,16 +40,26 @@ namespace Proyecto_AdministracionOrgDatos
             }
         }
 
-        private void FormLogin_ESA_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
         private void HoraFecha_Tick(object sender, EventArgs e)
         {
             HoraC.Text = DateTime.Now.ToShortTimeString();
             FechaC.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void lblTitulo_ACO_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imgLogin_ACO_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormLogin_ESA_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
