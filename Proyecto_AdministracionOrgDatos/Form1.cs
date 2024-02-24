@@ -50,7 +50,12 @@ namespace Proyecto_AdministracionOrgDatos
 
         public bool archivoAdmin(string[] usuario, string[] contraseña)
         {
-            return true;
+            for(int i = 0; i < usuario.Length; i++)
+            {
+                if (usuario[i] == txtUsuario_ESA.Text && contraseña[i] == txtContraseña_ESA.Text)
+                    return true;
+            }
+            return false;
         }
 
         private void guardado()
