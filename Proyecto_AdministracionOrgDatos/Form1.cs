@@ -61,6 +61,11 @@ namespace Proyecto_AdministracionOrgDatos
         {
 
         }
+
+        public void metodo()
+        {
+            errorLogin.Visible = true;
+        }
     }
 }
 

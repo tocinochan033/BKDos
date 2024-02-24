@@ -196,6 +196,8 @@
             this.errorLogin.Size = new System.Drawing.Size(169, 13);
             this.errorLogin.TabIndex = 20;
             this.errorLogin.Text = "Usuario y/o Contraseña incorrecto";
+            this.errorLogin.UseWaitCursor = true;
+            this.errorLogin.Visible = false;
             // 
             // FormLogin_ESA
             // 
