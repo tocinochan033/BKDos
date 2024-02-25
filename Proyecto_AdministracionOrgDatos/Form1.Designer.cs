@@ -41,6 +41,8 @@
             this.HoraC = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.errorLogin = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogin_ESA)).BeginInit();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -83,7 +85,7 @@
             this.txtContraseña_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtContraseña_ESA.Name = "txtContraseña_ESA";
             this.txtContraseña_ESA.PasswordChar = '*';
-            this.txtContraseña_ESA.Size = new System.Drawing.Size(325, 39);
+            this.txtContraseña_ESA.Size = new System.Drawing.Size(325, 38);
             this.txtContraseña_ESA.TabIndex = 13;
             // 
             // txtUsuario_ESA
@@ -93,7 +95,7 @@
             this.txtUsuario_ESA.Location = new System.Drawing.Point(450, 176);
             this.txtUsuario_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsuario_ESA.Name = "txtUsuario_ESA";
-            this.txtUsuario_ESA.Size = new System.Drawing.Size(325, 39);
+            this.txtUsuario_ESA.Size = new System.Drawing.Size(325, 38);
             this.txtUsuario_ESA.TabIndex = 12;
             // 
             // lblNombreAlumno_ESA
@@ -104,7 +106,7 @@
             this.lblNombreAlumno_ESA.Location = new System.Drawing.Point(21, 59);
             this.lblNombreAlumno_ESA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreAlumno_ESA.Name = "lblNombreAlumno_ESA";
-            this.lblNombreAlumno_ESA.Size = new System.Drawing.Size(357, 31);
+            this.lblNombreAlumno_ESA.Size = new System.Drawing.Size(287, 25);
             this.lblNombreAlumno_ESA.TabIndex = 10;
             this.lblNombreAlumno_ESA.Text = "Equipo \"Los hijos del trueno\"";
             // 
@@ -135,7 +137,7 @@
             this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.FechaC.Location = new System.Drawing.Point(610, 20);
             this.FechaC.Name = "FechaC";
-            this.FechaC.Size = new System.Drawing.Size(183, 30);
+            this.FechaC.Size = new System.Drawing.Size(160, 31);
             this.FechaC.TabIndex = 16;
             this.FechaC.Text = "00/00/0000";
             // 
@@ -146,7 +148,7 @@
             this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.HoraC.Location = new System.Drawing.Point(624, 60);
             this.HoraC.Name = "HoraC";
-            this.HoraC.Size = new System.Drawing.Size(151, 30);
+            this.HoraC.Size = new System.Drawing.Size(143, 31);
             this.HoraC.TabIndex = 17;
             this.HoraC.Text = "00:00 a.m";
             // 
@@ -172,6 +174,19 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Contraseña :";
             // 
+            // errorLogin
+            // 
+            this.errorLogin.AutoSize = true;
+            this.errorLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLogin.ForeColor = System.Drawing.Color.Red;
+            this.errorLogin.Location = new System.Drawing.Point(446, 326);
+            this.errorLogin.Name = "errorLogin";
+            this.errorLogin.Size = new System.Drawing.Size(210, 16);
+            this.errorLogin.TabIndex = 20;
+            this.errorLogin.Text = "Usuario y/o Contraseña incorrecto";
+            this.errorLogin.UseWaitCursor = true;
+            this.errorLogin.Visible = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -189,6 +204,8 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(825, 445);
             this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(847, 510);
+            this.Controls.Add(this.errorLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.HoraC);
@@ -222,6 +239,7 @@
         private System.Windows.Forms.Label HoraC;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label errorLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

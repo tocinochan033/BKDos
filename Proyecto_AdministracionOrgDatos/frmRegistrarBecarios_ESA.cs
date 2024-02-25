@@ -155,6 +155,30 @@ namespace Proyecto_AdministracionOrgDatos
                || txtTelefono.Text == "" || txtCarrera.Text == "" || txtPeriodo.Text == "" || txtPromedio.Text == "" || cmbCCT.Text == "" || txtModelo.Text == "";
         }
 
+        private void camposLimpieza()
+        {
+            txtApaterno.Text = "";
+            txtAmaterno.Text = "";
+            txtNombres.Text = "";
+            txtFechanac.Text = "";
+            txtEdad.Text = "";
+            txtCURP.Text = "";
+            CBGenero.Text = "";
+            txtEstadoCivil.Text = "";
+            txtDomicilio.Text = "";
+            txtCodigoPostal.Text = "";
+            txtNacionalidad.Text = "";
+            txtEstadoNac.Text = "";
+            txtMunicipio.Text = "";
+            txtCorreoElectronico.Text = "";
+            txtTelefono.Text = "";
+            txtCarrera.Text = "";
+            txtPeriodo.Text = "";
+            txtPromedio.Text = "";
+            cmbCCT.Text = "";
+            txtModelo.Text = "";
+        }
+
         private void btnAgregar_ESA_Click(object sender, EventArgs e)
         {
             if(camposImcompletos())
@@ -193,35 +217,9 @@ namespace Proyecto_AdministracionOrgDatos
 
                 camposLimpieza();
 
-
-
                 //Regresar el "cursor" al label del nombre
                 txtApaterno.Focus();
             }
-        }
-
-        private void camposLimpieza()
-        {
-            txtApaterno.Text = "";
-            txtAmaterno.Text = "";
-            txtNombres.Text = "";
-            txtFechanac.Text = "";
-            txtEdad.Text = "";
-            txtCURP.Text = "";
-            CBGenero.Text = "";
-            txtEstadoCivil.Text = "";
-            txtDomicilio.Text = "";
-            txtCodigoPostal.Text = "";
-            txtNacionalidad.Text = "";
-            txtEstadoNac.Text = "";
-            txtMunicipio.Text = "";
-            txtCorreoElectronico.Text = "";
-            txtTelefono.Text = "";
-            txtCarrera.Text = "";
-            txtPeriodo.Text = "";
-            txtPromedio.Text = "";
-            cmbCCT.Text = "";
-            txtModelo.Text = "";
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -252,28 +250,7 @@ namespace Proyecto_AdministracionOrgDatos
                 dgv_Agregar.Rows[seleccion].Cells[18].Value = cmbCCT.Text;
                 dgv_Agregar.Rows[seleccion].Cells[19].Value = txtModelo.Text;
 
-                //Limpiamos espacios para evitar errores
-                txtApaterno.Text = "";
-                txtAmaterno.Text = "";
-                txtNombres.Text = "";
-                txtFechanac.Text = "";
-                txtEdad.Text = "";
-                txtCURP.Text = "";
-                CBGenero.Text = "";
-                txtEstadoCivil.Text = "";
-                txtDomicilio.Text = "";
-                txtCodigoPostal.Text = "";
-                txtNacionalidad.Text = "";
-                txtEstadoNac.Text = "";
-                txtMunicipio.Text = "";
-                txtCorreoElectronico.Text = "";
-                txtTelefono.Text = "";
-                txtCarrera.Text = "";
-                txtPeriodo.Text = "";
-                txtPromedio.Text = "";
-                cmbCCT.Text = "";
-                txtModelo.Text = "";
-
+                camposLimpieza();
             }
         }
 
