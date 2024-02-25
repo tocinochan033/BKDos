@@ -83,34 +83,102 @@ namespace Proyecto_AdministracionOrgDatos.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
         ///&lt;html&gt;
-        ///&lt;title&gt;Online HTML Editor&lt;/title&gt;
+        ///
         ///&lt;head&gt;
+        ///    &lt;title&gt;Title of the document&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        table.border {
+        ///            border-collapse: collapse;
+        ///        }
+        ///
+        ///            table.border th {
+        ///                padding: 5px;
+        ///                border: 1px solid black;
+        ///            }
+        ///
+        ///            table.border td {
+        ///                padding: 5px;
+        ///                border: 1px solid black;
+        ///            }
+        ///    &lt;/style&gt;
         ///&lt;/head&gt;
+        ///
         ///&lt;body&gt;
-        ///&lt;h1&gt;Online HTML Editor&lt;/h1&gt;
-        ///&lt;div&gt;This is real time online HTML Editor&lt;/div&gt;
-        ///&lt;/body&gt;
-        ///&lt;/html&gt;.
+        ///    &lt;table style=&quot;width:100%&quot;&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td style=&quot;wid [resto de la cadena truncado]&quot;;.
         /// </summary>
-        internal static string Impresion {
+        internal static string plantilla {
             get {
-                return ResourceManager.GetString("Impresion", resourceCulture);
+                return ResourceManager.GetString("plantilla", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
         ///&lt;html&gt;
-        ///  &lt;head&gt;
-        ///    &lt;title&gt;Título de ejemplo&lt;/title&gt;
-        ///  &lt;/head&gt;
-        ///  &lt;body&gt;
-        ///  &lt;/body&gt;
-        ///&lt;/html&gt;.
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;Title of the document&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        table.border {
+        ///            border-collapse: collapse;
+        ///        }
+        ///
+        ///            table.border th {
+        ///                padding: 5px;
+        ///                border: 1px solid black;
+        ///            }
+        ///
+        ///            table.border td {
+        ///                padding: 5px;
+        ///                border: 1px solid black;
+        ///            }
+        ///    &lt;/style&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;table style=&quot;width:100%&quot;&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td style=&quot;wid [resto de la cadena truncado]&quot;;.
         /// </summary>
-        internal static string plantilla {
+        internal static string plantillaAcademica {
             get {
-                return ResourceManager.GetString("plantilla", resourceCulture);
+                return ResourceManager.GetString("plantillaAcademica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;Title of the document&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        table.border {
+        ///            border-collapse: collapse;
+        ///        }
+        ///
+        ///            table.border th {
+        ///                padding: 5px;
+        ///                border: 1px solid black;
+        ///            }
+        ///
+        ///            table.border td {
+        ///                padding: 5px;
+        ///                border: 1px solid black;
+        ///            }
+        ///    &lt;/style&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;table style=&quot;width:100%&quot;&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td style=&quot;wid [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string plantillacontacto {
+            get {
+                return ResourceManager.GetString("plantillacontacto", resourceCulture);
             }
         }
     }
