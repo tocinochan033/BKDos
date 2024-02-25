@@ -35,7 +35,6 @@
             this.HoraC = new System.Windows.Forms.Label();
             this.FechaHora3 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.filtroTextBox = new System.Windows.Forms.TextBox();
             this.dgvMostrar = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +56,14 @@
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblEscuela = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.cmbFiltro = new System.Windows.Forms.ComboBox();
+            this.btnResetFiltro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -81,7 +88,7 @@
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Snow;
-            this.btnSalir.Location = new System.Drawing.Point(99, 589);
+            this.btnSalir.Location = new System.Drawing.Point(18, 600);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(111, 40);
             this.btnSalir.TabIndex = 63;
@@ -151,11 +158,12 @@
             this.FechaC.AutoSize = true;
             this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(87)))), ((int)(((byte)(137)))));
-            this.FechaC.Location = new System.Drawing.Point(12, 409);
+            this.FechaC.Location = new System.Drawing.Point(12, 442);
             this.FechaC.Name = "FechaC";
             this.FechaC.Size = new System.Drawing.Size(160, 31);
             this.FechaC.TabIndex = 69;
             this.FechaC.Text = "00/00/0000";
+            this.FechaC.Click += new System.EventHandler(this.FechaC_Click);
             // 
             // HoraC
             // 
@@ -182,14 +190,6 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 71;
             this.pictureBox3.TabStop = false;
-            // 
-            // filtroTextBox
-            // 
-            this.filtroTextBox.Location = new System.Drawing.Point(363, 28);
-            this.filtroTextBox.Name = "filtroTextBox";
-            this.filtroTextBox.Size = new System.Drawing.Size(180, 20);
-            this.filtroTextBox.TabIndex = 72;
-            this.filtroTextBox.TextChanged += new System.EventHandler(this.filtroTextBox_TextChanged_1);
             // 
             // dgvMostrar
             // 
@@ -224,6 +224,7 @@
             this.dgvMostrar.ReadOnly = true;
             this.dgvMostrar.Size = new System.Drawing.Size(1007, 556);
             this.dgvMostrar.TabIndex = 73;
+            this.dgvMostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrar_CellContentClick);
             // 
             // Nombre
             // 
@@ -345,13 +346,91 @@
             this.Column15.Name = "Column15";
             this.Column15.ReadOnly = true;
             // 
+            // lblEscuela
+            // 
+            this.lblEscuela.AutoSize = true;
+            this.lblEscuela.Location = new System.Drawing.Point(387, 16);
+            this.lblEscuela.Name = "lblEscuela";
+            this.lblEscuela.Size = new System.Drawing.Size(0, 13);
+            this.lblEscuela.TabIndex = 75;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnFiltrar.Location = new System.Drawing.Point(838, 26);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(129, 42);
+            this.btnFiltrar.TabIndex = 76;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltro.Location = new System.Drawing.Point(359, 26);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(59, 20);
+            this.lblFiltro.TabIndex = 77;
+            this.lblFiltro.Text = "Buscar";
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltro.Location = new System.Drawing.Point(424, 26);
+            this.txtFiltro.Multiline = true;
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(179, 28);
+            this.txtFiltro.TabIndex = 78;
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(628, 26);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(29, 20);
+            this.lblCategoria.TabIndex = 79;
+            this.lblCategoria.Text = "En";
+            // 
+            // cmbFiltro
+            // 
+            this.cmbFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFiltro.FormattingEnabled = true;
+            this.cmbFiltro.Location = new System.Drawing.Point(663, 26);
+            this.cmbFiltro.Name = "cmbFiltro";
+            this.cmbFiltro.Size = new System.Drawing.Size(121, 28);
+            this.cmbFiltro.TabIndex = 80;
+            // 
+            // btnResetFiltro
+            // 
+            this.btnResetFiltro.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnResetFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetFiltro.ForeColor = System.Drawing.Color.Transparent;
+            this.btnResetFiltro.Location = new System.Drawing.Point(1036, 26);
+            this.btnResetFiltro.Name = "btnResetFiltro";
+            this.btnResetFiltro.Size = new System.Drawing.Size(158, 42);
+            this.btnResetFiltro.TabIndex = 81;
+            this.btnResetFiltro.Text = "Reiniciar filtros";
+            this.btnResetFiltro.UseVisualStyleBackColor = false;
+            this.btnResetFiltro.Click += new System.EventHandler(this.btnResetFiltro_Click);
+            // 
             // Mostrar_datos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1397, 708);
+            this.ClientSize = new System.Drawing.Size(1370, 708);
+            this.Controls.Add(this.btnResetFiltro);
+            this.Controls.Add(this.cmbFiltro);
+            this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.lblFiltro);
+            this.Controls.Add(this.btnFiltrar);
+            this.Controls.Add(this.lblEscuela);
             this.Controls.Add(this.dgvMostrar);
-            this.Controls.Add(this.filtroTextBox);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.HoraC);
             this.Controls.Add(this.FechaC);
@@ -365,6 +444,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Mostrar_datos";
             this.Text = "Consulta ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -386,7 +466,6 @@
         private System.Windows.Forms.Label HoraC;
         private System.Windows.Forms.Timer FechaHora3;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox filtroTextBox;
         private System.Windows.Forms.DataGridView dgvMostrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
@@ -408,5 +487,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.Label lblEscuela;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.ComboBox cmbFiltro;
+        private System.Windows.Forms.Button btnResetFiltro;
     }
 }

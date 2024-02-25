@@ -63,6 +63,7 @@
             this.FechaHora2 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtFechanac = new System.Windows.Forms.DateTimePicker();
             this.txtEstadoCivil = new System.Windows.Forms.TextBox();
             this.lblEstado_Civil = new System.Windows.Forms.Label();
             this.CBGenero = new System.Windows.Forms.ComboBox();
@@ -71,20 +72,19 @@
             this.lblGenero = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.lblEdad = new System.Windows.Forms.Label();
-            this.txtFechanac = new System.Windows.Forms.TextBox();
             this.lblfechanac = new System.Windows.Forms.Label();
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.lblNombres = new System.Windows.Forms.Label();
             this.txtAmaterno = new System.Windows.Forms.TextBox();
             this.lblAmaterno = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtEstadoNac = new System.Windows.Forms.ComboBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
             this.lblCorreoElectronico = new System.Windows.Forms.Label();
             this.txtMunicipio = new System.Windows.Forms.TextBox();
             this.lblMunicipio = new System.Windows.Forms.Label();
-            this.txtEstadoNac = new System.Windows.Forms.TextBox();
             this.lblEstadoNac = new System.Windows.Forms.Label();
             this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.lblNacionalidad = new System.Windows.Forms.Label();
@@ -93,7 +93,7 @@
             this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.lblDomicilio = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.txtModelo = new System.Windows.Forms.ComboBox();
             this.lblModelo = new System.Windows.Forms.Label();
             this.lblCCT = new System.Windows.Forms.Label();
             this.cmbCCT = new System.Windows.Forms.ComboBox();
@@ -167,7 +167,7 @@
             this.FechaC.AutoSize = true;
             this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(87)))), ((int)(((byte)(137)))));
-            this.FechaC.Location = new System.Drawing.Point(595, 9);
+            this.FechaC.Location = new System.Drawing.Point(905, 9);
             this.FechaC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FechaC.Name = "FechaC";
             this.FechaC.Size = new System.Drawing.Size(160, 31);
@@ -376,7 +376,7 @@
             this.HoraC.AutoSize = true;
             this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(87)))), ((int)(((byte)(137)))));
-            this.HoraC.Location = new System.Drawing.Point(818, 10);
+            this.HoraC.Location = new System.Drawing.Point(1176, 10);
             this.HoraC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HoraC.Name = "HoraC";
             this.HoraC.Size = new System.Drawing.Size(143, 31);
@@ -401,6 +401,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.txtFechanac);
             this.tabPage1.Controls.Add(this.txtEstadoCivil);
             this.tabPage1.Controls.Add(this.lblEstado_Civil);
             this.tabPage1.Controls.Add(this.CBGenero);
@@ -409,7 +410,6 @@
             this.tabPage1.Controls.Add(this.lblGenero);
             this.tabPage1.Controls.Add(this.txtEdad);
             this.tabPage1.Controls.Add(this.lblEdad);
-            this.tabPage1.Controls.Add(this.txtFechanac);
             this.tabPage1.Controls.Add(this.lblfechanac);
             this.tabPage1.Controls.Add(this.txtNombres);
             this.tabPage1.Controls.Add(this.lblNombres);
@@ -426,11 +426,20 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // txtFechanac
+            // 
+            this.txtFechanac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechanac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFechanac.Location = new System.Drawing.Point(21, 245);
+            this.txtFechanac.Name = "txtFechanac";
+            this.txtFechanac.Size = new System.Drawing.Size(303, 26);
+            this.txtFechanac.TabIndex = 70;
+            // 
             // txtEstadoCivil
             // 
             this.txtEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstadoCivil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtEstadoCivil.Location = new System.Drawing.Point(255, 468);
+            this.txtEstadoCivil.Location = new System.Drawing.Point(261, 469);
             this.txtEstadoCivil.Margin = new System.Windows.Forms.Padding(2);
             this.txtEstadoCivil.Name = "txtEstadoCivil";
             this.txtEstadoCivil.Size = new System.Drawing.Size(207, 38);
@@ -516,16 +525,6 @@
             this.lblEdad.TabIndex = 62;
             this.lblEdad.Text = "Edad";
             // 
-            // txtFechanac
-            // 
-            this.txtFechanac.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechanac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtFechanac.Location = new System.Drawing.Point(15, 244);
-            this.txtFechanac.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFechanac.Name = "txtFechanac";
-            this.txtFechanac.Size = new System.Drawing.Size(309, 38);
-            this.txtFechanac.TabIndex = 59;
-            // 
             // lblfechanac
             // 
             this.lblfechanac.AutoSize = true;
@@ -584,13 +583,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.txtEstadoNac);
             this.tabPage2.Controls.Add(this.txtTelefono);
             this.tabPage2.Controls.Add(this.lblTelefono);
             this.tabPage2.Controls.Add(this.txtCorreoElectronico);
             this.tabPage2.Controls.Add(this.lblCorreoElectronico);
             this.tabPage2.Controls.Add(this.txtMunicipio);
             this.tabPage2.Controls.Add(this.lblMunicipio);
-            this.tabPage2.Controls.Add(this.txtEstadoNac);
             this.tabPage2.Controls.Add(this.lblEstadoNac);
             this.tabPage2.Controls.Add(this.txtNacionalidad);
             this.tabPage2.Controls.Add(this.lblNacionalidad);
@@ -605,6 +604,15 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Contacto";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // txtEstadoNac
+            // 
+            this.txtEstadoNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstadoNac.FormattingEnabled = true;
+            this.txtEstadoNac.Location = new System.Drawing.Point(36, 250);
+            this.txtEstadoNac.Name = "txtEstadoNac";
+            this.txtEstadoNac.Size = new System.Drawing.Size(309, 28);
+            this.txtEstadoNac.TabIndex = 81;
             // 
             // txtTelefono
             // 
@@ -671,16 +679,6 @@
             this.lblMunicipio.Size = new System.Drawing.Size(92, 24);
             this.lblMunicipio.TabIndex = 76;
             this.lblMunicipio.Text = "Municipio";
-            // 
-            // txtEstadoNac
-            // 
-            this.txtEstadoNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstadoNac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtEstadoNac.Location = new System.Drawing.Point(36, 249);
-            this.txtEstadoNac.Margin = new System.Windows.Forms.Padding(2);
-            this.txtEstadoNac.Name = "txtEstadoNac";
-            this.txtEstadoNac.Size = new System.Drawing.Size(309, 38);
-            this.txtEstadoNac.TabIndex = 73;
             // 
             // lblEstadoNac
             // 
@@ -782,13 +780,13 @@
             // 
             // txtModelo
             // 
-            this.txtModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtModelo.Location = new System.Drawing.Point(70, 394);
-            this.txtModelo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModelo.FormattingEnabled = true;
+            this.txtModelo.Location = new System.Drawing.Point(70, 412);
             this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(309, 38);
-            this.txtModelo.TabIndex = 81;
+            this.txtModelo.Size = new System.Drawing.Size(309, 28);
+            this.txtModelo.TabIndex = 83;
+            this.txtModelo.SelectedIndexChanged += new System.EventHandler(this.txtModelo_SelectedIndexChanged);
             // 
             // lblModelo
             // 
@@ -816,10 +814,11 @@
             // 
             // cmbCCT
             // 
+            this.cmbCCT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCCT.FormattingEnabled = true;
             this.cmbCCT.Location = new System.Drawing.Point(70, 318);
             this.cmbCCT.Name = "cmbCCT";
-            this.cmbCCT.Size = new System.Drawing.Size(196, 21);
+            this.cmbCCT.Size = new System.Drawing.Size(309, 28);
             this.cmbCCT.TabIndex = 79;
             this.cmbCCT.SelectedIndexChanged += new System.EventHandler(this.cmbCCT_SelectedIndexChanged);
             // 
@@ -908,6 +907,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRegistrarBecarios_ESA";
             this.Text = "Registro";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRegistrarBecarios_ESA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Agregar)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -943,7 +943,6 @@
         private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.Label lblEdad;
-        private System.Windows.Forms.TextBox txtFechanac;
         private System.Windows.Forms.Label lblfechanac;
         private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.Label lblNombres;
@@ -956,7 +955,6 @@
         private System.Windows.Forms.Label lblCorreoElectronico;
         private System.Windows.Forms.TextBox txtMunicipio;
         private System.Windows.Forms.Label lblMunicipio;
-        private System.Windows.Forms.TextBox txtEstadoNac;
         private System.Windows.Forms.Label lblEstadoNac;
         private System.Windows.Forms.TextBox txtNacionalidad;
         private System.Windows.Forms.Label lblNacionalidad;
@@ -994,7 +992,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.Label lblModelo;
+        private System.Windows.Forms.DateTimePicker txtFechanac;
+        private System.Windows.Forms.ComboBox txtModelo;
+        private System.Windows.Forms.ComboBox txtEstadoNac;
     }
 }

@@ -21,7 +21,11 @@ namespace Proyecto_AdministracionOrgDatos
         public Mostrar_datos()
         {
             InitializeComponent();
+            //Se iniciliazan los elementos del combo box
 
+            cmbFiltro.Items.Add("Edad");
+            cmbFiltro.Items.Add("Nombre");
+            cmbFiltro.Items.Add("Domicilio");
             //Se inicializan variables 
             string aPaterno, aMaterno, nombres, fechanac, edad, curp, genero, estado_civil;
             string domicilio, codigo_postal, nacionalidad, estado_nacimiento, municipio, correo_electronico, telefono;
@@ -217,7 +221,7 @@ namespace Proyecto_AdministracionOrgDatos
             FechaC.Text = DateTime.Now.ToShortDateString();
         }
 
-        private void filtroTextBox_TextChanged_1(object sender, EventArgs e)
+       /* private void filtroTextBox_TextChanged_1(object sender, EventArgs e)
         {
             if (filtroTextBox.Text != null)
             {
@@ -239,11 +243,117 @@ namespace Proyecto_AdministracionOrgDatos
                     }
                 }
             }
-        }
+        }*/
 
         private void button1_Click_2(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            //Si hay algo entonces se ejecuta
+            if (txtFiltro.Text != "")
+            {
+                if (cmbFiltro.Text != "")
+                {
+                    //Asignacion de celda
+                    string auxiliar = cmbFiltro.Text;
+                    switch (auxiliar)
+                    {
+                        case "Edad":
+                            auxiliar = "4";
+                            break;
+                        case "Nombre":
+                            auxiliar = "2";
+                            break;
+                        case "Domicilio":
+                            auxiliar = "8";
+                            break;
+                    }
+
+                    dgvMostrar.CurrentCell = null;
+
+                    //Recorrer filas para desaparecer todas
+                    foreach (DataGridViewRow row in dgvMostrar.Rows)
+                    {
+                        row.Visible = false;
+                    }
+
+                    //Se recorren las filas para buscar el valor
+                    foreach (DataGridViewRow row in dgvMostrar.Rows)
+                    {
+                        //Se recorre de celda en celda la fila del foreach anterior
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            if (row.Cells[Int32.Parse(auxiliar)].Value.ToString().ToUpper().IndexOf(txtFiltro.Text.ToUpper()) == 0)
+                            {
+
+                                row.Visible = true;
+                                break;
+
+                            }
+                        }
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Faltan datos por colocar");
+            }
+        }
+
+        /*public void CargarEscuelas()
+        {
+            //Abrimos archivo en modo lectura
+            //   FileStream becados = new FileStream("Becados.txt", FileMode.Create, FileAccess.Write);
+            FileStream becarios = new FileStream("Becados.txt", FileMode.OpenOrCreate, FileAccess.Read);
+
+            //Lee linea por linea
+            using (StreamReader reader = new StreamReader(becarios))
+            {
+                string linea = reader.ReadLine();
+                while(linea != null)
+                {
+                    //Reconstruye el objeto a partir de los datos
+
+                    string datos = linea;
+
+                    //Crear string para separar y mostrar datos
+                    datos = string.Join("",datos.Split(','));
+
+                    //Referencia al comboBox para agregarlo a los elementos
+                    cmbFiltrar.Items.Add(datos);
+
+                    linea = reader.ReadLine();
+                }
+
+            }
+            //Cerramos archivo
+            becarios.Close();
+            //Fin de lectura de archivo
+        }
+        */
+        private void cmbFiltrar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvMostrar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FechaC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnResetFiltro_Click(object sender, EventArgs e)
+        {
+            txtFiltro.Text = "";
+            cmbFiltro.Text = "";
         }
     }
 }

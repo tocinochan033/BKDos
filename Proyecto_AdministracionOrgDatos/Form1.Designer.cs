@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin_ESA));
-            this.imgLogin_ESA = new System.Windows.Forms.PictureBox();
             this.btnSalir_ESA = new System.Windows.Forms.Button();
             this.btnInicioSesion_ESA = new System.Windows.Forms.Button();
             this.txtContraseña_ESA = new System.Windows.Forms.TextBox();
@@ -43,23 +42,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorLogin = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogin_ESA)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.imgLogin_ESA)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imgLogin_ESA
-            // 
-            this.imgLogin_ESA.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.imgLogin_ESA.ErrorImage = null;
-            this.imgLogin_ESA.Image = ((System.Drawing.Image)(resources.GetObject("imgLogin_ESA.Image")));
-            this.imgLogin_ESA.InitialImage = null;
-            this.imgLogin_ESA.Location = new System.Drawing.Point(63, 111);
-            this.imgLogin_ESA.Margin = new System.Windows.Forms.Padding(2);
-            this.imgLogin_ESA.Name = "imgLogin_ESA";
-            this.imgLogin_ESA.Size = new System.Drawing.Size(334, 322);
-            this.imgLogin_ESA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgLogin_ESA.TabIndex = 8;
-            this.imgLogin_ESA.TabStop = false;
-            this.imgLogin_ESA.Click += new System.EventHandler(this.imgLogin_ACO_Click);
             // 
             // btnSalir_ESA
             // 
@@ -68,7 +54,7 @@
             this.btnSalir_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnSalir_ESA.Location = new System.Drawing.Point(705, 449);
-            this.btnSalir_ESA.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalir_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir_ESA.Name = "btnSalir_ESA";
             this.btnSalir_ESA.Size = new System.Drawing.Size(126, 44);
             this.btnSalir_ESA.TabIndex = 15;
@@ -78,12 +64,12 @@
             // 
             // btnInicioSesion_ESA
             // 
-            this.btnInicioSesion_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(87)))), ((int)(((byte)(137)))));
+            this.btnInicioSesion_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.btnInicioSesion_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInicioSesion_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicioSesion_ESA.ForeColor = System.Drawing.Color.Snow;
-            this.btnInicioSesion_ESA.Location = new System.Drawing.Point(488, 371);
-            this.btnInicioSesion_ESA.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInicioSesion_ESA.Location = new System.Drawing.Point(490, 350);
+            this.btnInicioSesion_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInicioSesion_ESA.Name = "btnInicioSesion_ESA";
             this.btnInicioSesion_ESA.Size = new System.Drawing.Size(240, 44);
             this.btnInicioSesion_ESA.TabIndex = 14;
@@ -93,10 +79,10 @@
             // 
             // txtContraseña_ESA
             // 
-            this.txtContraseña_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txtContraseña_ESA.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold);
+            this.txtContraseña_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtContraseña_ESA.Location = new System.Drawing.Point(450, 271);
-            this.txtContraseña_ESA.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContraseña_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtContraseña_ESA.Name = "txtContraseña_ESA";
             this.txtContraseña_ESA.PasswordChar = '*';
             this.txtContraseña_ESA.Size = new System.Drawing.Size(325, 38);
@@ -104,10 +90,10 @@
             // 
             // txtUsuario_ESA
             // 
-            this.txtUsuario_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txtUsuario_ESA.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtUsuario_ESA.Location = new System.Drawing.Point(450, 176);
-            this.txtUsuario_ESA.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsuario_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsuario_ESA.Name = "txtUsuario_ESA";
             this.txtUsuario_ESA.Size = new System.Drawing.Size(325, 38);
             this.txtUsuario_ESA.TabIndex = 12;
@@ -115,9 +101,9 @@
             // lblNombreAlumno_ESA
             // 
             this.lblNombreAlumno_ESA.AutoSize = true;
-            this.lblNombreAlumno_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreAlumno_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(87)))), ((int)(((byte)(137)))));
-            this.lblNombreAlumno_ESA.Location = new System.Drawing.Point(16, 59);
+            this.lblNombreAlumno_ESA.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreAlumno_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.lblNombreAlumno_ESA.Location = new System.Drawing.Point(21, 59);
             this.lblNombreAlumno_ESA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreAlumno_ESA.Name = "lblNombreAlumno_ESA";
             this.lblNombreAlumno_ESA.Size = new System.Drawing.Size(287, 25);
@@ -129,12 +115,12 @@
             this.lblTitulo_ESA.AutoSize = true;
             this.lblTitulo_ESA.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTitulo_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTitulo_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblTitulo_ESA.Location = new System.Drawing.Point(11, 9);
+            this.lblTitulo_ESA.Font = new System.Drawing.Font("Cocogoose", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.lblTitulo_ESA.Location = new System.Drawing.Point(45, 20);
             this.lblTitulo_ESA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo_ESA.Name = "lblTitulo_ESA";
-            this.lblTitulo_ESA.Size = new System.Drawing.Size(296, 39);
+            this.lblTitulo_ESA.Size = new System.Drawing.Size(298, 39);
             this.lblTitulo_ESA.TabIndex = 9;
             this.lblTitulo_ESA.Text = "Registro de becas";
             this.lblTitulo_ESA.Click += new System.EventHandler(this.lblTitulo_ACO_Click);
@@ -147,9 +133,9 @@
             // FechaC
             // 
             this.FechaC.AutoSize = true;
-            this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(87)))), ((int)(((byte)(137)))));
-            this.FechaC.Location = new System.Drawing.Point(652, 9);
+            this.FechaC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.FechaC.Location = new System.Drawing.Point(610, 20);
             this.FechaC.Name = "FechaC";
             this.FechaC.Size = new System.Drawing.Size(160, 31);
             this.FechaC.TabIndex = 16;
@@ -158,9 +144,9 @@
             // HoraC
             // 
             this.HoraC.AutoSize = true;
-            this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(87)))), ((int)(((byte)(137)))));
-            this.HoraC.Location = new System.Drawing.Point(680, 39);
+            this.HoraC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.HoraC.Location = new System.Drawing.Point(624, 60);
             this.HoraC.Name = "HoraC";
             this.HoraC.Size = new System.Drawing.Size(143, 31);
             this.HoraC.TabIndex = 17;
@@ -169,22 +155,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(87)))), ((int)(((byte)(137)))));
+            this.label1.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.label1.Location = new System.Drawing.Point(443, 135);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 31);
+            this.label1.Size = new System.Drawing.Size(119, 31);
             this.label1.TabIndex = 18;
             this.label1.Text = "Usuario :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(87)))), ((int)(((byte)(137)))));
+            this.label2.Font = new System.Drawing.Font("Cocogoose", 15.75F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.label2.Location = new System.Drawing.Point(443, 230);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 31);
+            this.label2.Size = new System.Drawing.Size(167, 31);
             this.label2.TabIndex = 19;
             this.label2.Text = "Contraseña :";
             // 
@@ -201,18 +187,29 @@
             this.errorLogin.UseWaitCursor = true;
             this.errorLogin.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(52, 125);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(291, 206);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormLogin_ESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(825, 445);
+            this.Controls.Add(this.pictureBox1);
             this.ClientSize = new System.Drawing.Size(847, 510);
             this.Controls.Add(this.errorLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.HoraC);
             this.Controls.Add(this.FechaC);
-            this.Controls.Add(this.imgLogin_ESA);
             this.Controls.Add(this.btnSalir_ESA);
             this.Controls.Add(this.btnInicioSesion_ESA);
             this.Controls.Add(this.txtContraseña_ESA);
@@ -220,18 +217,17 @@
             this.Controls.Add(this.lblNombreAlumno_ESA);
             this.Controls.Add(this.lblTitulo_ESA);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormLogin_ESA";
             this.Text = "BK2";
             this.Load += new System.EventHandler(this.FormLogin_ESA_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogin_ESA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox imgLogin_ESA;
         private System.Windows.Forms.Button btnSalir_ESA;
         private System.Windows.Forms.Button btnInicioSesion_ESA;
         private System.Windows.Forms.TextBox txtContraseña_ESA;
@@ -244,6 +240,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label errorLogin;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -21,6 +21,7 @@ namespace Proyecto_AdministracionOrgDatos
         private string[] contraseña = { "12345", "jacobo", "contraseña" };
         FileStream login = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
+
         public FormLogin_ESA()
         {
             InitializeComponent();
@@ -33,7 +34,8 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
         private void btnInicioSesion_ESA_Click(object sender, EventArgs e)
-        {            
+        {
+
             if (archivoAdmin(usuario, contraseña) || txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1")
             {
                 Form objMenu_ACO = new frmMenu_ESA();
