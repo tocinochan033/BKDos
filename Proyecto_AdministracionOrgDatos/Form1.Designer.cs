@@ -42,7 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorLogin = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogin_ESA)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.imgLogin_ESA)).BeginInit();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
