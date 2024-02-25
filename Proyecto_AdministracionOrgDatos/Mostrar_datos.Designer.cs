@@ -36,14 +36,6 @@
             this.FechaHora3 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.dgvMostrar = new System.Windows.Forms.DataGridView();
-            this.lblEscuela = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnFiltrar = new System.Windows.Forms.Button();
-            this.lblFiltro = new System.Windows.Forms.Label();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.lblCategoria = new System.Windows.Forms.Label();
-            this.cmbFiltro = new System.Windows.Forms.ComboBox();
-            this.btnResetFiltro = new System.Windows.Forms.Button();
             this.aPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,20 +56,35 @@
             this.promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblEscuela = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.cmbFiltro = new System.Windows.Forms.ComboBox();
+            this.btnResetFiltro = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(87)))), ((int)(((byte)(137)))));
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Snow;
-            this.btnEliminar.Location = new System.Drawing.Point(99, 128);
+            this.btnEliminar.Location = new System.Drawing.Point(110, 930);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(195, 39);
+            this.btnEliminar.Size = new System.Drawing.Size(204, 53);
             this.btnEliminar.TabIndex = 62;
             this.btnEliminar.Text = "Eliminar Lista";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -85,12 +92,13 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Snow;
-            this.btnSalir.Location = new System.Drawing.Point(18, 600);
+            this.btnSalir.Location = new System.Drawing.Point(1698, 934);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(111, 40);
+            this.btnSalir.Size = new System.Drawing.Size(122, 49);
             this.btnSalir.TabIndex = 63;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -98,12 +106,13 @@
             // 
             // btnGenerarPDF
             // 
-            this.btnGenerarPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(87)))), ((int)(((byte)(137)))));
-            this.btnGenerarPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.btnGenerarPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarPDF.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarPDF.ForeColor = System.Drawing.Color.Snow;
-            this.btnGenerarPDF.Location = new System.Drawing.Point(99, 202);
+            this.btnGenerarPDF.Location = new System.Drawing.Point(417, 930);
             this.btnGenerarPDF.Name = "btnGenerarPDF";
-            this.btnGenerarPDF.Size = new System.Drawing.Size(195, 39);
+            this.btnGenerarPDF.Size = new System.Drawing.Size(204, 53);
             this.btnGenerarPDF.TabIndex = 64;
             this.btnGenerarPDF.Text = "Generar PDF";
             this.btnGenerarPDF.UseVisualStyleBackColor = false;
@@ -112,7 +121,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(45, 202);
+            this.pictureBox1.Location = new System.Drawing.Point(354, 937);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(57, 39);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -122,22 +131,23 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(74, 16);
+            this.label1.Font = new System.Drawing.Font("Cocogoose", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.label1.Location = new System.Drawing.Point(57, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 62);
+            this.label1.Size = new System.Drawing.Size(356, 39);
             this.label1.TabIndex = 66;
-            this.label1.Text = "Consulta de \r\n   Registros";
+            this.label1.Text = "Consulta de Registros";
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(87)))), ((int)(((byte)(137)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Snow;
-            this.button1.Location = new System.Drawing.Point(99, 287);
+            this.button1.Location = new System.Drawing.Point(724, 930);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(195, 39);
+            this.button1.Size = new System.Drawing.Size(204, 53);
             this.button1.TabIndex = 67;
             this.button1.Text = "Imprimir PDF";
             this.button1.UseVisualStyleBackColor = false;
@@ -146,7 +156,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(45, 287);
+            this.pictureBox2.Location = new System.Drawing.Point(661, 937);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(57, 39);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -156,11 +166,11 @@
             // FechaC
             // 
             this.FechaC.AutoSize = true;
-            this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(87)))), ((int)(((byte)(137)))));
-            this.FechaC.Location = new System.Drawing.Point(12, 442);
+            this.FechaC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.FechaC.Location = new System.Drawing.Point(1646, 20);
             this.FechaC.Name = "FechaC";
-            this.FechaC.Size = new System.Drawing.Size(160, 31);
+            this.FechaC.Size = new System.Drawing.Size(183, 30);
             this.FechaC.TabIndex = 69;
             this.FechaC.Text = "00/00/0000";
             this.FechaC.Click += new System.EventHandler(this.FechaC_Click);
@@ -168,11 +178,11 @@
             // HoraC
             // 
             this.HoraC.AutoSize = true;
-            this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(87)))), ((int)(((byte)(137)))));
-            this.HoraC.Location = new System.Drawing.Point(12, 379);
+            this.HoraC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.HoraC.Location = new System.Drawing.Point(1656, 48);
             this.HoraC.Name = "HoraC";
-            this.HoraC.Size = new System.Drawing.Size(143, 31);
+            this.HoraC.Size = new System.Drawing.Size(151, 30);
             this.HoraC.TabIndex = 70;
             this.HoraC.Text = "00:00 a.m";
             // 
@@ -184,7 +194,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(45, 128);
+            this.pictureBox3.Location = new System.Drawing.Point(47, 937);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(57, 39);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -219,84 +229,12 @@
             this.modelo});
             this.dgvMostrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvMostrar.GridColor = System.Drawing.Color.Silver;
-            this.dgvMostrar.Location = new System.Drawing.Point(363, 84);
+            this.dgvMostrar.Location = new System.Drawing.Point(24, 150);
             this.dgvMostrar.Name = "dgvMostrar";
             this.dgvMostrar.ReadOnly = true;
-            this.dgvMostrar.Size = new System.Drawing.Size(1007, 556);
+            this.dgvMostrar.Size = new System.Drawing.Size(1796, 756);
             this.dgvMostrar.TabIndex = 73;
             this.dgvMostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrar_CellContentClick);
-            // 
-            // lblEscuela
-            // 
-            this.lblEscuela.AutoSize = true;
-            this.lblEscuela.Location = new System.Drawing.Point(387, 16);
-            this.lblEscuela.Name = "lblEscuela";
-            this.lblEscuela.Size = new System.Drawing.Size(0, 13);
-            this.lblEscuela.TabIndex = 75;
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFiltrar.Location = new System.Drawing.Point(838, 26);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(129, 42);
-            this.btnFiltrar.TabIndex = 76;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = false;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
-            // lblFiltro
-            // 
-            this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltro.Location = new System.Drawing.Point(359, 26);
-            this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(59, 20);
-            this.lblFiltro.TabIndex = 77;
-            this.lblFiltro.Text = "Buscar";
-            // 
-            // txtFiltro
-            // 
-            this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltro.Location = new System.Drawing.Point(424, 26);
-            this.txtFiltro.Multiline = true;
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(179, 28);
-            this.txtFiltro.TabIndex = 78;
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(628, 26);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(29, 20);
-            this.lblCategoria.TabIndex = 79;
-            this.lblCategoria.Text = "En";
-            // 
-            // cmbFiltro
-            // 
-            this.cmbFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Location = new System.Drawing.Point(663, 26);
-            this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(121, 28);
-            this.cmbFiltro.TabIndex = 80;
-            // 
-            // btnResetFiltro
-            // 
-            this.btnResetFiltro.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.btnResetFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetFiltro.ForeColor = System.Drawing.Color.Transparent;
-            this.btnResetFiltro.Location = new System.Drawing.Point(1036, 26);
-            this.btnResetFiltro.Name = "btnResetFiltro";
-            this.btnResetFiltro.Size = new System.Drawing.Size(158, 42);
-            this.btnResetFiltro.TabIndex = 81;
-            this.btnResetFiltro.Text = "Reiniciar filtros";
-            this.btnResetFiltro.UseVisualStyleBackColor = false;
-            this.btnResetFiltro.Click += new System.EventHandler(this.btnResetFiltro_Click);
             // 
             // aPaterno
             // 
@@ -418,16 +356,127 @@
             this.modelo.Name = "modelo";
             this.modelo.ReadOnly = true;
             // 
+            // lblEscuela
+            // 
+            this.lblEscuela.AutoSize = true;
+            this.lblEscuela.Location = new System.Drawing.Point(387, 16);
+            this.lblEscuela.Name = "lblEscuela";
+            this.lblEscuela.Size = new System.Drawing.Size(0, 13);
+            this.lblEscuela.TabIndex = 75;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrar.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnFiltrar.Location = new System.Drawing.Point(1185, 76);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(161, 53);
+            this.btnFiltrar.TabIndex = 76;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.lblFiltro.Location = new System.Drawing.Point(12, 11);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(111, 31);
+            this.lblFiltro.TabIndex = 77;
+            this.lblFiltro.Text = "Buscar :";
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFiltro.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.txtFiltro.Location = new System.Drawing.Point(129, 14);
+            this.txtFiltro.Multiline = true;
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(636, 28);
+            this.txtFiltro.TabIndex = 78;
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.lblCategoria.Location = new System.Drawing.Point(826, 11);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(56, 31);
+            this.lblCategoria.TabIndex = 79;
+            this.lblCategoria.Text = "En :";
+            // 
+            // cmbFiltro
+            // 
+            this.cmbFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.cmbFiltro.FormattingEnabled = true;
+            this.cmbFiltro.Location = new System.Drawing.Point(888, 11);
+            this.cmbFiltro.Name = "cmbFiltro";
+            this.cmbFiltro.Size = new System.Drawing.Size(200, 39);
+            this.cmbFiltro.TabIndex = 80;
+            // 
+            // btnResetFiltro
+            // 
+            this.btnResetFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.btnResetFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetFiltro.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetFiltro.ForeColor = System.Drawing.Color.Transparent;
+            this.btnResetFiltro.Location = new System.Drawing.Point(1368, 76);
+            this.btnResetFiltro.Name = "btnResetFiltro";
+            this.btnResetFiltro.Size = new System.Drawing.Size(231, 53);
+            this.btnResetFiltro.TabIndex = 81;
+            this.btnResetFiltro.Text = "Reiniciar filtros";
+            this.btnResetFiltro.UseVisualStyleBackColor = false;
+            this.btnResetFiltro.Click += new System.EventHandler(this.btnResetFiltro_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.pictureBox11);
+            this.panel1.Controls.Add(this.lblFiltro);
+            this.panel1.Controls.Add(this.txtFiltro);
+            this.panel1.Controls.Add(this.cmbFiltro);
+            this.panel1.Controls.Add(this.lblCategoria);
+            this.panel1.Location = new System.Drawing.Point(64, 69);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1100, 61);
+            this.panel1.TabIndex = 82;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(129, 48);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(636, 10);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 87;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(772, 14);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(37, 36);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 88;
+            this.pictureBox4.TabStop = false;
+            // 
             // Mostrar_datos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 708);
+            this.ClientSize = new System.Drawing.Size(1841, 1041);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnResetFiltro);
-            this.Controls.Add(this.cmbFiltro);
-            this.Controls.Add(this.lblCategoria);
-            this.Controls.Add(this.txtFiltro);
-            this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.lblEscuela);
             this.Controls.Add(this.dgvMostrar);
@@ -449,6 +498,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,5 +548,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn promedio;
         private System.Windows.Forms.DataGridViewTextBoxColumn cct;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

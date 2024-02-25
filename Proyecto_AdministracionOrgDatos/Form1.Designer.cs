@@ -42,19 +42,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorLogin = new System.Windows.Forms.Label();
-            //((System.ComponentModel.ISupportInitialize)(this.imgLogin_ESA)).BeginInit();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalir_ESA
             // 
-            this.btnSalir_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnSalir_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.btnSalir_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnSalir_ESA.Location = new System.Drawing.Point(705, 449);
-            this.btnSalir_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir_ESA.Name = "btnSalir_ESA";
             this.btnSalir_ESA.Size = new System.Drawing.Size(126, 44);
             this.btnSalir_ESA.TabIndex = 15;
@@ -66,12 +70,13 @@
             // 
             this.btnInicioSesion_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.btnInicioSesion_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInicioSesion_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInicioSesion_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicioSesion_ESA.ForeColor = System.Drawing.Color.Snow;
-            this.btnInicioSesion_ESA.Location = new System.Drawing.Point(490, 350);
-            this.btnInicioSesion_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInicioSesion_ESA.Location = new System.Drawing.Point(500, 355);
+            this.btnInicioSesion_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnInicioSesion_ESA.Name = "btnInicioSesion_ESA";
-            this.btnInicioSesion_ESA.Size = new System.Drawing.Size(240, 44);
+            this.btnInicioSesion_ESA.Size = new System.Drawing.Size(230, 44);
             this.btnInicioSesion_ESA.TabIndex = 14;
             this.btnInicioSesion_ESA.Text = "Iniciar Sesión";
             this.btnInicioSesion_ESA.UseVisualStyleBackColor = false;
@@ -79,23 +84,27 @@
             // 
             // txtContraseña_ESA
             // 
+            this.txtContraseña_ESA.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtContraseña_ESA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseña_ESA.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold);
             this.txtContraseña_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtContraseña_ESA.Location = new System.Drawing.Point(450, 271);
-            this.txtContraseña_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContraseña_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseña_ESA.Name = "txtContraseña_ESA";
             this.txtContraseña_ESA.PasswordChar = '*';
-            this.txtContraseña_ESA.Size = new System.Drawing.Size(325, 38);
+            this.txtContraseña_ESA.Size = new System.Drawing.Size(325, 32);
             this.txtContraseña_ESA.TabIndex = 13;
             // 
             // txtUsuario_ESA
             // 
+            this.txtUsuario_ESA.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtUsuario_ESA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario_ESA.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtUsuario_ESA.Location = new System.Drawing.Point(450, 176);
-            this.txtUsuario_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuario_ESA.Location = new System.Drawing.Point(449, 176);
+            this.txtUsuario_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario_ESA.Name = "txtUsuario_ESA";
-            this.txtUsuario_ESA.Size = new System.Drawing.Size(325, 38);
+            this.txtUsuario_ESA.Size = new System.Drawing.Size(325, 32);
             this.txtUsuario_ESA.TabIndex = 12;
             // 
             // lblNombreAlumno_ESA
@@ -106,7 +115,7 @@
             this.lblNombreAlumno_ESA.Location = new System.Drawing.Point(21, 59);
             this.lblNombreAlumno_ESA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreAlumno_ESA.Name = "lblNombreAlumno_ESA";
-            this.lblNombreAlumno_ESA.Size = new System.Drawing.Size(287, 25);
+            this.lblNombreAlumno_ESA.Size = new System.Drawing.Size(357, 31);
             this.lblNombreAlumno_ESA.TabIndex = 10;
             this.lblNombreAlumno_ESA.Text = "Equipo \"Los hijos del trueno\"";
             // 
@@ -135,9 +144,9 @@
             this.FechaC.AutoSize = true;
             this.FechaC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.FechaC.Location = new System.Drawing.Point(610, 20);
+            this.FechaC.Location = new System.Drawing.Point(648, 20);
             this.FechaC.Name = "FechaC";
-            this.FechaC.Size = new System.Drawing.Size(160, 31);
+            this.FechaC.Size = new System.Drawing.Size(183, 30);
             this.FechaC.TabIndex = 16;
             this.FechaC.Text = "00/00/0000";
             // 
@@ -146,9 +155,9 @@
             this.HoraC.AutoSize = true;
             this.HoraC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.HoraC.Location = new System.Drawing.Point(624, 60);
+            this.HoraC.Location = new System.Drawing.Point(662, 60);
             this.HoraC.Name = "HoraC";
-            this.HoraC.Size = new System.Drawing.Size(143, 31);
+            this.HoraC.Size = new System.Drawing.Size(151, 30);
             this.HoraC.TabIndex = 17;
             this.HoraC.Text = "00:00 a.m";
             // 
@@ -177,34 +186,55 @@
             // errorLogin
             // 
             this.errorLogin.AutoSize = true;
-            this.errorLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLogin.Font = new System.Drawing.Font("Louis George Cafe", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorLogin.ForeColor = System.Drawing.Color.Red;
-            this.errorLogin.Location = new System.Drawing.Point(446, 326);
+            this.errorLogin.Location = new System.Drawing.Point(488, 327);
             this.errorLogin.Name = "errorLogin";
-            this.errorLogin.Size = new System.Drawing.Size(210, 16);
+            this.errorLogin.Size = new System.Drawing.Size(255, 17);
             this.errorLogin.TabIndex = 20;
-            this.errorLogin.Text = "Usuario y/o Contraseña incorrecto";
+            this.errorLogin.Text = "Usuario y/o Contraseña incorrecto.";
             this.errorLogin.UseWaitCursor = true;
             this.errorLogin.Visible = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(52, 125);
+            this.pictureBox1.Location = new System.Drawing.Point(52, 176);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(291, 206);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
+            this.pictureBox15.Location = new System.Drawing.Point(449, 213);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(326, 10);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox15.TabIndex = 91;
+            this.pictureBox15.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(449, 308);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(326, 10);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 92;
+            this.pictureBox2.TabStop = false;
+            // 
             // FormLogin_ESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(825, 445);
-            this.Controls.Add(this.pictureBox1);
             this.ClientSize = new System.Drawing.Size(847, 510);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox15);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.errorLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -217,11 +247,14 @@
             this.Controls.Add(this.lblNombreAlumno_ESA);
             this.Controls.Add(this.lblTitulo_ESA);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLogin_ESA";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BK2";
             this.Load += new System.EventHandler(this.FormLogin_ESA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,6 +274,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label errorLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
