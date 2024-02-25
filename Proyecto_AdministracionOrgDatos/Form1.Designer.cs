@@ -101,7 +101,7 @@
             this.txtUsuario_ESA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario_ESA.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtUsuario_ESA.Location = new System.Drawing.Point(450, 176);
+            this.txtUsuario_ESA.Location = new System.Drawing.Point(449, 176);
             this.txtUsuario_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario_ESA.Name = "txtUsuario_ESA";
             this.txtUsuario_ESA.Size = new System.Drawing.Size(325, 32);
