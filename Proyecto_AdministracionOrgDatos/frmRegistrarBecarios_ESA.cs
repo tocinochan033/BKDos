@@ -17,18 +17,13 @@ namespace Proyecto_AdministracionOrgDatos
         public frmRegistrarBecarios_ESA()
         {
             InitializeComponent();
+            LlenarComboBoxEscuelas();
 
-            //Inicialiazcion de combo box de CCT
-            cmbCCT.Items.Add("02DIT0021M ITT");
-            cmbCCT.Items.Add("02PBH0079C UABC");
-            cmbCCT.Items.Add("U602000    UNAM");
-            cmbCCT.Items.Add("09PBH0056L ITESM");
-            cmbCCT.Items.Add("19USU3353S UANL");
-            cmbCCT.Items.Add("19USU3353S UANL");
-
+            /*
             //Inicializacion de combo box del modelo 
             txtModelo.Items.Add("Semestre");
             txtModelo.Items.Add("Cuatrimestre");
+            */
 
             //Inicializacion de los estados de la republica
             txtEstadoNac.Items.Add("Aguascalientes");
@@ -353,15 +348,48 @@ namespace Proyecto_AdministracionOrgDatos
 
         }
 
+        // Cambio en el ComboBox
+
+        private void LlenarComboBoxEscuelas()
+        {
+            // Puedes obtener los nombres de las escuelas desde tus archivos de texto u otra fuente de datos
+            List<string> nombresEscuelas = ObtenerNombresEscuelas();
+
+            // Limpia el ComboBox antes de llenarlo nuevamente
+            cmbCCT.Items.Clear();
+
+            // Agrega los nombres de las escuelas al ComboBox
+            cmbCCT.Items.AddRange(nombresEscuelas.ToArray());
+        }
+
+        private List<string> ObtenerNombresEscuelas()
+        {
+            // Puedes cargar los nombres de las escuelas desde tus archivos de texto u otra fuente de datos
+            List<string> nombresEscuelas = new List<string>
+            {
+                "02DIT0021M TEC",
+                "02PBH0079C UABC",
+                "U602000 UNAM",
+                "09PBH0056L ITESM",
+                "19USU3353S UANL",
+                "02PBH0022B ZOCHICALCO"
+                // Agrega otros nombres de escuelas según tu necesidad
+            };
+
+            return nombresEscuelas;
+        }
+
+
         private void cmbCCT_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //NO SUPE IMPLEMENTAR LA PARTE DE QUE SI PONES X UNI TE SALE SEMESTRAL
-            //Y SI PONES OTRA UNI IMPRIME CUATRIMESTRAL, REVISAR PORFAVOR
-            if (cmbCCT.Text == "TEC" && cmbCCT.Text == "UABC")
-                txtModelo.Text = "Semestral".ToString();
-            else if (cmbCCT.Text == "CETIS" && cmbCCT.Text == "UVM" && cmbCCT.Text == "ZOCHICALCO")
-                txtModelo.Text = "Cuatrimestral".ToString();
+            // Obtén el nombre de la escuela seleccionada
+            string escuelaSeleccionada = cmbCCT.Text;
 
+            // Utiliza la lógica para determinar el modelo según la escuela seleccionada
+            if (escuelaSeleccionada == "02DIT0021M TEC" || escuelaSeleccionada == "02PBH0079C UABC" || escuelaSeleccionada == "U602000 UNAM" || escuelaSeleccionada == "09PBH0056L ITESM")
+                txtModelo.Text = "Semestral";
+            else if (escuelaSeleccionada == "19USU3353S UANL" || escuelaSeleccionada == "02PBH0022B ZOCHICALCO")
+                txtModelo.Text = "Cuatrimestral";
         }
 
         private void txtModelo_SelectedIndexChanged(object sender, EventArgs e)
