@@ -35,8 +35,6 @@
             this.btnCerrarSesion_ESA = new System.Windows.Forms.Button();
             this.btnGenerarPDF_ESA = new System.Windows.Forms.Button();
             this.btnConsultar_ESA = new System.Windows.Forms.Button();
-            this.FechaC = new System.Windows.Forms.Label();
-            this.HoraC = new System.Windows.Forms.Label();
             this.FechaHora1 = new System.Windows.Forms.Timer(this.components);
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,7 +45,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.SideBarTimer = new System.Windows.Forms.Timer(this.components);
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -57,7 +54,6 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSubirDocumentos_ESA
@@ -148,33 +144,6 @@
             this.btnConsultar_ESA.UseVisualStyleBackColor = false;
             this.btnConsultar_ESA.Click += new System.EventHandler(this.btnConsultar_ESA_Click);
             // 
-            // FechaC
-            // 
-            this.FechaC.AutoSize = true;
-            this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.FechaC.Location = new System.Drawing.Point(1709, 22);
-            this.FechaC.Name = "FechaC";
-            this.FechaC.Size = new System.Drawing.Size(160, 31);
-            this.FechaC.TabIndex = 28;
-            this.FechaC.Text = "00/00/0000";
-            // 
-            // HoraC
-            // 
-            this.HoraC.AutoSize = true;
-            this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.HoraC.Location = new System.Drawing.Point(1719, 52);
-            this.HoraC.Name = "HoraC";
-            this.HoraC.Size = new System.Drawing.Size(143, 31);
-            this.HoraC.TabIndex = 30;
-            this.HoraC.Text = "00:00 a.m";
-            // 
-            // FechaHora1
-            // 
-            this.FechaHora1.Enabled = true;
-            this.FechaHora1.Tick += new System.EventHandler(this.FechaHora1_Tick);
-            // 
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
@@ -264,19 +233,6 @@
             this.panel6.Size = new System.Drawing.Size(244, 50);
             this.panel6.TabIndex = 38;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(763, 179);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(607, 629);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 36;
-            this.pictureBox3.TabStop = false;
-            // 
             // SideBarTimer
             // 
             this.SideBarTimer.Interval = 20;
@@ -288,11 +244,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.sidebar);
-            this.Controls.Add(this.HoraC);
-            this.Controls.Add(this.FechaC);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMenu_ESA";
             this.Text = "BK2";
@@ -307,9 +261,7 @@
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -319,8 +271,6 @@
         private System.Windows.Forms.Button btnCerrarSesion_ESA;
         private System.Windows.Forms.Button btnGenerarPDF_ESA;
         private System.Windows.Forms.Button btnConsultar_ESA;
-        private System.Windows.Forms.Label FechaC;
-        private System.Windows.Forms.Label HoraC;
         private System.Windows.Forms.Timer FechaHora1;
         private System.Windows.Forms.FlowLayoutPanel sidebar;
         private System.Windows.Forms.Panel panel1;
@@ -331,7 +281,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox menuButton;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Timer SideBarTimer;
     }
 }

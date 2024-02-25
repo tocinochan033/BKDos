@@ -26,7 +26,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mostrar_datos));
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnGenerarPDF = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -65,15 +64,16 @@
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.btnResetFiltro = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.GenerarPDF = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEliminar
@@ -96,27 +96,13 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Snow;
-            this.btnSalir.Location = new System.Drawing.Point(1698, 934);
+            this.btnSalir.Location = new System.Drawing.Point(1526, 927);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(122, 49);
             this.btnSalir.TabIndex = 63;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnGenerarPDF
-            // 
-            this.btnGenerarPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.btnGenerarPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerarPDF.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarPDF.ForeColor = System.Drawing.Color.Snow;
-            this.btnGenerarPDF.Location = new System.Drawing.Point(417, 930);
-            this.btnGenerarPDF.Name = "btnGenerarPDF";
-            this.btnGenerarPDF.Size = new System.Drawing.Size(204, 53);
-            this.btnGenerarPDF.TabIndex = 64;
-            this.btnGenerarPDF.Text = "Generar PDF";
-            this.btnGenerarPDF.UseVisualStyleBackColor = false;
-            this.btnGenerarPDF.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // pictureBox1
             // 
@@ -168,7 +154,7 @@
             this.FechaC.AutoSize = true;
             this.FechaC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.FechaC.Location = new System.Drawing.Point(1646, 20);
+            this.FechaC.Location = new System.Drawing.Point(1465, 16);
             this.FechaC.Name = "FechaC";
             this.FechaC.Size = new System.Drawing.Size(183, 30);
             this.FechaC.TabIndex = 69;
@@ -180,7 +166,7 @@
             this.HoraC.AutoSize = true;
             this.HoraC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.HoraC.Location = new System.Drawing.Point(1656, 48);
+            this.HoraC.Location = new System.Drawing.Point(1475, 44);
             this.HoraC.Name = "HoraC";
             this.HoraC.Size = new System.Drawing.Size(151, 30);
             this.HoraC.TabIndex = 70;
@@ -229,10 +215,10 @@
             this.modelo});
             this.dgvMostrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvMostrar.GridColor = System.Drawing.Color.Silver;
-            this.dgvMostrar.Location = new System.Drawing.Point(24, 150);
+            this.dgvMostrar.Location = new System.Drawing.Point(22, 150);
             this.dgvMostrar.Name = "dgvMostrar";
             this.dgvMostrar.ReadOnly = true;
-            this.dgvMostrar.Size = new System.Drawing.Size(1796, 756);
+            this.dgvMostrar.Size = new System.Drawing.Size(1626, 756);
             this.dgvMostrar.TabIndex = 73;
             this.dgvMostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrar_CellContentClick);
             // 
@@ -370,7 +356,7 @@
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrar.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFiltrar.Location = new System.Drawing.Point(1185, 76);
+            this.btnFiltrar.Location = new System.Drawing.Point(1046, 74);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(161, 53);
             this.btnFiltrar.TabIndex = 76;
@@ -397,7 +383,7 @@
             this.txtFiltro.Location = new System.Drawing.Point(129, 14);
             this.txtFiltro.Multiline = true;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(636, 28);
+            this.txtFiltro.Size = new System.Drawing.Size(481, 28);
             this.txtFiltro.TabIndex = 78;
             // 
             // lblCategoria
@@ -405,7 +391,7 @@
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblCategoria.Location = new System.Drawing.Point(826, 11);
+            this.lblCategoria.Location = new System.Drawing.Point(679, 11);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(56, 31);
             this.lblCategoria.TabIndex = 79;
@@ -414,12 +400,12 @@
             // cmbFiltro
             // 
             this.cmbFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFiltro.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Location = new System.Drawing.Point(888, 11);
+            this.cmbFiltro.Location = new System.Drawing.Point(741, 11);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(200, 39);
+            this.cmbFiltro.Size = new System.Drawing.Size(200, 38);
             this.cmbFiltro.TabIndex = 80;
             // 
             // btnResetFiltro
@@ -428,7 +414,7 @@
             this.btnResetFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResetFiltro.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetFiltro.ForeColor = System.Drawing.Color.Transparent;
-            this.btnResetFiltro.Location = new System.Drawing.Point(1368, 76);
+            this.btnResetFiltro.Location = new System.Drawing.Point(1229, 74);
             this.btnResetFiltro.Name = "btnResetFiltro";
             this.btnResetFiltro.Size = new System.Drawing.Size(231, 53);
             this.btnResetFiltro.TabIndex = 81;
@@ -447,34 +433,46 @@
             this.panel1.Controls.Add(this.lblCategoria);
             this.panel1.Location = new System.Drawing.Point(64, 69);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 61);
+            this.panel1.Size = new System.Drawing.Size(964, 61);
             this.panel1.TabIndex = 82;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(129, 48);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(636, 10);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 87;
-            this.pictureBox11.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(772, 14);
+            this.pictureBox4.Location = new System.Drawing.Point(625, 14);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(37, 36);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 88;
             this.pictureBox4.TabStop = false;
             // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(129, 48);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(481, 10);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 87;
+            this.pictureBox11.TabStop = false;
+            // 
+            // GenerarPDF
+            // 
+            this.GenerarPDF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GenerarPDF.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GenerarPDF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.GenerarPDF.FormattingEnabled = true;
+            this.GenerarPDF.Location = new System.Drawing.Point(417, 938);
+            this.GenerarPDF.Name = "GenerarPDF";
+            this.GenerarPDF.Size = new System.Drawing.Size(204, 38);
+            this.GenerarPDF.TabIndex = 89;
+            // 
             // Mostrar_datos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1841, 1041);
+            this.ClientSize = new System.Drawing.Size(1673, 1041);
+            this.Controls.Add(this.GenerarPDF);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnResetFiltro);
             this.Controls.Add(this.btnFiltrar);
@@ -487,9 +485,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnGenerarPDF);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Mostrar_datos";
             this.Text = "Consulta ";
@@ -500,8 +498,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,7 +508,6 @@
         #endregion
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnGenerarPDF;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
@@ -551,5 +548,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.ComboBox GenerarPDF;
     }
 }

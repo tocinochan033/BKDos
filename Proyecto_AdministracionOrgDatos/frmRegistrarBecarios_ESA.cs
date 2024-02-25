@@ -13,6 +13,7 @@ namespace Proyecto_AdministracionOrgDatos
 {
     public partial class frmRegistrarBecarios_ESA : Form
     {
+
         public frmRegistrarBecarios_ESA()
         {
             InitializeComponent();

@@ -13,6 +13,9 @@ namespace Proyecto_AdministracionOrgDatos
 {
     public partial class frmMenu_ESA : Form
     {
+        //Variables para las diferentes pantallas
+        frmRegistrarBecarios_ESA PantallaRegistro;
+        Mostrar_datos PantallaConsulta;
         public frmMenu_ESA()
         {
             InitializeComponent();
@@ -23,12 +26,35 @@ namespace Proyecto_AdministracionOrgDatos
 
         }
 
+        //Configuracion del boton de Registrar y modificar
         private void btnRegistrarUsuarios_ESA_Click(object sender, EventArgs e)
         {
-           Form objRegistrarUsuarios_ACO = new frmRegistrarBecarios_ESA();
+            /*
+            Form objRegistrarUsuarios_ACO = new frmRegistrarBecarios_ESA();
             objRegistrarUsuarios_ACO.Show();
-            this.Hide();
+            this.Hide();*/
+
+            if (PantallaRegistro == null)
+            {
+                PantallaRegistro = new frmRegistrarBecarios_ESA();
+                PantallaRegistro.FormClosed += PantallaRegistroCerrada;
+                PantallaRegistro.MdiParent = this;
+                PantallaRegistro.Show();
+            }
+            else
+            {
+                PantallaRegistro.Activate();
+            }
+
         }
+
+        private void PantallaRegistroCerrada (object sender, FormClosedEventArgs e)
+        {
+            PantallaRegistro = null;
+        }
+
+
+        // ----------------------------------------------------------------------
 
         private void btnCerrarSesion_ESA_Click(object sender, EventArgs e)
         {
@@ -47,19 +73,35 @@ namespace Proyecto_AdministracionOrgDatos
             
         }
 
+        //Configuracion del boton de Consultas
         private void btnConsultar_ESA_Click(object sender, EventArgs e)
         {
+            /*
             Form pbjMostrarDatos = new Mostrar_datos();
             pbjMostrarDatos.Show();
-            this.Hide();
+            this.Hide();*/
+
+            if (PantallaConsulta == null)
+            {
+                PantallaConsulta = new Mostrar_datos();
+                PantallaConsulta.FormClosed += PantallaConsultaCerrada;
+                PantallaConsulta.MdiParent = this;
+                PantallaConsulta.Show();
+            }
+            else
+            {
+                PantallaRegistro.Activate();
+            }
+
         }
-         
-        //Aqui estan las propiedades para agregar la fecha y la hora al programa
-        private void FechaHora1_Tick(object sender, EventArgs e)
+
+        private void PantallaConsultaCerrada(object sender, FormClosedEventArgs e)
         {
-            HoraC.Text = DateTime.Now.ToShortTimeString();
-            FechaC.Text = DateTime.Now.ToShortDateString();
+            PantallaConsulta = null;
         }
+
+
+        //-----------------------------------------------------------------------
 
         //Aqui esta el codigo de deslizamiento de la barra de menu
         bool sidebarExpand;
