@@ -36,26 +36,6 @@
             this.FechaHora3 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.dgvMostrar = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblEscuela = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnFiltrar = new System.Windows.Forms.Button();
@@ -64,6 +44,26 @@
             this.lblCategoria = new System.Windows.Forms.Label();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.btnResetFiltro = new System.Windows.Forms.Button();
+            this.aPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.generoo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nacionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estdNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.municipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -197,26 +197,26 @@
             this.dgvMostrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMostrar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nombre,
-            this.Telefono,
-            this.Correo,
-            this.Estado,
-            this.Column1,
-            this.Column2,
-            this.Genero,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15});
+            this.aPaterno,
+            this.aMaterno,
+            this.nombres,
+            this.fechaNac,
+            this.edad,
+            this.curp,
+            this.generoo,
+            this.estadoCivil,
+            this.domicilio,
+            this.cp,
+            this.nacionalidad,
+            this.estdNacimiento,
+            this.municipio,
+            this.correo,
+            this.telefono,
+            this.carrera,
+            this.periodo,
+            this.promedio,
+            this.cct,
+            this.modelo});
             this.dgvMostrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvMostrar.GridColor = System.Drawing.Color.Silver;
             this.dgvMostrar.Location = new System.Drawing.Point(363, 84);
@@ -225,126 +225,6 @@
             this.dgvMostrar.Size = new System.Drawing.Size(1007, 556);
             this.dgvMostrar.TabIndex = 73;
             this.dgvMostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrar_CellContentClick);
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "A.Paterno";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "A.Materno";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Nombres";
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "FechaNac.";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Edad";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Curp";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Genero
-            // 
-            this.Genero.HeaderText = "Genero";
-            this.Genero.Name = "Genero";
-            this.Genero.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "EstadoCivil";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Domicilio";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "C.P";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Nacionalidad";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Estd.Nacimiento";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Municipio";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Correo";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Telefono";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Carrera";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Periodo";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Promedio";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "CCT";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Modelo";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
             // 
             // lblEscuela
             // 
@@ -418,6 +298,126 @@
             this.btnResetFiltro.UseVisualStyleBackColor = false;
             this.btnResetFiltro.Click += new System.EventHandler(this.btnResetFiltro_Click);
             // 
+            // aPaterno
+            // 
+            this.aPaterno.HeaderText = "A.Paterno";
+            this.aPaterno.Name = "aPaterno";
+            this.aPaterno.ReadOnly = true;
+            // 
+            // aMaterno
+            // 
+            this.aMaterno.HeaderText = "A.Materno";
+            this.aMaterno.Name = "aMaterno";
+            this.aMaterno.ReadOnly = true;
+            // 
+            // nombres
+            // 
+            this.nombres.HeaderText = "Nombres";
+            this.nombres.Name = "nombres";
+            this.nombres.ReadOnly = true;
+            // 
+            // fechaNac
+            // 
+            this.fechaNac.HeaderText = "FechaNac.";
+            this.fechaNac.Name = "fechaNac";
+            this.fechaNac.ReadOnly = true;
+            // 
+            // edad
+            // 
+            this.edad.HeaderText = "Edad";
+            this.edad.Name = "edad";
+            this.edad.ReadOnly = true;
+            // 
+            // curp
+            // 
+            this.curp.HeaderText = "Curp";
+            this.curp.Name = "curp";
+            this.curp.ReadOnly = true;
+            // 
+            // generoo
+            // 
+            this.generoo.HeaderText = "Genero";
+            this.generoo.Name = "generoo";
+            this.generoo.ReadOnly = true;
+            // 
+            // estadoCivil
+            // 
+            this.estadoCivil.HeaderText = "EstadoCivil";
+            this.estadoCivil.Name = "estadoCivil";
+            this.estadoCivil.ReadOnly = true;
+            // 
+            // domicilio
+            // 
+            this.domicilio.HeaderText = "Domicilio";
+            this.domicilio.Name = "domicilio";
+            this.domicilio.ReadOnly = true;
+            // 
+            // cp
+            // 
+            this.cp.HeaderText = "C.P";
+            this.cp.Name = "cp";
+            this.cp.ReadOnly = true;
+            // 
+            // nacionalidad
+            // 
+            this.nacionalidad.HeaderText = "Nacionalidad";
+            this.nacionalidad.Name = "nacionalidad";
+            this.nacionalidad.ReadOnly = true;
+            // 
+            // estdNacimiento
+            // 
+            this.estdNacimiento.HeaderText = "Estd.Nacimiento";
+            this.estdNacimiento.Name = "estdNacimiento";
+            this.estdNacimiento.ReadOnly = true;
+            // 
+            // municipio
+            // 
+            this.municipio.HeaderText = "Municipio";
+            this.municipio.Name = "municipio";
+            this.municipio.ReadOnly = true;
+            // 
+            // correo
+            // 
+            this.correo.HeaderText = "Correo";
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
+            // 
+            // telefono
+            // 
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            // 
+            // carrera
+            // 
+            this.carrera.HeaderText = "Carrera";
+            this.carrera.Name = "carrera";
+            this.carrera.ReadOnly = true;
+            // 
+            // periodo
+            // 
+            this.periodo.HeaderText = "Periodo";
+            this.periodo.Name = "periodo";
+            this.periodo.ReadOnly = true;
+            // 
+            // promedio
+            // 
+            this.promedio.HeaderText = "Promedio";
+            this.promedio.Name = "promedio";
+            this.promedio.ReadOnly = true;
+            // 
+            // cct
+            // 
+            this.cct.HeaderText = "CCT";
+            this.cct.Name = "cct";
+            this.cct.ReadOnly = true;
+            // 
+            // modelo
+            // 
+            this.modelo.HeaderText = "Modelo";
+            this.modelo.Name = "modelo";
+            this.modelo.ReadOnly = true;
+            // 
             // Mostrar_datos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,26 +467,6 @@
         private System.Windows.Forms.Timer FechaHora3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.DataGridView dgvMostrar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Genero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.Label lblEscuela;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnFiltrar;
@@ -495,5 +475,25 @@
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.Button btnResetFiltro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aPaterno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aMaterno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaNac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn edad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn generoo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoCivil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nacionalidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estdNacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn municipio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carrera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn periodo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn promedio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
     }
 }
