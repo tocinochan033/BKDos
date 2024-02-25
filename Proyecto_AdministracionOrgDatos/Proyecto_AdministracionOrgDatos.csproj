@@ -121,13 +121,16 @@
     <None Include="Resources\Fuentes\Cocogoose-Pro-Regular-trial.ttf" />
     <None Include="Resources\Fuentes\Louis George Cafe Bold.ttf" />
     <None Include="Resources\Fuentes\Louis George Cafe.ttf" />
-    <None Include="Resources\Impresion.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plantilla.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Ajolote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plantillaAcademica.html" />
+    <Content Include="Resources\plantillaContacto.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
