@@ -40,22 +40,22 @@
             this.FechaHora1 = new System.Windows.Forms.Timer(this.components);
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.menuButton = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.menuButton = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.SideBarTimer = new System.Windows.Forms.Timer(this.components);
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -109,7 +109,7 @@
             this.btnCerrarSesion_ESA.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.btnCerrarSesion_ESA.Size = new System.Drawing.Size(278, 77);
             this.btnCerrarSesion_ESA.TabIndex = 21;
-            this.btnCerrarSesion_ESA.Text = "Cerrar Sesión";
+            this.btnCerrarSesion_ESA.Text = "      Cerrar Sesión";
             this.btnCerrarSesion_ESA.UseVisualStyleBackColor = false;
             this.btnCerrarSesion_ESA.Click += new System.EventHandler(this.btnCerrarSesion_ESA_Click);
             // 
@@ -144,7 +144,7 @@
             this.btnConsultar_ESA.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnConsultar_ESA.Size = new System.Drawing.Size(271, 79);
             this.btnConsultar_ESA.TabIndex = 27;
-            this.btnConsultar_ESA.Text = "Consultar";
+            this.btnConsultar_ESA.Text = "     Consultar";
             this.btnConsultar_ESA.UseVisualStyleBackColor = false;
             this.btnConsultar_ESA.Click += new System.EventHandler(this.btnConsultar_ESA_Click);
             // 
@@ -153,7 +153,7 @@
             this.FechaC.AutoSize = true;
             this.FechaC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.FechaC.Location = new System.Drawing.Point(1023, 584);
+            this.FechaC.Location = new System.Drawing.Point(1709, 22);
             this.FechaC.Name = "FechaC";
             this.FechaC.Size = new System.Drawing.Size(183, 30);
             this.FechaC.TabIndex = 28;
@@ -164,7 +164,7 @@
             this.HoraC.AutoSize = true;
             this.HoraC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.HoraC.Location = new System.Drawing.Point(1042, 628);
+            this.HoraC.Location = new System.Drawing.Point(1719, 52);
             this.HoraC.Name = "HoraC";
             this.HoraC.Size = new System.Drawing.Size(151, 30);
             this.HoraC.TabIndex = 30;
@@ -186,10 +186,10 @@
             this.sidebar.Controls.Add(this.panel6);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
-            this.sidebar.MaximumSize = new System.Drawing.Size(247, 676);
-            this.sidebar.MinimumSize = new System.Drawing.Size(63, 676);
+            this.sidebar.MaximumSize = new System.Drawing.Size(247, 1080);
+            this.sidebar.MinimumSize = new System.Drawing.Size(63, 1080);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(247, 676);
+            this.sidebar.Size = new System.Drawing.Size(247, 1080);
             this.sidebar.TabIndex = 35;
             // 
             // panel1
@@ -201,13 +201,28 @@
             this.panel1.Size = new System.Drawing.Size(244, 100);
             this.panel1.TabIndex = 36;
             // 
-            // panel2
+            // label1
             // 
-            this.panel2.Controls.Add(this.btnSubirDocumentos_ESA);
-            this.panel2.Location = new System.Drawing.Point(3, 165);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(244, 50);
-            this.panel2.TabIndex = 37;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cocogoose", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Snow;
+            this.label1.Location = new System.Drawing.Point(97, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 39);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Menu";
+            // 
+            // menuButton
+            // 
+            this.menuButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.menuButton.Image = ((System.Drawing.Image)(resources.GetObject("menuButton.Image")));
+            this.menuButton.Location = new System.Drawing.Point(9, 31);
+            this.menuButton.Name = "menuButton";
+            this.menuButton.Size = new System.Drawing.Size(40, 40);
+            this.menuButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.menuButton.TabIndex = 36;
+            this.menuButton.TabStop = false;
+            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
             // 
             // panel3
             // 
@@ -216,6 +231,14 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(244, 50);
             this.panel3.TabIndex = 38;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnSubirDocumentos_ESA);
+            this.panel2.Location = new System.Drawing.Point(3, 165);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(244, 50);
+            this.panel2.TabIndex = 37;
             // 
             // panel4
             // 
@@ -233,28 +256,6 @@
             this.panel5.Size = new System.Drawing.Size(244, 50);
             this.panel5.TabIndex = 40;
             // 
-            // menuButton
-            // 
-            this.menuButton.Image = ((System.Drawing.Image)(resources.GetObject("menuButton.Image")));
-            this.menuButton.Location = new System.Drawing.Point(9, 31);
-            this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(40, 40);
-            this.menuButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.menuButton.TabIndex = 36;
-            this.menuButton.TabStop = false;
-            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cocogoose", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(97, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 39);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Menu";
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.btnCerrarSesion_ESA);
@@ -265,10 +266,13 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(514, 109);
+            this.pictureBox3.Location = new System.Drawing.Point(763, 179);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(430, 410);
+            this.pictureBox3.Size = new System.Drawing.Size(607, 629);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 36;
             this.pictureBox3.TabStop = false;
@@ -283,7 +287,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1218, 676);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.HoraC);
@@ -297,11 +301,11 @@
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
