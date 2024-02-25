@@ -18,9 +18,11 @@ namespace Proyecto_AdministracionOrgDatos
             InitializeComponent();
             LlenarComboBoxEscuelas();
 
+            /*
             //Inicializacion de combo box del modelo 
             txtModelo.Items.Add("Semestre");
             txtModelo.Items.Add("Cuatrimestre");
+            */
 
             //Inicializacion de los estados de la republica
             txtEstadoNac.Items.Add("Aguascalientes");
