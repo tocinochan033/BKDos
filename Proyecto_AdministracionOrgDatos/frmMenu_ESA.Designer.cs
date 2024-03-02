@@ -105,7 +105,7 @@
             this.btnCerrarSesion_ESA.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.btnCerrarSesion_ESA.Size = new System.Drawing.Size(278, 77);
             this.btnCerrarSesion_ESA.TabIndex = 21;
-            this.btnCerrarSesion_ESA.Text = "      Cerrar Sesión";
+            this.btnCerrarSesion_ESA.Text = "        Cerrar Sesión";
             this.btnCerrarSesion_ESA.UseVisualStyleBackColor = false;
             this.btnCerrarSesion_ESA.Click += new System.EventHandler(this.btnCerrarSesion_ESA_Click);
             // 
@@ -140,7 +140,7 @@
             this.btnConsultar_ESA.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnConsultar_ESA.Size = new System.Drawing.Size(271, 79);
             this.btnConsultar_ESA.TabIndex = 27;
-            this.btnConsultar_ESA.Text = "     Consultar";
+            this.btnConsultar_ESA.Text = "       Consultar";
             this.btnConsultar_ESA.UseVisualStyleBackColor = false;
             this.btnConsultar_ESA.Click += new System.EventHandler(this.btnConsultar_ESA_Click);
             // 
@@ -155,10 +155,10 @@
             this.sidebar.Controls.Add(this.panel6);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
-            this.sidebar.MaximumSize = new System.Drawing.Size(247, 1080);
-            this.sidebar.MinimumSize = new System.Drawing.Size(63, 1080);
+            this.sidebar.MaximumSize = new System.Drawing.Size(247, 788);
+            this.sidebar.MinimumSize = new System.Drawing.Size(63, 788);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(247, 1080);
+            this.sidebar.Size = new System.Drawing.Size(247, 788);
             this.sidebar.TabIndex = 35;
             // 
             // panel1
@@ -249,8 +249,8 @@
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMenu_ESA";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BK2";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenu_ESA_Load);
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

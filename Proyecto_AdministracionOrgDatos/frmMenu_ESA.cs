@@ -34,6 +34,7 @@ namespace Proyecto_AdministracionOrgDatos
             objRegistrarUsuarios_ACO.Show();
             this.Hide();*/
 
+            
             if (PantallaRegistro == null)
             {
                 PantallaRegistro = new frmRegistrarBecarios_ESA();

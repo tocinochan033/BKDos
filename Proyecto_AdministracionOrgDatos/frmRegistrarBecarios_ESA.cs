@@ -140,7 +140,6 @@ namespace Proyecto_AdministracionOrgDatos
             Form objMenu_ESA = new frmMenu_ESA();
             objMenu_ESA.Show();
             this.Hide();
-
         }
 
         private bool camposImcompletos()
@@ -213,7 +212,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                 camposLimpieza();
 
-                //Regresar el "cursor" al label del nombre
+                //Regresar el "cursor" al textbox del nombre
                 txtApaterno.Focus();
             }
         }
