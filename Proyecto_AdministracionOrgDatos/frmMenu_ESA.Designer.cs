@@ -60,7 +60,7 @@
             // 
             this.btnSubirDocumentos_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.btnSubirDocumentos_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubirDocumentos_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubirDocumentos_ESA.Font = new System.Drawing.Font("Cocogoose", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubirDocumentos_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnSubirDocumentos_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnSubirDocumentos_ESA.Image")));
             this.btnSubirDocumentos_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -77,7 +77,7 @@
             // 
             this.btnRegistrarUsuarios_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.btnRegistrarUsuarios_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegistrarUsuarios_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarUsuarios_ESA.Font = new System.Drawing.Font("Cocogoose", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarUsuarios_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnRegistrarUsuarios_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarUsuarios_ESA.Image")));
             this.btnRegistrarUsuarios_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -95,7 +95,7 @@
             // 
             this.btnCerrarSesion_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.btnCerrarSesion_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarSesion_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion_ESA.Font = new System.Drawing.Font("Cocogoose", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnCerrarSesion_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion_ESA.Image")));
             this.btnCerrarSesion_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -105,7 +105,7 @@
             this.btnCerrarSesion_ESA.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.btnCerrarSesion_ESA.Size = new System.Drawing.Size(278, 77);
             this.btnCerrarSesion_ESA.TabIndex = 21;
-            this.btnCerrarSesion_ESA.Text = "      Cerrar Sesión";
+            this.btnCerrarSesion_ESA.Text = "        Cerrar Sesión";
             this.btnCerrarSesion_ESA.UseVisualStyleBackColor = false;
             this.btnCerrarSesion_ESA.Click += new System.EventHandler(this.btnCerrarSesion_ESA_Click);
             // 
@@ -113,7 +113,7 @@
             // 
             this.btnGenerarPDF_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.btnGenerarPDF_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenerarPDF_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarPDF_ESA.Font = new System.Drawing.Font("Cocogoose", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarPDF_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnGenerarPDF_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarPDF_ESA.Image")));
             this.btnGenerarPDF_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,7 +130,7 @@
             // 
             this.btnConsultar_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.btnConsultar_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsultar_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar_ESA.Font = new System.Drawing.Font("Cocogoose", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnConsultar_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar_ESA.Image")));
             this.btnConsultar_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -140,7 +140,7 @@
             this.btnConsultar_ESA.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnConsultar_ESA.Size = new System.Drawing.Size(271, 79);
             this.btnConsultar_ESA.TabIndex = 27;
-            this.btnConsultar_ESA.Text = "     Consultar";
+            this.btnConsultar_ESA.Text = "       Consultar";
             this.btnConsultar_ESA.UseVisualStyleBackColor = false;
             this.btnConsultar_ESA.Click += new System.EventHandler(this.btnConsultar_ESA_Click);
             // 
@@ -155,10 +155,10 @@
             this.sidebar.Controls.Add(this.panel6);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
-            this.sidebar.MaximumSize = new System.Drawing.Size(247, 1080);
-            this.sidebar.MinimumSize = new System.Drawing.Size(63, 1080);
+            this.sidebar.MaximumSize = new System.Drawing.Size(247, 788);
+            this.sidebar.MinimumSize = new System.Drawing.Size(63, 788);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(247, 1080);
+            this.sidebar.Size = new System.Drawing.Size(247, 788);
             this.sidebar.TabIndex = 35;
             // 
             // panel1
@@ -173,11 +173,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Cocogoose", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
             this.label1.Location = new System.Drawing.Point(97, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 31);
+            this.label1.Size = new System.Drawing.Size(102, 39);
             this.label1.TabIndex = 36;
             this.label1.Text = "Menu";
             // 
@@ -249,8 +249,8 @@
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMenu_ESA";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BK2";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenu_ESA_Load);
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

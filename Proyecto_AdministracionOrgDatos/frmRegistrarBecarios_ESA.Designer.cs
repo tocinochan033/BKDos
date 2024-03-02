@@ -149,7 +149,7 @@
             this.btnAgregar_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar_ESA.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar_ESA.ForeColor = System.Drawing.Color.Snow;
-            this.btnAgregar_ESA.Location = new System.Drawing.Point(967, 187);
+            this.btnAgregar_ESA.Location = new System.Drawing.Point(1033, 142);
             this.btnAgregar_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar_ESA.Name = "btnAgregar_ESA";
             this.btnAgregar_ESA.Size = new System.Drawing.Size(187, 51);
@@ -188,7 +188,7 @@
             this.btnRegresarMenu_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresarMenu_ESA.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresarMenu_ESA.ForeColor = System.Drawing.Color.Snow;
-            this.btnRegresarMenu_ESA.Location = new System.Drawing.Point(1182, 327);
+            this.btnRegresarMenu_ESA.Location = new System.Drawing.Point(1013, 358);
             this.btnRegresarMenu_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresarMenu_ESA.Name = "btnRegresarMenu_ESA";
             this.btnRegresarMenu_ESA.Size = new System.Drawing.Size(225, 51);
@@ -202,7 +202,7 @@
             this.FechaC.AutoSize = true;
             this.FechaC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.FechaC.Location = new System.Drawing.Point(1462, 30);
+            this.FechaC.Location = new System.Drawing.Point(1090, 26);
             this.FechaC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FechaC.Name = "FechaC";
             this.FechaC.Size = new System.Drawing.Size(183, 30);
@@ -252,7 +252,7 @@
             this.dgv_Agregar.Location = new System.Drawing.Point(30, 462);
             this.dgv_Agregar.Name = "dgv_Agregar";
             this.dgv_Agregar.ReadOnly = true;
-            this.dgv_Agregar.Size = new System.Drawing.Size(1615, 529);
+            this.dgv_Agregar.Size = new System.Drawing.Size(1243, 254);
             this.dgv_Agregar.TabIndex = 60;
             this.dgv_Agregar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Agregar_CellContentClick);
             // 
@@ -383,7 +383,7 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.Snow;
-            this.btnModificar.Location = new System.Drawing.Point(1194, 187);
+            this.btnModificar.Location = new System.Drawing.Point(1033, 210);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(187, 51);
@@ -399,7 +399,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Snow;
-            this.btnEliminar.Location = new System.Drawing.Point(1422, 187);
+            this.btnEliminar.Location = new System.Drawing.Point(1033, 274);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(187, 51);
@@ -413,7 +413,7 @@
             this.HoraC.AutoSize = true;
             this.HoraC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.HoraC.Location = new System.Drawing.Point(1476, 60);
+            this.HoraC.Location = new System.Drawing.Point(1104, 56);
             this.HoraC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HoraC.Name = "HoraC";
             this.HoraC.Size = new System.Drawing.Size(151, 30);
@@ -1131,7 +1131,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1673, 1041);
+            this.ClientSize = new System.Drawing.Size(1323, 730);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.HoraC);
             this.Controls.Add(this.btnEliminar);
