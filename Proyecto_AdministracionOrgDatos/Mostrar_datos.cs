@@ -152,8 +152,6 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Form objMenu_ESA = new frmMenu_ESA();
-            objMenu_ESA.Show();
             this.Hide();
         }
 

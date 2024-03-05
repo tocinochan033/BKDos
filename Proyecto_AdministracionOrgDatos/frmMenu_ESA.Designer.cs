@@ -60,7 +60,7 @@
             // 
             this.btnSubirDocumentos_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.btnSubirDocumentos_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubirDocumentos_ESA.Font = new System.Drawing.Font("Cocogoose", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubirDocumentos_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubirDocumentos_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnSubirDocumentos_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnSubirDocumentos_ESA.Image")));
             this.btnSubirDocumentos_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -77,7 +77,7 @@
             // 
             this.btnRegistrarUsuarios_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.btnRegistrarUsuarios_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegistrarUsuarios_ESA.Font = new System.Drawing.Font("Cocogoose", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarUsuarios_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarUsuarios_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnRegistrarUsuarios_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarUsuarios_ESA.Image")));
             this.btnRegistrarUsuarios_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -95,7 +95,7 @@
             // 
             this.btnCerrarSesion_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.btnCerrarSesion_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarSesion_ESA.Font = new System.Drawing.Font("Cocogoose", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnCerrarSesion_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion_ESA.Image")));
             this.btnCerrarSesion_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -113,7 +113,7 @@
             // 
             this.btnGenerarPDF_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.btnGenerarPDF_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenerarPDF_ESA.Font = new System.Drawing.Font("Cocogoose", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarPDF_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarPDF_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnGenerarPDF_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarPDF_ESA.Image")));
             this.btnGenerarPDF_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,7 +130,7 @@
             // 
             this.btnConsultar_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.btnConsultar_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsultar_ESA.Font = new System.Drawing.Font("Cocogoose", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnConsultar_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar_ESA.Image")));
             this.btnConsultar_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -173,11 +173,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cocogoose", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
             this.label1.Location = new System.Drawing.Point(97, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 39);
+            this.label1.Size = new System.Drawing.Size(81, 31);
             this.label1.TabIndex = 36;
             this.label1.Text = "Menu";
             // 
