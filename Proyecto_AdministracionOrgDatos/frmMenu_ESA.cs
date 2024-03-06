@@ -34,24 +34,19 @@ namespace Proyecto_AdministracionOrgDatos
             objRegistrarUsuarios_ACO.Show();
             this.Hide();*/
 
-            
-            if (PantallaRegistro == null)
-            {
+
                 PantallaRegistro = new frmRegistrarBecarios_ESA();
-                PantallaRegistro.FormClosed += PantallaRegistroCerrada;
+                PantallaRegistro.FormClosed += PantallasCerradas;
                 PantallaRegistro.MdiParent = this;
                 PantallaRegistro.Show();
-            }
-            else
-            {
-                PantallaRegistro.Activate();
-            }
+
 
         }
 
-        private void PantallaRegistroCerrada (object sender, FormClosedEventArgs e)
+        private void PantallasCerradas (object sender, FormClosedEventArgs e)
         {
             PantallaRegistro = null;
+            PantallaConsulta = null;
         }
 
 
@@ -64,8 +59,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void frmMenu_ESA_Load(object sender, EventArgs e)
         {
-            
-            
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void btnDarBaja_ESA_Click(object sender, EventArgs e)
@@ -82,24 +76,15 @@ namespace Proyecto_AdministracionOrgDatos
             pbjMostrarDatos.Show();
             this.Hide();*/
 
-            if (PantallaConsulta == null)
-            {
+  
                 PantallaConsulta = new Mostrar_datos();
-                PantallaConsulta.FormClosed += PantallaConsultaCerrada;
+                PantallaConsulta.FormClosed += PantallasCerradas;
                 PantallaConsulta.MdiParent = this;
                 PantallaConsulta.Show();
-            }
-            else
-            {
-                PantallaRegistro.Activate();
-            }
+          
 
         }
 
-        private void PantallaConsultaCerrada(object sender, FormClosedEventArgs e)
-        {
-            PantallaConsulta = null;
-        }
 
 
         //-----------------------------------------------------------------------
