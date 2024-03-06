@@ -80,7 +80,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Snow;
             this.btnEliminar.Location = new System.Drawing.Point(85, 672);
             this.btnEliminar.Name = "btnEliminar";
@@ -94,7 +94,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Snow;
             this.btnSalir.Location = new System.Drawing.Point(1147, 672);
             this.btnSalir.Name = "btnSalir";
@@ -117,11 +117,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cocogoose", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.label1.Location = new System.Drawing.Point(15, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(356, 39);
+            this.label1.Size = new System.Drawing.Size(282, 31);
             this.label1.TabIndex = 66;
             this.label1.Text = "Consulta de Registros";
             // 
@@ -129,7 +129,7 @@
             // 
             this.btnImprimirPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.btnImprimirPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimirPDF.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimirPDF.ForeColor = System.Drawing.Color.Snow;
             this.btnImprimirPDF.Location = new System.Drawing.Point(627, 670);
             this.btnImprimirPDF.Name = "btnImprimirPDF";
@@ -152,11 +152,11 @@
             // FechaC
             // 
             this.FechaC.AutoSize = true;
-            this.FechaC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.FechaC.Location = new System.Drawing.Point(1071, 21);
             this.FechaC.Name = "FechaC";
-            this.FechaC.Size = new System.Drawing.Size(183, 30);
+            this.FechaC.Size = new System.Drawing.Size(160, 31);
             this.FechaC.TabIndex = 69;
             this.FechaC.Text = "00/00/0000";
             this.FechaC.Click += new System.EventHandler(this.FechaC_Click);
@@ -164,11 +164,11 @@
             // HoraC
             // 
             this.HoraC.AutoSize = true;
-            this.HoraC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.HoraC.Location = new System.Drawing.Point(1081, 49);
             this.HoraC.Name = "HoraC";
-            this.HoraC.Size = new System.Drawing.Size(151, 30);
+            this.HoraC.Size = new System.Drawing.Size(143, 31);
             this.HoraC.TabIndex = 70;
             this.HoraC.Text = "00:00 a.m";
             // 
@@ -394,7 +394,7 @@
             // 
             this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrar.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.ForeColor = System.Drawing.Color.Transparent;
             this.btnFiltrar.Location = new System.Drawing.Point(856, 91);
             this.btnFiltrar.Name = "btnFiltrar";
@@ -407,18 +407,18 @@
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblFiltro.Location = new System.Drawing.Point(12, 11);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(111, 31);
+            this.lblFiltro.Size = new System.Drawing.Size(91, 25);
             this.lblFiltro.TabIndex = 77;
             this.lblFiltro.Text = "Buscar :";
             // 
             // txtFiltro
             // 
             this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFiltro.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtFiltro.Location = new System.Drawing.Point(129, 14);
             this.txtFiltro.Multiline = true;
@@ -429,29 +429,29 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblCategoria.Location = new System.Drawing.Point(542, 11);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(56, 31);
+            this.lblCategoria.Size = new System.Drawing.Size(50, 25);
             this.lblCategoria.TabIndex = 79;
             this.lblCategoria.Text = "En :";
             // 
             // cmbFiltro
             // 
-            this.cmbFiltro.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbFiltro.FormattingEnabled = true;
             this.cmbFiltro.Location = new System.Drawing.Point(604, 11);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(200, 38);
+            this.cmbFiltro.Size = new System.Drawing.Size(200, 24);
             this.cmbFiltro.TabIndex = 80;
             // 
             // btnResetFiltro
             // 
             this.btnResetFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.btnResetFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetFiltro.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetFiltro.ForeColor = System.Drawing.Color.Transparent;
             this.btnResetFiltro.Location = new System.Drawing.Point(1023, 91);
             this.btnResetFiltro.Name = "btnResetFiltro";
@@ -497,12 +497,12 @@
             // 
             // cmbPDFeleccion
             // 
-            this.cmbPDFeleccion.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPDFeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPDFeleccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbPDFeleccion.FormattingEnabled = true;
             this.cmbPDFeleccion.Location = new System.Drawing.Point(356, 678);
             this.cmbPDFeleccion.Name = "cmbPDFeleccion";
-            this.cmbPDFeleccion.Size = new System.Drawing.Size(204, 38);
+            this.cmbPDFeleccion.Size = new System.Drawing.Size(204, 24);
             this.cmbPDFeleccion.TabIndex = 89;
             // 
             // Mostrar_datos

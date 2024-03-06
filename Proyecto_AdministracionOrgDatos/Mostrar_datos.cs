@@ -18,6 +18,9 @@ namespace Proyecto_AdministracionOrgDatos
 {
     public partial class Mostrar_datos : Form
     {
+        //Variables para las diferentes pantallas
+        frmMenu_ESA PantallaMenu;
+
         //Indicadores de filtro
         static bool validarFiltro = false; 
         static int tipoReporte = 0;
@@ -151,8 +154,13 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
-        {
+        {       
             this.Hide();
+        }
+
+        private void PantallaRegistroCerrada(object sender, FormClosedEventArgs e)
+        {
+            PantallaMenu = null;
         }
 
 
