@@ -137,8 +137,6 @@ namespace Proyecto_AdministracionOrgDatos
         {
             //Guarda los datos y regresa a la pantalla anterior
             Guardar();
-            Form objMenu_ESA = new frmMenu_ESA();
-            objMenu_ESA.Show();
             this.Hide();
         }
 
