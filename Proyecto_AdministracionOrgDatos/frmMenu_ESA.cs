@@ -16,9 +16,48 @@ namespace Proyecto_AdministracionOrgDatos
         //Variables para las diferentes pantallas
         frmRegistrarBecarios_ESA PantallaRegistro;
         Mostrar_datos PantallaConsulta;
+
+        //Variable para el calculo de la inactividad
+        private Timer temporizadorInactividad;
+
+        private static frmMenu_ESA instancia = null; //Inicializacion del formulario estatico
+
+        //Metodo para obtener solamente un formulario abierto de tipo "frmMenu_ESA"
+        public static frmMenu_ESA ventanaUnica()
+        {   //Evaluar 
+            if(instancia == null)
+            {
+                //Crear uno nuevo
+                instancia = new frmMenu_ESA();
+                return instancia;
+            }
+            //Regresar el que se creo con anterioridad
+            return instancia;
+        }
+
         public frmMenu_ESA()
         {
             InitializeComponent();
+            activarTimer();
+        }
+
+
+        //Metodo para evaluar si ya se ha creado un formulario(evita duplicar)
+        bool formIsOpen(string nombre_form)
+        {   
+            //Recorrer formulario hijos en el Padre
+            foreach(var form_hijo in this.MdiChildren) 
+            {
+                //Validar si existe
+                if(form_hijo.Text == nombre_form)
+                {
+                    form_hijo.Show();
+                    return true; 
+                }
+
+                return false;
+            }
+            return false;
         }
 
         private void btnInventario_ACO_Click(object sender, EventArgs e)
@@ -34,13 +73,16 @@ namespace Proyecto_AdministracionOrgDatos
             objRegistrarUsuarios_ACO.Show();
             this.Hide();*/
 
-
+            //Se comprueba si ese formulario existe para mostrarlo o crearlo
+            if(formIsOpen("frmRegistrarBecarios_ESA")==false)
+            {
                 PantallaRegistro = new frmRegistrarBecarios_ESA();
                 PantallaRegistro.FormClosed += PantallasCerradas;
                 PantallaRegistro.MdiParent = this;
                 PantallaRegistro.Show();
-
-
+            }
+            DatosInactividad.control = true; //Indicador
+            timerInactividad.Enabled = false; //Detener temporizador(aplica solo al menu)
         }
 
         private void PantallasCerradas (object sender, FormClosedEventArgs e)
@@ -76,13 +118,16 @@ namespace Proyecto_AdministracionOrgDatos
             pbjMostrarDatos.Show();
             this.Hide();*/
 
-  
+            //Se comprueba si ese formulario existe para mostrarlo o crearlo
+            if (formIsOpen("Mostrar_datos") == false)
+            {
                 PantallaConsulta = new Mostrar_datos();
                 PantallaConsulta.FormClosed += PantallasCerradas;
                 PantallaConsulta.MdiParent = this;
                 PantallaConsulta.Show();
-          
-
+            }
+            DatosInactividad.control = true; //Indicador
+            timerInactividad.Enabled = false; //Detener temporizador(aplica solo al menu)
         }
 
 
@@ -119,5 +164,38 @@ namespace Proyecto_AdministracionOrgDatos
         {
             SideBarTimer.Start();
         }
+
+        private void frmMenu_ESA_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Al cerrar el formulario, entonces esa instancia creada se "limpia",
+            //necesario para el metodo "ventanaUnica()"
+            instancia = null; 
+        }
+
+        private void timerInactividad_Tick(object sender, EventArgs e)
+        {
+            //Evaluar tiempo de inactividad
+            if (DatosInactividad.GetInputIdleTime().TotalSeconds > 1800)//30min
+            {
+                //Detener temporizador
+                timerInactividad.Enabled = false;
+
+                //Notificacion de inactividad
+                MessageBox.Show("Inactividad detectada. Vuelva a iniciar sesion!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                //Cerra la ventana y regresar al login
+                this.Close();
+                Program.loginEstatico.Show();
+            }
+        }
+
+        private void activarTimer()
+        {   
+            //Evaluar indicador, para volver a activar el temporizador y seguir 
+            //validando la inactividad
+            if (DatosInactividad.control == false)
+            {    timerInactividad.Enabled = true; }
+        }
+
     }
 }

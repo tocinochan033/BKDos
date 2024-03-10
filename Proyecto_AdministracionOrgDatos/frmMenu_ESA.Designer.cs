@@ -46,6 +46,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.SideBarTimer = new System.Windows.Forms.Timer(this.components);
+            this.timerInactividad = new System.Windows.Forms.Timer(this.components);
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -238,6 +239,11 @@
             this.SideBarTimer.Interval = 20;
             this.SideBarTimer.Tick += new System.EventHandler(this.SideBarTimer_Tick);
             // 
+            // timerInactividad
+            // 
+            this.timerInactividad.Interval = 1000;
+            this.timerInactividad.Tick += new System.EventHandler(this.timerInactividad_Tick);
+            // 
             // frmMenu_ESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,6 +257,7 @@
             this.Name = "frmMenu_ESA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BK2";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_ESA_FormClosing);
             this.Load += new System.EventHandler(this.frmMenu_ESA_Load);
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -282,5 +289,6 @@
         private System.Windows.Forms.PictureBox menuButton;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Timer SideBarTimer;
+        private System.Windows.Forms.Timer timerInactividad;
     }
 }
