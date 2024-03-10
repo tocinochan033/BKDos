@@ -17,15 +17,15 @@ namespace Proyecto_AdministracionOrgDatos
         /// <summary>
         /// LOGIN EN HIATUS
         /// </summary>
-        private string[] usuario = { "manolo", "jose", "felipe" };
-        private string[] contraseña = { "12345", "jacobo", "contraseña" };
+        //private string[] usuario = { "manolo", "jose", "felipe" };
+        //private string[] contraseña = { "12345", "jacobo", "contraseña" };
         FileStream login = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
 
         public FormLogin_ESA()
         {
             InitializeComponent();
-            guardado();
+            //guardado();
         }
 
         private void btnSalir_ESA_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace Proyecto_AdministracionOrgDatos
         private void btnInicioSesion_ESA_Click(object sender, EventArgs e)
         {
 
-            if (archivoAdmin(usuario, contraseña) || txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1")
+            if (archivoAdmin() ||txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1")
             {
                 Form objMenu_ACO = new frmMenu_ESA();
                 objMenu_ACO.Show();
@@ -50,26 +50,39 @@ namespace Proyecto_AdministracionOrgDatos
             }
         }
 
-        public bool archivoAdmin(string[] usuario, string[] contraseña)
+        public bool archivoAdmin()
         {
-            for(int i = 0; i < usuario.Length; i++)
+            using (StreamReader sr = new StreamReader(login))
             {
-                if (usuario[i] == txtUsuario_ESA.Text && contraseña[i] == txtContraseña_ESA.Text)
-                    return true;
+                string linea;
+                while ((linea = sr.ReadLine()) != null)
+                {
+                    string[] partes = linea.Split(',');
+                    if (partes.Length >= 5)
+                    {
+                        string usuarioArchivo = partes[0];
+                        string contrasenaArchivo = partes[4];
+
+                        if (usuarioArchivo == txtUsuario_ESA.Text && contrasenaArchivo == txtContraseña_ESA.Text)
+                        {
+                            return true;
+                        }
+                    }
+                }
             }
             return false;
         }
 
-        private void guardado()
-        {
-            using (StreamWriter writer = new StreamWriter(login))
-            {
-                for (int i = 0; i < usuario.Length; i++)
-                {
-                    writer.WriteLine($"{usuario[i]},{contraseña[i]}");
-                }
-            }
-        }
+        //private void guardado()
+        //{
+        //    using (StreamWriter writer = new StreamWriter(login))
+        //    {
+        //        for (int i = 0; i < usuario.Length; i++)
+        //        {
+        //            writer.WriteLine($"{usuario[i]},{contraseña[i]}");
+        //        }
+        //    }
+        //}
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
         private void HoraFecha_Tick(object sender, EventArgs e)

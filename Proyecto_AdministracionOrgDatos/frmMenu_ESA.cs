@@ -119,5 +119,11 @@ namespace Proyecto_AdministracionOrgDatos
         {
             SideBarTimer.Start();
         }
+
+        private void frmNewAdmin_Click(object sender, EventArgs e)
+        {
+            Form adminRegistro = new fmrRegistroAdmin();
+            adminRegistro.Show();
+        }
     }
 }
