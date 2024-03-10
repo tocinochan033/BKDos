@@ -514,7 +514,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void Mostrar_datos_Load(object sender, EventArgs e)
         {
-
+            this.FormBorderStyle = FormBorderStyle.None;
         }
     }
 }
