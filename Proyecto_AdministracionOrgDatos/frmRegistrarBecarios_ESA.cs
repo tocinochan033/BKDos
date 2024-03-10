@@ -13,11 +13,22 @@ namespace Proyecto_AdministracionOrgDatos
 {
     public partial class frmRegistrarBecarios_ESA : Form
     {
+        //Variable para el calculo de la inactividad
+        private Timer temporizadorInactividad;
 
         public frmRegistrarBecarios_ESA()
         {
             InitializeComponent();
             LlenarComboBoxEscuelas();
+
+
+            //Creacion del temporizador y su tiempo
+            temporizadorInactividad = new Timer();
+            temporizadorInactividad.Interval = 1000;
+            //Al llegar al tiempo especificado se accede al metodo
+            temporizadorInactividad.Tick += (sender, e) => Verificarlnactividad();
+            //Inicializacion del temporizador
+            temporizadorInactividad.Start();
 
             /*
             //Inicializacion de combo box del modelo 
@@ -155,11 +166,34 @@ namespace Proyecto_AdministracionOrgDatos
             becados.Close();
         }
 
+
+        private void Verificarlnactividad()
+        {
+            //Evaluar tiempo de inactividad
+            if (DatosInactividad.GetInputIdleTime().TotalSeconds > 1800)//30min
+            {
+                //Detener temporizador de la inactividad
+                temporizadorInactividad.Stop();
+
+                //Notificacion de inactividad
+                MessageBox.Show("Inactividad detectada. Vuelva a iniciar sesion!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                //Cerrar la ventana y regresar al login
+                frmMenu_ESA objMenu_ACO = frmMenu_ESA.ventanaUnica();
+                this.Close(); objMenu_ACO.Close();
+                Program.loginEstatico.Show();
+
+                DatosInactividad.control = false; //Indicador al detectar la inactividad
+            }
+        }
+
         private void btnRegresarMenu_ESA_Click(object sender, EventArgs e)
         {
             //Guarda los datos y regresa a la pantalla anterior
             Guardar();
-            this.Hide();
+            this.Close();
+
+            DatosInactividad.control = false; //Indicador al cerrar este formulario
         }
 
         private bool camposImcompletos()

@@ -13,12 +13,13 @@ namespace Proyecto_AdministracionOrgDatos
         /// 
         /// no cambios de fichero.
         /// </summary>
+        public static FormLogin_ESA loginEstatico;//Login estatico, para evitar que se duplique
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin_ESA());
+            Application.Run(loginEstatico = new FormLogin_ESA());
         }
     }
 }

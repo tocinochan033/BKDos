@@ -38,9 +38,13 @@ namespace Proyecto_AdministracionOrgDatos
 
             if (archivoAdmin(usuario, contraseña) || txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1")
             {
-                Form objMenu_ACO = new frmMenu_ESA();
+                txtUsuario_ESA.Text = "";
+                txtContraseña_ESA.Text = "";
+                txtUsuario_ESA.Focus();
+
+                frmMenu_ESA objMenu_ACO = frmMenu_ESA.ventanaUnica();
+                Program.loginEstatico.Hide();
                 objMenu_ACO.Show();
-                this.Hide();
             }
             else
             {
