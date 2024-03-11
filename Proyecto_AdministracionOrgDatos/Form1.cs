@@ -22,10 +22,15 @@ namespace Proyecto_AdministracionOrgDatos
         FileStream login = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
 
+        private FuentePersonalizada fontPers;
+        private TextoGuia txtGuia;
+
         public FormLogin_ESA()
         {
             InitializeComponent();
             guardado();
+            fontPers = new FuentePersonalizada();  
+            txtGuia = new TextoGuia();
         }
 
         private void btnSalir_ESA_Click(object sender, EventArgs e)
@@ -78,18 +83,28 @@ namespace Proyecto_AdministracionOrgDatos
             FechaC.Text = DateTime.Now.ToShortDateString();
         }
 
-        private void lblTitulo_ACO_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void imgLogin_ACO_Click(object sender, EventArgs e)
-        {
 
-        }
+        
+
 
         private void FormLogin_ESA_Load(object sender, EventArgs e)
         {
+            txtGuia.CuadroTexto_Enter(txtUsuario_ESA, "Usuario");
+            txtGuia.CuadroTexto_Leave(txtUsuario_ESA, "");
+            txtGuia.CuadroTexto_TextChanged(txtUsuario_ESA);
+
+            // Cargar las fuente desde el archivo TTF
+            string nombreFuente = "coolveticaRG.otf";
+            fontPers.CargarFuentePersonalizada(nombreFuente);
+            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
+            fontPers.AplicarFuente(lblTitulo_ESA, 28, FontStyle.Regular);
+            
+            string nombreFuenteBK2 = "Louis George Cafe Bold.ttf";
+            fontPers.CargarFuentePersonalizada(nombreFuenteBK2);
+            // Aplicar la fuente a la etiqueta en lbl4
+            fontPers.AplicarFuente(label4, 47, FontStyle.Regular);
 
         }
     }
