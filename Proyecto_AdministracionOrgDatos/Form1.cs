@@ -15,17 +15,22 @@ namespace Proyecto_AdministracionOrgDatos
     public partial class FormLogin_ESA : Form
     {
         /// <summary>
-        /// LOGIN EN HIATUS
+        /// Hize una jaladota que ni yo mismo entiendo. Dentro del archivo 'login.txt' si no existe informacion alguna copien y peguen
+        /// 1,correo@gmail.com,632534,mamaoso,1   -  Es el unico usuario para la visualizacion del boton
+        /// Esto es para que puedan entrar sin problemas y aparezca el boton de agregar nuevos administradores.
+        /// 
+        /// El usuario y contraseña sigue siendo 1.
+        /// ----------------------------------------------------------------------------------------------------------------------------------------
+        /// 
         /// </summary>
-        //private string[] usuario = { "manolo", "jose", "felipe" };
-        //private string[] contraseña = { "12345", "jacobo", "contraseña" };
-        FileStream login = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
 
+        //Abre/crea el archivo cada vez que cargue el formulario 
+        private FileStream login;
         public FormLogin_ESA()
         {
+            login = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
             InitializeComponent();
-            //guardado();
         }
 
         private void btnSalir_ESA_Click(object sender, EventArgs e)
@@ -35,54 +40,52 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnInicioSesion_ESA_Click(object sender, EventArgs e)
         {
-
-            if (archivoAdmin() ||txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1")
+            //Si el usuario contraseña son identificables, carga al siguiente usuario. A la vez, compara el rol
+            string rol = archivoAdmin();
+            if (rol != null)
             {
                 Form objMenu_ACO = new frmMenu_ESA();
                 objMenu_ACO.Show();
+
+                ((frmMenu_ESA)objMenu_ACO).ActualizarVisibilidad(rol == "mamaoso"); //Si el rol dentro del archivo es "mamaoso" se visualiza el boton
+                
                 this.Hide();
+                login.Close();
             }
             else
             {
                 errorLogin.Visible = true;
                 txtUsuario_ESA.Focus();
+
                 SystemSounds.Exclamation.Play();
             }
         }
 
-        public bool archivoAdmin()
+        private string archivoAdmin()
         {
             using (StreamReader sr = new StreamReader(login))
             {
                 string linea;
                 while ((linea = sr.ReadLine()) != null)
                 {
-                    string[] partes = linea.Split(',');
-                    if (partes.Length >= 5)
+                    string[] datos = linea.Split(',');
+                    if (datos.Length >= 5)
                     {
-                        string usuarioArchivo = partes[0];
-                        string contrasenaArchivo = partes[4];
+                        //Posiciones dentro del arhivo
+                        //nombre,correo,numero,rol,contraseña
+                        string usuarioArchivo = datos[0];
+                        string contrasenaArchivo = datos[4];
+                        string verificacionRol = datos[3];
 
                         if (usuarioArchivo == txtUsuario_ESA.Text && contrasenaArchivo == txtContraseña_ESA.Text)
                         {
-                            return true;
+                            return verificacionRol; //devuelve un string 'obrera' or 'mamaoso' dependiendo del contenido de la posicion [3]
                         }
                     }
                 }
             }
-            return false;
+            return null;
         }
-
-        //private void guardado()
-        //{
-        //    using (StreamWriter writer = new StreamWriter(login))
-        //    {
-        //        for (int i = 0; i < usuario.Length; i++)
-        //        {
-        //            writer.WriteLine($"{usuario[i]},{contraseña[i]}");
-        //        }
-        //    }
-        //}
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
         private void HoraFecha_Tick(object sender, EventArgs e)

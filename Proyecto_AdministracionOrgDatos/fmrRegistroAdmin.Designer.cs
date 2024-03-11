@@ -40,10 +40,17 @@
             this.rolCombo = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.newAdminButton = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.administradoresDataGrid = new System.Windows.Forms.DataGridView();
+            this.nombreData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correoData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rolData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.administradoresDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -130,7 +137,8 @@
             // 
             this.rolCombo.FormattingEnabled = true;
             this.rolCombo.Items.AddRange(new object[] {
-            "obrera"});
+            "obrera",
+            "mamaOso"});
             this.rolCombo.Location = new System.Drawing.Point(25, 202);
             this.rolCombo.Name = "rolCombo";
             this.rolCombo.Size = new System.Drawing.Size(153, 21);
@@ -165,16 +173,6 @@
             this.tabPage1.Text = "Nuevo Admin...";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(477, 353);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Borrar Admin...";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // newAdminButton
             // 
             this.newAdminButton.Location = new System.Drawing.Point(27, 254);
@@ -184,6 +182,50 @@
             this.newAdminButton.Text = "Crear Administrador";
             this.newAdminButton.UseVisualStyleBackColor = true;
             this.newAdminButton.Click += new System.EventHandler(this.newAdminButton_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.administradoresDataGrid);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(477, 353);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Borrar Admin...";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // administradoresDataGrid
+            // 
+            this.administradoresDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.administradoresDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombreData,
+            this.correoData,
+            this.rolData,
+            this.telefonoData});
+            this.administradoresDataGrid.Location = new System.Drawing.Point(16, 66);
+            this.administradoresDataGrid.Name = "administradoresDataGrid";
+            this.administradoresDataGrid.Size = new System.Drawing.Size(445, 270);
+            this.administradoresDataGrid.TabIndex = 0;
+            // 
+            // nombreData
+            // 
+            this.nombreData.HeaderText = "Nombre";
+            this.nombreData.Name = "nombreData";
+            // 
+            // correoData
+            // 
+            this.correoData.HeaderText = "Correo";
+            this.correoData.Name = "correoData";
+            // 
+            // rolData
+            // 
+            this.rolData.HeaderText = "Rol";
+            this.rolData.Name = "rolData";
+            // 
+            // telefonoData
+            // 
+            this.telefonoData.HeaderText = "Num. Telefono";
+            this.telefonoData.Name = "telefonoData";
             // 
             // fmrRegistroAdmin
             // 
@@ -199,6 +241,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.administradoresDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +264,10 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button newAdminButton;
+        private System.Windows.Forms.DataGridView administradoresDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correoData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rolData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoData;
     }
 }

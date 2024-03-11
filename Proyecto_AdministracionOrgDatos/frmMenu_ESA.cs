@@ -16,9 +16,15 @@ namespace Proyecto_AdministracionOrgDatos
         //Variables para las diferentes pantallas
         frmRegistrarBecarios_ESA PantallaRegistro;
         Mostrar_datos PantallaConsulta;
+
         public frmMenu_ESA()
         {
-            InitializeComponent();
+            InitializeComponent();  
+        }
+
+        public void ActualizarVisibilidad(bool mostrar)
+        {
+            frmNewAdmin.Visible = mostrar;
         }
 
         private void btnInventario_ACO_Click(object sender, EventArgs e)
@@ -29,18 +35,10 @@ namespace Proyecto_AdministracionOrgDatos
         //Configuracion del boton de Registrar y modificar
         private void btnRegistrarUsuarios_ESA_Click(object sender, EventArgs e)
         {
-            /*
-            Form objRegistrarUsuarios_ACO = new frmRegistrarBecarios_ESA();
-            objRegistrarUsuarios_ACO.Show();
-            this.Hide();*/
-
-
-                PantallaRegistro = new frmRegistrarBecarios_ESA();
-                PantallaRegistro.FormClosed += PantallasCerradas;
-                PantallaRegistro.MdiParent = this;
-                PantallaRegistro.Show();
-
-
+            PantallaRegistro = new frmRegistrarBecarios_ESA();
+            PantallaRegistro.FormClosed += PantallasCerradas;
+            PantallaRegistro.MdiParent = this;
+            PantallaRegistro.Show();
         }
 
         private void PantallasCerradas (object sender, FormClosedEventArgs e)
@@ -81,10 +79,7 @@ namespace Proyecto_AdministracionOrgDatos
                 PantallaConsulta.FormClosed += PantallasCerradas;
                 PantallaConsulta.MdiParent = this;
                 PantallaConsulta.Show();
-          
-
         }
-
 
 
         //-----------------------------------------------------------------------
