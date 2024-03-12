@@ -45,8 +45,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.SideBarTimer = new System.Windows.Forms.Timer(this.components);
             this.frmNewAdmin = new System.Windows.Forms.Button();
+            this.SideBarTimer = new System.Windows.Forms.Timer(this.components);
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -154,6 +154,7 @@
             this.sidebar.Controls.Add(this.panel4);
             this.sidebar.Controls.Add(this.panel5);
             this.sidebar.Controls.Add(this.panel6);
+            this.sidebar.Controls.Add(this.frmNewAdmin);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.MaximumSize = new System.Drawing.Size(247, 788);
@@ -234,20 +235,20 @@
             this.panel6.Size = new System.Drawing.Size(244, 50);
             this.panel6.TabIndex = 38;
             // 
-            // SideBarTimer
-            // 
-            this.SideBarTimer.Interval = 20;
-            this.SideBarTimer.Tick += new System.EventHandler(this.SideBarTimer_Tick);
-            // 
             // frmNewAdmin
             // 
-            this.frmNewAdmin.Location = new System.Drawing.Point(268, 697);
+            this.frmNewAdmin.Location = new System.Drawing.Point(3, 389);
             this.frmNewAdmin.Name = "frmNewAdmin";
-            this.frmNewAdmin.Size = new System.Drawing.Size(52, 22);
+            this.frmNewAdmin.Size = new System.Drawing.Size(147, 22);
             this.frmNewAdmin.TabIndex = 41;
             this.frmNewAdmin.Text = "Nuevo Administrador";
             this.frmNewAdmin.UseVisualStyleBackColor = true;
             this.frmNewAdmin.Click += new System.EventHandler(this.frmNewAdmin_Click);
+            // 
+            // SideBarTimer
+            // 
+            this.SideBarTimer.Interval = 20;
+            this.SideBarTimer.Tick += new System.EventHandler(this.SideBarTimer_Tick);
             // 
             // frmMenu_ESA
             // 
@@ -256,7 +257,6 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.sidebar);
-            this.Controls.Add(this.frmNewAdmin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
