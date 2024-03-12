@@ -25,7 +25,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         public void ActualizarVisibilidad(bool mostrar)
         {
-            frmNewAdmin.Visible = mostrar;
+            //frmNewAdmin.Visible = mostrar;
         }
 
         private void btnInventario_ACO_Click(object sender, EventArgs e)
@@ -82,50 +82,5 @@ namespace Proyecto_AdministracionOrgDatos
                 PantallaConsulta.Show();
         }
 
-
-        //-----------------------------------------------------------------------
-
-        //Aqui esta el codigo de deslizamiento de la barra de menu
-        bool sidebarExpand;
-        private void SideBarTimer_Tick(object sender, EventArgs e)
-        {
-
-            if (sidebarExpand)
-            {
-                
-                sidebar.Width -= 10;
-                if (sidebar.Width == sidebar.MinimumSize.Width)
-                {
-                    sidebarExpand = false;
-                    SideBarTimer.Stop();
-                }
-            }else
-            {
-                sidebar.Width += 10;
-                if (sidebar.Width == sidebar.MaximumSize.Width)
-                {
-                    sidebarExpand = true;
-                    SideBarTimer.Stop();
-                }
-            }
-        }
-
-        //Boton del menu
-        private void menuButton_Click(object sender, EventArgs e)
-        {
-            SideBarTimer.Start();
-        }
-
-        private void frmNewAdmin_Click(object sender, EventArgs e)
-        {
-            string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
-
-            if (int.Parse(confirmacion) == 2) //Cada nuevo administrador requiere confirmacion de contraseña: 2
-            {
-                Form adminRegistro = new fmrRegistroAdmin();
-                adminRegistro.Show();
-            }
-
-        }
     }
 }
