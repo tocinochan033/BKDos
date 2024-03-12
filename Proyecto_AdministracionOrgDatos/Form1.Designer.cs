@@ -63,7 +63,7 @@
             btnInicioSesion_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnInicioSesion_ESA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnInicioSesion_ESA.ForeColor = System.Drawing.Color.AliceBlue;
-            btnInicioSesion_ESA.Location = new System.Drawing.Point(207, 244);
+            btnInicioSesion_ESA.Location = new System.Drawing.Point(188, 244);
             btnInicioSesion_ESA.Margin = new System.Windows.Forms.Padding(2);
             btnInicioSesion_ESA.Name = "btnInicioSesion_ESA";
             btnInicioSesion_ESA.Size = new System.Drawing.Size(114, 25);
@@ -80,7 +80,7 @@
             this.btnSalir_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir_ESA.ForeColor = System.Drawing.Color.Snow;
-            this.btnSalir_ESA.Location = new System.Drawing.Point(163, 244);
+            this.btnSalir_ESA.Location = new System.Drawing.Point(144, 244);
             this.btnSalir_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir_ESA.Name = "btnSalir_ESA";
             this.btnSalir_ESA.Size = new System.Drawing.Size(44, 25);
@@ -94,13 +94,12 @@
             // 
             this.txtContraseña_ESA.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtContraseña_ESA.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContraseña_ESA.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseña_ESA.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña_ESA.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtContraseña_ESA.Location = new System.Drawing.Point(23, 170);
+            this.txtContraseña_ESA.Location = new System.Drawing.Point(23, 171);
             this.txtContraseña_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseña_ESA.Name = "txtContraseña_ESA";
-            this.txtContraseña_ESA.PasswordChar = '*';
-            this.txtContraseña_ESA.Size = new System.Drawing.Size(298, 22);
+            this.txtContraseña_ESA.Size = new System.Drawing.Size(279, 18);
             this.txtContraseña_ESA.TabIndex = 13;
             this.toolTip1.SetToolTip(this.txtContraseña_ESA, "Ingresa tu contraseña.");
             // 
@@ -109,12 +108,12 @@
             this.txtUsuario_ESA.AccessibleDescription = "";
             this.txtUsuario_ESA.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtUsuario_ESA.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsuario_ESA.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario_ESA.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario_ESA.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtUsuario_ESA.Location = new System.Drawing.Point(23, 114);
+            this.txtUsuario_ESA.Location = new System.Drawing.Point(23, 117);
             this.txtUsuario_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario_ESA.Name = "txtUsuario_ESA";
-            this.txtUsuario_ESA.Size = new System.Drawing.Size(298, 22);
+            this.txtUsuario_ESA.Size = new System.Drawing.Size(279, 18);
             this.txtUsuario_ESA.TabIndex = 12;
             this.toolTip1.SetToolTip(this.txtUsuario_ESA, "Ingresa tu nombre de usuario.");
             // 
@@ -194,13 +193,14 @@
             this.errorLogin.Text = "Usuario y/o Contraseña incorrecto.";
             this.errorLogin.UseWaitCursor = true;
             this.errorLogin.Visible = false;
+            this.errorLogin.Click += new System.EventHandler(this.errorLogin_Click);
             // 
             // pictureBox15
             // 
             this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
             this.pictureBox15.Location = new System.Drawing.Point(23, 135);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(298, 10);
+            this.pictureBox15.Size = new System.Drawing.Size(279, 10);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox15.TabIndex = 91;
             this.pictureBox15.TabStop = false;
@@ -210,7 +210,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(23, 188);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(298, 10);
+            this.pictureBox2.Size = new System.Drawing.Size(279, 10);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 92;
             this.pictureBox2.TabStop = false;
@@ -233,7 +233,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.SteelBlue;
-            this.pictureBox3.Location = new System.Drawing.Point(340, -1);
+            this.pictureBox3.Location = new System.Drawing.Point(319, -1);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(194, 282);
             this.pictureBox3.TabIndex = 94;
@@ -243,7 +243,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
             this.pictureBox1.Image = global::Proyecto_AdministracionOrgDatos.Properties.Resources._5bbd9abb_5618_4750_ad86_7379fc3a08a0;
-            this.pictureBox1.Location = new System.Drawing.Point(347, 129);
+            this.pictureBox1.Location = new System.Drawing.Point(331, 129);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(169, 157);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -256,7 +256,7 @@
             this.label3.BackColor = System.Drawing.Color.SteelBlue;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(384, 41);
+            this.label3.Location = new System.Drawing.Point(362, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 15);
             this.label3.TabIndex = 96;
@@ -268,7 +268,7 @@
             this.label4.BackColor = System.Drawing.Color.SteelBlue;
             this.label4.Font = new System.Drawing.Font("Lovelo Black", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(373, 44);
+            this.label4.Location = new System.Drawing.Point(351, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(147, 82);
             this.label4.TabIndex = 97;
@@ -279,7 +279,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(527, 280);
+            this.ClientSize = new System.Drawing.Size(512, 280);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTitulo_ESA);

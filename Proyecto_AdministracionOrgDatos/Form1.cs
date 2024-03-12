@@ -29,8 +29,10 @@ namespace Proyecto_AdministracionOrgDatos
         {
             InitializeComponent();
             guardado();
+            
             fontPers = new FuentePersonalizada();  
             txtGuia = new TextoGuia();
+
         }
 
         private void btnSalir_ESA_Click(object sender, EventArgs e)
@@ -84,16 +86,22 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
 
-
-
-        
-
-
-        private void FormLogin_ESA_Load(object sender, EventArgs e)
+        public void CargarTextoGuia()
         {
-            txtGuia.CuadroTexto_Enter(txtUsuario_ESA, "Usuario");
-            txtGuia.CuadroTexto_Leave(txtUsuario_ESA, "");
-            txtGuia.CuadroTexto_TextChanged(txtUsuario_ESA);
+            //Cuando se entra, sale o cambia el texto del control, se ejecutara el metodo en txtUsuario_ESA
+            txtUsuario_ESA.Enter += (s, v) => txtGuia.CuadroTexto_Enter(txtUsuario_ESA, " Ejemplo: Usuario2134");
+            txtUsuario_ESA.Leave += (s, v) => txtGuia.CuadroTexto_Enter(txtUsuario_ESA, " Ejemplo: Usuario2134");
+            txtUsuario_ESA.TextChanged += (s, v) => txtGuia.CuadroTexto_TextChanged(txtUsuario_ESA);
+            //Cuando se entra, sale o cambia el texto del control, se ejecutara el metodo en txtContrasena_ESA
+            txtContraseña_ESA.Enter += (s, v) => txtGuia.CuadroTexto_Enter(txtContraseña_ESA, " Ejemplo: Password2781");
+            txtContraseña_ESA.Leave += (s, v) => txtGuia.CuadroTexto_Enter(txtContraseña_ESA, " Ejemplo: Password2781");
+            txtContraseña_ESA.TextChanged += (s, v) => txtGuia.CuadroTexto_TextChangedPassword(txtContraseña_ESA);
+        }
+
+        public void FormLogin_ESA_Load(object sender, EventArgs e)
+        {
+            CargarTextoGuia();
+    
 
             // Cargar las fuente desde el archivo TTF
             string nombreFuente = "coolveticaRG.otf";
@@ -105,6 +113,19 @@ namespace Proyecto_AdministracionOrgDatos
             fontPers.CargarFuentePersonalizada(nombreFuenteBK2);
             // Aplicar la fuente a la etiqueta en lbl4
             fontPers.AplicarFuente(label4, 47, FontStyle.Regular);
+
+        }
+
+
+        private void TxtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Mostrar el texto claro cuando se está escribiendo
+            txtContraseña_ESA.PasswordChar = '\0';  // '\0' representa ningún carácter de contraseña 
+
+        }
+
+        private void errorLogin_Click(object sender, EventArgs e)
+        {
 
         }
     }

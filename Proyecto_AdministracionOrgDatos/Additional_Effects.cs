@@ -60,13 +60,14 @@ namespace Proyecto_AdministracionOrgDatos
 
     public class TextoGuia
     {
+
         //Cuando el cuadro de texto obtiene el foco, este manejador de eventos se ejecutará.
         public void CuadroTexto_Enter(System.Windows.Forms.TextBox cuadroTexto, string textoMarcador)
         {
             if (cuadroTexto.Text == textoMarcador)
             {
                 cuadroTexto.Clear();
-                cuadroTexto.ForeColor = SystemColors.ControlText;
+                cuadroTexto.ForeColor = SystemColors.ActiveBorder;
             }
             else { CuadroTexto_Leave(cuadroTexto, textoMarcador); }
         }
@@ -75,6 +76,7 @@ namespace Proyecto_AdministracionOrgDatos
         {
             if (string.IsNullOrWhiteSpace(cuadroTexto.Text))
             {
+                cuadroTexto.Clear();
                 cuadroTexto.Text = textoMarcador;
                 cuadroTexto.ForeColor = SystemColors.ActiveBorder;
             }
@@ -82,11 +84,33 @@ namespace Proyecto_AdministracionOrgDatos
 
         public void CuadroTexto_TextChanged(System.Windows.Forms.TextBox cuadroTexto)
         {
-            // Cambiar el color a negro cuando se comienza a escribir
+            // Cambiar el color a azul cuando se comienza a escribir
+            if (cuadroTexto.ForeColor == SystemColors.ActiveBorder)
+            {
+                cuadroTexto.ForeColor = Color.SteelBlue; 
+            }
+            if (string.IsNullOrWhiteSpace(cuadroTexto.Text))
+            {
+                cuadroTexto.ForeColor = SystemColors.ActiveBorder;
+            }
+        }
+
+        public void CuadroTexto_TextChangedPassword(System.Windows.Forms.TextBox cuadroTexto)
+        {
+            // Cambiar el color a azul cuando se comienza a escribir
             if (cuadroTexto.ForeColor == SystemColors.ActiveBorder)
             {
                 cuadroTexto.ForeColor = Color.SteelBlue;
+                cuadroTexto.PasswordChar = '*';
+            }
+            if (string.IsNullOrWhiteSpace(cuadroTexto.Text))
+            {
+                cuadroTexto.ForeColor = SystemColors.ActiveBorder;
+               
             }
         }
+
+
+
     }
 }
