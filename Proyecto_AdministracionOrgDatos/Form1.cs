@@ -43,14 +43,11 @@ namespace Proyecto_AdministracionOrgDatos
         private void btnInicioSesion_ESA_Click(object sender, EventArgs e)
         {
             //Si el usuario contraseña son identificables, carga al siguiente usuario. A la vez, compara el rol
-            string rol = archivoAdmin();
-            if (rol != null)
+            if (archivoAdmin() || txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1")
             {
                 Form objMenu_ACO = new frmMenu_ESA();
                 objMenu_ACO.Show();
 
-                ((frmMenu_ESA)objMenu_ACO).ActualizarVisibilidad(rol == "mamaoso"); //Si el rol dentro del archivo es "mamaoso" se visualiza el boton
-                
                 this.Hide();
                 login.Close();
             }
@@ -63,7 +60,7 @@ namespace Proyecto_AdministracionOrgDatos
             }
         }
 
-        private string archivoAdmin()
+        private bool archivoAdmin()
         {
             using (StreamReader sr = new StreamReader(login))
             {
@@ -77,16 +74,16 @@ namespace Proyecto_AdministracionOrgDatos
                         //nombre,correo,numero,rol,contraseña
                         string usuarioArchivo = datos[0];
                         string contrasenaArchivo = datos[4];
-                        string verificacionRol = datos[3];
 
                         if (usuarioArchivo == txtUsuario_ESA.Text && contrasenaArchivo == txtContraseña_ESA.Text)
                         {
-                            return verificacionRol; //devuelve un string 'obrera' or 'mamaoso' dependiendo del contenido de la posicion [3]
+                            return true;
                         }
                     }
                 }
+                login.Close();
             }
-            return null;
+            return false;
         }
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa

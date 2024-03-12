@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -117,8 +118,14 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void frmNewAdmin_Click(object sender, EventArgs e)
         {
-            Form adminRegistro = new fmrRegistroAdmin();
-            adminRegistro.Show();
+            string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
+
+            if (int.Parse(confirmacion) == 2) //Cada nuevo administrador requiere confirmacion de contraseña: 2
+            {
+                Form adminRegistro = new fmrRegistroAdmin();
+                adminRegistro.Show();
+            }
+
         }
     }
 }
