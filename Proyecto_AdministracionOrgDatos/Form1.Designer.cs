@@ -58,7 +58,7 @@
             // 
             // btnInicioSesion_ESA
             // 
-            btnInicioSesion_ESA.BackColor = System.Drawing.Color.SteelBlue;
+            btnInicioSesion_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             btnInicioSesion_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
             btnInicioSesion_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnInicioSesion_ESA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,7 +92,7 @@
             // 
             // txtContraseña_ESA
             // 
-            this.txtContraseña_ESA.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtContraseña_ESA.BackColor = System.Drawing.Color.White;
             this.txtContraseña_ESA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseña_ESA.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña_ESA.ForeColor = System.Drawing.Color.SteelBlue;
@@ -106,7 +106,7 @@
             // txtUsuario_ESA
             // 
             this.txtUsuario_ESA.AccessibleDescription = "";
-            this.txtUsuario_ESA.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtUsuario_ESA.BackColor = System.Drawing.Color.White;
             this.txtUsuario_ESA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario_ESA.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario_ESA.ForeColor = System.Drawing.Color.SteelBlue;
@@ -120,9 +120,9 @@
             // lblNombreAlumno_ESA
             // 
             this.lblNombreAlumno_ESA.AutoSize = true;
-            this.lblNombreAlumno_ESA.BackColor = System.Drawing.Color.White;
+            this.lblNombreAlumno_ESA.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblNombreAlumno_ESA.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreAlumno_ESA.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblNombreAlumno_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblNombreAlumno_ESA.Location = new System.Drawing.Point(134, 58);
             this.lblNombreAlumno_ESA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreAlumno_ESA.Name = "lblNombreAlumno_ESA";
@@ -138,7 +138,7 @@
             // FechaC
             // 
             this.FechaC.AutoSize = true;
-            this.FechaC.BackColor = System.Drawing.Color.White;
+            this.FechaC.BackColor = System.Drawing.Color.WhiteSmoke;
             this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaC.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.FechaC.Location = new System.Drawing.Point(20, 256);
@@ -150,7 +150,7 @@
             // HoraC
             // 
             this.HoraC.AutoSize = true;
-            this.HoraC.BackColor = System.Drawing.Color.White;
+            this.HoraC.BackColor = System.Drawing.Color.WhiteSmoke;
             this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoraC.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.HoraC.Location = new System.Drawing.Point(20, 238);
@@ -185,7 +185,7 @@
             // 
             this.errorLogin.AutoSize = true;
             this.errorLogin.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorLogin.ForeColor = System.Drawing.Color.SteelBlue;
+            this.errorLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.errorLogin.Location = new System.Drawing.Point(67, 203);
             this.errorLogin.Name = "errorLogin";
             this.errorLogin.Size = new System.Drawing.Size(188, 13);
@@ -218,10 +218,10 @@
             // lblTitulo_ESA
             // 
             this.lblTitulo_ESA.AutoSize = true;
-            this.lblTitulo_ESA.BackColor = System.Drawing.Color.White;
+            this.lblTitulo_ESA.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTitulo_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTitulo_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo_ESA.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblTitulo_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblTitulo_ESA.Location = new System.Drawing.Point(11, 16);
             this.lblTitulo_ESA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo_ESA.Name = "lblTitulo_ESA";
@@ -232,7 +232,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.SteelBlue;
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.pictureBox3.Location = new System.Drawing.Point(319, -1);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(194, 282);
@@ -241,7 +241,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.pictureBox1.Image = global::Proyecto_AdministracionOrgDatos.Properties.Resources._5bbd9abb_5618_4750_ad86_7379fc3a08a0;
             this.pictureBox1.Location = new System.Drawing.Point(331, 129);
             this.pictureBox1.Name = "pictureBox1";
@@ -253,7 +253,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.SteelBlue;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(362, 41);
@@ -265,7 +265,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.SteelBlue;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.label4.Font = new System.Drawing.Font("Lovelo Black", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(351, 44);
@@ -278,7 +278,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(512, 280);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
