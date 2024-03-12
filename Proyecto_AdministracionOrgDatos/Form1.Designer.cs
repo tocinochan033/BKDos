@@ -64,7 +64,6 @@
             this.btnSalir_ESA.TabIndex = 15;
             this.btnSalir_ESA.Text = "Salir";
             this.btnSalir_ESA.UseVisualStyleBackColor = false;
-          
             // 
             // btnInicioSesion_ESA
             // 
