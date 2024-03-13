@@ -199,7 +199,7 @@ namespace Proyecto_AdministracionOrgDatos
         private bool camposImcompletos()
         {
             return txtApaterno.Text == "" || txtAmaterno.Text == "" || txtNombres.Text == "" || txtFechanac.Text == ""
-               || txtEdad.Text == "" || txtCURP.Text == "" || CBGenero.Text == "" || txtEstadoCivil.Text == "" || txtDomicilio.Text == ""
+               || txtEdad.Text == "" || CBGenero.Text == "" || txtEstadoCivil.Text == "" || txtDomicilio.Text == ""
                || txtCodigoPostal.Text == "" || txtNacionalidad.Text == "" || cmbEstadoNac.Text == "" || txtMunicipio.Text == "" || txtCorreoElectronico.Text == ""
                || txtTelefono.Text == "" || txtCarrera.Text == "" || txtPeriodo.Text == "" || txtPromedio.Text == "" || cmbCCT.Text == "" || txtModelo.Text == "";
         }
@@ -211,7 +211,6 @@ namespace Proyecto_AdministracionOrgDatos
             txtNombres.Text = "";
             txtFechanac.Text = "";
             txtEdad.Text = "";
-            txtCURP.Text = "";
             CBGenero.Text = "";
             txtEstadoCivil.Text = "";
             txtDomicilio.Text = "";
@@ -551,37 +550,7 @@ namespace Proyecto_AdministracionOrgDatos
             }
         }
 
-        private void dgv_Agregar_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //Verificamos si hay una celda seleccionada
-            if(this.dgv_Agregar.SelectedRows.Count == 1)
-            {
-                //Definimos el indice de la fila
-                int seleccion = dgv_Agregar.CurrentRow.Index;
-
-                //Cargamos los textbox con los datos de la fila seleccionada en sus celdas correspondientes
-                txtApaterno.Text = dgv_Agregar.Rows[seleccion].Cells[0].Value.ToString();
-                txtAmaterno.Text = dgv_Agregar.Rows[seleccion].Cells[1].Value.ToString();
-                txtNombres.Text = dgv_Agregar.Rows[seleccion].Cells[2].Value.ToString();
-                txtFechanac.Text = dgv_Agregar.Rows[seleccion].Cells[3].Value.ToString();
-                txtEdad.Text = dgv_Agregar.Rows[seleccion].Cells[4].Value.ToString();
-                txtCURP.Text = dgv_Agregar.Rows[seleccion].Cells[5].Value.ToString();
-                CBGenero.Text = dgv_Agregar.Rows[seleccion].Cells[6].Value.ToString();
-                txtEstadoCivil.Text = dgv_Agregar.Rows[seleccion].Cells[7].Value.ToString();
-                txtDomicilio.Text = dgv_Agregar.Rows[seleccion].Cells[8].Value.ToString();
-                txtCodigoPostal.Text = dgv_Agregar.Rows[seleccion].Cells[9].Value.ToString();
-                txtNacionalidad.Text = dgv_Agregar.Rows[seleccion].Cells[10].Value.ToString();
-                cmbEstadoNac.Text = dgv_Agregar.Rows[seleccion].Cells[11].Value.ToString();
-                txtMunicipio.Text = dgv_Agregar.Rows[seleccion].Cells[12].Value.ToString();
-                txtCorreoElectronico.Text = dgv_Agregar.Rows[seleccion].Cells[13].Value.ToString();
-                txtTelefono.Text = dgv_Agregar.Rows[seleccion].Cells[14].Value.ToString();
-                txtCarrera.Text = dgv_Agregar.Rows[seleccion].Cells[15].Value.ToString();
-                txtPeriodo.Text = dgv_Agregar.Rows[seleccion].Cells[16].Value.ToString();
-                txtPromedio.Text = dgv_Agregar.Rows[seleccion].Cells[17].Value.ToString();
-                cmbCCT.Text = dgv_Agregar.Rows[seleccion].Cells[18].Value.ToString();
-                txtModelo.Text = dgv_Agregar.Rows[seleccion].Cells[19].Value.ToString();
-            }
-        }
+        
 
         private void Guardar()
         {
@@ -690,6 +659,139 @@ namespace Proyecto_AdministracionOrgDatos
         private void txtModificacion_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+            
+        }
+
+        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten numeros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+            
+
+        }
+
+        private void txtApaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtAmaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtEstadoCivil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten numeros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtCodigoPostal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten numeros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNacionalidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtMunicipio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtDomicilio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtCarrera_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPeriodo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtPromedio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPromedio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten numeros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }
