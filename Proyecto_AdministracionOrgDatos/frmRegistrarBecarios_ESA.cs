@@ -100,6 +100,7 @@ namespace Proyecto_AdministracionOrgDatos
                 /*---------------------Tercera tabla Datos academicos-------------------------*/
                 txtCarrera.Text = fila["Carrera"].ToString();
                 txtPeriodo.Text = fila["Periodo"].ToString();
+                txtPromedio.Text = fila["Promedio"].ToString();
                 txtPromedio.Text = fila["Modelo"].ToString();
                 cmbCCT.Text = fila["CCT"].ToString();
                 txtModelo.Text = fila["NombreEscuela"].ToString();
@@ -417,32 +418,8 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void Guardar()
         {
-            /*
-               txtApaterno.Text = fila["ApellidoPaterno"].ToString(); ;
-               txtAmaterno.Text = fila["ApellidoMaterno"].ToString();
-               txtNombres.Text = fila["Nombres"].ToString();
-               txtFechanac.Text = fila["FechaNacimiento"].ToString();
-               txtEdad.Text = fila["Edad"].ToString();
-               txtCURP.Text = fila["Curp"].ToString();
-               txtEstadoCivil.Text = fila["EstadoCivil"].ToString();
-               CBGenero.Text = fila["Genero"].ToString();
-
-               //------------------- Segunda tabla de datos contactos -------------------------
-               txtDomicilio.Text = fila["Domicilio"].ToString();
-               txtCodigoPostal.Text = fila["CodigoPostal"].ToString();
-               txtNacionalidad.Text = fila["Nacionalidad"].ToString();
-               txtEstadoNac.Text = fila["EstadoNacimiento"].ToString();
-               txtMunicipio.Text = fila["Municipio"].ToString();
-               txtCorreoElectronico.Text = fila["Correo"].ToString();
-               txtTelefono.Text = fila["Telefono"].ToString();
-
-
-               txtCarrera.Text = fila["Carrera"].ToString();
-               txtPeriodo.Text = fila["Periodo"].ToString();
-               txtPromedio.Text = fila["Modelo"].ToString();
-               cmbCCT.Text = fila["CCT"].ToString();
-               txtModelo.Text = fila["NombreEscuela"].ToString();*/
-            Sql = "insert into DatosGenerales (ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil,Genero,Domicilio, CodigoPostal,Nacionalidad,EstadoNacimiento,Municipio,Correo, Telefono, Carrera,Periodo ,Modelo,CCT,NombreEscuela) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio,@Correo, @Telefono, @Carrera,@Periodo ,@Modelo,@CCT,@NombreEscuela)";
+           
+            Sql = "insert into DatosGenerales (ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT, NombreEscuela) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio, @Correo, @Telefono, @Carrera, @Periodo, @Promedio, @Modelo, @CCT, @NombreEscuela)";
             Comando = new SqlCommand(Sql, Conexion);
             //Añandiendo parametro
             Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
@@ -462,7 +439,8 @@ namespace Proyecto_AdministracionOrgDatos
             Comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
             Comando.Parameters.AddWithValue("@Carrera", txtCarrera.Text);
             Comando.Parameters.AddWithValue("@Periodo", txtPeriodo.Text);
-            Comando.Parameters.AddWithValue("@Modelo", txtPromedio.Text);
+            Comando.Parameters.AddWithValue("@Promedio", txtPromedio.Text);
+            Comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
             Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
             Comando.Parameters.AddWithValue("@NombreEscuela", txtModelo.Text);
         

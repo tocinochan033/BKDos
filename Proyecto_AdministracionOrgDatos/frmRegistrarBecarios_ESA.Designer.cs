@@ -119,6 +119,9 @@
             this.lblPeriodo = new System.Windows.Forms.Label();
             this.txtCarrera = new System.Windows.Forms.TextBox();
             this.lblCarrera = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.txtEscuela = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Agregar)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -140,6 +143,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar_ESA
@@ -947,6 +951,9 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.txtEscuela);
+            this.tabPage3.Controls.Add(this.pictureBox17);
+            this.tabPage3.Controls.Add(this.label1);
             this.tabPage3.Controls.Add(this.pictureBox4);
             this.tabPage3.Controls.Add(this.pictureBox3);
             this.tabPage3.Controls.Add(this.pictureBox2);
@@ -1126,6 +1133,39 @@
             this.lblCarrera.TabIndex = 74;
             this.lblCarrera.Text = "Carrera :";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label1.Location = new System.Drawing.Point(16, 196);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 24);
+            this.label1.TabIndex = 87;
+            this.label1.Text = "Escuela:";
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
+            this.pictureBox17.Location = new System.Drawing.Point(20, 261);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(417, 10);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox17.TabIndex = 88;
+            this.pictureBox17.TabStop = false;
+            // 
+            // txtEscuela
+            // 
+            this.txtEscuela.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEscuela.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEscuela.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.txtEscuela.Location = new System.Drawing.Point(20, 227);
+            this.txtEscuela.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEscuela.Name = "txtEscuela";
+            this.txtEscuela.Size = new System.Drawing.Size(417, 31);
+            this.txtEscuela.TabIndex = 89;
+            // 
             // frmRegistrarBecarios_ESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1172,6 +1212,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1267,5 +1308,8 @@
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.TextBox txtEscuela;
+        private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.Label label1;
     }
 }
