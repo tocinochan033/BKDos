@@ -245,6 +245,15 @@ namespace Proyecto_AdministracionOrgDatos
                     txtCorreoElectronico.Focus();
                     return;//Detener la ejecucion del metodo si el correo electronico no es valido
                 }
+                if (txtEdad.Text.Length != 2)//Vaidar rango de edad
+                {
+                    MessageBox.Show("Por favor, ingrese una edad dentro del rango válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEdad.Focus();
+                    return;//Detener la ejecucion del metodo si el correo electronico no es valido
+                }
+
+                txtEdad.BorderStyle = BorderStyle.None;
+
                 //Sirve para adicionar un nuevo renglon y guardar el indice de este mismo
                 indiceNuevaFila = dgv_Agregar.Rows.Add();
 

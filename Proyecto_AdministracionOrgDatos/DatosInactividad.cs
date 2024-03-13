@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Proyecto_AdministracionOrgDatos
 {
@@ -23,7 +25,7 @@ namespace Proyecto_AdministracionOrgDatos
             if (NativeMethods.GetLastInputInfo(ref plii))
             {
                 //Calcula el timepo de inactividad
-                return TimeSpan.FromMilliseconds(Environment.TickCount - plii.dwTime); 
+                return TimeSpan.FromMilliseconds(Environment.TickCount - plii.dwTime);
             }
             else
             { throw new Win32Exception(Marshal.GetLastWin32Error()); }
@@ -33,7 +35,7 @@ namespace Proyecto_AdministracionOrgDatos
         public static DateTimeOffset GetLastInputTime()
         {
             //Se resta el tiempo actual con el tiempo actividad
-            return DateTimeOffset.Now.Subtract(GetInputIdleTime()); 
+            return DateTimeOffset.Now.Subtract(GetInputIdleTime());
         }
 
 
