@@ -122,18 +122,7 @@ namespace Proyecto_AdministracionOrgDatos
             {
                 MessageBox.Show(ex.ToString());
             }
-           /* if (archivoAdmin(usuario, contraseña) || txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1")
-            {
-                Form objMenu_ACO = new frmMenu_ESA();
-                objMenu_ACO.Show();
-                this.Hide();
-            }
-            else
-            {
-                errorLogin.Visible = true;
-                txtUsuario_ESA.Focus();
-                SystemSounds.Exclamation.Play();
-            }*/
+           
         }
 
        
