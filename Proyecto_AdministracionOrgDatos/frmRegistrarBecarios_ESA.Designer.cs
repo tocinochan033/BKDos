@@ -105,6 +105,9 @@
             this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.lblDomicilio = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txtEscuela = new System.Windows.Forms.TextBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -119,9 +122,7 @@
             this.lblPeriodo = new System.Windows.Forms.Label();
             this.txtCarrera = new System.Windows.Forms.TextBox();
             this.lblCarrera = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.txtEscuela = new System.Windows.Forms.TextBox();
+            this.btnGuardarMod = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Agregar)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -139,11 +140,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar_ESA
@@ -192,10 +193,10 @@
             this.btnRegresarMenu_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresarMenu_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresarMenu_ESA.ForeColor = System.Drawing.Color.Snow;
-            this.btnRegresarMenu_ESA.Location = new System.Drawing.Point(1150, 324);
+            this.btnRegresarMenu_ESA.Location = new System.Drawing.Point(1188, 324);
             this.btnRegresarMenu_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresarMenu_ESA.Name = "btnRegresarMenu_ESA";
-            this.btnRegresarMenu_ESA.Size = new System.Drawing.Size(225, 51);
+            this.btnRegresarMenu_ESA.Size = new System.Drawing.Size(187, 51);
             this.btnRegresarMenu_ESA.TabIndex = 52;
             this.btnRegresarMenu_ESA.Text = "Guardar y Salir";
             this.btnRegresarMenu_ESA.UseVisualStyleBackColor = false;
@@ -976,6 +977,39 @@
             this.tabPage3.Text = "Datos academicos";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // txtEscuela
+            // 
+            this.txtEscuela.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEscuela.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEscuela.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.txtEscuela.Location = new System.Drawing.Point(20, 227);
+            this.txtEscuela.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEscuela.Name = "txtEscuela";
+            this.txtEscuela.Size = new System.Drawing.Size(417, 31);
+            this.txtEscuela.TabIndex = 89;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
+            this.pictureBox17.Location = new System.Drawing.Point(20, 261);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(417, 10);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox17.TabIndex = 88;
+            this.pictureBox17.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label1.Location = new System.Drawing.Point(16, 196);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 24);
+            this.label1.TabIndex = 87;
+            this.label1.Text = "Escuela:";
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
@@ -1133,38 +1167,21 @@
             this.lblCarrera.TabIndex = 74;
             this.lblCarrera.Text = "Carrera :";
             // 
-            // label1
+            // btnGuardarMod
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.label1.Location = new System.Drawing.Point(16, 196);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 24);
-            this.label1.TabIndex = 87;
-            this.label1.Text = "Escuela:";
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(20, 261);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(417, 10);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox17.TabIndex = 88;
-            this.pictureBox17.TabStop = false;
-            // 
-            // txtEscuela
-            // 
-            this.txtEscuela.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEscuela.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEscuela.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtEscuela.Location = new System.Drawing.Point(20, 227);
-            this.txtEscuela.Margin = new System.Windows.Forms.Padding(2);
-            this.txtEscuela.Name = "txtEscuela";
-            this.txtEscuela.Size = new System.Drawing.Size(417, 31);
-            this.txtEscuela.TabIndex = 89;
+            this.btnGuardarMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.btnGuardarMod.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarMod.ForeColor = System.Drawing.Color.Snow;
+            this.btnGuardarMod.Location = new System.Drawing.Point(967, 324);
+            this.btnGuardarMod.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuardarMod.Name = "btnGuardarMod";
+            this.btnGuardarMod.Size = new System.Drawing.Size(187, 51);
+            this.btnGuardarMod.TabIndex = 69;
+            this.btnGuardarMod.Text = "Guardar Cambios";
+            this.btnGuardarMod.UseVisualStyleBackColor = false;
+            this.btnGuardarMod.Click += new System.EventHandler(this.btnGuardarMod_Click);
             // 
             // frmRegistrarBecarios_ESA
             // 
@@ -1172,6 +1189,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.btnGuardarMod);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.HoraC);
             this.Controls.Add(this.btnEliminar);
@@ -1208,11 +1226,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1311,5 +1329,6 @@
         private System.Windows.Forms.TextBox txtEscuela;
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnGuardarMod;
     }
 }

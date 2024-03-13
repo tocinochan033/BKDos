@@ -383,7 +383,7 @@ namespace Proyecto_AdministracionOrgDatos
                 }
             }
         }
-
+        /*-----------------------Metodo inservible------------------*/
         private void dgv_Agregar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Verificamos si hay una celda seleccionada
@@ -418,10 +418,10 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void Guardar()
         {
-           
+            /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
             Sql = "insert into DatosGenerales (ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT, NombreEscuela) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio, @Correo, @Telefono, @Carrera, @Periodo, @Promedio, @Modelo, @CCT, @NombreEscuela)";
             Comando = new SqlCommand(Sql, Conexion);
-            //Añandiendo parametro
+            //Añandiendo parametros y campos a agregar
             Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
             Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
             Comando.Parameters.AddWithValue("@Nombres", txtNombres.Text);
@@ -442,10 +442,22 @@ namespace Proyecto_AdministracionOrgDatos
             Comando.Parameters.AddWithValue("@Promedio", txtPromedio.Text);
             Comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
             Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
-            Comando.Parameters.AddWithValue("@NombreEscuela", txtModelo.Text);
-        
-            //FALTA AGREGAR PROMEDIO EN LA BASE DE DATOS
+            Comando.Parameters.AddWithValue("@NombreEscuela", txtEscuela.Text);
 
+        
+            try
+            {
+                //Ejecutamos la instruccion del sql para afectar las filas
+                Comando.ExecuteNonQuery();
+
+                MessageBox.Show("Registro insertardo");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+
+            /*-----------------------------------Fin de metodo con base de datos-------------------------------------*/
 
             ///Se guardan los datos de los becados en el archivo txt
             ///Se tiene que sobreescribir ya que si es que se eliminan datos
@@ -542,6 +554,50 @@ namespace Proyecto_AdministracionOrgDatos
         private void txtModelo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGuardarMod_Click(object sender, EventArgs e)
+        {
+            /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
+            Sql = "update DatosGenerales set ApellidoPaterno = @ApellidoPaterno, ApellidoMaterno = @ApellidoMaterno, Nombres = @Nombres, FechaNacimiento=@FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT, NombreEscuela) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio, @Correo, @Telefono, @Carrera, @Periodo, @Promedio, @Modelo, @CCT, @NombreEscuela)";
+            Comando = new SqlCommand(Sql, Conexion);
+            //Añandiendo parametros y campos a agregar
+            Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
+            Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
+            Comando.Parameters.AddWithValue("@Nombres", txtNombres.Text);
+            Comando.Parameters.AddWithValue("@FechaNacimiento", txtFechanac.Text);
+            Comando.Parameters.AddWithValue("@Edad", txtEdad.Text);
+            Comando.Parameters.AddWithValue("@Curp", txtCURP.Text);
+            Comando.Parameters.AddWithValue("@EstadoCivil", txtEstadoCivil.Text);
+            Comando.Parameters.AddWithValue("@Genero", CBGenero.Text);
+            Comando.Parameters.AddWithValue("@Domicilio", txtDomicilio.Text);
+            Comando.Parameters.AddWithValue("@CodigoPostal", txtCodigoPostal.Text);
+            Comando.Parameters.AddWithValue("@Nacionalidad", txtNacionalidad.Text);
+            Comando.Parameters.AddWithValue("@EstadoNacimiento", txtEstadoNac.Text);
+            Comando.Parameters.AddWithValue("@Municipio", txtMunicipio.Text);
+            Comando.Parameters.AddWithValue("@Correo", txtCorreoElectronico.Text);
+            Comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+            Comando.Parameters.AddWithValue("@Carrera", txtCarrera.Text);
+            Comando.Parameters.AddWithValue("@Periodo", txtPeriodo.Text);
+            Comando.Parameters.AddWithValue("@Promedio", txtPromedio.Text);
+            Comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
+            Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
+            Comando.Parameters.AddWithValue("@NombreEscuela", txtEscuela.Text);
+
+
+            try
+            {
+                //Ejecutamos la instruccion del sql para afectar las filas
+                Comando.ExecuteNonQuery();
+
+                MessageBox.Show("Registro insertardo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+
+            /*-----------------------------------Fin de metodo con base de datos-------------------------------------*/
         }
     }
 }
