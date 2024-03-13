@@ -147,7 +147,7 @@
             this.btnAgregar_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.btnAgregar_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar_ESA.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnAgregar_ESA.Location = new System.Drawing.Point(967, 187);
             this.btnAgregar_ESA.Margin = new System.Windows.Forms.Padding(2);
@@ -161,24 +161,24 @@
             // lblApaterno
             // 
             this.lblApaterno.AutoSize = true;
-            this.lblApaterno.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblApaterno.Location = new System.Drawing.Point(17, 110);
             this.lblApaterno.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApaterno.Name = "lblApaterno";
-            this.lblApaterno.Size = new System.Drawing.Size(208, 28);
+            this.lblApaterno.Size = new System.Drawing.Size(159, 24);
             this.lblApaterno.TabIndex = 54;
             this.lblApaterno.Text = "Apellido Paterno :";
             // 
             // txtApaterno
             // 
             this.txtApaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApaterno.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtApaterno.Location = new System.Drawing.Point(19, 140);
             this.txtApaterno.Margin = new System.Windows.Forms.Padding(2);
             this.txtApaterno.Name = "txtApaterno";
-            this.txtApaterno.Size = new System.Drawing.Size(400, 32);
+            this.txtApaterno.Size = new System.Drawing.Size(400, 31);
             this.txtApaterno.TabIndex = 53;
             // 
             // btnRegresarMenu_ESA
@@ -186,9 +186,9 @@
             this.btnRegresarMenu_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.btnRegresarMenu_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegresarMenu_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresarMenu_ESA.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresarMenu_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresarMenu_ESA.ForeColor = System.Drawing.Color.Snow;
-            this.btnRegresarMenu_ESA.Location = new System.Drawing.Point(1182, 327);
+            this.btnRegresarMenu_ESA.Location = new System.Drawing.Point(1150, 324);
             this.btnRegresarMenu_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresarMenu_ESA.Name = "btnRegresarMenu_ESA";
             this.btnRegresarMenu_ESA.Size = new System.Drawing.Size(225, 51);
@@ -200,24 +200,24 @@
             // FechaC
             // 
             this.FechaC.AutoSize = true;
-            this.FechaC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.FechaC.Location = new System.Drawing.Point(1462, 30);
             this.FechaC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FechaC.Name = "FechaC";
-            this.FechaC.Size = new System.Drawing.Size(183, 30);
+            this.FechaC.Size = new System.Drawing.Size(160, 31);
             this.FechaC.TabIndex = 51;
             this.FechaC.Text = "00/00/0000";
             // 
             // lblTitulo_ESA
             // 
             this.lblTitulo_ESA.AutoSize = true;
-            this.lblTitulo_ESA.Font = new System.Drawing.Font("Cocogoose", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.lblTitulo_ESA.Location = new System.Drawing.Point(23, 26);
             this.lblTitulo_ESA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo_ESA.Name = "lblTitulo_ESA";
-            this.lblTitulo_ESA.Size = new System.Drawing.Size(309, 39);
+            this.lblTitulo_ESA.Size = new System.Drawing.Size(238, 31);
             this.lblTitulo_ESA.TabIndex = 49;
             this.lblTitulo_ESA.Text = "Registrar Becarios";
             // 
@@ -381,9 +381,9 @@
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.Snow;
-            this.btnModificar.Location = new System.Drawing.Point(1194, 187);
+            this.btnModificar.Location = new System.Drawing.Point(1188, 187);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(187, 51);
@@ -397,7 +397,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Cocogoose", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Snow;
             this.btnEliminar.Location = new System.Drawing.Point(1422, 187);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
@@ -411,12 +411,12 @@
             // HoraC
             // 
             this.HoraC.AutoSize = true;
-            this.HoraC.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.HoraC.Location = new System.Drawing.Point(1476, 60);
             this.HoraC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HoraC.Name = "HoraC";
-            this.HoraC.Size = new System.Drawing.Size(151, 30);
+            this.HoraC.Size = new System.Drawing.Size(143, 31);
             this.HoraC.TabIndex = 67;
             this.HoraC.Text = "00:00 a.m";
             // 
@@ -430,7 +430,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Font = new System.Drawing.Font("Cocogoose", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(30, 82);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -461,10 +461,10 @@
             this.tabPage1.Controls.Add(this.lblAmaterno);
             this.tabPage1.Controls.Add(this.txtApaterno);
             this.tabPage1.Controls.Add(this.lblApaterno);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(896, 327);
+            this.tabPage1.Size = new System.Drawing.Size(896, 331);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos personales";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -533,40 +533,40 @@
             // txtFechanac
             // 
             this.txtFechanac.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtFechanac.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechanac.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechanac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtFechanac.Location = new System.Drawing.Point(452, 227);
             this.txtFechanac.Name = "txtFechanac";
-            this.txtFechanac.Size = new System.Drawing.Size(400, 39);
+            this.txtFechanac.Size = new System.Drawing.Size(400, 38);
             this.txtFechanac.TabIndex = 70;
             // 
             // txtEstadoCivil
             // 
             this.txtEstadoCivil.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEstadoCivil.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstadoCivil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtEstadoCivil.Location = new System.Drawing.Point(720, 53);
             this.txtEstadoCivil.Margin = new System.Windows.Forms.Padding(2);
             this.txtEstadoCivil.Name = "txtEstadoCivil";
-            this.txtEstadoCivil.Size = new System.Drawing.Size(154, 32);
+            this.txtEstadoCivil.Size = new System.Drawing.Size(154, 31);
             this.txtEstadoCivil.TabIndex = 68;
             // 
             // lblEstado_Civil
             // 
             this.lblEstado_Civil.AutoSize = true;
-            this.lblEstado_Civil.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado_Civil.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado_Civil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblEstado_Civil.Location = new System.Drawing.Point(715, 23);
             this.lblEstado_Civil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEstado_Civil.Name = "lblEstado_Civil";
-            this.lblEstado_Civil.Size = new System.Drawing.Size(149, 28);
+            this.lblEstado_Civil.Size = new System.Drawing.Size(117, 24);
             this.lblEstado_Civil.TabIndex = 69;
             this.lblEstado_Civil.Text = "Estado Civil :";
             // 
             // CBGenero
             // 
             this.CBGenero.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CBGenero.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBGenero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.CBGenero.FormattingEnabled = true;
             this.CBGenero.Items.AddRange(new object[] {
@@ -575,122 +575,122 @@
             "Otros..."});
             this.CBGenero.Location = new System.Drawing.Point(551, 53);
             this.CBGenero.Name = "CBGenero";
-            this.CBGenero.Size = new System.Drawing.Size(147, 38);
+            this.CBGenero.Size = new System.Drawing.Size(147, 39);
             this.CBGenero.TabIndex = 67;
             // 
             // txtCURP
             // 
             this.txtCURP.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCURP.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCURP.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCURP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtCURP.Location = new System.Drawing.Point(19, 227);
             this.txtCURP.Margin = new System.Windows.Forms.Padding(2);
             this.txtCURP.Name = "txtCURP";
-            this.txtCURP.Size = new System.Drawing.Size(400, 32);
+            this.txtCURP.Size = new System.Drawing.Size(400, 31);
             this.txtCURP.TabIndex = 65;
             // 
             // lblCurp
             // 
             this.lblCurp.AutoSize = true;
-            this.lblCurp.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblCurp.Location = new System.Drawing.Point(24, 197);
             this.lblCurp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCurp.Name = "lblCurp";
-            this.lblCurp.Size = new System.Drawing.Size(77, 28);
+            this.lblCurp.Size = new System.Drawing.Size(61, 24);
             this.lblCurp.TabIndex = 66;
             this.lblCurp.Text = "Curp :";
             // 
             // lblGenero
             // 
             this.lblGenero.AutoSize = true;
-            this.lblGenero.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblGenero.Location = new System.Drawing.Point(546, 23);
             this.lblGenero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGenero.Name = "lblGenero";
-            this.lblGenero.Size = new System.Drawing.Size(103, 28);
+            this.lblGenero.Size = new System.Drawing.Size(84, 24);
             this.lblGenero.TabIndex = 64;
             this.lblGenero.Text = "Genero :";
             // 
             // txtEdad
             // 
             this.txtEdad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEdad.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtEdad.Location = new System.Drawing.Point(451, 53);
             this.txtEdad.Margin = new System.Windows.Forms.Padding(2);
             this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(78, 32);
+            this.txtEdad.Size = new System.Drawing.Size(78, 31);
             this.txtEdad.TabIndex = 61;
             // 
             // lblEdad
             // 
             this.lblEdad.AutoSize = true;
-            this.lblEdad.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblEdad.Location = new System.Drawing.Point(447, 23);
             this.lblEdad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(82, 28);
+            this.lblEdad.Size = new System.Drawing.Size(65, 24);
             this.lblEdad.TabIndex = 62;
             this.lblEdad.Text = "Edad :";
             // 
             // lblfechanac
             // 
             this.lblfechanac.AutoSize = true;
-            this.lblfechanac.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfechanac.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfechanac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblfechanac.Location = new System.Drawing.Point(446, 197);
             this.lblfechanac.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblfechanac.Name = "lblfechanac";
-            this.lblfechanac.Size = new System.Drawing.Size(251, 28);
+            this.lblfechanac.Size = new System.Drawing.Size(198, 24);
             this.lblfechanac.TabIndex = 60;
             this.lblfechanac.Text = "Fecha de nacimiento :";
             // 
             // txtNombres
             // 
             this.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombres.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtNombres.Location = new System.Drawing.Point(19, 53);
             this.txtNombres.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(400, 32);
+            this.txtNombres.Size = new System.Drawing.Size(400, 31);
             this.txtNombres.TabIndex = 57;
             // 
             // lblNombres
             // 
             this.lblNombres.AutoSize = true;
-            this.lblNombres.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblNombres.Location = new System.Drawing.Point(17, 23);
             this.lblNombres.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombres.Name = "lblNombres";
-            this.lblNombres.Size = new System.Drawing.Size(122, 28);
+            this.lblNombres.Size = new System.Drawing.Size(98, 24);
             this.lblNombres.TabIndex = 58;
             this.lblNombres.Text = "Nombres :";
             // 
             // txtAmaterno
             // 
             this.txtAmaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAmaterno.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtAmaterno.Location = new System.Drawing.Point(452, 140);
             this.txtAmaterno.Margin = new System.Windows.Forms.Padding(2);
             this.txtAmaterno.Name = "txtAmaterno";
-            this.txtAmaterno.Size = new System.Drawing.Size(400, 32);
+            this.txtAmaterno.Size = new System.Drawing.Size(400, 31);
             this.txtAmaterno.TabIndex = 55;
             // 
             // lblAmaterno
             // 
             this.lblAmaterno.AutoSize = true;
-            this.lblAmaterno.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblAmaterno.Location = new System.Drawing.Point(447, 110);
             this.lblAmaterno.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAmaterno.Name = "lblAmaterno";
-            this.lblAmaterno.Size = new System.Drawing.Size(213, 28);
+            this.lblAmaterno.Size = new System.Drawing.Size(163, 24);
             this.lblAmaterno.TabIndex = 56;
             this.lblAmaterno.Text = "Apellido Materno :";
             // 
@@ -716,10 +716,10 @@
             this.tabPage2.Controls.Add(this.lblCodigoPostal);
             this.tabPage2.Controls.Add(this.txtDomicilio);
             this.tabPage2.Controls.Add(this.lblDomicilio);
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(896, 327);
+            this.tabPage2.Size = new System.Drawing.Size(896, 331);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Contacto";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -787,161 +787,161 @@
             // txtEstadoNac
             // 
             this.txtEstadoNac.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtEstadoNac.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstadoNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstadoNac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtEstadoNac.FormattingEnabled = true;
             this.txtEstadoNac.Location = new System.Drawing.Point(306, 221);
             this.txtEstadoNac.Name = "txtEstadoNac";
-            this.txtEstadoNac.Size = new System.Drawing.Size(309, 38);
+            this.txtEstadoNac.Size = new System.Drawing.Size(309, 39);
             this.txtEstadoNac.TabIndex = 81;
             // 
             // txtTelefono
             // 
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTelefono.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtTelefono.Location = new System.Drawing.Point(572, 48);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(297, 32);
+            this.txtTelefono.Size = new System.Drawing.Size(297, 31);
             this.txtTelefono.TabIndex = 79;
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblTelefono.Location = new System.Drawing.Point(567, 22);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(247, 28);
+            this.lblTelefono.Size = new System.Drawing.Size(193, 24);
             this.lblTelefono.TabIndex = 80;
             this.lblTelefono.Text = "Número de teléfono : ";
             // 
             // txtCorreoElectronico
             // 
             this.txtCorreoElectronico.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCorreoElectronico.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreoElectronico.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreoElectronico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtCorreoElectronico.Location = new System.Drawing.Point(19, 48);
             this.txtCorreoElectronico.Margin = new System.Windows.Forms.Padding(2);
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
-            this.txtCorreoElectronico.Size = new System.Drawing.Size(529, 32);
+            this.txtCorreoElectronico.Size = new System.Drawing.Size(529, 31);
             this.txtCorreoElectronico.TabIndex = 77;
             // 
             // lblCorreoElectronico
             // 
             this.lblCorreoElectronico.AutoSize = true;
-            this.lblCorreoElectronico.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreoElectronico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorreoElectronico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblCorreoElectronico.Location = new System.Drawing.Point(14, 22);
             this.lblCorreoElectronico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCorreoElectronico.Name = "lblCorreoElectronico";
-            this.lblCorreoElectronico.Size = new System.Drawing.Size(235, 28);
+            this.lblCorreoElectronico.Size = new System.Drawing.Size(181, 24);
             this.lblCorreoElectronico.TabIndex = 78;
             this.lblCorreoElectronico.Text = "Correo electronico : ";
             // 
             // txtMunicipio
             // 
             this.txtMunicipio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMunicipio.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMunicipio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtMunicipio.Location = new System.Drawing.Point(19, 220);
             this.txtMunicipio.Margin = new System.Windows.Forms.Padding(2);
             this.txtMunicipio.Name = "txtMunicipio";
-            this.txtMunicipio.Size = new System.Drawing.Size(257, 32);
+            this.txtMunicipio.Size = new System.Drawing.Size(257, 31);
             this.txtMunicipio.TabIndex = 75;
             // 
             // lblMunicipio
             // 
             this.lblMunicipio.AutoSize = true;
-            this.lblMunicipio.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMunicipio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblMunicipio.Location = new System.Drawing.Point(14, 193);
             this.lblMunicipio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMunicipio.Name = "lblMunicipio";
-            this.lblMunicipio.Size = new System.Drawing.Size(129, 28);
+            this.lblMunicipio.Size = new System.Drawing.Size(102, 24);
             this.lblMunicipio.TabIndex = 76;
             this.lblMunicipio.Text = "Municipio :";
             // 
             // lblEstadoNac
             // 
             this.lblEstadoNac.AutoSize = true;
-            this.lblEstadoNac.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoNac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblEstadoNac.Location = new System.Drawing.Point(301, 193);
             this.lblEstadoNac.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEstadoNac.Name = "lblEstadoNac";
-            this.lblEstadoNac.Size = new System.Drawing.Size(262, 28);
+            this.lblEstadoNac.Size = new System.Drawing.Size(202, 24);
             this.lblEstadoNac.TabIndex = 74;
             this.lblEstadoNac.Text = "Estado de nacimiento :";
             // 
             // txtNacionalidad
             // 
             this.txtNacionalidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNacionalidad.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNacionalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtNacionalidad.Location = new System.Drawing.Point(645, 220);
             this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtNacionalidad.Name = "txtNacionalidad";
-            this.txtNacionalidad.Size = new System.Drawing.Size(224, 32);
+            this.txtNacionalidad.Size = new System.Drawing.Size(224, 31);
             this.txtNacionalidad.TabIndex = 71;
             // 
             // lblNacionalidad
             // 
             this.lblNacionalidad.AutoSize = true;
-            this.lblNacionalidad.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNacionalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblNacionalidad.Location = new System.Drawing.Point(642, 190);
             this.lblNacionalidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNacionalidad.Name = "lblNacionalidad";
-            this.lblNacionalidad.Size = new System.Drawing.Size(172, 28);
+            this.lblNacionalidad.Size = new System.Drawing.Size(130, 24);
             this.lblNacionalidad.TabIndex = 72;
             this.lblNacionalidad.Text = "Nacionalidad :";
             // 
             // txtCodigoPostal
             // 
             this.txtCodigoPostal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCodigoPostal.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoPostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoPostal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtCodigoPostal.Location = new System.Drawing.Point(711, 136);
             this.txtCodigoPostal.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigoPostal.Name = "txtCodigoPostal";
-            this.txtCodigoPostal.Size = new System.Drawing.Size(158, 32);
+            this.txtCodigoPostal.Size = new System.Drawing.Size(158, 31);
             this.txtCodigoPostal.TabIndex = 69;
             // 
             // lblCodigoPostal
             // 
             this.lblCodigoPostal.AutoSize = true;
-            this.lblCodigoPostal.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoPostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigoPostal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblCodigoPostal.Location = new System.Drawing.Point(706, 106);
             this.lblCodigoPostal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodigoPostal.Name = "lblCodigoPostal";
-            this.lblCodigoPostal.Size = new System.Drawing.Size(175, 28);
+            this.lblCodigoPostal.Size = new System.Drawing.Size(135, 24);
             this.lblCodigoPostal.TabIndex = 70;
             this.lblCodigoPostal.Text = "Código postal :";
             // 
             // txtDomicilio
             // 
             this.txtDomicilio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDomicilio.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDomicilio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtDomicilio.Location = new System.Drawing.Point(19, 136);
             this.txtDomicilio.Margin = new System.Windows.Forms.Padding(2);
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(675, 32);
+            this.txtDomicilio.Size = new System.Drawing.Size(675, 31);
             this.txtDomicilio.TabIndex = 67;
             // 
             // lblDomicilio
             // 
             this.lblDomicilio.AutoSize = true;
-            this.lblDomicilio.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDomicilio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblDomicilio.Location = new System.Drawing.Point(14, 106);
             this.lblDomicilio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDomicilio.Name = "lblDomicilio";
-            this.lblDomicilio.Size = new System.Drawing.Size(122, 28);
+            this.lblDomicilio.Size = new System.Drawing.Size(97, 24);
             this.lblDomicilio.TabIndex = 68;
             this.lblDomicilio.Text = "Domicilio :";
             // 
@@ -961,10 +961,10 @@
             this.tabPage3.Controls.Add(this.lblPeriodo);
             this.tabPage3.Controls.Add(this.txtCarrera);
             this.tabPage3.Controls.Add(this.lblCarrera);
-            this.tabPage3.Location = new System.Drawing.Point(4, 26);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(896, 327);
+            this.tabPage3.Size = new System.Drawing.Size(896, 331);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Datos academicos";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1012,117 +1012,117 @@
             // txtModelo
             // 
             this.txtModelo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtModelo.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtModelo.FormattingEnabled = true;
             this.txtModelo.Location = new System.Drawing.Point(461, 138);
             this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(356, 38);
+            this.txtModelo.Size = new System.Drawing.Size(356, 39);
             this.txtModelo.TabIndex = 83;
             this.txtModelo.SelectedIndexChanged += new System.EventHandler(this.txtModelo_SelectedIndexChanged);
             // 
             // lblModelo
             // 
             this.lblModelo.AutoSize = true;
-            this.lblModelo.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblModelo.Location = new System.Drawing.Point(456, 107);
             this.lblModelo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(104, 28);
+            this.lblModelo.Size = new System.Drawing.Size(84, 24);
             this.lblModelo.TabIndex = 82;
             this.lblModelo.Text = "Modelo :";
             // 
             // lblCCT
             // 
             this.lblCCT.AutoSize = true;
-            this.lblCCT.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCCT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCCT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblCCT.Location = new System.Drawing.Point(15, 107);
             this.lblCCT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCCT.Name = "lblCCT";
-            this.lblCCT.Size = new System.Drawing.Size(63, 28);
+            this.lblCCT.Size = new System.Drawing.Size(58, 24);
             this.lblCCT.TabIndex = 80;
             this.lblCCT.Text = "CCT :";
             // 
             // cmbCCT
             // 
             this.cmbCCT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbCCT.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCCT.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCCT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbCCT.FormattingEnabled = true;
             this.cmbCCT.Location = new System.Drawing.Point(20, 138);
             this.cmbCCT.Name = "cmbCCT";
-            this.cmbCCT.Size = new System.Drawing.Size(417, 38);
+            this.cmbCCT.Size = new System.Drawing.Size(417, 39);
             this.cmbCCT.TabIndex = 79;
             this.cmbCCT.SelectedIndexChanged += new System.EventHandler(this.cmbCCT_SelectedIndexChanged);
             // 
             // txtPromedio
             // 
             this.txtPromedio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPromedio.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPromedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPromedio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtPromedio.Location = new System.Drawing.Point(746, 51);
             this.txtPromedio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPromedio.Name = "txtPromedio";
-            this.txtPromedio.Size = new System.Drawing.Size(132, 32);
+            this.txtPromedio.Size = new System.Drawing.Size(132, 31);
             this.txtPromedio.TabIndex = 77;
             // 
             // lblPromedio
             // 
             this.lblPromedio.AutoSize = true;
-            this.lblPromedio.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPromedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPromedio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblPromedio.Location = new System.Drawing.Point(741, 25);
             this.lblPromedio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPromedio.Name = "lblPromedio";
-            this.lblPromedio.Size = new System.Drawing.Size(130, 28);
+            this.lblPromedio.Size = new System.Drawing.Size(102, 24);
             this.lblPromedio.TabIndex = 78;
             this.lblPromedio.Text = "Promedio :";
             // 
             // txtPeriodo
             // 
             this.txtPeriodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPeriodo.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtPeriodo.Location = new System.Drawing.Point(461, 51);
             this.txtPeriodo.Margin = new System.Windows.Forms.Padding(2);
             this.txtPeriodo.Name = "txtPeriodo";
-            this.txtPeriodo.Size = new System.Drawing.Size(261, 32);
+            this.txtPeriodo.Size = new System.Drawing.Size(261, 31);
             this.txtPeriodo.TabIndex = 75;
             // 
             // lblPeriodo
             // 
             this.lblPeriodo.AutoSize = true;
-            this.lblPeriodo.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblPeriodo.Location = new System.Drawing.Point(456, 25);
             this.lblPeriodo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPeriodo.Name = "lblPeriodo";
-            this.lblPeriodo.Size = new System.Drawing.Size(110, 28);
+            this.lblPeriodo.Size = new System.Drawing.Size(86, 24);
             this.lblPeriodo.TabIndex = 76;
             this.lblPeriodo.Text = "Periodo :";
             // 
             // txtCarrera
             // 
             this.txtCarrera.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCarrera.Font = new System.Drawing.Font("Louis George Cafe", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCarrera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtCarrera.Location = new System.Drawing.Point(20, 51);
             this.txtCarrera.Margin = new System.Windows.Forms.Padding(2);
             this.txtCarrera.Name = "txtCarrera";
-            this.txtCarrera.Size = new System.Drawing.Size(417, 32);
+            this.txtCarrera.Size = new System.Drawing.Size(417, 31);
             this.txtCarrera.TabIndex = 73;
             // 
             // lblCarrera
             // 
             this.lblCarrera.AutoSize = true;
-            this.lblCarrera.Font = new System.Drawing.Font("Cocogoose", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCarrera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblCarrera.Location = new System.Drawing.Point(15, 25);
             this.lblCarrera.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCarrera.Name = "lblCarrera";
-            this.lblCarrera.Size = new System.Drawing.Size(113, 28);
+            this.lblCarrera.Size = new System.Drawing.Size(82, 24);
             this.lblCarrera.TabIndex = 74;
             this.lblCarrera.Text = "Carrera :";
             // 
@@ -1131,7 +1131,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1673, 1041);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.HoraC);
             this.Controls.Add(this.btnEliminar);

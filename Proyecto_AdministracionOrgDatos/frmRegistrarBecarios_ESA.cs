@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,6 +14,117 @@ namespace Proyecto_AdministracionOrgDatos
 {
     public partial class frmRegistrarBecarios_ESA : Form
     {
+        /*-------------------------INSTANCIAS-----------------------------*/
+        //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
+        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
+
+        //Comando objeto del tipo SQLcommand para representar las instrucciones SQL
+        SqlCommand Comando;
+
+        //Adaptador objeto del tipo sqlDataAdapter para intercambiar datos entre una
+        //fuente de datos (en este caso sql server) y un almacen de datos
+        SqlDataAdapter Adaptador = null;
+
+        //Tabla objeto del tipo DATATABLE respresenta una coleccion de registros en memoria del cliente
+        DataTable Tabla = new DataTable();
+
+        //------------------------------------Variables-----------------------
+        //Almacenar instrucciones SQL
+        String Sql = "";
+        // DESKTOP-LRR3RR8\SQLEXPRESS
+        //DESKTOP-JGTCE3J
+        //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER
+        String Servidor = @"DESKTOP-JGTCE3J";
+
+        //Variable de tipo string para almacenar el nombre de la base de datos
+        String Base_Datos = "BKDOS";
+        int indice = 0;
+
+        /*--------------------------Metodo Conectar--------------------------*/
+        void Conectar()
+        {
+            try
+            {
+                Conexion.ConnectionString = "Data Source =" + Servidor + ";" +
+                "Initial Catalog =" + Base_Datos + ";" + "Integrated security = true";
+                try
+                //Bloque try catch para capturar de excepciones en ejecucion
+                {
+                    Conexion.Open();
+
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Error al tratar de establecer la conexión " + ex.Message);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error en la conexión: " + ex.Message);
+            }
+        }
+        /**********************************************************************/
+
+
+        /*------------------------METODO PARA CARGAR DATOS--------------------*/
+        
+        void CargarDatos (int indice)
+        {
+            //Se crea la fila del objeto de la tabla
+
+            //En caso de que la tabla de la base de datos no tenga informacion se utiliza esta condicion
+            if(Tabla.Rows.Count >0)
+            {
+                //Asignamos los valores correspondientes de cada registro
+                //DataRow representa una fila de datos
+                DataRow fila = Tabla.Rows[indice];
+                /*Primera tabla datos*/
+                txtApaterno.Text = fila["ApellidoPaterno"].ToString(); ;
+                txtAmaterno.Text = fila["ApellidoMaterno"].ToString();
+                txtNombres.Text = fila["Nombres"].ToString();
+                txtFechanac.Text = fila["FechaNacimiento"].ToString();
+                txtEdad.Text = fila["Edad"].ToString();
+                txtCURP.Text = fila["Curp"].ToString();
+                txtEstadoCivil.Text = fila["EstadoCivil"].ToString();
+                CBGenero.Text = fila["Genero"].ToString();
+
+                //------------------- Segunda tabla de datos contactos -------------------------
+                txtDomicilio.Text = fila["Domicilio"].ToString();
+                txtCodigoPostal.Text = fila["CodigoPostal"].ToString();
+                txtNacionalidad.Text = fila["Nacionalidad"].ToString();
+                txtEstadoNac.Text = fila["EstadoNacimiento"].ToString();
+                txtMunicipio.Text = fila["Municipio"].ToString();
+                txtCorreoElectronico.Text = fila["Correo"].ToString();
+                txtTelefono.Text = fila["Telefono"].ToString();
+               
+                /*---------------------Tercera tabla Datos academicos-------------------------*/
+                txtCarrera.Text = fila["Carrera"].ToString();
+                txtPeriodo.Text = fila["Periodo"].ToString();
+                txtPromedio.Text = fila["Modelo"].ToString();
+                cmbCCT.Text = fila["CCT"].ToString();
+                txtModelo.Text = fila["NombreEscuela"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("No hay registros guardados");
+            }
+           
+
+        }
+       /*----------------------Refrescar datos-----------------------*/
+       void RefrescarDatos()
+        {
+            //Se selecciona la tabl de donde sacar los datos
+            Sql = "select * from DatosGenerales";
+            //Pasamos los parametros al adaptador
+            Adaptador = new SqlDataAdapter(Sql, Conexion);
+            //Se limpia la tabla
+            Tabla.Clear();
+            //Se vuelve a llenar
+            Adaptador.Fill(Tabla);
+        }
+
+        /*--------------------------------------------------------------------*/
 
         public frmRegistrarBecarios_ESA()
         {
@@ -65,9 +177,12 @@ namespace Proyecto_AdministracionOrgDatos
             string carrera, periodo, promedio, cct, modelo;
             int indicieNuevoRenglon;
 
-
-            //Abrimos el archivo de texto en modo lectura
-            FileStream becados = new FileStream("Becados.txt",FileMode.OpenOrCreate,FileAccess.Read);
+            /*Cargar los datos en el datagridview*/
+            RefrescarDatos();
+            CargarDatos(indice);
+            /*----------------------------------------------ARCHIVOS------------------------------------------*/
+             //Abrimos el archivo de texto en modo lectura
+             FileStream becados = new FileStream("Becados.txt",FileMode.OpenOrCreate,FileAccess.Read);
 
             //Leemos linea por linea y cargamos esta misma en el datagridview
             using(StreamReader lector = new StreamReader(becados))
@@ -131,6 +246,7 @@ namespace Proyecto_AdministracionOrgDatos
                 }
             }
             becados.Close();
+            /*Archivios recordar tambien cerrar accion de base de datos*/
         }
 
         private void btnRegresarMenu_ESA_Click(object sender, EventArgs e)
@@ -184,6 +300,7 @@ namespace Proyecto_AdministracionOrgDatos
             }
             else
             {
+               
                 int indiceNuevaFila;
 
                 //Sirve para adicionar un nuevo renglon y guardar el indice de este mismo
@@ -300,6 +417,58 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void Guardar()
         {
+            /*
+               txtApaterno.Text = fila["ApellidoPaterno"].ToString(); ;
+               txtAmaterno.Text = fila["ApellidoMaterno"].ToString();
+               txtNombres.Text = fila["Nombres"].ToString();
+               txtFechanac.Text = fila["FechaNacimiento"].ToString();
+               txtEdad.Text = fila["Edad"].ToString();
+               txtCURP.Text = fila["Curp"].ToString();
+               txtEstadoCivil.Text = fila["EstadoCivil"].ToString();
+               CBGenero.Text = fila["Genero"].ToString();
+
+               //------------------- Segunda tabla de datos contactos -------------------------
+               txtDomicilio.Text = fila["Domicilio"].ToString();
+               txtCodigoPostal.Text = fila["CodigoPostal"].ToString();
+               txtNacionalidad.Text = fila["Nacionalidad"].ToString();
+               txtEstadoNac.Text = fila["EstadoNacimiento"].ToString();
+               txtMunicipio.Text = fila["Municipio"].ToString();
+               txtCorreoElectronico.Text = fila["Correo"].ToString();
+               txtTelefono.Text = fila["Telefono"].ToString();
+
+
+               txtCarrera.Text = fila["Carrera"].ToString();
+               txtPeriodo.Text = fila["Periodo"].ToString();
+               txtPromedio.Text = fila["Modelo"].ToString();
+               cmbCCT.Text = fila["CCT"].ToString();
+               txtModelo.Text = fila["NombreEscuela"].ToString();*/
+            Sql = "insert into DatosGenerales (ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil,Genero,Domicilio, CodigoPostal,Nacionalidad,EstadoNacimiento,Municipio,Correo, Telefono, Carrera,Periodo ,Modelo,CCT,NombreEscuela) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio,@Correo, @Telefono, @Carrera,@Periodo ,@Modelo,@CCT,@NombreEscuela)";
+            Comando = new SqlCommand(Sql, Conexion);
+            //Añandiendo parametro
+            Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
+            Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
+            Comando.Parameters.AddWithValue("@Nombres", txtNombres.Text);
+            Comando.Parameters.AddWithValue("@FechaNacimiento", txtFechanac.Text);
+            Comando.Parameters.AddWithValue("@Edad", txtEdad.Text);
+            Comando.Parameters.AddWithValue("@Curp", txtCURP.Text);
+            Comando.Parameters.AddWithValue("@EstadoCivil", txtEstadoCivil.Text);
+            Comando.Parameters.AddWithValue("@Genero", CBGenero.Text);
+            Comando.Parameters.AddWithValue("@Domicilio", txtDomicilio.Text);
+            Comando.Parameters.AddWithValue("@CodigoPostal", txtCodigoPostal.Text);
+            Comando.Parameters.AddWithValue("@Nacionalidad", txtNacionalidad.Text);
+            Comando.Parameters.AddWithValue("@EstadoNacimiento", txtEstadoNac.Text);
+            Comando.Parameters.AddWithValue("@Municipio", txtMunicipio.Text);
+            Comando.Parameters.AddWithValue("@Correo", txtCorreoElectronico.Text);
+            Comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+            Comando.Parameters.AddWithValue("@Carrera", txtCarrera.Text);
+            Comando.Parameters.AddWithValue("@Periodo", txtPeriodo.Text);
+            Comando.Parameters.AddWithValue("@Modelo", txtPromedio.Text);
+            Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
+            Comando.Parameters.AddWithValue("@NombreEscuela", txtModelo.Text);
+        
+            //FALTA AGREGAR PROMEDIO EN LA BASE DE DATOS
+
+
             ///Se guardan los datos de los becados en el archivo txt
             ///Se tiene que sobreescribir ya que si es que se eliminan datos
             ///los indices estarian mal para las siguientes veces que se desplegara el programa
