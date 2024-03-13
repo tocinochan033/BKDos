@@ -71,10 +71,7 @@ namespace Proyecto_AdministracionOrgDatos
         /// <summary>
         /// LOGIN EN HIATUS
         /// </summary>
-      /*  private string[] usuario = { "manolo", "jose", "felipe" };
-        private string[] contraseña = { "12345", "jacobo", "contraseña" };
-        FileStream login = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);*/
-        
+      
 
         public FormLogin_ESA()
         {
@@ -93,14 +90,17 @@ namespace Proyecto_AdministracionOrgDatos
             try
             {
                 
-               
+               //Invocacion del metodo conectar
                     Conectar();
+                    //comando sql para seleccionar los campos de que tablas se obtendran
                     using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contrasena FROM Usuarios WHERE Usuario='" + txtUsuario_ESA.Text + "' AND Contrasena='" + txtContraseña_ESA.Text + "'", Conexion))
                     {
+                    //se ejecuta la variable para leer el comando de ejecutar
                         SqlDataReader dr = cmd.ExecuteReader();
+                    //si lee los datos corrrectos
                         if (dr.Read())
                         {
-                          
+                          //Se muestra los otros datos
                             Form objMenu_ACO = new frmMenu_ESA();
                             objMenu_ACO.Show();
                             this.Hide();
@@ -108,6 +108,7 @@ namespace Proyecto_AdministracionOrgDatos
                         }
                         else
                         {
+                        //Cuando no se encontro la informacion
                             errorLogin.Visible = true;
                             txtUsuario_ESA.Focus();
                             SystemSounds.Exclamation.Play();
