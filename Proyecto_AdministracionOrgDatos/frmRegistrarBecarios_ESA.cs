@@ -486,7 +486,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                 }
             }
-            //Se terminan de guardar los datos y se cierra el archivo
+            //Se terminan de guardar los datos y se cierra el archiv
             becados.Close();    
         }
 
