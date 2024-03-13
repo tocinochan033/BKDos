@@ -12,8 +12,13 @@ using System.Windows.Forms;
 
 namespace Proyecto_AdministracionOrgDatos
 {
+    
     public partial class frmMenu_ESA : Form
     {
+        Form loginForm = new FormLogin_ESA();
+        private FuentePersonalizada fontPers = new FuentePersonalizada();
+
+
         //Variables para las diferentes pantallas
         frmRegistrarBecarios_ESA PantallaRegistro;
         Mostrar_datos PantallaConsulta;
@@ -53,12 +58,14 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnCerrarSesion_ESA_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            loginForm.Show();
         }
 
         private void frmMenu_ESA_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
+            CargarFuentes();
         }
 
         private void btnDarBaja_ESA_Click(object sender, EventArgs e)
@@ -80,6 +87,15 @@ namespace Proyecto_AdministracionOrgDatos
                 PantallaConsulta.FormClosed += PantallasCerradas;
                 PantallaConsulta.MdiParent = this;
                 PantallaConsulta.Show();
+        }
+
+        public void CargarFuentes()
+        {
+            // Cargar las fuente desde el archivo TTF
+            string nombreFuente = "coolveticaRG.otf";
+            fontPers.CargarFuentePersonalizada(nombreFuente);
+            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
+            fontPers.AplicarFuente(label4, 48, FontStyle.Regular);
         }
 
     }

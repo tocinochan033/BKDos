@@ -30,9 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Button btnInicioSesion_ESA;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin_ESA));
             System.Windows.Forms.Button button1;
-            this.btnSalir_ESA = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin_ESA));
             this.txtContraseña_ESA = new System.Windows.Forms.TextBox();
             this.txtUsuario_ESA = new System.Windows.Forms.TextBox();
             this.lblNombreAlumno_ESA = new System.Windows.Forms.Label();
@@ -63,9 +62,9 @@
             btnInicioSesion_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             btnInicioSesion_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
             btnInicioSesion_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnInicioSesion_ESA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnInicioSesion_ESA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnInicioSesion_ESA.ForeColor = System.Drawing.Color.AliceBlue;
-            btnInicioSesion_ESA.Location = new System.Drawing.Point(188, 244);
+            btnInicioSesion_ESA.Location = new System.Drawing.Point(188, 263);
             btnInicioSesion_ESA.Margin = new System.Windows.Forms.Padding(2);
             btnInicioSesion_ESA.Name = "btnInicioSesion_ESA";
             btnInicioSesion_ESA.Size = new System.Drawing.Size(114, 25);
@@ -75,22 +74,23 @@
             btnInicioSesion_ESA.UseVisualStyleBackColor = false;
             btnInicioSesion_ESA.Click += new System.EventHandler(this.btnInicioSesion_ESA_Click);
             // 
-            // btnSalir_ESA
+            // button1
             // 
-            this.btnSalir_ESA.BackColor = System.Drawing.SystemColors.GrayText;
-            this.btnSalir_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir_ESA.ForeColor = System.Drawing.Color.Snow;
-            this.btnSalir_ESA.Location = new System.Drawing.Point(144, 244);
-            this.btnSalir_ESA.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSalir_ESA.Name = "btnSalir_ESA";
-            this.btnSalir_ESA.Size = new System.Drawing.Size(44, 25);
-            this.btnSalir_ESA.TabIndex = 15;
-            this.btnSalir_ESA.Text = "Salir";
-            this.btnSalir_ESA.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSalir_ESA.UseVisualStyleBackColor = false;
-            this.btnSalir_ESA.Click += new System.EventHandler(this.btnSalir_ESA_Click);
+            button1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            button1.ForeColor = System.Drawing.Color.AliceBlue;
+            button1.Location = new System.Drawing.Point(108, 263);
+            button1.Margin = new System.Windows.Forms.Padding(2);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(80, 25);
+            button1.TabIndex = 98;
+            button1.Text = "Registrar";
+            button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(button1, "Registrar nuevo administrador.");
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtContraseña_ESA
             // 
@@ -98,7 +98,7 @@
             this.txtContraseña_ESA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseña_ESA.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña_ESA.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtContraseña_ESA.Location = new System.Drawing.Point(23, 171);
+            this.txtContraseña_ESA.Location = new System.Drawing.Point(23, 188);
             this.txtContraseña_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseña_ESA.Name = "txtContraseña_ESA";
             this.txtContraseña_ESA.Size = new System.Drawing.Size(279, 18);
@@ -112,7 +112,7 @@
             this.txtUsuario_ESA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario_ESA.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario_ESA.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtUsuario_ESA.Location = new System.Drawing.Point(23, 117);
+            this.txtUsuario_ESA.Location = new System.Drawing.Point(23, 134);
             this.txtUsuario_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario_ESA.Name = "txtUsuario_ESA";
             this.txtUsuario_ESA.Size = new System.Drawing.Size(279, 18);
@@ -125,7 +125,7 @@
             this.lblNombreAlumno_ESA.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblNombreAlumno_ESA.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreAlumno_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblNombreAlumno_ESA.Location = new System.Drawing.Point(134, 58);
+            this.lblNombreAlumno_ESA.Location = new System.Drawing.Point(133, 69);
             this.lblNombreAlumno_ESA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreAlumno_ESA.Name = "lblNombreAlumno_ESA";
             this.lblNombreAlumno_ESA.Size = new System.Drawing.Size(168, 18);
@@ -143,7 +143,7 @@
             this.FechaC.BackColor = System.Drawing.Color.WhiteSmoke;
             this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaC.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.FechaC.Location = new System.Drawing.Point(20, 256);
+            this.FechaC.Location = new System.Drawing.Point(20, 272);
             this.FechaC.Name = "FechaC";
             this.FechaC.Size = new System.Drawing.Size(65, 13);
             this.FechaC.TabIndex = 16;
@@ -155,7 +155,7 @@
             this.HoraC.BackColor = System.Drawing.Color.WhiteSmoke;
             this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoraC.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.HoraC.Location = new System.Drawing.Point(20, 238);
+            this.HoraC.Location = new System.Drawing.Point(20, 254);
             this.HoraC.Name = "HoraC";
             this.HoraC.Size = new System.Drawing.Size(54, 13);
             this.HoraC.TabIndex = 17;
@@ -166,7 +166,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(19, 94);
+            this.label1.Location = new System.Drawing.Point(19, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 17);
             this.label1.TabIndex = 18;
@@ -177,7 +177,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(20, 149);
+            this.label2.Location = new System.Drawing.Point(20, 166);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 17);
             this.label2.TabIndex = 19;
@@ -188,7 +188,7 @@
             this.errorLogin.AutoSize = true;
             this.errorLogin.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.errorLogin.Location = new System.Drawing.Point(67, 203);
+            this.errorLogin.Location = new System.Drawing.Point(67, 220);
             this.errorLogin.Name = "errorLogin";
             this.errorLogin.Size = new System.Drawing.Size(188, 13);
             this.errorLogin.TabIndex = 20;
@@ -200,7 +200,7 @@
             // pictureBox15
             // 
             this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(23, 135);
+            this.pictureBox15.Location = new System.Drawing.Point(23, 152);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(279, 10);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -210,7 +210,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(23, 188);
+            this.pictureBox2.Location = new System.Drawing.Point(23, 205);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(279, 10);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,7 +224,7 @@
             this.lblTitulo_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTitulo_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblTitulo_ESA.Location = new System.Drawing.Point(11, 16);
+            this.lblTitulo_ESA.Location = new System.Drawing.Point(10, 27);
             this.lblTitulo_ESA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo_ESA.Name = "lblTitulo_ESA";
             this.lblTitulo_ESA.Size = new System.Drawing.Size(337, 42);
@@ -237,7 +237,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.pictureBox3.Location = new System.Drawing.Point(319, -1);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(194, 282);
+            this.pictureBox3.Size = new System.Drawing.Size(194, 321);
             this.pictureBox3.TabIndex = 94;
             this.pictureBox3.TabStop = false;
             // 
@@ -245,7 +245,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.pictureBox1.Image = global::Proyecto_AdministracionOrgDatos.Properties.Resources._5bbd9abb_5618_4750_ad86_7379fc3a08a0;
-            this.pictureBox1.Location = new System.Drawing.Point(331, 129);
+            this.pictureBox1.Location = new System.Drawing.Point(331, 155);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(169, 157);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -258,7 +258,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(362, 41);
+            this.label3.Location = new System.Drawing.Point(362, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 15);
             this.label3.TabIndex = 96;
@@ -270,35 +270,18 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(351, 44);
+            this.label4.Location = new System.Drawing.Point(351, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(157, 73);
             this.label4.TabIndex = 97;
             this.label4.Text = "BK2";
-            // 
-            // button1
-            // 
-            button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            button1.ForeColor = System.Drawing.Color.AliceBlue;
-            button1.Location = new System.Drawing.Point(188, 215);
-            button1.Margin = new System.Windows.Forms.Padding(2);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(114, 25);
-            button1.TabIndex = 98;
-            button1.Text = "Registrar";
-            button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormLogin_ESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(512, 280);
+            this.ClientSize = new System.Drawing.Size(512, 308);
             this.Controls.Add(button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
@@ -310,7 +293,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.HoraC);
             this.Controls.Add(this.FechaC);
-            this.Controls.Add(this.btnSalir_ESA);
             this.Controls.Add(btnInicioSesion_ESA);
             this.Controls.Add(this.txtContraseña_ESA);
             this.Controls.Add(this.txtUsuario_ESA);
@@ -334,7 +316,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSalir_ESA;
         private System.Windows.Forms.TextBox txtContraseña_ESA;
         private System.Windows.Forms.TextBox txtUsuario_ESA;
         private System.Windows.Forms.Label lblNombreAlumno_ESA;

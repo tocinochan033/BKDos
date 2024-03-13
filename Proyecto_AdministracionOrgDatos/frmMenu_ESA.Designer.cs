@@ -37,11 +37,12 @@
             this.btnConsultar_ESA = new System.Windows.Forms.Button();
             this.FechaHora1 = new System.Windows.Forms.Timer(this.components);
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.sidebar.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSubirDocumentos_ESA
@@ -54,7 +55,7 @@
             this.btnSubirDocumentos_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnSubirDocumentos_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnSubirDocumentos_ESA.Image")));
             this.btnSubirDocumentos_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubirDocumentos_ESA.Location = new System.Drawing.Point(2, 154);
+            this.btnSubirDocumentos_ESA.Location = new System.Drawing.Point(2, 157);
             this.btnSubirDocumentos_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubirDocumentos_ESA.Name = "btnSubirDocumentos_ESA";
             this.btnSubirDocumentos_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -73,7 +74,7 @@
             this.btnRegistrarUsuarios_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnRegistrarUsuarios_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarUsuarios_ESA.Image")));
             this.btnRegistrarUsuarios_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrarUsuarios_ESA.Location = new System.Drawing.Point(2, 96);
+            this.btnRegistrarUsuarios_ESA.Location = new System.Drawing.Point(2, 99);
             this.btnRegistrarUsuarios_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrarUsuarios_ESA.Name = "btnRegistrarUsuarios_ESA";
             this.btnRegistrarUsuarios_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -93,7 +94,7 @@
             this.btnCerrarSesion_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnCerrarSesion_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion_ESA.Image")));
             this.btnCerrarSesion_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion_ESA.Location = new System.Drawing.Point(2, 316);
+            this.btnCerrarSesion_ESA.Location = new System.Drawing.Point(2, 319);
             this.btnCerrarSesion_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarSesion_ESA.Name = "btnCerrarSesion_ESA";
             this.btnCerrarSesion_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -113,7 +114,7 @@
             this.btnGenerarPDF_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnGenerarPDF_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarPDF_ESA.Image")));
             this.btnGenerarPDF_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarPDF_ESA.Location = new System.Drawing.Point(2, 209);
+            this.btnGenerarPDF_ESA.Location = new System.Drawing.Point(2, 212);
             this.btnGenerarPDF_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerarPDF_ESA.Name = "btnGenerarPDF_ESA";
             this.btnGenerarPDF_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -132,7 +133,7 @@
             this.btnConsultar_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnConsultar_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar_ESA.Image")));
             this.btnConsultar_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultar_ESA.Location = new System.Drawing.Point(2, 261);
+            this.btnConsultar_ESA.Location = new System.Drawing.Point(2, 264);
             this.btnConsultar_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultar_ESA.Name = "btnConsultar_ESA";
             this.btnConsultar_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -159,41 +160,56 @@
             this.sidebar.Size = new System.Drawing.Size(193, 788);
             this.sidebar.TabIndex = 35;
             // 
-            // panel2
+            // label4
             // 
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(244, 88);
-            this.panel2.TabIndex = 37;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(26, 2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(157, 73);
+            this.label4.TabIndex = 98;
+            this.label4.Text = "BK2";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(21, 9);
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.Size = new System.Drawing.Size(188, 91);
+            this.pictureBox1.TabIndex = 99;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(190, 91);
+            this.panel2.TabIndex = 37;
             // 
             // frmMenu_ESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1198, 612);
             this.Controls.Add(this.sidebar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "frmMenu_ESA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BK2";
             this.Load += new System.EventHandler(this.frmMenu_ESA_Load);
             this.sidebar.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -206,7 +222,8 @@
         private System.Windows.Forms.Button btnConsultar_ESA;
         private System.Windows.Forms.Timer FechaHora1;
         private System.Windows.Forms.FlowLayoutPanel sidebar;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

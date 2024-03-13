@@ -67,6 +67,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.cmbPDFeleccion = new System.Windows.Forms.ComboBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -74,17 +75,19 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.FlatAppearance.BorderSize = 2;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.Color.Snow;
-            this.btnEliminar.Location = new System.Drawing.Point(85, 672);
+            this.btnEliminar.Location = new System.Drawing.Point(101, 561);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(204, 53);
+            this.btnEliminar.Size = new System.Drawing.Size(182, 31);
             this.btnEliminar.TabIndex = 62;
             this.btnEliminar.Text = "Eliminar Lista";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -92,13 +95,13 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.btnSalir.BackColor = System.Drawing.Color.DimGray;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnSalir.ForeColor = System.Drawing.Color.Snow;
-            this.btnSalir.Location = new System.Drawing.Point(1147, 672);
+            this.btnSalir.Location = new System.Drawing.Point(799, 561);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(122, 49);
+            this.btnSalir.Size = new System.Drawing.Size(144, 30);
             this.btnSalir.TabIndex = 63;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -107,9 +110,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(293, 677);
+            this.pictureBox1.Location = new System.Drawing.Point(315, 561);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(57, 39);
+            this.pictureBox1.Size = new System.Drawing.Size(33, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 65;
             this.pictureBox1.TabStop = false;
@@ -117,9 +120,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.label1.Location = new System.Drawing.Point(15, 21);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(35, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(282, 31);
             this.label1.TabIndex = 66;
@@ -129,11 +133,11 @@
             // 
             this.btnImprimirPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.btnImprimirPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimirPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirPDF.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnImprimirPDF.ForeColor = System.Drawing.Color.Snow;
-            this.btnImprimirPDF.Location = new System.Drawing.Point(627, 670);
+            this.btnImprimirPDF.Location = new System.Drawing.Point(610, 561);
             this.btnImprimirPDF.Name = "btnImprimirPDF";
-            this.btnImprimirPDF.Size = new System.Drawing.Size(204, 53);
+            this.btnImprimirPDF.Size = new System.Drawing.Size(182, 30);
             this.btnImprimirPDF.TabIndex = 67;
             this.btnImprimirPDF.Text = "Imprimir PDF";
             this.btnImprimirPDF.UseVisualStyleBackColor = false;
@@ -142,9 +146,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(564, 677);
+            this.pictureBox2.Location = new System.Drawing.Point(568, 561);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(57, 39);
+            this.pictureBox2.Size = new System.Drawing.Size(36, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 68;
             this.pictureBox2.TabStop = false;
@@ -152,11 +156,12 @@
             // FechaC
             // 
             this.FechaC.AutoSize = true;
-            this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.FechaC.Location = new System.Drawing.Point(1071, 21);
+            this.FechaC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.FechaC.ForeColor = System.Drawing.Color.White;
+            this.FechaC.Location = new System.Drawing.Point(856, 44);
             this.FechaC.Name = "FechaC";
-            this.FechaC.Size = new System.Drawing.Size(160, 31);
+            this.FechaC.Size = new System.Drawing.Size(81, 16);
             this.FechaC.TabIndex = 69;
             this.FechaC.Text = "00/00/0000";
             this.FechaC.Click += new System.EventHandler(this.FechaC_Click);
@@ -164,11 +169,12 @@
             // HoraC
             // 
             this.HoraC.AutoSize = true;
-            this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.HoraC.Location = new System.Drawing.Point(1081, 49);
+            this.HoraC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.HoraC.ForeColor = System.Drawing.Color.White;
+            this.HoraC.Location = new System.Drawing.Point(865, 65);
             this.HoraC.Name = "HoraC";
-            this.HoraC.Size = new System.Drawing.Size(143, 31);
+            this.HoraC.Size = new System.Drawing.Size(72, 16);
             this.HoraC.TabIndex = 70;
             this.HoraC.Text = "00:00 a.m";
             // 
@@ -180,9 +186,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(22, 679);
+            this.pictureBox3.Location = new System.Drawing.Point(59, 561);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(57, 39);
+            this.pictureBox3.Size = new System.Drawing.Size(36, 31);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 71;
             this.pictureBox3.TabStop = false;
@@ -214,11 +220,11 @@
             this.CCT,
             this.Modelo});
             this.dgvMostrar.GridColor = System.Drawing.Color.Silver;
-            this.dgvMostrar.Location = new System.Drawing.Point(22, 150);
+            this.dgvMostrar.Location = new System.Drawing.Point(41, 248);
             this.dgvMostrar.Name = "dgvMostrar";
             this.dgvMostrar.ReadOnly = true;
             this.dgvMostrar.RowHeadersWidth = 51;
-            this.dgvMostrar.Size = new System.Drawing.Size(1247, 513);
+            this.dgvMostrar.Size = new System.Drawing.Size(902, 296);
             this.dgvMostrar.TabIndex = 73;
             this.dgvMostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrar_CellContentClick);
             // 
@@ -385,7 +391,7 @@
             // lblEscuela
             // 
             this.lblEscuela.AutoSize = true;
-            this.lblEscuela.Location = new System.Drawing.Point(387, 16);
+            this.lblEscuela.Location = new System.Drawing.Point(389, 22);
             this.lblEscuela.Name = "lblEscuela";
             this.lblEscuela.Size = new System.Drawing.Size(0, 13);
             this.lblEscuela.TabIndex = 75;
@@ -394,11 +400,11 @@
             // 
             this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnFiltrar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFiltrar.Location = new System.Drawing.Point(856, 91);
+            this.btnFiltrar.Location = new System.Drawing.Point(543, 59);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(161, 53);
+            this.btnFiltrar.Size = new System.Drawing.Size(168, 31);
             this.btnFiltrar.TabIndex = 76;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
@@ -407,55 +413,56 @@
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltro.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblFiltro.Location = new System.Drawing.Point(12, 11);
+            this.lblFiltro.Location = new System.Drawing.Point(12, 16);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(91, 25);
+            this.lblFiltro.Size = new System.Drawing.Size(66, 21);
             this.lblFiltro.TabIndex = 77;
             this.lblFiltro.Text = "Buscar :";
             // 
             // txtFiltro
             // 
             this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltro.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtFiltro.Location = new System.Drawing.Point(129, 14);
+            this.txtFiltro.Location = new System.Drawing.Point(84, 11);
             this.txtFiltro.Multiline = true;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(360, 28);
+            this.txtFiltro.Size = new System.Drawing.Size(801, 28);
             this.txtFiltro.TabIndex = 78;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblCategoria.Location = new System.Drawing.Point(542, 11);
+            this.lblCategoria.Location = new System.Drawing.Point(43, 59);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(50, 25);
+            this.lblCategoria.Size = new System.Drawing.Size(35, 21);
             this.lblCategoria.TabIndex = 79;
             this.lblCategoria.Text = "En :";
             // 
             // cmbFiltro
             // 
-            this.cmbFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFiltro.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cmbFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Location = new System.Drawing.Point(604, 11);
+            this.cmbFiltro.Location = new System.Drawing.Point(84, 59);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(200, 24);
+            this.cmbFiltro.Size = new System.Drawing.Size(453, 29);
             this.cmbFiltro.TabIndex = 80;
             // 
             // btnResetFiltro
             // 
-            this.btnResetFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.btnResetFiltro.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnResetFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetFiltro.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnResetFiltro.ForeColor = System.Drawing.Color.Transparent;
-            this.btnResetFiltro.Location = new System.Drawing.Point(1023, 91);
+            this.btnResetFiltro.Location = new System.Drawing.Point(717, 59);
             this.btnResetFiltro.Name = "btnResetFiltro";
-            this.btnResetFiltro.Size = new System.Drawing.Size(231, 53);
+            this.btnResetFiltro.Size = new System.Drawing.Size(168, 31);
             this.btnResetFiltro.TabIndex = 81;
             this.btnResetFiltro.Text = "Reiniciar filtros";
             this.btnResetFiltro.UseVisualStyleBackColor = false;
@@ -463,24 +470,27 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox11);
+            this.panel1.Controls.Add(this.btnResetFiltro);
             this.panel1.Controls.Add(this.lblFiltro);
+            this.panel1.Controls.Add(this.btnFiltrar);
             this.panel1.Controls.Add(this.txtFiltro);
             this.panel1.Controls.Add(this.cmbFiltro);
             this.panel1.Controls.Add(this.lblCategoria);
-            this.panel1.Location = new System.Drawing.Point(22, 83);
+            this.panel1.Location = new System.Drawing.Point(41, 120);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(819, 61);
+            this.panel1.Size = new System.Drawing.Size(902, 109);
             this.panel1.TabIndex = 82;
             // 
             // pictureBox4
             // 
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(495, 11);
+            this.pictureBox4.Location = new System.Drawing.Point(860, 14);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(37, 36);
+            this.pictureBox4.Size = new System.Drawing.Size(18, 17);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 88;
             this.pictureBox4.TabStop = false;
@@ -488,43 +498,53 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(129, 48);
+            this.pictureBox11.Location = new System.Drawing.Point(84, 34);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(360, 10);
+            this.pictureBox11.Size = new System.Drawing.Size(801, 10);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 87;
             this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
             // 
             // cmbPDFeleccion
             // 
-            this.cmbPDFeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPDFeleccion.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cmbPDFeleccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbPDFeleccion.FormattingEnabled = true;
-            this.cmbPDFeleccion.Location = new System.Drawing.Point(356, 678);
+            this.cmbPDFeleccion.Location = new System.Drawing.Point(354, 563);
             this.cmbPDFeleccion.Name = "cmbPDFeleccion";
-            this.cmbPDFeleccion.Size = new System.Drawing.Size(204, 24);
+            this.cmbPDFeleccion.Size = new System.Drawing.Size(182, 29);
             this.cmbPDFeleccion.TabIndex = 89;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.pictureBox13.Location = new System.Drawing.Point(-4, -1);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(1005, 106);
+            this.pictureBox13.TabIndex = 90;
+            this.pictureBox13.TabStop = false;
             // 
             // Mostrar_datos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1323, 730);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(993, 635);
             this.Controls.Add(this.cmbPDFeleccion);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnResetFiltro);
-            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.lblEscuela);
             this.Controls.Add(this.dgvMostrar);
+            this.Controls.Add(this.btnImprimirPDF);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.HoraC);
             this.Controls.Add(this.FechaC);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnImprimirPDF);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.pictureBox13);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Mostrar_datos";
@@ -539,6 +559,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -588,5 +609,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Promedio;
         private System.Windows.Forms.DataGridViewTextBoxColumn CCT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
+        private System.Windows.Forms.PictureBox pictureBox13;
     }
 }

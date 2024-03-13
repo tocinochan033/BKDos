@@ -514,7 +514,28 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void Mostrar_datos_Load(object sender, EventArgs e)
         {
+            CargarFuentes();
+        }
 
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+
+        }
+       
+        private FuentePersonalizada fontPers = new FuentePersonalizada();
+
+        public void CargarFuentes()
+        {
+            // Cargar las fuente desde el archivo TTF
+            string nombreFuente = "coolveticaRG.otf";
+            fontPers.CargarFuentePersonalizada(nombreFuente);
+            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
+            fontPers.AplicarFuente(label1, 28, FontStyle.Regular);
         }
     }
 }

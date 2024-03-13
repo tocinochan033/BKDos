@@ -113,4 +113,53 @@ namespace Proyecto_AdministracionOrgDatos
 
 
     }
+
+    public class BuscarTBoxVacio
+    {
+        frmRegistrarBecarios_ESA fRegistro = new frmRegistrarBecarios_ESA();
+
+        public void BuscarCamposVacios()
+        {
+            if (HayCamposVacios())
+            {
+                MessageBox.Show("Por favor complete todos los campos.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               
+                for (int i = 0; i < fRegistro.tabControl1.TabPages.Count; i++)
+                {
+                    foreach (Control control in fRegistro.tabControl1.TabPages[i].Controls)
+                    {
+                        if (control is System.Windows.Forms.TextBox textBox && string.IsNullOrEmpty(textBox.Text))
+                        {
+                            fRegistro.tabControl1.SelectTab(i);
+                            textBox.Focus();
+                            return; // Terminamos la búsqueda después de moverse a la pestaña adecuada
+                        }
+                        else if (control is System.Windows.Forms.ComboBox comboBox && comboBox.SelectedIndex == -1)
+                        {
+                            fRegistro.tabControl1.SelectTab(i);
+                            comboBox.Focus();
+                            return; // Terminamos la búsqueda después de moverse a la pestaña adecuada
+                        }
+                    }
+                }
+            }
+        }
+
+        // Método para verificar si hay campos vacíos
+        private bool HayCamposVacios()
+        {
+            // Suponiendo que los controles están directamente en los TabPage
+            foreach (TabPage tabPage in fRegistro.tabControl1.TabPages)
+            {
+                foreach (Control control in tabPage.Controls)
+                {
+                    if (control is System.Windows.Forms.TextBox textBox && string.IsNullOrEmpty(textBox.Text))
+                        return true;
+                    else if (control is System.Windows.Forms.ComboBox comboBox && comboBox.SelectedIndex == -1)
+                        return true;
+                }
+            }
+            return false;
+        }
+    }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,13 @@ namespace Proyecto_AdministracionOrgDatos
 {
     public partial class frmRegistrarBecarios_ESA : Form
     {
+        private FuentePersonalizada fontPers;
+        
 
         public frmRegistrarBecarios_ESA()
         {
+            fontPers = new FuentePersonalizada();
+
             InitializeComponent();
             LlenarComboBoxEscuelas();
 
@@ -143,7 +148,7 @@ namespace Proyecto_AdministracionOrgDatos
         private bool camposImcompletos()
         {
             return txtApaterno.Text == "" || txtAmaterno.Text == "" || txtNombres.Text == "" || txtFechanac.Text == ""
-               || txtEdad.Text == "" || txtCURP.Text == "" || CBGenero.Text == "" || txtEstadoCivil.Text == "" || txtDomicilio.Text == ""
+               || txtEdad.Text == "" || txtCURP.Text == "" || CBGenero.Text == "" || cmbEstadoCivil.Text == "" || txtDomicilio.Text == ""
                || txtCodigoPostal.Text == "" || txtNacionalidad.Text == "" || txtEstadoNac.Text == "" || txtMunicipio.Text == "" || txtCorreoElectronico.Text == ""
                || txtTelefono.Text == "" || txtCarrera.Text == "" || txtPeriodo.Text == "" || txtPromedio.Text == "" || cmbCCT.Text == "" || txtModelo.Text == "";
         }
@@ -157,7 +162,7 @@ namespace Proyecto_AdministracionOrgDatos
             txtEdad.Text = "";
             txtCURP.Text = "";
             CBGenero.Text = "";
-            txtEstadoCivil.Text = "";
+            cmbEstadoCivil.Text = "";
             txtDomicilio.Text = "";
             txtCodigoPostal.Text = "";
             txtNacionalidad.Text = "";
@@ -174,45 +179,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnAgregar_ESA_Click(object sender, EventArgs e)
         {
-            if(camposImcompletos())
-            {
-                MessageBox.Show("Favor de no olvidar todos los datos en casa.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtApaterno.Focus();
-            }
-            else
-            {
-                int indiceNuevaFila;
-
-                //Sirve para adicionar un nuevo renglon y guardar el indice de este mismo
-                indiceNuevaFila = dgv_Agregar.Rows.Add();
-
-                //Colocamos la informacion en el DataGridView
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[0].Value = txtApaterno.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[1].Value = txtAmaterno.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[2].Value = txtNombres.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[3].Value = txtFechanac.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[4].Value = txtEdad.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[5].Value = txtCURP.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[6].Value = CBGenero.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[7].Value = txtEstadoCivil.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[8].Value = txtDomicilio.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[9].Value = txtCodigoPostal.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[10].Value = txtNacionalidad.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[11].Value = txtEstadoNac.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[12].Value = txtMunicipio.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[13].Value = txtCorreoElectronico.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[14].Value = txtTelefono.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[15].Value = txtCarrera.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[16].Value = txtPeriodo.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[17].Value = txtPromedio.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[18].Value = cmbCCT.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[19].Value = txtModelo.Text;
-
-                camposLimpieza();
-
-                //Regresar el "cursor" al textbox del nombre
-                txtApaterno.Focus();
-            }
+            BuscarCamposVacios_AgregarDatos();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -229,7 +196,7 @@ namespace Proyecto_AdministracionOrgDatos
                 dgv_Agregar.Rows[seleccion].Cells[4].Value = txtEdad.Text;
                 dgv_Agregar.Rows[seleccion].Cells[5].Value = txtCURP.Text;
                 dgv_Agregar.Rows[seleccion].Cells[6].Value = CBGenero.Text;
-                dgv_Agregar.Rows[seleccion].Cells[7].Value = txtEstadoCivil.Text;
+                dgv_Agregar.Rows[seleccion].Cells[7].Value = cmbEstadoCivil.Text;
                 dgv_Agregar.Rows[seleccion].Cells[8].Value = txtDomicilio.Text;
                 dgv_Agregar.Rows[seleccion].Cells[9].Value = txtCodigoPostal.Text;
                 dgv_Agregar.Rows[seleccion].Cells[10].Value = txtNacionalidad.Text;
@@ -279,7 +246,7 @@ namespace Proyecto_AdministracionOrgDatos
                 txtEdad.Text = dgv_Agregar.Rows[seleccion].Cells[4].Value.ToString();
                 txtCURP.Text = dgv_Agregar.Rows[seleccion].Cells[5].Value.ToString();
                 CBGenero.Text = dgv_Agregar.Rows[seleccion].Cells[6].Value.ToString();
-                txtEstadoCivil.Text = dgv_Agregar.Rows[seleccion].Cells[7].Value.ToString();
+                cmbEstadoCivil.Text = dgv_Agregar.Rows[seleccion].Cells[7].Value.ToString();
                 txtDomicilio.Text = dgv_Agregar.Rows[seleccion].Cells[8].Value.ToString();
                 txtCodigoPostal.Text = dgv_Agregar.Rows[seleccion].Cells[9].Value.ToString();
                 txtNacionalidad.Text = dgv_Agregar.Rows[seleccion].Cells[10].Value.ToString();
@@ -318,6 +285,8 @@ namespace Proyecto_AdministracionOrgDatos
             becados.Close();    
         }
 
+
+
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
         private void FechaHora2_Tick(object sender, EventArgs e)
         {
@@ -325,28 +294,25 @@ namespace Proyecto_AdministracionOrgDatos
             FechaC.Text = DateTime.Now.ToShortDateString();
         }
 
+
+
         private void frmRegistrarBecarios_ESA_Load(object sender, EventArgs e)
         {
-
+            CargarFuentes();
         }
 
         private void dgv_Agregar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
-        private void Txt_Estado_ESA_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }
 
-        // Cambio en el ComboBox
 
+
+        // Cambio en el ComboBox
         private void LlenarComboBoxEscuelas()
         {
             // Puedes obtener los nombres de las escuelas desde tus archivos de texto u otra fuente de datos
@@ -358,6 +324,8 @@ namespace Proyecto_AdministracionOrgDatos
             // Agrega los nombres de las escuelas al ComboBox
             cmbCCT.Items.AddRange(nombresEscuelas.ToArray());
         }
+
+
 
         private List<string> ObtenerNombresEscuelas()
         {
@@ -377,6 +345,8 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
 
+
+
         private void cmbCCT_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Obtén el nombre de la escuela seleccionada
@@ -389,7 +359,123 @@ namespace Proyecto_AdministracionOrgDatos
                 txtModelo.Text = "Cuatrimestral";
         }
 
+
+
         private void txtModelo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+        public void CargarFuentes()
+        {
+            // Cargar las fuente desde el archivo TTF
+            string nombreFuente = "coolveticaRG.otf";
+            fontPers.CargarFuentePersonalizada(nombreFuente);
+            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
+            fontPers.AplicarFuente(lblTitulo_ESA, 28, FontStyle.Regular);
+        }
+
+        public void BuscarCamposVacios_AgregarDatos()
+        {
+            if (HayCamposVacios())
+            {
+                MessageBox.Show("Por favor complete todos los campos.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                for (int i = 0; i < tabControl1.TabPages.Count; i++)
+                {
+                    foreach (Control control in tabControl1.TabPages[i].Controls)
+                    {
+                        if (control is System.Windows.Forms.TextBox textBox && string.IsNullOrEmpty(textBox.Text))
+                        {
+                            tabControl1.SelectTab(i);
+                            textBox.Focus();
+                            return; // Terminamos la búsqueda después de moverse a la pestaña adecuada
+                        }
+                        else if (control is System.Windows.Forms.ComboBox comboBox && comboBox.SelectedIndex == -1)
+                        {
+                            tabControl1.SelectTab(i);
+                            comboBox.Focus();
+                            return; // Terminamos la búsqueda después de moverse a la pestaña adecuada
+                        }
+                    }
+                }
+            }
+
+            else
+            {
+                int indiceNuevaFila;
+
+                //Sirve para adicionar un nuevo renglon y guardar el indice de este mismo
+                indiceNuevaFila = dgv_Agregar.Rows.Add();
+
+                //Colocamos la informacion en el DataGridView
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[0].Value = txtApaterno.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[1].Value = txtAmaterno.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[2].Value = txtNombres.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[3].Value = txtFechanac.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[4].Value = txtEdad.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[5].Value = txtCURP.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[6].Value = CBGenero.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[7].Value = cmbEstadoCivil.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[8].Value = txtDomicilio.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[9].Value = txtCodigoPostal.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[10].Value = txtNacionalidad.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[11].Value = txtEstadoNac.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[12].Value = txtMunicipio.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[13].Value = txtCorreoElectronico.Text.ToLower();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[14].Value = txtTelefono.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[15].Value = txtCarrera.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[16].Value = txtPeriodo.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[17].Value = txtPromedio.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[18].Value = cmbCCT.Text.ToUpper();
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[19].Value = txtModelo.Text.ToUpper();
+
+                camposLimpieza();
+
+                //Regresar el "cursor" al textbox del nombre
+                txtApaterno.Focus();
+            }
+        }
+
+        // Método para verificar si hay campos vacíos en un TabControl
+        private bool HayCamposVacios()
+        {
+            // Suponiendo que los controles están directamente en los TabPage
+            // foreach (tipo elemento in colección) .TabPages(Toma todas las paginas del TabControl
+            foreach (TabPage tabPage in tabControl1.TabPages)
+            {
+                // foreach (tipo elemento in colección) .Controls(Obtiene todos los controles dentro del tabPage)
+                foreach (Control control in tabPage.Controls)
+                {
+                    //Si hay un control de tipo Textbox y su valor string esta nulo o vacio, regresara true
+                    if (control is System.Windows.Forms.TextBox textBox && string.IsNullOrEmpty(textBox.Text))
+                        return true;
+                    //Si hay un control de tipo ComboBox y su valor string esta nulo o vacio, regresara true
+                    else if (control is System.Windows.Forms.ComboBox comboBox && comboBox.SelectedIndex == -1)
+                        return true;
+                }
+            }
+            return false; //Regresa falso si ningun campo esta vacio
+        }
+
+
+
+
+
+
+
+        private void txtEdad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void txtFechanac_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void tabPage3_Click(object sender, EventArgs e)
         {
 
         }
