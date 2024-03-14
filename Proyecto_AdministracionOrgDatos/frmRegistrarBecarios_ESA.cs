@@ -70,10 +70,11 @@ namespace Proyecto_AdministracionOrgDatos
         
         void CargarDatos (int indice)
         {
+            
             //Se crea la fila del objeto de la tabla
 
             //En caso de que la tabla de la base de datos no tenga informacion se utiliza esta condicion
-            if(Tabla.Rows.Count >0)
+            if (Tabla.Rows.Count >0)
             {
                 //Asignamos los valores correspondientes de cada registro
                 //DataRow representa una fila de datos
@@ -126,6 +127,14 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
         /*--------------------------------------------------------------------*/
+        void LlenarDGV()
+        {
+            //Se selecciona la tabl de donde sacar los datos
+            Sql = "select * from DatosGenerales";
+            Adaptador = new SqlDataAdapter(Sql, Conexion);
+            Adaptador.Fill(Tabla);
+            dgv_Agregar.DataSource = Tabla;
+        }
 
         public frmRegistrarBecarios_ESA()
         {
@@ -181,73 +190,11 @@ namespace Proyecto_AdministracionOrgDatos
             /*Cargar los datos en el datagridview*/
             RefrescarDatos();
             CargarDatos(indice);
-            /*----------------------------------------------ARCHIVOS------------------------------------------*/
-             //Abrimos el archivo de texto en modo lectura
-             FileStream becados = new FileStream("Becados.txt",FileMode.OpenOrCreate,FileAccess.Read);
-
-            //Leemos linea por linea y cargamos esta misma en el datagridview
-            using(StreamReader lector = new StreamReader(becados))
-            {
-                string renglon = lector.ReadLine();
-                while (renglon != null)
-                {
-                    //Se usa el metodo split para leer los datos de manera individual
-                    string[] datos = renglon.Split(',');
-
-                    //Adicionamos nuevo renglon y regresamos su indice
-                    indicieNuevoRenglon = dgv_Agregar.Rows.Add();
-
-                    //Asignamos el valor a las variables
-                    aPaterno = datos[0];
-                    aMaterno = datos[1];
-                    nombres = datos[2];
-                    fechanac = datos[3];
-                    edad = datos[4];
-                    curp = datos[5];
-                    genero = datos[6];
-                    estado_civil = datos[7];
-                    domicilio = datos[8];
-                    codigo_postal = datos[9];
-                    nacionalidad = datos[10];
-                    estado_nacimiento = datos[11];
-                    municipio = datos[12];
-                    correo_electronico = datos[13];
-                    telefono = datos[14];
-                    carrera = datos[15];
-                    periodo = datos[16];
-                    promedio = datos[17];
-                    cct = datos[18];
-                    modelo = datos[19];
-
-
-                    //Colocamos la informacion en el datagridview
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[0].Value = aPaterno;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[1].Value = aMaterno;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[2].Value = nombres;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[3].Value = fechanac;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[4].Value = edad;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[5].Value = curp;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[6].Value = genero;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[7].Value = estado_civil;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[8].Value = domicilio;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[9].Value = codigo_postal;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[10].Value = nacionalidad;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[11].Value = estado_nacimiento;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[12].Value = municipio;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[13].Value = correo_electronico;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[14].Value = telefono;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[15].Value = carrera;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[16].Value = periodo;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[17].Value = promedio;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[18].Value = cct;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[19].Value = modelo;
-
-
-                    renglon = lector.ReadLine();
-                }
-            }
-            becados.Close();
-            /*Archivios recordar tambien cerrar accion de base de datos*/
+            Conexion.Open();
+            //Este metodo llena el dgv
+            LlenarDGV();
+            Conexion.Close();
+            
         }
 
         private void btnRegresarMenu_ESA_Click(object sender, EventArgs e)
@@ -308,27 +255,27 @@ namespace Proyecto_AdministracionOrgDatos
                 indiceNuevaFila = dgv_Agregar.Rows.Add();
 
                 //Colocamos la informacion en el DataGridView
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[0].Value = txtApaterno.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[1].Value = txtAmaterno.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[2].Value = txtNombres.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[3].Value = txtFechanac.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[4].Value = txtEdad.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[5].Value = txtCURP.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[6].Value = CBGenero.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[7].Value = txtEstadoCivil.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[8].Value = txtDomicilio.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[9].Value = txtCodigoPostal.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[10].Value = txtNacionalidad.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[11].Value = txtEstadoNac.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[12].Value = txtMunicipio.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[13].Value = txtCorreoElectronico.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[14].Value = txtTelefono.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[15].Value = txtCarrera.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[16].Value = txtPeriodo.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[17].Value = txtPromedio.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[18].Value = cmbCCT.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[1].Value = txtApaterno.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[2].Value = txtAmaterno.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[3].Value = txtNombres.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[4].Value = txtFechanac.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[5].Value = txtEdad.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[6].Value = txtCURP.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[7].Value = CBGenero.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[8].Value = txtEstadoCivil.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[9].Value = txtDomicilio.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[10].Value = txtCodigoPostal.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[11].Value = txtNacionalidad.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[12].Value = txtEstadoNac.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[13].Value = txtMunicipio.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[14].Value = txtCorreoElectronico.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[15].Value = txtTelefono.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[16].Value = txtCarrera.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[17].Value = txtPeriodo.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[18].Value = txtPromedio.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[19].Value = txtModelo.Text;
-
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[20].Value = cmbCCT.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[21].Value = txtEscuela.Text;
                 camposLimpieza();
 
                 //Regresar el "cursor" al label del nombre
@@ -338,34 +285,40 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            //Verificamos si hay una celda seleccionada
+           /* RefrescarDatos();
+          
+
+            
+           //Verificamos si hay una celda seleccionada
             if (this.dgv_Agregar.SelectedRows.Count == 1)
             {
                 //Se cargan los datos actuales en los textbox en el datagridview para actualizar sus valores
                 int seleccion = dgv_Agregar.CurrentRow.Index;
-                dgv_Agregar.Rows[seleccion].Cells[0].Value = txtApaterno.Text;
-                dgv_Agregar.Rows[seleccion].Cells[1].Value = txtAmaterno.Text;
-                dgv_Agregar.Rows[seleccion].Cells[2].Value = txtNombres.Text;
-                dgv_Agregar.Rows[seleccion].Cells[3].Value = txtFechanac.Text;
-                dgv_Agregar.Rows[seleccion].Cells[4].Value = txtEdad.Text;
-                dgv_Agregar.Rows[seleccion].Cells[5].Value = txtCURP.Text;
-                dgv_Agregar.Rows[seleccion].Cells[6].Value = CBGenero.Text;
-                dgv_Agregar.Rows[seleccion].Cells[7].Value = txtEstadoCivil.Text;
-                dgv_Agregar.Rows[seleccion].Cells[8].Value = txtDomicilio.Text;
-                dgv_Agregar.Rows[seleccion].Cells[9].Value = txtCodigoPostal.Text;
-                dgv_Agregar.Rows[seleccion].Cells[10].Value = txtNacionalidad.Text;
-                dgv_Agregar.Rows[seleccion].Cells[11].Value = txtEstadoNac.Text;
-                dgv_Agregar.Rows[seleccion].Cells[12].Value = txtMunicipio.Text;
-                dgv_Agregar.Rows[seleccion].Cells[13].Value = txtCorreoElectronico.Text;
-                dgv_Agregar.Rows[seleccion].Cells[14].Value = txtTelefono.Text;
-                dgv_Agregar.Rows[seleccion].Cells[15].Value = txtCarrera.Text;
-                dgv_Agregar.Rows[seleccion].Cells[16].Value = txtPeriodo.Text;
-                dgv_Agregar.Rows[seleccion].Cells[17].Value = txtPromedio.Text;
-                dgv_Agregar.Rows[seleccion].Cells[18].Value = cmbCCT.Text;
+                dgv_Agregar.Rows[seleccion].Cells[1].Value = txtApaterno.Text;
+                dgv_Agregar.Rows[seleccion].Cells[2].Value = txtAmaterno.Text;
+                dgv_Agregar.Rows[seleccion].Cells[3].Value = txtNombres.Text;
+                dgv_Agregar.Rows[seleccion].Cells[4].Value = txtFechanac.Text;
+                dgv_Agregar.Rows[seleccion].Cells[5].Value = txtEdad.Text;
+                dgv_Agregar.Rows[seleccion].Cells[6].Value = txtCURP.Text;
+                dgv_Agregar.Rows[seleccion].Cells[7].Value = CBGenero.Text;
+                dgv_Agregar.Rows[seleccion].Cells[8].Value = txtEstadoCivil.Text;
+                dgv_Agregar.Rows[seleccion].Cells[9].Value = txtDomicilio.Text;
+                dgv_Agregar.Rows[seleccion].Cells[10].Value = txtCodigoPostal.Text;
+                dgv_Agregar.Rows[seleccion].Cells[11].Value = txtNacionalidad.Text;
+                dgv_Agregar.Rows[seleccion].Cells[12].Value = txtEstadoNac.Text;
+                dgv_Agregar.Rows[seleccion].Cells[13].Value = txtMunicipio.Text;
+                dgv_Agregar.Rows[seleccion].Cells[14].Value = txtCorreoElectronico.Text;
+                dgv_Agregar.Rows[seleccion].Cells[15].Value = txtTelefono.Text;
+                dgv_Agregar.Rows[seleccion].Cells[16].Value = txtCarrera.Text;
+                dgv_Agregar.Rows[seleccion].Cells[17].Value = txtPeriodo.Text;
+                dgv_Agregar.Rows[seleccion].Cells[18].Value = txtPromedio.Text;
                 dgv_Agregar.Rows[seleccion].Cells[19].Value = txtModelo.Text;
+                dgv_Agregar.Rows[seleccion].Cells[20].Value = cmbCCT.Text;
+                dgv_Agregar.Rows[seleccion].Cells[21].Value = txtEscuela.Text;
+             
 
                 camposLimpieza();
-            }
+            }*/
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -384,40 +337,11 @@ namespace Proyecto_AdministracionOrgDatos
             }
         }
         /*-----------------------Metodo inservible------------------*/
-        private void dgv_Agregar_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //Verificamos si hay una celda seleccionada
-            if(this.dgv_Agregar.SelectedRows.Count == 1)
-            {
-                //Definimos el indice de la fila
-                int seleccion = dgv_Agregar.CurrentRow.Index;
-
-                //Cargamos los textbox con los datos de la fila seleccionada en sus celdas correspondientes
-                txtApaterno.Text = dgv_Agregar.Rows[seleccion].Cells[0].Value.ToString();
-                txtAmaterno.Text = dgv_Agregar.Rows[seleccion].Cells[1].Value.ToString();
-                txtNombres.Text = dgv_Agregar.Rows[seleccion].Cells[2].Value.ToString();
-                txtFechanac.Text = dgv_Agregar.Rows[seleccion].Cells[3].Value.ToString();
-                txtEdad.Text = dgv_Agregar.Rows[seleccion].Cells[4].Value.ToString();
-                txtCURP.Text = dgv_Agregar.Rows[seleccion].Cells[5].Value.ToString();
-                CBGenero.Text = dgv_Agregar.Rows[seleccion].Cells[6].Value.ToString();
-                txtEstadoCivil.Text = dgv_Agregar.Rows[seleccion].Cells[7].Value.ToString();
-                txtDomicilio.Text = dgv_Agregar.Rows[seleccion].Cells[8].Value.ToString();
-                txtCodigoPostal.Text = dgv_Agregar.Rows[seleccion].Cells[9].Value.ToString();
-                txtNacionalidad.Text = dgv_Agregar.Rows[seleccion].Cells[10].Value.ToString();
-                txtEstadoNac.Text = dgv_Agregar.Rows[seleccion].Cells[11].Value.ToString();
-                txtMunicipio.Text = dgv_Agregar.Rows[seleccion].Cells[12].Value.ToString();
-                txtCorreoElectronico.Text = dgv_Agregar.Rows[seleccion].Cells[13].Value.ToString();
-                txtTelefono.Text = dgv_Agregar.Rows[seleccion].Cells[14].Value.ToString();
-                txtCarrera.Text = dgv_Agregar.Rows[seleccion].Cells[15].Value.ToString();
-                txtPeriodo.Text = dgv_Agregar.Rows[seleccion].Cells[16].Value.ToString();
-                txtPromedio.Text = dgv_Agregar.Rows[seleccion].Cells[17].Value.ToString();
-                cmbCCT.Text = dgv_Agregar.Rows[seleccion].Cells[18].Value.ToString();
-                txtModelo.Text = dgv_Agregar.Rows[seleccion].Cells[19].Value.ToString();
-            }
-        }
+      
 
         private void Guardar()
         {
+            Conectar();
             /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
             Sql = "insert into DatosGenerales (ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT, NombreEscuela) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio, @Correo, @Telefono, @Carrera, @Periodo, @Promedio, @Modelo, @CCT, @NombreEscuela)";
             Comando = new SqlCommand(Sql, Conexion);
@@ -459,25 +383,9 @@ namespace Proyecto_AdministracionOrgDatos
 
             /*-----------------------------------Fin de metodo con base de datos-------------------------------------*/
 
-            ///Se guardan los datos de los becados en el archivo txt
-            ///Se tiene que sobreescribir ya que si es que se eliminan datos
-            ///los indices estarian mal para las siguientes veces que se desplegara el programa
-            FileStream becados = new FileStream("Becados.txt", FileMode.Create, FileAccess.Write);
-            using (StreamWriter writer = new StreamWriter(becados))
-            {
-                //Se recorren todas las filas del datagridview
-                foreach(DataGridViewRow row in dgv_Agregar.Rows)
-                {
-                    writer.WriteLine($"{row.Cells[0].Value},{row.Cells[1].Value},{row.Cells[2].Value},{row.Cells[3].Value}," +
-                        $"{row.Cells[4].Value},{row.Cells[5].Value},{row.Cells[6].Value},{row.Cells[7].Value}," +
-                        $"{row.Cells[8].Value},{row.Cells[9].Value},{row.Cells[10].Value},{row.Cells[11].Value}," +
-                        $"{row.Cells[12].Value},{row.Cells[13].Value},{row.Cells[14].Value},{row.Cells[15].Value}," +
-                        $"{row.Cells[16].Value},{row.Cells[17].Value},{row.Cells[18].Value},{row.Cells[19].Value}");
-
-                }
-            }
+           
             //Se terminan de guardar los datos y se cierra el archiv
-            becados.Close();    
+            Conexion.Close();    
         }
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
@@ -547,7 +455,7 @@ namespace Proyecto_AdministracionOrgDatos
             // Utiliza la lógica para determinar el modelo según la escuela seleccionada
             if (escuelaSeleccionada == "02DIT0021M TEC" || escuelaSeleccionada == "02PBH0079C UABC" || escuelaSeleccionada == "U602000 UNAM" || escuelaSeleccionada == "09PBH0056L ITESM")
                 txtModelo.Text = "Semestral";
-            else if (escuelaSeleccionada == "19USU3353S UANL" || escuelaSeleccionada == "02PBH0022B ZOCHICALCO")
+            else if (escuelaSeleccionada == "19USU3353S UANL" || escuelaSeleccionada == "02PBH0022B XOCHICALCO")
                 txtModelo.Text = "Cuatrimestral";
         }
 
@@ -558,6 +466,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnGuardarMod_Click(object sender, EventArgs e)
         {
+            Conectar();
             /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
             Sql = "update DatosGenerales set ApellidoPaterno = @ApellidoPaterno, ApellidoMaterno = @ApellidoMaterno, Nombres = @Nombres, FechaNacimiento=@FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT, NombreEscuela) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio, @Correo, @Telefono, @Carrera, @Periodo, @Promedio, @Modelo, @CCT, @NombreEscuela)";
             Comando = new SqlCommand(Sql, Conexion);
@@ -598,6 +507,35 @@ namespace Proyecto_AdministracionOrgDatos
             }
 
             /*-----------------------------------Fin de metodo con base de datos-------------------------------------*/
+            Conexion.Close();
+        }
+
+        //Evento para que al seleccionar una celda se refleje en su respectivo text box
+        private void dgv_Agregar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtApaterno.Text = dgv_Agregar.SelectedCells[1].Value.ToString();
+            txtAmaterno.Text = dgv_Agregar.SelectedCells[2].Value.ToString();
+            txtNombres.Text = dgv_Agregar.SelectedCells[3].Value.ToString();
+            txtFechanac.Text = dgv_Agregar.SelectedCells[4].Value.ToString();
+            txtEdad.Text = dgv_Agregar.SelectedCells[5].Value.ToString();
+            txtCURP.Text = dgv_Agregar.SelectedCells[6].Value.ToString();
+            CBGenero.Text = dgv_Agregar.SelectedCells[7].Value.ToString();
+            txtEstadoCivil.Text = dgv_Agregar.SelectedCells[8].Value.ToString();
+            txtDomicilio.Text = dgv_Agregar.SelectedCells[9].Value.ToString();
+            txtCodigoPostal.Text = dgv_Agregar.SelectedCells[10].Value.ToString();
+            txtNacionalidad.Text = dgv_Agregar.SelectedCells[11].Value.ToString();
+            txtEstadoNac.Text = dgv_Agregar.SelectedCells[12].Value.ToString();
+            txtMunicipio.Text = dgv_Agregar.SelectedCells[13].Value.ToString();
+            txtCorreoElectronico.Text = dgv_Agregar.SelectedCells[14].Value.ToString();
+            txtTelefono.Text = dgv_Agregar.SelectedCells[15].Value.ToString();
+            txtCarrera.Text = dgv_Agregar.SelectedCells[16].Value.ToString();
+            txtPeriodo.Text = dgv_Agregar.SelectedCells[17].Value.ToString();
+            txtPromedio.Text = dgv_Agregar.SelectedCells[18].Value.ToString();
+            txtModelo.Text = dgv_Agregar.SelectedCells[19].Value.ToString();
+            cmbCCT.Text = dgv_Agregar.SelectedCells[20].Value.ToString();
+            txtEscuela.Text = dgv_Agregar.SelectedCells[21].Value.ToString();
+
+
         }
     }
 }
