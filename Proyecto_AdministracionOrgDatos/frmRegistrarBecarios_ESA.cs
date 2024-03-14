@@ -117,7 +117,7 @@ namespace Proyecto_AdministracionOrgDatos
        void RefrescarDatos()
         {
             //Se selecciona la tabl de donde sacar los datos
-            Sql = "select * from DatosGenerales";
+            Sql = "select * from DatosGenerales ";
             //Pasamos los parametros al adaptador
             Adaptador = new SqlDataAdapter(Sql, Conexion);
             //Se limpia la tabla
@@ -129,11 +129,13 @@ namespace Proyecto_AdministracionOrgDatos
         /*--------------------------------------------------------------------*/
         void LlenarDGV()
         {
+            Conectar();
             //Se selecciona la tabl de donde sacar los datos
             Sql = "select * from DatosGenerales";
             Adaptador = new SqlDataAdapter(Sql, Conexion);
             Adaptador.Fill(Tabla);
             dgv_Agregar.DataSource = Tabla;
+            Conexion.Close();
         }
 
         public frmRegistrarBecarios_ESA()
@@ -188,12 +190,13 @@ namespace Proyecto_AdministracionOrgDatos
             int indicieNuevoRenglon;
 
             /*Cargar los datos en el datagridview*/
+           /* Conexion.Open();
             RefrescarDatos();
-            CargarDatos(indice);
-            Conexion.Open();
+            CargarDatos(indice);*/
+           
             //Este metodo llena el dgv
             LlenarDGV();
-            Conexion.Close();
+           // Conexion.Close();
             
         }
 
@@ -522,7 +525,7 @@ namespace Proyecto_AdministracionOrgDatos
             CBGenero.Text = dgv_Agregar.SelectedCells[7].Value.ToString();
             txtEstadoCivil.Text = dgv_Agregar.SelectedCells[8].Value.ToString();
             txtDomicilio.Text = dgv_Agregar.SelectedCells[9].Value.ToString();
-            txtCodigoPostal.Text = dgv_Agregar.SelectedCells[10].Value.ToString();
+            /*txtCodigoPostal.Text = dgv_Agregar.SelectedCells[10].Value.ToString();
             txtNacionalidad.Text = dgv_Agregar.SelectedCells[11].Value.ToString();
             txtEstadoNac.Text = dgv_Agregar.SelectedCells[12].Value.ToString();
             txtMunicipio.Text = dgv_Agregar.SelectedCells[13].Value.ToString();
@@ -533,7 +536,8 @@ namespace Proyecto_AdministracionOrgDatos
             txtPromedio.Text = dgv_Agregar.SelectedCells[18].Value.ToString();
             txtModelo.Text = dgv_Agregar.SelectedCells[19].Value.ToString();
             cmbCCT.Text = dgv_Agregar.SelectedCells[20].Value.ToString();
-            txtEscuela.Text = dgv_Agregar.SelectedCells[21].Value.ToString();
+            txtEscuela.Text = dgv_Agregar.SelectedCells[21].Value.ToString();*/
+            //Comentado hasta que vea la forma de modificar 3 tablas a la vez
 
 
         }
