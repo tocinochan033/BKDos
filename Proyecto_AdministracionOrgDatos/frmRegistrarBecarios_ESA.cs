@@ -301,6 +301,7 @@ namespace Proyecto_AdministracionOrgDatos
             //Se adelanta una posicion el contador porque el inicila ya se esta ocupando
             int i = 1;
             //Ciclo que evalua la palabra buscando la primera consonante
+          
             do
             {
                 string Letra = String.Concat(palabra[i]);
