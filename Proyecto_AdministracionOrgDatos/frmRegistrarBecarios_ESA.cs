@@ -237,6 +237,22 @@ namespace Proyecto_AdministracionOrgDatos
             else
             {
                 int indiceNuevaFila;
+                // Validar que el campo "Correo Electrónico" contenga "@" y termine con ".com"
+                string correoElectronico = txtCorreoElectronico.Text;
+                if (!correoElectronico.Contains("@") || !correoElectronico.EndsWith(".com"))
+                {
+                    MessageBox.Show("Por favor, ingrese una dirección de correo electrónico válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtCorreoElectronico.Focus();
+                    return;//Detener la ejecucion del metodo si el correo electronico no es valido
+                }
+                if (txtEdad.Text.Length != 2)//Vaidar rango de edad
+                {
+                    MessageBox.Show("Por favor, ingrese una edad dentro del rango válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEdad.Focus();
+                    return;//Detener la ejecucion del metodo si el correo electronico no es valido
+                }
+
+                txtEdad.BorderStyle = BorderStyle.None;
 
                 //Sirve para adicionar un nuevo renglon y guardar el indice de este mismo
                 indiceNuevaFila = dgv_Agregar.Rows.Add();
@@ -246,20 +262,27 @@ namespace Proyecto_AdministracionOrgDatos
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[1].Value = txtAmaterno.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[2].Value = txtNombres.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[3].Value = txtFechanac.Text;
+                
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[4].Value = txtEdad.Text;
+
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[5].Value = GeneracionCURP();
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[6].Value = CBGenero.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[7].Value = txtEstadoCivil.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[8].Value = txtDomicilio.Text;
+
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[9].Value = txtCodigoPostal.Text;
+
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[10].Value = txtNacionalidad.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[11].Value = cmbEstadoNac.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[12].Value = txtMunicipio.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[13].Value = txtCorreoElectronico.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[13].Value = correoElectronico;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[14].Value = txtTelefono.Text;
+
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[15].Value = txtCarrera.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[16].Value = txtPeriodo.Text;
+
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[17].Value = txtPromedio.Text;
+
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[18].Value = cmbCCT.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[19].Value = txtModelo.Text;
 
@@ -278,6 +301,7 @@ namespace Proyecto_AdministracionOrgDatos
             //Se adelanta una posicion el contador porque el inicila ya se esta ocupando
             int i = 1;
             //Ciclo que evalua la palabra buscando la primera consonante
+          
             do
             {
                 string Letra = String.Concat(palabra[i]);
@@ -536,21 +560,30 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //Verificamos si hay una fila seleccionada
-            if(dgv_Agregar.CurrentRow.Index > -1)
+            try
             {
-                DialogResult confirmacion = MessageBox.Show("¿Está seguro que desea eliminar esta fila permanentemente? Permanentemente es mucho tiempo.", 
-                    "Confirmar eliminacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                
-                //Usuario confirma eliminacion
-                if(confirmacion == DialogResult.Yes)
+                // Verificamos si hay una fila seleccionada
+                if (dgv_Agregar.CurrentRow != null && dgv_Agregar.CurrentRow.Index > -1)
                 {
-                    dgv_Agregar.Rows.RemoveAt(dgv_Agregar.CurrentRow.Index);
+                    DialogResult confirmacion = MessageBox.Show("¿Está seguro que desea eliminar esta fila permanentemente? Permanentemente es mucho tiempo.",
+                        "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    // Usuario confirma eliminación
+                    if (confirmacion == DialogResult.Yes)
+                    {
+                        dgv_Agregar.Rows.RemoveAt(dgv_Agregar.CurrentRow.Index);
+                    }
+                }
+                else
+                {
+                    throw new Exception("Seleccione una fila para eliminar.");
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se produjo un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
-        
 
         private void Guardar()
         {
@@ -792,6 +825,11 @@ namespace Proyecto_AdministracionOrgDatos
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void txtCorreoElectronico_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
