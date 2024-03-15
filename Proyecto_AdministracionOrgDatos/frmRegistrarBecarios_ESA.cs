@@ -131,7 +131,7 @@ namespace Proyecto_AdministracionOrgDatos
         {
             Conectar();
             //Se selecciona la tabl de donde sacar los datos
-            Sql = "select * from DatosGenerales,DatosAcademicos, DatosContacto,TablaCCT";
+            Sql = "select * from DatosGenerales, DatosAcademicos, DatosContacto, TablaCCT";
             Adaptador = new SqlDataAdapter(Sql, Conexion);
             Adaptador.Fill(Tabla);
             dgv_Agregar.DataSource = Tabla;
