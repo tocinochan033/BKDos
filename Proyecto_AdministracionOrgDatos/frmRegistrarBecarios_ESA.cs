@@ -131,7 +131,7 @@ namespace Proyecto_AdministracionOrgDatos
         {
             Conectar();
             //Se selecciona la tabl de donde sacar los datos
-            Sql = "select * from DatosGenerales";
+            Sql = "select * from DatosGenerales,DatosAcademicos, DatosContacto,TablaCCT";
             Adaptador = new SqlDataAdapter(Sql, Conexion);
             Adaptador.Fill(Tabla);
             dgv_Agregar.DataSource = Tabla;
@@ -346,8 +346,21 @@ namespace Proyecto_AdministracionOrgDatos
         {
             Conectar();
             /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
-            Sql = "insert into DatosGenerales (ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT, NombreEscuela) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio, @Correo, @Telefono, @Carrera, @Periodo, @Promedio, @Modelo, @CCT, @NombreEscuela)";
+            /*Insercion de primera tabla Datos generales*/
+            Sql = "insert into DatosGenerales (ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero)";
             Comando = new SqlCommand(Sql, Conexion);
+
+            /*Insercion de segunda tabla Datos Contacto*/
+            Sql = "insert into DatosContacto (Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono) values (@Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio, @Correo, @Telefono)";
+            Comando = new SqlCommand(Sql, Conexion);
+
+            /*Insercion de tercera tabla Datos academicos*/
+            Sql = "insert into DatosAcademicos (Carrera, Periodo, Promedio, Modelo, Id_cct) values (@Carrera, @Periodo, @Promedio, @Modelo, @Id_cct)";
+            Comando = new SqlCommand(Sql, Conexion);
+
+            /*Insercion de cuarta tabla CCT*/
+            Sql = "insert into TablaCCT (CCT, NombreEscuela) values (@CCT, @NombreEscuela)";
+
             //Añandiendo parametros y campos a agregar
             Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
             Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
@@ -451,7 +464,9 @@ namespace Proyecto_AdministracionOrgDatos
 
 
         private void cmbCCT_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {/*
+            Sql = "select  CCT, NombreEscuela FROM [TablaCCT]";
+            Comando = new SqlCommand(Sql, Conexion);*/
             // Obtén el nombre de la escuela seleccionada
             string escuelaSeleccionada = cmbCCT.Text;
 
@@ -473,6 +488,24 @@ namespace Proyecto_AdministracionOrgDatos
             /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
             Sql = "update DatosGenerales set ApellidoPaterno = @ApellidoPaterno, ApellidoMaterno = @ApellidoMaterno, Nombres = @Nombres, FechaNacimiento=@FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT, NombreEscuela) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio, @Correo, @Telefono, @Carrera, @Periodo, @Promedio, @Modelo, @CCT, @NombreEscuela)";
             Comando = new SqlCommand(Sql, Conexion);
+
+            /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
+            /*Insercion de primera tabla Datos generales*/
+            Sql = "update DatosGenerales set ApellidoPaterno = @ApellidoPaterno, ApellidoMaterno = @ApellidoMaterno, Nombres = @Nombres, FechaNacimiento = @FechaNacimiento, Edad = @Edad, Curp = @Curp, EstadoCivil = @EstadoCivil, Genero = @Genero";
+            Comando = new SqlCommand(Sql, Conexion);
+
+            /*Insercion de segunda tabla Datos Contacto*/
+            Sql = "update DatosContacto set Domicilio = @Domicilio, CodigoPostal = @CodigoPostal, Nacionalidad = @Nacionalidad, EstadoNacimiento = @EstadoNacimiento, Municipio = @Municipio, Correo = @Correo, Telefono = @Telefono";
+            Comando = new SqlCommand(Sql, Conexion);
+
+            /*Insercion de tercera tabla Datos academicos*/
+            Sql = "update DatosAcademicos set Carrera = @Carrera, Periodo = @Periodo, Promedio = @Promedio, Modelo = @Modelo";
+            Comando = new SqlCommand(Sql, Conexion);
+
+            /*Insercion de cuarta tabla CCT*/
+            Sql = "update TablaCCT CCT=@CCT, NombreEscuela=@NombreEscuela";
+            Comando = new SqlCommand(Sql, Conexion);
+
             //Añandiendo parametros y campos a agregar
             Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
             Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
@@ -522,10 +555,11 @@ namespace Proyecto_AdministracionOrgDatos
             txtFechanac.Text = dgv_Agregar.SelectedCells[4].Value.ToString();
             txtEdad.Text = dgv_Agregar.SelectedCells[5].Value.ToString();
             txtCURP.Text = dgv_Agregar.SelectedCells[6].Value.ToString();
-            CBGenero.Text = dgv_Agregar.SelectedCells[7].Value.ToString();
-            txtEstadoCivil.Text = dgv_Agregar.SelectedCells[8].Value.ToString();
+            txtEstadoCivil.Text = dgv_Agregar.SelectedCells[7].Value.ToString();
+            CBGenero.Text = dgv_Agregar.SelectedCells[8].Value.ToString();
+            
             txtDomicilio.Text = dgv_Agregar.SelectedCells[9].Value.ToString();
-            /*txtCodigoPostal.Text = dgv_Agregar.SelectedCells[10].Value.ToString();
+            txtCodigoPostal.Text = dgv_Agregar.SelectedCells[10].Value.ToString();
             txtNacionalidad.Text = dgv_Agregar.SelectedCells[11].Value.ToString();
             txtEstadoNac.Text = dgv_Agregar.SelectedCells[12].Value.ToString();
             txtMunicipio.Text = dgv_Agregar.SelectedCells[13].Value.ToString();
@@ -536,7 +570,7 @@ namespace Proyecto_AdministracionOrgDatos
             txtPromedio.Text = dgv_Agregar.SelectedCells[18].Value.ToString();
             txtModelo.Text = dgv_Agregar.SelectedCells[19].Value.ToString();
             cmbCCT.Text = dgv_Agregar.SelectedCells[20].Value.ToString();
-            txtEscuela.Text = dgv_Agregar.SelectedCells[21].Value.ToString();*/
+            txtEscuela.Text = dgv_Agregar.SelectedCells[21].Value.ToString();
             //Comentado hasta que vea la forma de modificar 3 tablas a la vez
 
 
