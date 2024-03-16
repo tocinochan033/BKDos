@@ -80,6 +80,7 @@
     <Compile Include="Mostrar_datos.Designer.cs">
       <DependentUpon>Mostrar_datos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Municipios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
