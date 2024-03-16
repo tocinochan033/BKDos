@@ -16,10 +16,16 @@ namespace Proyecto_AdministracionOrgDatos
         //Variable para el calculo de la inactividad
         private Timer temporizadorInactividad;
 
+        // Define un diccionario para almacenar los municipios por estado
+        Dictionary<string, List<string>> municipiosPorEstado = new Dictionary<string, List<string>>();
+
+        private Municipios Munic;
         public frmRegistrarBecarios_ESA()
         {
             InitializeComponent();
             LlenarComboBoxEscuelas();
+
+            Munic = new Municipios(cmbEstadoNac, cmbMunicipio);
 
 
             //Creacion del temporizador y su tiempo
@@ -36,40 +42,7 @@ namespace Proyecto_AdministracionOrgDatos
             txtModelo.Items.Add("Cuatrimestre");
             */
 
-            //Inicializacion de los estados de la republica
-            cmbEstadoNac.Items.Add("Aguascalientes");
-            cmbEstadoNac.Items.Add("Baja California");
-            cmbEstadoNac.Items.Add("Baja California Sur");
-            cmbEstadoNac.Items.Add("Campeche");
-            cmbEstadoNac.Items.Add("Coahuila");
-            cmbEstadoNac.Items.Add("Colima");
-            cmbEstadoNac.Items.Add("Chiapas");
-            cmbEstadoNac.Items.Add("Chihuahua");
-            cmbEstadoNac.Items.Add("Distrito Federal");
-            cmbEstadoNac.Items.Add("Durango");
-            cmbEstadoNac.Items.Add("Guanajuato");
-            cmbEstadoNac.Items.Add("Guerrero");
-            cmbEstadoNac.Items.Add("Hidalgo");
-            cmbEstadoNac.Items.Add("Jalisco");
-            cmbEstadoNac.Items.Add("Mexico");
-            cmbEstadoNac.Items.Add("Michoacan");
-            cmbEstadoNac.Items.Add("Morelos");
-            cmbEstadoNac.Items.Add("Nayarit");
-            cmbEstadoNac.Items.Add("Nuevo Leon");
-            cmbEstadoNac.Items.Add("Oaxaca");
-            cmbEstadoNac.Items.Add("Puebla");
-            cmbEstadoNac.Items.Add("Queretaro");
-            cmbEstadoNac.Items.Add("Quintana Roo");
-            cmbEstadoNac.Items.Add("San Luis Potosi");
-            cmbEstadoNac.Items.Add("Sinaloa");
-            cmbEstadoNac.Items.Add("Sonora");
-            cmbEstadoNac.Items.Add("Tabasco");
-            cmbEstadoNac.Items.Add("Tamaulipas");
-            cmbEstadoNac.Items.Add("Tlaxcala ");
-            cmbEstadoNac.Items.Add("Veracruz");
-            cmbEstadoNac.Items.Add("Yucatan");
-            cmbEstadoNac.Items.Add("Zacatecas");
-            cmbEstadoNac.Items.Add("Extranjero");
+
 
             //Inicializacion de las opciones de modificacion
             cmbFiltroModificar.Items.Add("A.Paterno");
@@ -831,5 +804,7 @@ namespace Proyecto_AdministracionOrgDatos
         {
 
         }
+
+        
     }
 }
