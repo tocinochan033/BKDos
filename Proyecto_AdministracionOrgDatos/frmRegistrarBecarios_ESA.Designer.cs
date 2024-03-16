@@ -63,7 +63,6 @@
             this.FechaHora2 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
@@ -73,8 +72,6 @@
             this.txtEstadoCivil = new System.Windows.Forms.TextBox();
             this.lblEstado_Civil = new System.Windows.Forms.Label();
             this.CBGenero = new System.Windows.Forms.ComboBox();
-            this.txtCURP = new System.Windows.Forms.TextBox();
-            this.lblCurp = new System.Windows.Forms.Label();
             this.lblGenero = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.lblEdad = new System.Windows.Forms.Label();
@@ -129,7 +126,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Agregar)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
@@ -189,6 +185,7 @@
             this.txtApaterno.Name = "txtApaterno";
             this.txtApaterno.Size = new System.Drawing.Size(533, 39);
             this.txtApaterno.TabIndex = 53;
+            this.txtApaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApaterno_KeyPress);
             // 
             // btnRegresarMenu_ESA
             // 
@@ -488,7 +485,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.pictureBox16);
             this.tabPage1.Controls.Add(this.pictureBox15);
             this.tabPage1.Controls.Add(this.pictureBox14);
             this.tabPage1.Controls.Add(this.pictureBox13);
@@ -498,8 +494,6 @@
             this.tabPage1.Controls.Add(this.txtEstadoCivil);
             this.tabPage1.Controls.Add(this.lblEstado_Civil);
             this.tabPage1.Controls.Add(this.CBGenero);
-            this.tabPage1.Controls.Add(this.txtCURP);
-            this.tabPage1.Controls.Add(this.lblCurp);
             this.tabPage1.Controls.Add(this.lblGenero);
             this.tabPage1.Controls.Add(this.txtEdad);
             this.tabPage1.Controls.Add(this.lblEdad);
@@ -519,17 +513,6 @@
             this.tabPage1.Text = "Datos personales";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(25, 334);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(533, 12);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox16.TabIndex = 91;
-            this.pictureBox16.TabStop = false;
             // 
             // pictureBox15
             // 
@@ -607,6 +590,7 @@
             this.txtEstadoCivil.Name = "txtEstadoCivil";
             this.txtEstadoCivil.Size = new System.Drawing.Size(205, 39);
             this.txtEstadoCivil.TabIndex = 68;
+            this.txtEstadoCivil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstadoCivil_KeyPress);
             // 
             // lblEstado_Civil
             // 
@@ -638,25 +622,11 @@
             // 
             // txtCURP
             // 
-            this.txtCURP.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCURP.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCURP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtCURP.Location = new System.Drawing.Point(25, 279);
-            this.txtCURP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCURP.Name = "txtCURP";
-            this.txtCURP.Size = new System.Drawing.Size(533, 39);
-            this.txtCURP.TabIndex = 65;
+       
             // 
             // lblCurp
             // 
-            this.lblCurp.AutoSize = true;
-            this.lblCurp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblCurp.Location = new System.Drawing.Point(32, 242);
-            this.lblCurp.Name = "lblCurp";
-            this.lblCurp.Size = new System.Drawing.Size(77, 29);
-            this.lblCurp.TabIndex = 66;
-            this.lblCurp.Text = "Curp :";
+          
             // 
             // lblGenero
             // 
@@ -679,6 +649,7 @@
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(104, 39);
             this.txtEdad.TabIndex = 61;
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
             // lblEdad
             // 
@@ -712,6 +683,7 @@
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(533, 39);
             this.txtNombres.TabIndex = 57;
+            this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
             // lblNombres
             // 
@@ -734,6 +706,7 @@
             this.txtAmaterno.Name = "txtAmaterno";
             this.txtAmaterno.Size = new System.Drawing.Size(533, 39);
             this.txtAmaterno.TabIndex = 55;
+            this.txtAmaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmaterno_KeyPress);
             // 
             // lblAmaterno
             // 
@@ -855,6 +828,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(396, 39);
             this.txtTelefono.TabIndex = 79;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // lblTelefono
             // 
@@ -877,6 +851,7 @@
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Size = new System.Drawing.Size(705, 39);
             this.txtCorreoElectronico.TabIndex = 77;
+            this.txtCorreoElectronico.TextChanged += new System.EventHandler(this.txtCorreoElectronico_TextChanged);
             // 
             // lblCorreoElectronico
             // 
@@ -899,6 +874,7 @@
             this.txtMunicipio.Name = "txtMunicipio";
             this.txtMunicipio.Size = new System.Drawing.Size(343, 39);
             this.txtMunicipio.TabIndex = 75;
+            this.txtMunicipio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMunicipio_KeyPress);
             // 
             // lblMunicipio
             // 
@@ -932,6 +908,7 @@
             this.txtNacionalidad.Name = "txtNacionalidad";
             this.txtNacionalidad.Size = new System.Drawing.Size(299, 39);
             this.txtNacionalidad.TabIndex = 71;
+            this.txtNacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNacionalidad_KeyPress);
             // 
             // lblNacionalidad
             // 
@@ -954,6 +931,7 @@
             this.txtCodigoPostal.Name = "txtCodigoPostal";
             this.txtCodigoPostal.Size = new System.Drawing.Size(211, 39);
             this.txtCodigoPostal.TabIndex = 69;
+            this.txtCodigoPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoPostal_KeyPress);
             // 
             // lblCodigoPostal
             // 
@@ -976,6 +954,7 @@
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(900, 39);
             this.txtDomicilio.TabIndex = 67;
+            this.txtDomicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDomicilio_KeyPress);
             // 
             // lblDomicilio
             // 
@@ -1120,6 +1099,8 @@
             this.txtPromedio.Name = "txtPromedio";
             this.txtPromedio.Size = new System.Drawing.Size(176, 39);
             this.txtPromedio.TabIndex = 77;
+            this.txtPromedio.TextChanged += new System.EventHandler(this.txtPromedio_TextChanged);
+            this.txtPromedio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPromedio_KeyPress);
             // 
             // lblPromedio
             // 
@@ -1142,6 +1123,7 @@
             this.txtPeriodo.Name = "txtPeriodo";
             this.txtPeriodo.Size = new System.Drawing.Size(348, 39);
             this.txtPeriodo.TabIndex = 75;
+            this.txtPeriodo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPeriodo_KeyPress);
             // 
             // lblPeriodo
             // 
@@ -1164,6 +1146,7 @@
             this.txtCarrera.Name = "txtCarrera";
             this.txtCarrera.Size = new System.Drawing.Size(556, 39);
             this.txtCarrera.TabIndex = 73;
+            this.txtCarrera.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCarrera_KeyPress);
             // 
             // lblCarrera
             // 
@@ -1296,7 +1279,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
@@ -1341,8 +1323,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox txtCURP;
-        private System.Windows.Forms.Label lblCurp;
         private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.Label lblEdad;
@@ -1408,7 +1388,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox13;

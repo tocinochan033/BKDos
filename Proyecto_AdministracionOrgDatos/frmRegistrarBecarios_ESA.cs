@@ -172,7 +172,7 @@ namespace Proyecto_AdministracionOrgDatos
         private bool camposImcompletos()
         {
             return txtApaterno.Text == "" || txtAmaterno.Text == "" || txtNombres.Text == "" || txtFechanac.Text == ""
-               || txtEdad.Text == "" || txtCURP.Text == "" || CBGenero.Text == "" || txtEstadoCivil.Text == "" || txtDomicilio.Text == ""
+               || txtEdad.Text == "" || CBGenero.Text == "" || txtEstadoCivil.Text == "" || txtDomicilio.Text == ""
                || txtCodigoPostal.Text == "" || txtNacionalidad.Text == "" || cmbEstadoNac.Text == "" || txtMunicipio.Text == "" || txtCorreoElectronico.Text == ""
                || txtTelefono.Text == "" || txtCarrera.Text == "" || txtPeriodo.Text == "" || txtPromedio.Text == "" || cmbCCT.Text == "" || txtModelo.Text == "";
         }
@@ -184,7 +184,6 @@ namespace Proyecto_AdministracionOrgDatos
             txtNombres.Text = "";
             txtFechanac.Text = "";
             txtEdad.Text = "";
-            txtCURP.Text = "";
             CBGenero.Text = "";
             txtEstadoCivil.Text = "";
             txtDomicilio.Text = "";
@@ -211,6 +210,22 @@ namespace Proyecto_AdministracionOrgDatos
             else
             {
                 int indiceNuevaFila;
+                // Validar que el campo "Correo Electrónico" contenga "@" y termine con ".com"
+                string correoElectronico = txtCorreoElectronico.Text;
+                if (!correoElectronico.Contains("@") || !correoElectronico.EndsWith(".com"))
+                {
+                    MessageBox.Show("Por favor, ingrese una dirección de correo electrónico válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtCorreoElectronico.Focus();
+                    return;//Detener la ejecucion del metodo si el correo electronico no es valido
+                }
+                if (txtEdad.Text.Length != 2)//Vaidar rango de edad
+                {
+                    MessageBox.Show("Por favor, ingrese una edad dentro del rango válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEdad.Focus();
+                    return;//Detener la ejecucion del metodo si el correo electronico no es valido
+                }
+
+                txtEdad.BorderStyle = BorderStyle.None;
 
                 //Sirve para adicionar un nuevo renglon y guardar el indice de este mismo
                 indiceNuevaFila = dgv_Agregar.Rows.Add();
@@ -220,20 +235,27 @@ namespace Proyecto_AdministracionOrgDatos
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[1].Value = txtAmaterno.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[2].Value = txtNombres.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[3].Value = txtFechanac.Text;
+                
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[4].Value = txtEdad.Text;
+
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[5].Value = GeneracionCURP();
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[6].Value = CBGenero.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[7].Value = txtEstadoCivil.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[8].Value = txtDomicilio.Text;
+
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[9].Value = txtCodigoPostal.Text;
+
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[10].Value = txtNacionalidad.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[11].Value = cmbEstadoNac.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[12].Value = txtMunicipio.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[13].Value = txtCorreoElectronico.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[13].Value = correoElectronico;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[14].Value = txtTelefono.Text;
+
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[15].Value = txtCarrera.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[16].Value = txtPeriodo.Text;
+
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[17].Value = txtPromedio.Text;
+
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[18].Value = cmbCCT.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[19].Value = txtModelo.Text;
 
@@ -252,6 +274,7 @@ namespace Proyecto_AdministracionOrgDatos
             //Se adelanta una posicion el contador porque el inicila ya se esta ocupando
             int i = 1;
             //Ciclo que evalua la palabra buscando la primera consonante
+          
             do
             {
                 string Letra = String.Concat(palabra[i]);
@@ -510,49 +533,28 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //Verificamos si hay una fila seleccionada
-            if(dgv_Agregar.CurrentRow.Index > -1)
+            try
             {
-                DialogResult confirmacion = MessageBox.Show("¿Está seguro que desea eliminar esta fila permanentemente? Permanentemente es mucho tiempo.", 
-                    "Confirmar eliminacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                
-                //Usuario confirma eliminacion
-                if(confirmacion == DialogResult.Yes)
+                // Verificamos si hay una fila seleccionada
+                if (dgv_Agregar.CurrentRow != null && dgv_Agregar.CurrentRow.Index > -1)
                 {
-                    dgv_Agregar.Rows.RemoveAt(dgv_Agregar.CurrentRow.Index);
+                    DialogResult confirmacion = MessageBox.Show("¿Está seguro que desea eliminar esta fila permanentemente? Permanentemente es mucho tiempo.",
+                        "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    // Usuario confirma eliminación
+                    if (confirmacion == DialogResult.Yes)
+                    {
+                        dgv_Agregar.Rows.RemoveAt(dgv_Agregar.CurrentRow.Index);
+                    }
+                }
+                else
+                {
+                    throw new Exception("Seleccione una fila para eliminar.");
                 }
             }
-        }
-
-        private void dgv_Agregar_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //Verificamos si hay una celda seleccionada
-            if(this.dgv_Agregar.SelectedRows.Count == 1)
+            catch (Exception ex)
             {
-                //Definimos el indice de la fila
-                int seleccion = dgv_Agregar.CurrentRow.Index;
-
-                //Cargamos los textbox con los datos de la fila seleccionada en sus celdas correspondientes
-                txtApaterno.Text = dgv_Agregar.Rows[seleccion].Cells[0].Value.ToString();
-                txtAmaterno.Text = dgv_Agregar.Rows[seleccion].Cells[1].Value.ToString();
-                txtNombres.Text = dgv_Agregar.Rows[seleccion].Cells[2].Value.ToString();
-                txtFechanac.Text = dgv_Agregar.Rows[seleccion].Cells[3].Value.ToString();
-                txtEdad.Text = dgv_Agregar.Rows[seleccion].Cells[4].Value.ToString();
-                txtCURP.Text = dgv_Agregar.Rows[seleccion].Cells[5].Value.ToString();
-                CBGenero.Text = dgv_Agregar.Rows[seleccion].Cells[6].Value.ToString();
-                txtEstadoCivil.Text = dgv_Agregar.Rows[seleccion].Cells[7].Value.ToString();
-                txtDomicilio.Text = dgv_Agregar.Rows[seleccion].Cells[8].Value.ToString();
-                txtCodigoPostal.Text = dgv_Agregar.Rows[seleccion].Cells[9].Value.ToString();
-                txtNacionalidad.Text = dgv_Agregar.Rows[seleccion].Cells[10].Value.ToString();
-                cmbEstadoNac.Text = dgv_Agregar.Rows[seleccion].Cells[11].Value.ToString();
-                txtMunicipio.Text = dgv_Agregar.Rows[seleccion].Cells[12].Value.ToString();
-                txtCorreoElectronico.Text = dgv_Agregar.Rows[seleccion].Cells[13].Value.ToString();
-                txtTelefono.Text = dgv_Agregar.Rows[seleccion].Cells[14].Value.ToString();
-                txtCarrera.Text = dgv_Agregar.Rows[seleccion].Cells[15].Value.ToString();
-                txtPeriodo.Text = dgv_Agregar.Rows[seleccion].Cells[16].Value.ToString();
-                txtPromedio.Text = dgv_Agregar.Rows[seleccion].Cells[17].Value.ToString();
-                cmbCCT.Text = dgv_Agregar.Rows[seleccion].Cells[18].Value.ToString();
-                txtModelo.Text = dgv_Agregar.Rows[seleccion].Cells[19].Value.ToString();
+                MessageBox.Show("Se produjo un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -661,6 +663,144 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
         private void txtModificacion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+            
+        }
+
+        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten numeros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+            
+
+        }
+
+        private void txtApaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtAmaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtEstadoCivil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten numeros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtCodigoPostal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten numeros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNacionalidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtMunicipio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtDomicilio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtCarrera_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPeriodo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtPromedio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPromedio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo se admiten numeros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtCorreoElectronico_TextChanged(object sender, EventArgs e)
         {
 
         }
