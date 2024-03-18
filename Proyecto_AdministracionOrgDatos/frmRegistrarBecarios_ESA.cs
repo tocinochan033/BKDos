@@ -41,7 +41,7 @@ namespace Proyecto_AdministracionOrgDatos
         int indice = 0;
 
         /*--------------------------Metodo Conectar--------------------------*/
-        void Conectar()
+        public void Conectar()
         {
             try
             {
@@ -68,7 +68,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         /*------------------------METODO PARA CARGAR DATOS--------------------*/
         
-        void CargarDatos (int indice)
+        public void CargarDatos (int indice)
         {
             
             //Se crea la fila del objeto de la tabla
@@ -114,7 +114,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         }
        /*----------------------Refrescar datos-----------------------*/
-       void RefrescarDatos()
+       public void RefrescarDatos()
         {
             //Se selecciona la tabl de donde sacar los datos
             Sql = "select * from DatosGenerales ";
@@ -127,7 +127,7 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
         /*--------------------------------------------------------------------*/
-        void LlenarDGV()
+        public void LlenarDGV()
         {
             Conectar();
             //Se selecciona la tabl de donde sacar los datos
@@ -339,7 +339,7 @@ namespace Proyecto_AdministracionOrgDatos
                 }
             }
         }
-        /*-----------------------Metodo inservible------------------*/
+        
       
 
         private void Guardar()
@@ -355,12 +355,16 @@ namespace Proyecto_AdministracionOrgDatos
             Comando = new SqlCommand(Sql, Conexion);
 
             /*Insercion de tercera tabla Datos academicos*/
-            Sql = "insert into DatosAcademicos (Carrera, Periodo, Promedio, Modelo, Id_cct) values (@Carrera, @Periodo, @Promedio, @Modelo, @Id_cct)";
+            Sql = "insert into DatosAcademicos (Carrera, Periodo, Promedio, Modelo, Id_cct) values (@Carrera, @Periodo, @Promedio, @Modelo)";
             Comando = new SqlCommand(Sql, Conexion);
 
             /*Insercion de cuarta tabla CCT*/
-            Sql = "insert into TablaCCT (CCT, NombreEscuela) values (@CCT, @NombreEscuela)";
+            Sql = "insert into TablaCCT (Id_cct, CCT, NombreEscuela) values (@Id_cct, @CCT, @NombreEscuela)";
 
+            /*Seleccionar id de escuela, le asigno una variable para guardar el valor*/
+            string Nam_Escuela;
+            Nam_Escuela = txtEscuela.Text;
+           
             //Añandiendo parametros y campos a agregar
             Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
             Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
@@ -381,6 +385,7 @@ namespace Proyecto_AdministracionOrgDatos
             Comando.Parameters.AddWithValue("@Periodo", txtPeriodo.Text);
             Comando.Parameters.AddWithValue("@Promedio", txtPromedio.Text);
             Comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
+            Comando.Parameters.AddWithValue("@Id_cct", selectIDCCT(Nam_Escuela));
             Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
             Comando.Parameters.AddWithValue("@NombreEscuela", txtEscuela.Text);
 
@@ -450,18 +455,51 @@ namespace Proyecto_AdministracionOrgDatos
             // Puedes cargar los nombres de las escuelas desde tus archivos de texto u otra fuente de datos
             List<string> nombresEscuelas = new List<string>
             {
-                "02DIT0021M TEC",
-                "02PBH0079C UABC",
-                "U602000 UNAM",
-                "09PBH0056L ITESM",
-                "19USU3353S UANL",
-                "02PBH0022B ZOCHICALCO"
+                "02DIT0021M Instituto Tecnologico de Tijuana",
+                "02PBH0128V Universidad Autónoma de Baja California",
+                "U602000 Universidad Nacional Autónoma de México",
+                "09PBH0056L Instituto Tecnológico de Monterrey",
+                "19USU3353S Universidad Autónoma de Nuevo León",
+                "02PBH0022B Universidad Xochicalco"
                 // Agrega otros nombres de escuelas según tu necesidad
             };
 
             return nombresEscuelas;
         }
+        public int selectIDCCT(string namEscuela)
+        {
+            int idEscuela=0;
+            namEscuela = txtEscuela.Text;
+            switch (namEscuela)
+            {
 
+                case "Instituto Tecnologico de Tijuana":
+                    idEscuela = 2002;
+                    break;
+
+                case "Universidad Autónoma de Baja California":
+                    idEscuela = 3002; 
+                    break;
+
+                case "Universidad Nacional Autónoma de México":
+                    idEscuela = 3003;
+                    break;
+
+                case "Instituto Tecnológico de Monterrey":
+                    idEscuela = 3005; 
+                    break;
+
+                case "Universidad Autónoma de Nuevo León":
+                    idEscuela = 3006;
+                    break;
+
+                case "Universidad Xochicalco":
+                    idEscuela = 3007;
+                    break;
+            }
+            return idEscuela;
+
+        }
 
         private void cmbCCT_SelectedIndexChanged(object sender, EventArgs e)
         {/*
@@ -471,10 +509,39 @@ namespace Proyecto_AdministracionOrgDatos
             string escuelaSeleccionada = cmbCCT.Text;
 
             // Utiliza la lógica para determinar el modelo según la escuela seleccionada
-            if (escuelaSeleccionada == "02DIT0021M TEC" || escuelaSeleccionada == "02PBH0079C UABC" || escuelaSeleccionada == "U602000 UNAM" || escuelaSeleccionada == "09PBH0056L ITESM")
+            if (escuelaSeleccionada == "02DIT0021M Instituto Tecnologico de Tijuana" || escuelaSeleccionada == "02PBH0128V Universidad Autónoma de Baja California" || escuelaSeleccionada == "U602000 Universidad Nacional Autónoma de México" || escuelaSeleccionada == "09PBH0056L Instituto Tecnológico de Monterrey")
                 txtModelo.Text = "Semestral";
-            else if (escuelaSeleccionada == "19USU3353S UANL" || escuelaSeleccionada == "02PBH0022B XOCHICALCO")
+            else if (escuelaSeleccionada == "19USU3353S Universidad Autónoma de Nuevo León" || escuelaSeleccionada == "02PBH0022B Universidad Xochicalco")
                 txtModelo.Text = "Cuatrimestral";
+
+            //Condicion para agregar la escuela automatica
+            switch(escuelaSeleccionada)
+            {
+                case "02DIT0021M Instituto Tecnologico de Tijuana":
+                    txtEscuela.Text = "Instituto Tecnologico de Tijuana";
+                   
+                    break;
+
+                case "02PBH0128V Universidad Autónoma de Baja California":
+                    txtEscuela.Text = "Universidad Autónoma de Baja California";
+                    break;
+
+                case "U602000 Universidad Nacional Autónoma de México":
+                    txtEscuela.Text = "Universidad Nacional Autónoma de México";
+                    break;
+
+                case "09PBH0056L Instituto Tecnológico de Monterrey":
+                    txtEscuela.Text = "Instituto Tecnológico de Monterrey";
+                    break;
+
+                case "19USU3353S Universidad Autónoma de Nuevo León":
+                    txtEscuela.Text = "Universidad Autónoma de Nuevo León";
+                    break;
+
+                case "02PBH0022B Universidad Xochicalco":
+                    txtEscuela.Text = "Universidad Xochicalco";
+                    break;
+            }
         }
 
         private void txtModelo_SelectedIndexChanged(object sender, EventArgs e)
@@ -499,13 +566,17 @@ namespace Proyecto_AdministracionOrgDatos
             Comando = new SqlCommand(Sql, Conexion);
 
             /*Insercion de tercera tabla Datos academicos*/
-            Sql = "update DatosAcademicos set Carrera = @Carrera, Periodo = @Periodo, Promedio = @Promedio, Modelo = @Modelo";
+            Sql = "update DatosAcademicos set Carrera = @Carrera, Periodo = @Periodo, Promedio = @Promedio, Modelo = @Modelo, Id_cct = @Id_cct";
             Comando = new SqlCommand(Sql, Conexion);
 
             /*Insercion de cuarta tabla CCT*/
-            Sql = "update TablaCCT CCT=@CCT, NombreEscuela=@NombreEscuela";
+            Sql = "update TablaCCT CCT = @CCT, NombreEscuela = @NombreEscuela";
             Comando = new SqlCommand(Sql, Conexion);
 
+            /*Seleccionar id de escuela, le asigno una variable para guardar el valor*/
+            string Nam_Escuela;
+            Nam_Escuela = txtEscuela.Text;
+           
             //Añandiendo parametros y campos a agregar
             Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
             Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
@@ -526,6 +597,7 @@ namespace Proyecto_AdministracionOrgDatos
             Comando.Parameters.AddWithValue("@Periodo", txtPeriodo.Text);
             Comando.Parameters.AddWithValue("@Promedio", txtPromedio.Text);
             Comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
+            Comando.Parameters.AddWithValue("@Id_cct", selectIDCCT(Nam_Escuela));
             Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
             Comando.Parameters.AddWithValue("@NombreEscuela", txtEscuela.Text);
 
