@@ -81,6 +81,7 @@
             this.txtAmaterno = new System.Windows.Forms.TextBox();
             this.lblAmaterno = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cmbMunicipio = new System.Windows.Forms.ComboBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -122,7 +123,6 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.lblInstruccionModificar = new System.Windows.Forms.Label();
-            this.cmbMunicipio = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Agregar)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -155,10 +155,10 @@
             this.btnAgregar_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar_ESA.ForeColor = System.Drawing.Color.Snow;
-            this.btnAgregar_ESA.Location = new System.Drawing.Point(87, 87);
-            this.btnAgregar_ESA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregar_ESA.Location = new System.Drawing.Point(65, 15);
+            this.btnAgregar_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregar_ESA.Name = "btnAgregar_ESA";
-            this.btnAgregar_ESA.Size = new System.Drawing.Size(249, 63);
+            this.btnAgregar_ESA.Size = new System.Drawing.Size(187, 51);
             this.btnAgregar_ESA.TabIndex = 57;
             this.btnAgregar_ESA.Text = "Agregar";
             this.btnAgregar_ESA.UseVisualStyleBackColor = false;
@@ -169,9 +169,10 @@
             this.lblApaterno.AutoSize = true;
             this.lblApaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblApaterno.Location = new System.Drawing.Point(23, 135);
+            this.lblApaterno.Location = new System.Drawing.Point(17, 110);
+            this.lblApaterno.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApaterno.Name = "lblApaterno";
-            this.lblApaterno.Size = new System.Drawing.Size(204, 29);
+            this.lblApaterno.Size = new System.Drawing.Size(159, 24);
             this.lblApaterno.TabIndex = 54;
             this.lblApaterno.Text = "Apellido Paterno :";
             // 
@@ -180,10 +181,10 @@
             this.txtApaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtApaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtApaterno.Location = new System.Drawing.Point(25, 172);
-            this.txtApaterno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtApaterno.Location = new System.Drawing.Point(19, 140);
+            this.txtApaterno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtApaterno.Name = "txtApaterno";
-            this.txtApaterno.Size = new System.Drawing.Size(533, 39);
+            this.txtApaterno.Size = new System.Drawing.Size(400, 31);
             this.txtApaterno.TabIndex = 53;
             this.txtApaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApaterno_KeyPress);
             // 
@@ -194,10 +195,10 @@
             this.btnRegresarMenu_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresarMenu_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresarMenu_ESA.ForeColor = System.Drawing.Color.Snow;
-            this.btnRegresarMenu_ESA.Location = new System.Drawing.Point(1345, 482);
-            this.btnRegresarMenu_ESA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRegresarMenu_ESA.Location = new System.Drawing.Point(935, 332);
+            this.btnRegresarMenu_ESA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegresarMenu_ESA.Name = "btnRegresarMenu_ESA";
-            this.btnRegresarMenu_ESA.Size = new System.Drawing.Size(300, 63);
+            this.btnRegresarMenu_ESA.Size = new System.Drawing.Size(225, 51);
             this.btnRegresarMenu_ESA.TabIndex = 52;
             this.btnRegresarMenu_ESA.Text = "Guardar y Salir";
             this.btnRegresarMenu_ESA.UseVisualStyleBackColor = false;
@@ -208,9 +209,10 @@
             this.FechaC.AutoSize = true;
             this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.FechaC.Location = new System.Drawing.Point(1453, 32);
+            this.FechaC.Location = new System.Drawing.Point(879, 46);
+            this.FechaC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FechaC.Name = "FechaC";
-            this.FechaC.Size = new System.Drawing.Size(197, 39);
+            this.FechaC.Size = new System.Drawing.Size(160, 31);
             this.FechaC.TabIndex = 51;
             this.FechaC.Text = "00/00/0000";
             // 
@@ -219,9 +221,10 @@
             this.lblTitulo_ESA.AutoSize = true;
             this.lblTitulo_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo_ESA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.lblTitulo_ESA.Location = new System.Drawing.Point(31, 32);
+            this.lblTitulo_ESA.Location = new System.Drawing.Point(26, 46);
+            this.lblTitulo_ESA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo_ESA.Name = "lblTitulo_ESA";
-            this.lblTitulo_ESA.Size = new System.Drawing.Size(297, 39);
+            this.lblTitulo_ESA.Size = new System.Drawing.Size(238, 31);
             this.lblTitulo_ESA.TabIndex = 49;
             this.lblTitulo_ESA.Text = "Registrar Becarios";
             // 
@@ -253,12 +256,11 @@
             this.Column15});
             this.dgv_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgv_Agregar.GridColor = System.Drawing.Color.Silver;
-            this.dgv_Agregar.Location = new System.Drawing.Point(40, 569);
-            this.dgv_Agregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_Agregar.Location = new System.Drawing.Point(15, 412);
             this.dgv_Agregar.Name = "dgv_Agregar";
             this.dgv_Agregar.ReadOnly = true;
             this.dgv_Agregar.RowHeadersWidth = 51;
-            this.dgv_Agregar.Size = new System.Drawing.Size(1657, 313);
+            this.dgv_Agregar.Size = new System.Drawing.Size(1006, 147);
             this.dgv_Agregar.TabIndex = 60;
             this.dgv_Agregar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Agregar_CellContentClick);
             // 
@@ -429,10 +431,10 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.Snow;
-            this.btnModificar.Location = new System.Drawing.Point(93, 210);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificar.Location = new System.Drawing.Point(68, 132);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(249, 63);
+            this.btnModificar.Size = new System.Drawing.Size(187, 51);
             this.btnModificar.TabIndex = 65;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -445,10 +447,10 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Snow;
-            this.btnEliminar.Location = new System.Drawing.Point(87, 191);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminar.Location = new System.Drawing.Point(65, 75);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(249, 63);
+            this.btnEliminar.Size = new System.Drawing.Size(187, 51);
             this.btnEliminar.TabIndex = 66;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -459,9 +461,10 @@
             this.HoraC.AutoSize = true;
             this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.HoraC.Location = new System.Drawing.Point(1472, 69);
+            this.HoraC.Location = new System.Drawing.Point(893, 76);
+            this.HoraC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HoraC.Name = "HoraC";
-            this.HoraC.Size = new System.Drawing.Size(176, 39);
+            this.HoraC.Size = new System.Drawing.Size(143, 31);
             this.HoraC.TabIndex = 67;
             this.HoraC.Text = "00:00 a.m";
             // 
@@ -476,11 +479,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(40, 101);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Location = new System.Drawing.Point(33, 102);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1205, 439);
+            this.tabControl1.Size = new System.Drawing.Size(892, 304);
             this.tabControl1.TabIndex = 68;
             // 
             // tabPage1
@@ -504,11 +506,10 @@
             this.tabPage1.Controls.Add(this.lblAmaterno);
             this.tabPage1.Controls.Add(this.txtApaterno);
             this.tabPage1.Controls.Add(this.lblApaterno);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage1.Size = new System.Drawing.Size(1197, 409);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(884, 278);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos personales";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -517,10 +518,9 @@
             // pictureBox15
             // 
             this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(601, 226);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox15.Location = new System.Drawing.Point(451, 184);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(533, 12);
+            this.pictureBox15.Size = new System.Drawing.Size(400, 10);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox15.TabIndex = 90;
             this.pictureBox15.TabStop = false;
@@ -528,10 +528,9 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(25, 226);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox14.Location = new System.Drawing.Point(19, 184);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(533, 12);
+            this.pictureBox14.Size = new System.Drawing.Size(400, 10);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 89;
             this.pictureBox14.TabStop = false;
@@ -539,10 +538,9 @@
             // pictureBox13
             // 
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(960, 119);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox13.Location = new System.Drawing.Point(720, 97);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(205, 12);
+            this.pictureBox13.Size = new System.Drawing.Size(154, 10);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 88;
             this.pictureBox13.TabStop = false;
@@ -550,10 +548,9 @@
             // pictureBox12
             // 
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(601, 119);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox12.Location = new System.Drawing.Point(451, 97);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(104, 12);
+            this.pictureBox12.Size = new System.Drawing.Size(78, 10);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 87;
             this.pictureBox12.TabStop = false;
@@ -561,10 +558,9 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(25, 119);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox11.Location = new System.Drawing.Point(19, 97);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(533, 12);
+            this.pictureBox11.Size = new System.Drawing.Size(400, 10);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 86;
             this.pictureBox11.TabStop = false;
@@ -574,10 +570,9 @@
             this.txtFechanac.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtFechanac.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechanac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtFechanac.Location = new System.Drawing.Point(603, 279);
-            this.txtFechanac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFechanac.Location = new System.Drawing.Point(452, 227);
             this.txtFechanac.Name = "txtFechanac";
-            this.txtFechanac.Size = new System.Drawing.Size(532, 46);
+            this.txtFechanac.Size = new System.Drawing.Size(400, 38);
             this.txtFechanac.TabIndex = 70;
             // 
             // txtEstadoCivil
@@ -585,10 +580,10 @@
             this.txtEstadoCivil.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstadoCivil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtEstadoCivil.Location = new System.Drawing.Point(960, 65);
-            this.txtEstadoCivil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEstadoCivil.Location = new System.Drawing.Point(720, 53);
+            this.txtEstadoCivil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtEstadoCivil.Name = "txtEstadoCivil";
-            this.txtEstadoCivil.Size = new System.Drawing.Size(205, 39);
+            this.txtEstadoCivil.Size = new System.Drawing.Size(154, 31);
             this.txtEstadoCivil.TabIndex = 68;
             this.txtEstadoCivil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstadoCivil_KeyPress);
             // 
@@ -597,9 +592,10 @@
             this.lblEstado_Civil.AutoSize = true;
             this.lblEstado_Civil.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado_Civil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblEstado_Civil.Location = new System.Drawing.Point(953, 28);
+            this.lblEstado_Civil.Location = new System.Drawing.Point(715, 23);
+            this.lblEstado_Civil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEstado_Civil.Name = "lblEstado_Civil";
-            this.lblEstado_Civil.Size = new System.Drawing.Size(152, 29);
+            this.lblEstado_Civil.Size = new System.Drawing.Size(117, 24);
             this.lblEstado_Civil.TabIndex = 69;
             this.lblEstado_Civil.Text = "Estado Civil :";
             // 
@@ -614,28 +610,20 @@
             "HOMBRE",
             "MUJER",
             "OTROS..."});
-            this.CBGenero.Location = new System.Drawing.Point(735, 65);
-            this.CBGenero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CBGenero.Location = new System.Drawing.Point(551, 53);
             this.CBGenero.Name = "CBGenero";
-            this.CBGenero.Size = new System.Drawing.Size(195, 33);
+            this.CBGenero.Size = new System.Drawing.Size(147, 28);
             this.CBGenero.TabIndex = 67;
-            // 
-            // txtCURP
-            // 
-       
-            // 
-            // lblCurp
-            // 
-          
             // 
             // lblGenero
             // 
             this.lblGenero.AutoSize = true;
             this.lblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblGenero.Location = new System.Drawing.Point(728, 28);
+            this.lblGenero.Location = new System.Drawing.Point(546, 23);
+            this.lblGenero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGenero.Name = "lblGenero";
-            this.lblGenero.Size = new System.Drawing.Size(106, 29);
+            this.lblGenero.Size = new System.Drawing.Size(84, 24);
             this.lblGenero.TabIndex = 64;
             this.lblGenero.Text = "Genero :";
             // 
@@ -644,10 +632,10 @@
             this.txtEdad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtEdad.Location = new System.Drawing.Point(601, 65);
-            this.txtEdad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEdad.Location = new System.Drawing.Point(451, 53);
+            this.txtEdad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(104, 39);
+            this.txtEdad.Size = new System.Drawing.Size(78, 31);
             this.txtEdad.TabIndex = 61;
             this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
@@ -656,9 +644,10 @@
             this.lblEdad.AutoSize = true;
             this.lblEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblEdad.Location = new System.Drawing.Point(596, 28);
+            this.lblEdad.Location = new System.Drawing.Point(447, 23);
+            this.lblEdad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(82, 29);
+            this.lblEdad.Size = new System.Drawing.Size(65, 24);
             this.lblEdad.TabIndex = 62;
             this.lblEdad.Text = "Edad :";
             // 
@@ -667,9 +656,10 @@
             this.lblfechanac.AutoSize = true;
             this.lblfechanac.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfechanac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblfechanac.Location = new System.Drawing.Point(595, 242);
+            this.lblfechanac.Location = new System.Drawing.Point(446, 197);
+            this.lblfechanac.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblfechanac.Name = "lblfechanac";
-            this.lblfechanac.Size = new System.Drawing.Size(249, 29);
+            this.lblfechanac.Size = new System.Drawing.Size(198, 24);
             this.lblfechanac.TabIndex = 60;
             this.lblfechanac.Text = "Fecha de nacimiento :";
             // 
@@ -678,10 +668,10 @@
             this.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtNombres.Location = new System.Drawing.Point(25, 65);
-            this.txtNombres.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombres.Location = new System.Drawing.Point(19, 53);
+            this.txtNombres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(533, 39);
+            this.txtNombres.Size = new System.Drawing.Size(400, 31);
             this.txtNombres.TabIndex = 57;
             this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
@@ -690,9 +680,10 @@
             this.lblNombres.AutoSize = true;
             this.lblNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblNombres.Location = new System.Drawing.Point(23, 28);
+            this.lblNombres.Location = new System.Drawing.Point(17, 23);
+            this.lblNombres.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombres.Name = "lblNombres";
-            this.lblNombres.Size = new System.Drawing.Size(125, 29);
+            this.lblNombres.Size = new System.Drawing.Size(98, 24);
             this.lblNombres.TabIndex = 58;
             this.lblNombres.Text = "Nombres :";
             // 
@@ -701,10 +692,10 @@
             this.txtAmaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAmaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtAmaterno.Location = new System.Drawing.Point(603, 172);
-            this.txtAmaterno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAmaterno.Location = new System.Drawing.Point(452, 140);
+            this.txtAmaterno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAmaterno.Name = "txtAmaterno";
-            this.txtAmaterno.Size = new System.Drawing.Size(533, 39);
+            this.txtAmaterno.Size = new System.Drawing.Size(400, 31);
             this.txtAmaterno.TabIndex = 55;
             this.txtAmaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmaterno_KeyPress);
             // 
@@ -713,9 +704,10 @@
             this.lblAmaterno.AutoSize = true;
             this.lblAmaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblAmaterno.Location = new System.Drawing.Point(596, 135);
+            this.lblAmaterno.Location = new System.Drawing.Point(447, 110);
+            this.lblAmaterno.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAmaterno.Name = "lblAmaterno";
-            this.lblAmaterno.Size = new System.Drawing.Size(208, 29);
+            this.lblAmaterno.Size = new System.Drawing.Size(163, 24);
             this.lblAmaterno.TabIndex = 56;
             this.lblAmaterno.Text = "Apellido Materno :";
             // 
@@ -741,22 +733,29 @@
             this.tabPage2.Controls.Add(this.lblCodigoPostal);
             this.tabPage2.Controls.Add(this.txtDomicilio);
             this.tabPage2.Controls.Add(this.lblDomicilio);
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Size = new System.Drawing.Size(1197, 409);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(896, 331);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Contacto";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // cmbMunicipio
+            // 
+            this.cmbMunicipio.FormattingEnabled = true;
+            this.cmbMunicipio.Location = new System.Drawing.Point(19, 225);
+            this.cmbMunicipio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbMunicipio.Name = "cmbMunicipio";
+            this.cmbMunicipio.Size = new System.Drawing.Size(236, 21);
+            this.cmbMunicipio.TabIndex = 87;
+            // 
             // pictureBox10
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(860, 325);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox10.Location = new System.Drawing.Point(645, 264);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(299, 12);
+            this.pictureBox10.Size = new System.Drawing.Size(224, 10);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 86;
             this.pictureBox10.TabStop = false;
@@ -764,10 +763,9 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(948, 222);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox8.Location = new System.Drawing.Point(711, 180);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(211, 12);
+            this.pictureBox8.Size = new System.Drawing.Size(158, 10);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 84;
             this.pictureBox8.TabStop = false;
@@ -775,10 +773,9 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(25, 222);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Location = new System.Drawing.Point(19, 180);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(900, 12);
+            this.pictureBox7.Size = new System.Drawing.Size(675, 10);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 83;
             this.pictureBox7.TabStop = false;
@@ -786,10 +783,9 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(763, 113);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Location = new System.Drawing.Point(572, 92);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(396, 12);
+            this.pictureBox6.Size = new System.Drawing.Size(297, 10);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 82;
             this.pictureBox6.TabStop = false;
@@ -797,10 +793,9 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(25, 113);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(19, 92);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(705, 12);
+            this.pictureBox5.Size = new System.Drawing.Size(529, 10);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 70;
             this.pictureBox5.TabStop = false;
@@ -812,10 +807,9 @@
             this.cmbEstadoNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstadoNac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbEstadoNac.FormattingEnabled = true;
-            this.cmbEstadoNac.Location = new System.Drawing.Point(408, 272);
-            this.cmbEstadoNac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEstadoNac.Location = new System.Drawing.Point(306, 221);
             this.cmbEstadoNac.Name = "cmbEstadoNac";
-            this.cmbEstadoNac.Size = new System.Drawing.Size(411, 32);
+            this.cmbEstadoNac.Size = new System.Drawing.Size(309, 26);
             this.cmbEstadoNac.TabIndex = 81;
             // 
             // txtTelefono
@@ -823,10 +817,10 @@
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtTelefono.Location = new System.Drawing.Point(763, 59);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTelefono.Location = new System.Drawing.Point(572, 48);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(396, 39);
+            this.txtTelefono.Size = new System.Drawing.Size(297, 31);
             this.txtTelefono.TabIndex = 79;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
@@ -835,9 +829,10 @@
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblTelefono.Location = new System.Drawing.Point(756, 27);
+            this.lblTelefono.Location = new System.Drawing.Point(567, 22);
+            this.lblTelefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(245, 29);
+            this.lblTelefono.Size = new System.Drawing.Size(193, 24);
             this.lblTelefono.TabIndex = 80;
             this.lblTelefono.Text = "Número de teléfono : ";
             // 
@@ -846,10 +841,10 @@
             this.txtCorreoElectronico.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCorreoElectronico.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreoElectronico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtCorreoElectronico.Location = new System.Drawing.Point(25, 59);
-            this.txtCorreoElectronico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCorreoElectronico.Location = new System.Drawing.Point(19, 48);
+            this.txtCorreoElectronico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
-            this.txtCorreoElectronico.Size = new System.Drawing.Size(705, 39);
+            this.txtCorreoElectronico.Size = new System.Drawing.Size(529, 31);
             this.txtCorreoElectronico.TabIndex = 77;
             this.txtCorreoElectronico.TextChanged += new System.EventHandler(this.txtCorreoElectronico_TextChanged);
             // 
@@ -858,9 +853,10 @@
             this.lblCorreoElectronico.AutoSize = true;
             this.lblCorreoElectronico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorreoElectronico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblCorreoElectronico.Location = new System.Drawing.Point(19, 27);
+            this.lblCorreoElectronico.Location = new System.Drawing.Point(14, 22);
+            this.lblCorreoElectronico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCorreoElectronico.Name = "lblCorreoElectronico";
-            this.lblCorreoElectronico.Size = new System.Drawing.Size(231, 29);
+            this.lblCorreoElectronico.Size = new System.Drawing.Size(181, 24);
             this.lblCorreoElectronico.TabIndex = 78;
             this.lblCorreoElectronico.Text = "Correo electronico : ";
             // 
@@ -869,10 +865,10 @@
             this.txtMunicipio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMunicipio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtMunicipio.Location = new System.Drawing.Point(25, 271);
-            this.txtMunicipio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMunicipio.Location = new System.Drawing.Point(19, 220);
+            this.txtMunicipio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMunicipio.Name = "txtMunicipio";
-            this.txtMunicipio.Size = new System.Drawing.Size(343, 39);
+            this.txtMunicipio.Size = new System.Drawing.Size(257, 31);
             this.txtMunicipio.TabIndex = 75;
             this.txtMunicipio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMunicipio_KeyPress);
             // 
@@ -881,9 +877,10 @@
             this.lblMunicipio.AutoSize = true;
             this.lblMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMunicipio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblMunicipio.Location = new System.Drawing.Point(19, 238);
+            this.lblMunicipio.Location = new System.Drawing.Point(14, 193);
+            this.lblMunicipio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMunicipio.Name = "lblMunicipio";
-            this.lblMunicipio.Size = new System.Drawing.Size(129, 29);
+            this.lblMunicipio.Size = new System.Drawing.Size(102, 24);
             this.lblMunicipio.TabIndex = 76;
             this.lblMunicipio.Text = "Municipio :";
             // 
@@ -892,9 +889,10 @@
             this.lblEstadoNac.AutoSize = true;
             this.lblEstadoNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoNac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblEstadoNac.Location = new System.Drawing.Point(401, 238);
+            this.lblEstadoNac.Location = new System.Drawing.Point(301, 193);
+            this.lblEstadoNac.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEstadoNac.Name = "lblEstadoNac";
-            this.lblEstadoNac.Size = new System.Drawing.Size(257, 29);
+            this.lblEstadoNac.Size = new System.Drawing.Size(202, 24);
             this.lblEstadoNac.TabIndex = 74;
             this.lblEstadoNac.Text = "Estado de nacimiento :";
             // 
@@ -903,10 +901,10 @@
             this.txtNacionalidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNacionalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtNacionalidad.Location = new System.Drawing.Point(860, 271);
-            this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNacionalidad.Location = new System.Drawing.Point(645, 220);
+            this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNacionalidad.Name = "txtNacionalidad";
-            this.txtNacionalidad.Size = new System.Drawing.Size(299, 39);
+            this.txtNacionalidad.Size = new System.Drawing.Size(224, 31);
             this.txtNacionalidad.TabIndex = 71;
             this.txtNacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNacionalidad_KeyPress);
             // 
@@ -915,9 +913,10 @@
             this.lblNacionalidad.AutoSize = true;
             this.lblNacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNacionalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblNacionalidad.Location = new System.Drawing.Point(856, 234);
+            this.lblNacionalidad.Location = new System.Drawing.Point(642, 190);
+            this.lblNacionalidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNacionalidad.Name = "lblNacionalidad";
-            this.lblNacionalidad.Size = new System.Drawing.Size(167, 29);
+            this.lblNacionalidad.Size = new System.Drawing.Size(130, 24);
             this.lblNacionalidad.TabIndex = 72;
             this.lblNacionalidad.Text = "Nacionalidad :";
             // 
@@ -926,10 +925,10 @@
             this.txtCodigoPostal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCodigoPostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoPostal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtCodigoPostal.Location = new System.Drawing.Point(948, 167);
-            this.txtCodigoPostal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCodigoPostal.Location = new System.Drawing.Point(711, 136);
+            this.txtCodigoPostal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCodigoPostal.Name = "txtCodigoPostal";
-            this.txtCodigoPostal.Size = new System.Drawing.Size(211, 39);
+            this.txtCodigoPostal.Size = new System.Drawing.Size(158, 31);
             this.txtCodigoPostal.TabIndex = 69;
             this.txtCodigoPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoPostal_KeyPress);
             // 
@@ -938,9 +937,10 @@
             this.lblCodigoPostal.AutoSize = true;
             this.lblCodigoPostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigoPostal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblCodigoPostal.Location = new System.Drawing.Point(941, 130);
+            this.lblCodigoPostal.Location = new System.Drawing.Point(706, 106);
+            this.lblCodigoPostal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodigoPostal.Name = "lblCodigoPostal";
-            this.lblCodigoPostal.Size = new System.Drawing.Size(175, 29);
+            this.lblCodigoPostal.Size = new System.Drawing.Size(135, 24);
             this.lblCodigoPostal.TabIndex = 70;
             this.lblCodigoPostal.Text = "Código postal :";
             // 
@@ -949,10 +949,10 @@
             this.txtDomicilio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDomicilio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtDomicilio.Location = new System.Drawing.Point(25, 167);
-            this.txtDomicilio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDomicilio.Location = new System.Drawing.Point(19, 136);
+            this.txtDomicilio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(900, 39);
+            this.txtDomicilio.Size = new System.Drawing.Size(675, 31);
             this.txtDomicilio.TabIndex = 67;
             this.txtDomicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDomicilio_KeyPress);
             // 
@@ -961,9 +961,10 @@
             this.lblDomicilio.AutoSize = true;
             this.lblDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDomicilio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblDomicilio.Location = new System.Drawing.Point(19, 130);
+            this.lblDomicilio.Location = new System.Drawing.Point(14, 106);
+            this.lblDomicilio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDomicilio.Name = "lblDomicilio";
-            this.lblDomicilio.Size = new System.Drawing.Size(126, 29);
+            this.lblDomicilio.Size = new System.Drawing.Size(97, 24);
             this.lblDomicilio.TabIndex = 68;
             this.lblDomicilio.Text = "Domicilio :";
             // 
@@ -983,11 +984,10 @@
             this.tabPage3.Controls.Add(this.lblPeriodo);
             this.tabPage3.Controls.Add(this.txtCarrera);
             this.tabPage3.Controls.Add(this.lblCarrera);
-            this.tabPage3.Location = new System.Drawing.Point(4, 26);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage3.Size = new System.Drawing.Size(1197, 409);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Size = new System.Drawing.Size(896, 331);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Datos academicos";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -995,10 +995,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(995, 116);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(746, 94);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(176, 12);
+            this.pictureBox4.Size = new System.Drawing.Size(132, 10);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 86;
             this.pictureBox4.TabStop = false;
@@ -1006,10 +1005,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(615, 116);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(461, 94);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(348, 12);
+            this.pictureBox3.Size = new System.Drawing.Size(261, 10);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 85;
             this.pictureBox3.TabStop = false;
@@ -1017,10 +1015,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(27, 116);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(20, 94);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(556, 12);
+            this.pictureBox2.Size = new System.Drawing.Size(417, 10);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 69;
             this.pictureBox2.TabStop = false;
@@ -1028,10 +1025,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1119, 170);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(839, 138);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 47);
+            this.pictureBox1.Size = new System.Drawing.Size(39, 38);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 84;
             this.pictureBox1.TabStop = false;
@@ -1046,10 +1042,9 @@
             this.txtModelo.Items.AddRange(new object[] {
             "Semestral",
             "Cuatrimestral"});
-            this.txtModelo.Location = new System.Drawing.Point(615, 170);
-            this.txtModelo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtModelo.Location = new System.Drawing.Point(461, 138);
             this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(473, 32);
+            this.txtModelo.Size = new System.Drawing.Size(356, 26);
             this.txtModelo.TabIndex = 83;
             this.txtModelo.SelectedIndexChanged += new System.EventHandler(this.txtModelo_SelectedIndexChanged);
             // 
@@ -1058,9 +1053,10 @@
             this.lblModelo.AutoSize = true;
             this.lblModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblModelo.Location = new System.Drawing.Point(608, 132);
+            this.lblModelo.Location = new System.Drawing.Point(456, 107);
+            this.lblModelo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(107, 29);
+            this.lblModelo.Size = new System.Drawing.Size(84, 24);
             this.lblModelo.TabIndex = 82;
             this.lblModelo.Text = "Modelo :";
             // 
@@ -1069,9 +1065,10 @@
             this.lblCCT.AutoSize = true;
             this.lblCCT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCCT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblCCT.Location = new System.Drawing.Point(20, 132);
+            this.lblCCT.Location = new System.Drawing.Point(15, 107);
+            this.lblCCT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCCT.Name = "lblCCT";
-            this.lblCCT.Size = new System.Drawing.Size(75, 29);
+            this.lblCCT.Size = new System.Drawing.Size(58, 24);
             this.lblCCT.TabIndex = 80;
             this.lblCCT.Text = "CCT :";
             // 
@@ -1082,10 +1079,9 @@
             this.cmbCCT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCCT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbCCT.FormattingEnabled = true;
-            this.cmbCCT.Location = new System.Drawing.Point(27, 170);
-            this.cmbCCT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCCT.Location = new System.Drawing.Point(20, 138);
             this.cmbCCT.Name = "cmbCCT";
-            this.cmbCCT.Size = new System.Drawing.Size(555, 32);
+            this.cmbCCT.Size = new System.Drawing.Size(417, 26);
             this.cmbCCT.TabIndex = 79;
             this.cmbCCT.SelectedIndexChanged += new System.EventHandler(this.cmbCCT_SelectedIndexChanged);
             // 
@@ -1094,10 +1090,10 @@
             this.txtPromedio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPromedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPromedio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtPromedio.Location = new System.Drawing.Point(995, 63);
-            this.txtPromedio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPromedio.Location = new System.Drawing.Point(746, 51);
+            this.txtPromedio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPromedio.Name = "txtPromedio";
-            this.txtPromedio.Size = new System.Drawing.Size(176, 39);
+            this.txtPromedio.Size = new System.Drawing.Size(132, 31);
             this.txtPromedio.TabIndex = 77;
             this.txtPromedio.TextChanged += new System.EventHandler(this.txtPromedio_TextChanged);
             this.txtPromedio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPromedio_KeyPress);
@@ -1107,9 +1103,10 @@
             this.lblPromedio.AutoSize = true;
             this.lblPromedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPromedio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblPromedio.Location = new System.Drawing.Point(988, 31);
+            this.lblPromedio.Location = new System.Drawing.Point(741, 25);
+            this.lblPromedio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPromedio.Name = "lblPromedio";
-            this.lblPromedio.Size = new System.Drawing.Size(131, 29);
+            this.lblPromedio.Size = new System.Drawing.Size(102, 24);
             this.lblPromedio.TabIndex = 78;
             this.lblPromedio.Text = "Promedio :";
             // 
@@ -1118,10 +1115,10 @@
             this.txtPeriodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtPeriodo.Location = new System.Drawing.Point(615, 63);
-            this.txtPeriodo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPeriodo.Location = new System.Drawing.Point(461, 51);
+            this.txtPeriodo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPeriodo.Name = "txtPeriodo";
-            this.txtPeriodo.Size = new System.Drawing.Size(348, 39);
+            this.txtPeriodo.Size = new System.Drawing.Size(261, 31);
             this.txtPeriodo.TabIndex = 75;
             this.txtPeriodo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPeriodo_KeyPress);
             // 
@@ -1130,9 +1127,10 @@
             this.lblPeriodo.AutoSize = true;
             this.lblPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblPeriodo.Location = new System.Drawing.Point(608, 31);
+            this.lblPeriodo.Location = new System.Drawing.Point(456, 25);
+            this.lblPeriodo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPeriodo.Name = "lblPeriodo";
-            this.lblPeriodo.Size = new System.Drawing.Size(111, 29);
+            this.lblPeriodo.Size = new System.Drawing.Size(86, 24);
             this.lblPeriodo.TabIndex = 76;
             this.lblPeriodo.Text = "Periodo :";
             // 
@@ -1141,10 +1139,10 @@
             this.txtCarrera.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCarrera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtCarrera.Location = new System.Drawing.Point(27, 63);
-            this.txtCarrera.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCarrera.Location = new System.Drawing.Point(20, 51);
+            this.txtCarrera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCarrera.Name = "txtCarrera";
-            this.txtCarrera.Size = new System.Drawing.Size(556, 39);
+            this.txtCarrera.Size = new System.Drawing.Size(417, 31);
             this.txtCarrera.TabIndex = 73;
             this.txtCarrera.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCarrera_KeyPress);
             // 
@@ -1153,9 +1151,10 @@
             this.lblCarrera.AutoSize = true;
             this.lblCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCarrera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblCarrera.Location = new System.Drawing.Point(20, 31);
+            this.lblCarrera.Location = new System.Drawing.Point(15, 25);
+            this.lblCarrera.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCarrera.Name = "lblCarrera";
-            this.lblCarrera.Size = new System.Drawing.Size(106, 29);
+            this.lblCarrera.Size = new System.Drawing.Size(82, 24);
             this.lblCarrera.TabIndex = 74;
             this.lblCarrera.Text = "Carrera :";
             // 
@@ -1164,10 +1163,10 @@
             this.txtModificacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtModificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModificacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtModificacion.Location = new System.Drawing.Point(60, 137);
-            this.txtModificacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtModificacion.Location = new System.Drawing.Point(45, 80);
+            this.txtModificacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtModificacion.Name = "txtModificacion";
-            this.txtModificacion.Size = new System.Drawing.Size(300, 39);
+            this.txtModificacion.Size = new System.Drawing.Size(225, 31);
             this.txtModificacion.TabIndex = 69;
             this.txtModificacion.TextChanged += new System.EventHandler(this.txtModificacion_TextChanged);
             // 
@@ -1178,10 +1177,9 @@
             this.cmbFiltroModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFiltroModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbFiltroModificar.FormattingEnabled = true;
-            this.cmbFiltroModificar.Location = new System.Drawing.Point(111, 58);
-            this.cmbFiltroModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbFiltroModificar.Location = new System.Drawing.Point(83, 47);
             this.cmbFiltroModificar.Name = "cmbFiltroModificar";
-            this.cmbFiltroModificar.Size = new System.Drawing.Size(195, 33);
+            this.cmbFiltroModificar.Size = new System.Drawing.Size(147, 28);
             this.cmbFiltroModificar.TabIndex = 70;
             this.cmbFiltroModificar.SelectedIndexChanged += new System.EventHandler(this.cmbFiltroModificar_SelectedIndexChanged);
             // 
@@ -1189,22 +1187,20 @@
             // 
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Location = new System.Drawing.Point(1280, 111);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl2.Location = new System.Drawing.Point(931, 110);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(431, 354);
+            this.tabControl2.Size = new System.Drawing.Size(316, 217);
             this.tabControl2.TabIndex = 71;
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.btnAgregar_ESA);
             this.tabPage4.Controls.Add(this.btnEliminar);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage4.Size = new System.Drawing.Size(423, 325);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Size = new System.Drawing.Size(308, 191);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Adicion y eliminacion";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1216,11 +1212,10 @@
             this.tabPage5.Controls.Add(this.cmbFiltroModificar);
             this.tabPage5.Controls.Add(this.txtModificacion);
             this.tabPage5.Controls.Add(this.btnModificar);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage5.Size = new System.Drawing.Size(423, 325);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage5.Size = new System.Drawing.Size(308, 191);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Modificacion";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1228,10 +1223,9 @@
             // pictureBox17
             // 
             this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(61, 181);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox17.Location = new System.Drawing.Point(46, 116);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(299, 12);
+            this.pictureBox17.Size = new System.Drawing.Size(224, 10);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox17.TabIndex = 87;
             this.pictureBox17.TabStop = false;
@@ -1241,26 +1235,19 @@
             this.lblInstruccionModificar.AutoSize = true;
             this.lblInstruccionModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInstruccionModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblInstruccionModificar.Location = new System.Drawing.Point(15, 17);
+            this.lblInstruccionModificar.Location = new System.Drawing.Point(11, 14);
+            this.lblInstruccionModificar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInstruccionModificar.Name = "lblInstruccionModificar";
-            this.lblInstruccionModificar.Size = new System.Drawing.Size(380, 29);
+            this.lblInstruccionModificar.Size = new System.Drawing.Size(298, 24);
             this.lblInstruccionModificar.TabIndex = 81;
             this.lblInstruccionModificar.Text = "Seleccione la columna a modificar";
             // 
-            // cmbMunicipio
-            // 
-            this.cmbMunicipio.FormattingEnabled = true;
-            this.cmbMunicipio.Location = new System.Drawing.Point(25, 277);
-            this.cmbMunicipio.Name = "cmbMunicipio";
-            this.cmbMunicipio.Size = new System.Drawing.Size(313, 25);
-            this.cmbMunicipio.TabIndex = 87;
-            // 
             // frmRegistrarBecarios_ESA
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1764, 898);
+            this.ClientSize = new System.Drawing.Size(1201, 780);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.btnRegresarMenu_ESA);
             this.Controls.Add(this.tabControl1);
@@ -1270,10 +1257,13 @@
             this.Controls.Add(this.lblTitulo_ESA);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(1201, 780);
+            this.MinimumSize = new System.Drawing.Size(1201, 780);
             this.Name = "frmRegistrarBecarios_ESA";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frmRegistrarBecarios_ESA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Agregar)).EndInit();
             this.tabControl1.ResumeLayout(false);
