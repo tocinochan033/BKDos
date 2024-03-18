@@ -15,7 +15,6 @@ namespace Proyecto_AdministracionOrgDatos
     public partial class frmRegistrarBecarios_ESA : Form
     {
         private FuentePersonalizada fontPers;
-        
 
         public frmRegistrarBecarios_ESA()
         {
@@ -286,7 +285,6 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
 
-
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
         private void FechaHora2_Tick(object sender, EventArgs e)
         {
@@ -295,21 +293,10 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
 
-
         private void frmRegistrarBecarios_ESA_Load(object sender, EventArgs e)
         {
             CargarFuentes();
         }
-
-        private void dgv_Agregar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
 
         // Cambio en el ComboBox
@@ -324,7 +311,6 @@ namespace Proyecto_AdministracionOrgDatos
             // Agrega los nombres de las escuelas al ComboBox
             cmbCCT.Items.AddRange(nombresEscuelas.ToArray());
         }
-
 
 
         private List<string> ObtenerNombresEscuelas()
@@ -346,7 +332,6 @@ namespace Proyecto_AdministracionOrgDatos
 
 
 
-
         private void cmbCCT_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Obtén el nombre de la escuela seleccionada
@@ -358,15 +343,6 @@ namespace Proyecto_AdministracionOrgDatos
             else if (escuelaSeleccionada == "19USU3353S UANL" || escuelaSeleccionada == "02PBH0022B ZOCHICALCO")
                 txtModelo.Text = "Cuatrimestral";
         }
-
-
-
-        private void txtModelo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
 
 
         public void CargarFuentes()
@@ -467,6 +443,18 @@ namespace Proyecto_AdministracionOrgDatos
 
 
 
+        private void dgv_Agregar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void txtModelo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
         private void txtEdad_TextChanged(object sender, EventArgs e)
         {
 
