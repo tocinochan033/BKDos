@@ -18,7 +18,6 @@ namespace Proyecto_AdministracionOrgDatos
         Form loginForm = new FormLogin_ESA();
         private FuentePersonalizada fontPers = new FuentePersonalizada();
 
-
         //Variables para las diferentes pantallas
         frmRegistrarBecarios_ESA PantallaRegistro;
         Mostrar_datos PantallaConsulta;
@@ -26,16 +25,6 @@ namespace Proyecto_AdministracionOrgDatos
         public frmMenu_ESA()
         {
             InitializeComponent();  
-        }
-
-        public void ActualizarVisibilidad(bool mostrar)
-        {
-            //frmNewAdmin.Visible = mostrar;
-        }
-
-        private void btnInventario_ACO_Click(object sender, EventArgs e)
-        {
-
         }
 
         //Configuracion del boton de Registrar y modificar
@@ -66,12 +55,6 @@ namespace Proyecto_AdministracionOrgDatos
         {
             this.FormBorderStyle = FormBorderStyle.None;
             CargarFuentes();
-        }
-
-        private void btnDarBaja_ESA_Click(object sender, EventArgs e)
-        {
-           
-            
         }
 
         //Configuracion del boton de Consultas

@@ -26,16 +26,16 @@ namespace Proyecto_AdministracionOrgDatos
 
         public void CargarFuentePersonalizada(string nombreArchivo)
         {
-           
-                // Obtener la ruta de la carpeta donde se encuentra el ejecutable
-                string rutaEjecutable = AppDomain.CurrentDomain.BaseDirectory;
 
-                // Construir la ruta completa al archivo de fuente usando la ruta relativa
-                string rutaCompletaFuente = Path.Combine(rutaEjecutable, "Fuentes", nombreArchivo);
+            // Obtener la ruta de la carpeta donde se encuentra el ejecutable
+            string rutaEjecutable = AppDomain.CurrentDomain.BaseDirectory;
 
-                // Cargar la fuente desde el archivo
-                fontCollection.AddFontFile(rutaCompletaFuente);
-           
+            // Construir la ruta completa al archivo de fuente usando la ruta relativa
+            string rutaCompletaFuente = Path.Combine(rutaEjecutable, "Fuentes", nombreArchivo);
+
+            // Cargar la fuente desde el archivo
+            fontCollection.AddFontFile(rutaCompletaFuente);
+
         }
 
         public void AplicarFuente(Control control, float tamano, FontStyle estilo)
@@ -87,7 +87,7 @@ namespace Proyecto_AdministracionOrgDatos
             // Cambiar el color a azul cuando se comienza a escribir
             if (cuadroTexto.ForeColor == SystemColors.ActiveBorder)
             {
-                cuadroTexto.ForeColor = Color.SteelBlue; 
+                cuadroTexto.ForeColor = Color.SteelBlue;
             }
             if (string.IsNullOrWhiteSpace(cuadroTexto.Text))
             {
@@ -106,12 +106,11 @@ namespace Proyecto_AdministracionOrgDatos
             if (string.IsNullOrWhiteSpace(cuadroTexto.Text))
             {
                 cuadroTexto.ForeColor = SystemColors.ActiveBorder;
-               
+
             }
         }
 
-
-
     }
+}
 
-
+    
