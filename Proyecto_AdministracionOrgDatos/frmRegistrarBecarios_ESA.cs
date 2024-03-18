@@ -182,7 +182,7 @@ namespace Proyecto_AdministracionOrgDatos
             txtFechanac.Text = "";
             txtEdad.Text = "";
             CBGenero.Text = "";
-            txtEstadoCivil.Text = "";
+            cmbEstCivil.Text = "";
             txtDomicilio.Text = "";
             txtCodigoPostal.Text = "";
             txtNacionalidad.Text = "";
@@ -524,17 +524,8 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void frmRegistrarBecarios_ESA_Load(object sender, EventArgs e)
         {
+            CargarFuentes();
             this.FormBorderStyle = FormBorderStyle.None;
-        }
-
-        private void dgv_Agregar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
         }
 
         // Cambio en el ComboBox
@@ -581,20 +572,6 @@ namespace Proyecto_AdministracionOrgDatos
                 txtModelo.Text = "Cuatrimestral";
         }
 
-        private void txtModelo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbFiltroModificar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtModificacion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -729,10 +706,6 @@ namespace Proyecto_AdministracionOrgDatos
             }
         }
 
-        private void txtCorreoElectronico_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private bool HayCamposVacios()
         {
@@ -812,7 +785,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[5].Value = GeneracionCURP();
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[6].Value = CBGenero.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[7].Value = txtEstadoCivil.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[7].Value = cmbEstCivil.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[8].Value = txtDomicilio.Text;
 
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[9].Value = txtCodigoPostal.Text;
@@ -839,5 +812,38 @@ namespace Proyecto_AdministracionOrgDatos
                 txtApaterno.Focus();
             }
         }
+        public void CargarFuentes()
+        {
+            // Cargar las fuente desde el archivo TTF
+            string nombreFuente = "coolveticaRG.otf";
+            fontPers.CargarFuentePersonalizada(nombreFuente);
+            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
+            fontPers.AplicarFuente(lblTitulo_ESA, 28, FontStyle.Regular);
+        }
+
+        private void txtModelo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void cmbFiltroModificar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void txtModificacion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void txtCorreoElectronico_TextChanged(object sender, EventArgs e)
+        {
+        }
+        private void dgv_Agregar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

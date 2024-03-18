@@ -84,20 +84,6 @@ namespace Proyecto_AdministracionOrgDatos
             FechaC.Text = DateTime.Now.ToShortDateString();
         }
 
-        private void lblTitulo_ACO_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void imgLogin_ACO_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormLogin_ESA_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void frmRegistrarButton_Click(object sender, EventArgs e)
         {
@@ -109,6 +95,17 @@ namespace Proyecto_AdministracionOrgDatos
                 Form adminRegistro = new frmRegistroAdmin();
                 adminRegistro.Show();
             }
+        }
+
+
+
+        private void lblTitulo_ACO_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void FormLogin_ESA_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

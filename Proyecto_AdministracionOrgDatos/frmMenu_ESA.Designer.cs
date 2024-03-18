@@ -38,11 +38,10 @@
             this.FechaHora1 = new System.Windows.Forms.Timer(this.components);
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timerInactividad = new System.Windows.Forms.Timer(this.components);
+            this.label4 = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSubirDocumentos_ESA
@@ -55,11 +54,11 @@
             this.btnSubirDocumentos_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnSubirDocumentos_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnSubirDocumentos_ESA.Image")));
             this.btnSubirDocumentos_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubirDocumentos_ESA.Location = new System.Drawing.Point(2, 151);
+            this.btnSubirDocumentos_ESA.Location = new System.Drawing.Point(2, 159);
             this.btnSubirDocumentos_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubirDocumentos_ESA.Name = "btnSubirDocumentos_ESA";
             this.btnSubirDocumentos_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnSubirDocumentos_ESA.Size = new System.Drawing.Size(220, 56);
+            this.btnSubirDocumentos_ESA.Size = new System.Drawing.Size(189, 56);
             this.btnSubirDocumentos_ESA.TabIndex = 24;
             this.btnSubirDocumentos_ESA.Text = "Subir documentos";
             this.btnSubirDocumentos_ESA.UseVisualStyleBackColor = false;
@@ -74,11 +73,11 @@
             this.btnRegistrarUsuarios_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnRegistrarUsuarios_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarUsuarios_ESA.Image")));
             this.btnRegistrarUsuarios_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrarUsuarios_ESA.Location = new System.Drawing.Point(2, 91);
+            this.btnRegistrarUsuarios_ESA.Location = new System.Drawing.Point(2, 99);
             this.btnRegistrarUsuarios_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrarUsuarios_ESA.Name = "btnRegistrarUsuarios_ESA";
             this.btnRegistrarUsuarios_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnRegistrarUsuarios_ESA.Size = new System.Drawing.Size(184, 56);
+            this.btnRegistrarUsuarios_ESA.Size = new System.Drawing.Size(189, 56);
             this.btnRegistrarUsuarios_ESA.TabIndex = 22;
             this.btnRegistrarUsuarios_ESA.Text = "Registrar y Modificar";
             this.btnRegistrarUsuarios_ESA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -95,11 +94,11 @@
             this.btnCerrarSesion_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnCerrarSesion_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion_ESA.Image")));
             this.btnCerrarSesion_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion_ESA.Location = new System.Drawing.Point(2, 331);
+            this.btnCerrarSesion_ESA.Location = new System.Drawing.Point(2, 339);
             this.btnCerrarSesion_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarSesion_ESA.Name = "btnCerrarSesion_ESA";
             this.btnCerrarSesion_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnCerrarSesion_ESA.Size = new System.Drawing.Size(184, 56);
+            this.btnCerrarSesion_ESA.Size = new System.Drawing.Size(189, 56);
             this.btnCerrarSesion_ESA.TabIndex = 21;
             this.btnCerrarSesion_ESA.Text = "        Cerrar Sesión";
             this.btnCerrarSesion_ESA.UseVisualStyleBackColor = false;
@@ -115,11 +114,11 @@
             this.btnGenerarPDF_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnGenerarPDF_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarPDF_ESA.Image")));
             this.btnGenerarPDF_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarPDF_ESA.Location = new System.Drawing.Point(2, 211);
+            this.btnGenerarPDF_ESA.Location = new System.Drawing.Point(2, 219);
             this.btnGenerarPDF_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerarPDF_ESA.Name = "btnGenerarPDF_ESA";
             this.btnGenerarPDF_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnGenerarPDF_ESA.Size = new System.Drawing.Size(220, 56);
+            this.btnGenerarPDF_ESA.Size = new System.Drawing.Size(189, 56);
             this.btnGenerarPDF_ESA.TabIndex = 26;
             this.btnGenerarPDF_ESA.Text = "Generar PDF";
             this.btnGenerarPDF_ESA.UseVisualStyleBackColor = false;
@@ -134,11 +133,11 @@
             this.btnConsultar_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnConsultar_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar_ESA.Image")));
             this.btnConsultar_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultar_ESA.Location = new System.Drawing.Point(2, 271);
+            this.btnConsultar_ESA.Location = new System.Drawing.Point(2, 279);
             this.btnConsultar_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultar_ESA.Name = "btnConsultar_ESA";
             this.btnConsultar_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnConsultar_ESA.Size = new System.Drawing.Size(184, 56);
+            this.btnConsultar_ESA.Size = new System.Drawing.Size(189, 56);
             this.btnConsultar_ESA.TabIndex = 27;
             this.btnConsultar_ESA.Text = "       Consultar";
             this.btnConsultar_ESA.UseVisualStyleBackColor = false;
@@ -153,43 +152,42 @@
             this.sidebar.Controls.Add(this.btnGenerarPDF_ESA);
             this.sidebar.Controls.Add(this.btnConsultar_ESA);
             this.sidebar.Controls.Add(this.btnCerrarSesion_ESA);
-            this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidebar.Location = new System.Drawing.Point(0, 0);
-            this.sidebar.MaximumSize = new System.Drawing.Size(185, 788);
-            this.sidebar.MinimumSize = new System.Drawing.Size(185, 788);
+            this.sidebar.Location = new System.Drawing.Point(-1, 1);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(185, 788);
+            this.sidebar.Size = new System.Drawing.Size(195, 539);
             this.sidebar.TabIndex = 35;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(183, 83);
+            this.panel1.Size = new System.Drawing.Size(188, 91);
             this.panel1.TabIndex = 36;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(156, 55);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // timerInactividad
             // 
             this.timerInactividad.Interval = 1000;
             this.timerInactividad.Tick += new System.EventHandler(this.timerInactividad_Tick);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(26, 2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(157, 73);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "BK2";
+            // 
             // frmMenu_ESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(871, 533);
             this.Controls.Add(this.sidebar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -201,7 +199,7 @@
             this.Load += new System.EventHandler(this.frmMenu_ESA_Load);
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -216,6 +214,6 @@
         private System.Windows.Forms.FlowLayoutPanel sidebar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timerInactividad;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label4;
     }
 }

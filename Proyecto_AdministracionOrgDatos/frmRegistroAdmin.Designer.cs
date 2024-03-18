@@ -32,6 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.newAdminButton = new System.Windows.Forms.Button();
             this.rolCombo = new System.Windows.Forms.ComboBox();
             this.Rol = new System.Windows.Forms.Label();
             this.correoTxt = new System.Windows.Forms.TextBox();
@@ -41,14 +42,13 @@
             this.nombreTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.confirmarTodoButton = new System.Windows.Forms.Button();
+            this.eliminarAdminButton = new System.Windows.Forms.Button();
             this.administradoresDataGrid = new System.Windows.Forms.DataGridView();
             this.nombreData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correoData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.newAdminButton = new System.Windows.Forms.Button();
-            this.eliminarAdminButton = new System.Windows.Forms.Button();
-            this.confirmarTodoButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -59,7 +59,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(109, 43);
+            this.label1.Location = new System.Drawing.Point(25, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(212, 25);
             this.label1.TabIndex = 0;
@@ -103,6 +103,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nuevo Admin...";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // newAdminButton
+            // 
+            this.newAdminButton.Location = new System.Drawing.Point(36, 247);
+            this.newAdminButton.Name = "newAdminButton";
+            this.newAdminButton.Size = new System.Drawing.Size(114, 22);
+            this.newAdminButton.TabIndex = 8;
+            this.newAdminButton.Text = "Nuevo Administrador";
+            this.newAdminButton.UseVisualStyleBackColor = true;
+            this.newAdminButton.Click += new System.EventHandler(this.newAdminButton_Click);
             // 
             // rolCombo
             // 
@@ -189,6 +199,26 @@
             this.tabPage2.Text = "Borrar Admin...";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // confirmarTodoButton
+            // 
+            this.confirmarTodoButton.Location = new System.Drawing.Point(140, 26);
+            this.confirmarTodoButton.Name = "confirmarTodoButton";
+            this.confirmarTodoButton.Size = new System.Drawing.Size(112, 23);
+            this.confirmarTodoButton.TabIndex = 2;
+            this.confirmarTodoButton.Text = "Confirmar todo";
+            this.confirmarTodoButton.UseVisualStyleBackColor = true;
+            this.confirmarTodoButton.Click += new System.EventHandler(this.confirmarTodoButton_Click);
+            // 
+            // eliminarAdminButton
+            // 
+            this.eliminarAdminButton.Location = new System.Drawing.Point(12, 26);
+            this.eliminarAdminButton.Name = "eliminarAdminButton";
+            this.eliminarAdminButton.Size = new System.Drawing.Size(122, 23);
+            this.eliminarAdminButton.TabIndex = 1;
+            this.eliminarAdminButton.Text = "Eliminar Administrador";
+            this.eliminarAdminButton.UseVisualStyleBackColor = true;
+            this.eliminarAdminButton.Click += new System.EventHandler(this.eliminarAdminButton_Click);
+            // 
             // administradoresDataGrid
             // 
             this.administradoresDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -221,36 +251,6 @@
             // 
             this.telefonoData.HeaderText = "Num. Telefono";
             this.telefonoData.Name = "telefonoData";
-            // 
-            // newAdminButton
-            // 
-            this.newAdminButton.Location = new System.Drawing.Point(36, 247);
-            this.newAdminButton.Name = "newAdminButton";
-            this.newAdminButton.Size = new System.Drawing.Size(114, 22);
-            this.newAdminButton.TabIndex = 8;
-            this.newAdminButton.Text = "Nuevo Administrador";
-            this.newAdminButton.UseVisualStyleBackColor = true;
-            this.newAdminButton.Click += new System.EventHandler(this.newAdminButton_Click);
-            // 
-            // eliminarAdminButton
-            // 
-            this.eliminarAdminButton.Location = new System.Drawing.Point(12, 26);
-            this.eliminarAdminButton.Name = "eliminarAdminButton";
-            this.eliminarAdminButton.Size = new System.Drawing.Size(122, 23);
-            this.eliminarAdminButton.TabIndex = 1;
-            this.eliminarAdminButton.Text = "Eliminar Administrador";
-            this.eliminarAdminButton.UseVisualStyleBackColor = true;
-            this.eliminarAdminButton.Click += new System.EventHandler(this.eliminarAdminButton_Click);
-            // 
-            // confirmarTodoButton
-            // 
-            this.confirmarTodoButton.Location = new System.Drawing.Point(140, 26);
-            this.confirmarTodoButton.Name = "confirmarTodoButton";
-            this.confirmarTodoButton.Size = new System.Drawing.Size(112, 23);
-            this.confirmarTodoButton.TabIndex = 2;
-            this.confirmarTodoButton.Text = "Confirmar todo";
-            this.confirmarTodoButton.UseVisualStyleBackColor = true;
-            this.confirmarTodoButton.Click += new System.EventHandler(this.confirmarTodoButton_Click);
             // 
             // frmRegistroAdmin
             // 

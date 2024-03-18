@@ -18,6 +18,7 @@ namespace Proyecto_AdministracionOrgDatos
         //crea aleatoriamente numeros de 6 digitos para la contraseña
         Random rnd = new Random();
 
+
         public frmRegistroAdmin()
         {
             InitializeComponent();

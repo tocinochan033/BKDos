@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,9 @@ namespace Proyecto_AdministracionOrgDatos
 {
     public partial class frmMenu_ESA : Form
     {
+        Form loginForm = new FormLogin_ESA();
+        private FuentePersonalizada fontPers = new FuentePersonalizada();
+
         //Variables para las diferentes pantallas
         frmRegistrarBecarios_ESA PantallaRegistro;
         Mostrar_datos PantallaConsulta;
@@ -61,11 +65,6 @@ namespace Proyecto_AdministracionOrgDatos
             return false;
         }
 
-        private void btnInventario_ACO_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //Configuracion del boton de Registrar y modificar
         private void btnRegistrarUsuarios_ESA_Click(object sender, EventArgs e)
         {
@@ -97,18 +96,12 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnCerrarSesion_ESA_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide(); loginForm.Show();
         }
 
         private void frmMenu_ESA_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
-        }
-
-        private void btnDarBaja_ESA_Click(object sender, EventArgs e)
-        {
-           
-            
         }
 
         //Configuracion del boton de Consultas
@@ -164,6 +157,15 @@ namespace Proyecto_AdministracionOrgDatos
             {    timerInactividad.Enabled = true; }
         }
 
-        
+        public void CargarFuentes()
+        {
+            // Cargar las fuente desde el archivo TTF
+            string nombreFuente = "coolveticaRG.otf";
+            fontPers.CargarFuentePersonalizada(nombreFuente);
+            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
+            fontPers.AplicarFuente(label4, 48, FontStyle.Regular);
+        }
+
+
     }
 }
