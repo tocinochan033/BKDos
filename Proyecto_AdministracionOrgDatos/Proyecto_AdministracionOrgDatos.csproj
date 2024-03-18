@@ -78,6 +78,12 @@
     <Compile Include="frmMenu_ESA.Designer.cs">
       <DependentUpon>frmMenu_ESA.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRegistroAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistroAdmin.Designer.cs">
+      <DependentUpon>frmRegistroAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mostrar_datos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu_ESA.resx">
       <DependentUpon>frmMenu_ESA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistroAdmin.resx">
+      <DependentUpon>frmRegistroAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mostrar_datos.resx">
       <DependentUpon>Mostrar_datos.cs</DependentUpon>

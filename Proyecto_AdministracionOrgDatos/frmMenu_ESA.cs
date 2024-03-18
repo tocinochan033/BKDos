@@ -132,40 +132,6 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
 
-
-        //-----------------------------------------------------------------------
-
-        //Aqui esta el codigo de deslizamiento de la barra de menu
-        bool sidebarExpand;
-        private void SideBarTimer_Tick(object sender, EventArgs e)
-        {
-
-            if (sidebarExpand)
-            {
-                
-                sidebar.Width -= 10;
-                if (sidebar.Width == sidebar.MinimumSize.Width)
-                {
-                    sidebarExpand = false;
-                    SideBarTimer.Stop();
-                }
-            }else
-            {
-                sidebar.Width += 10;
-                if (sidebar.Width == sidebar.MaximumSize.Width)
-                {
-                    sidebarExpand = true;
-                    SideBarTimer.Stop();
-                }
-            }
-        }
-
-        //Boton del menu
-        private void menuButton_Click(object sender, EventArgs e)
-        {
-            SideBarTimer.Start();
-        }
-
         private void frmMenu_ESA_FormClosing(object sender, FormClosingEventArgs e)
         {
             //Al cerrar el formulario, entonces esa instancia creada se "limpia",
@@ -198,5 +164,6 @@ namespace Proyecto_AdministracionOrgDatos
             {    timerInactividad.Enabled = true; }
         }
 
+        
     }
 }
