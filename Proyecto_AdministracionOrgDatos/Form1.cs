@@ -14,19 +14,17 @@ using Microsoft.VisualBasic;
 namespace Proyecto_AdministracionOrgDatos
 {
     public partial class FormLogin_ESA : Form
-    { 
+    {
         /// <summary>
         /// LOGIN EN HIATUS
         /// </summary>
-        private string[] usuario = { "manolo", "jose", "felipe" };
-        private string[] contraseña = { "12345", "jacobo", "contraseña" };
-        FileStream login = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
 
+        private FileStream login;
         public FormLogin_ESA()
         {
+            login = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
             InitializeComponent();
-            guardado();
         }
 
         private void btnSalir_ESA_Click(object sender, EventArgs e)
@@ -36,16 +34,14 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnInicioSesion_ESA_Click(object sender, EventArgs e)
         {
-
-            if (archivoAdmin(usuario, contraseña) || txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1")
+            //Si el usuario contraseña son identificables, carga al siguiente usuario. A la vez, compara el rol
+            if (archivoAdmin() || txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1")
             {
-                txtUsuario_ESA.Text = "";
-                txtContraseña_ESA.Text = "";
-                txtUsuario_ESA.Focus();
-
-                frmMenu_ESA objMenu_ACO = frmMenu_ESA.ventanaUnica();
-                Program.loginEstatico.Hide();
+                Form objMenu_ACO = new frmMenu_ESA();
                 objMenu_ACO.Show();
+
+                this.Hide();
+                login.Close();
             }
             else
             {
@@ -55,25 +51,30 @@ namespace Proyecto_AdministracionOrgDatos
             }
         }
 
-        public bool archivoAdmin(string[] usuario, string[] contraseña)
+        private bool archivoAdmin() //Verifica si el usuario y contraseña coinciden en la misma fila de archivo
         {
-            for(int i = 0; i < usuario.Length; i++)
+            using (StreamReader sr = new StreamReader(login))
             {
-                if (usuario[i] == txtUsuario_ESA.Text && contraseña[i] == txtContraseña_ESA.Text)
-                    return true;
+                string linea;
+                while ((linea = sr.ReadLine()) != null)
+                {
+                    string[] datos = linea.Split(',');
+                    if (datos.Length >= 5)
+                    {
+                        //Posiciones dentro del arhivo
+                        //nombre,correo,numero,rol,contraseña
+                        string usuarioArchivo = datos[0];
+                        string contrasenaArchivo = datos[4];
+
+                        if (usuarioArchivo == txtUsuario_ESA.Text && contrasenaArchivo == txtContraseña_ESA.Text)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                login.Close();
             }
             return false;
-        }
-
-        private void guardado()
-        {
-            using (StreamWriter writer = new StreamWriter(login))
-            {
-                for (int i = 0; i < usuario.Length; i++)
-                {
-                    writer.WriteLine($"{usuario[i]},{contraseña[i]}");
-                }
-            }
         }
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
@@ -96,6 +97,18 @@ namespace Proyecto_AdministracionOrgDatos
         private void FormLogin_ESA_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmRegistrarButton_Click(object sender, EventArgs e)
+        {
+            login.Close();
+            string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
+
+            if (int.Parse(confirmacion) == 2) //Cada nuevo administrador requiere confirmacion de contraseña: 2
+            {
+                Form adminRegistro = new frmRegistroAdmin();
+                adminRegistro.Show();
+            }
         }
     }
 }

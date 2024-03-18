@@ -45,6 +45,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.frmRegistrarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -226,12 +227,23 @@
             this.pictureBox2.TabIndex = 92;
             this.pictureBox2.TabStop = false;
             // 
+            // frmRegistrarButton
+            // 
+            this.frmRegistrarButton.Location = new System.Drawing.Point(538, 387);
+            this.frmRegistrarButton.Name = "frmRegistrarButton";
+            this.frmRegistrarButton.Size = new System.Drawing.Size(149, 32);
+            this.frmRegistrarButton.TabIndex = 93;
+            this.frmRegistrarButton.Text = "Registrar";
+            this.frmRegistrarButton.UseVisualStyleBackColor = true;
+            this.frmRegistrarButton.Click += new System.EventHandler(this.frmRegistrarButton_Click);
+            // 
             // FormLogin_ESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(847, 510);
+            this.Controls.Add(this.frmRegistrarButton);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox15);
             this.Controls.Add(this.pictureBox1);
@@ -276,6 +288,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button frmRegistrarButton;
     }
 }
 
