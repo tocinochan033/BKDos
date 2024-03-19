@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,9 +19,11 @@ namespace Proyecto_AdministracionOrgDatos
         /// <summary>
         /// LOGIN EN HIATUS
         /// </summary>
-
-
+        private FuentePersonalizada fontPers = new FuentePersonalizada();
+        private TextoGuia txtGuia = new TextoGuia();
         private FileStream login;
+
+
         public FormLogin_ESA()
         {
             login = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
@@ -104,6 +107,34 @@ namespace Proyecto_AdministracionOrgDatos
 
         }
         private void FormLogin_ESA_Load(object sender, EventArgs e)
+        {
+            CargarTextoGuia();
+
+            // Cargar las fuente desde el archivo TTF
+            string nombreFuente = "coolveticaRG.otf";
+            fontPers.CargarFuentePersonalizada(nombreFuente);
+            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
+            fontPers.AplicarFuente(lblTitulo_ESA, 28, FontStyle.Regular);
+
+            string nombreFuenteBK2 = "Louis George Cafe Bold.ttf";
+            fontPers.CargarFuentePersonalizada(nombreFuenteBK2);
+            // Aplicar la fuente a la etiqueta en lbl4
+            fontPers.AplicarFuente(label4, 47, FontStyle.Regular);
+        }
+
+        public void CargarTextoGuia()
+        {
+            //Cuando se entra, sale o cambia el texto del control, se ejecutara el metodo en txtUsuario_ESA
+            txtUsuario_ESA.Enter += (s, v) => txtGuia.CuadroTexto_Enter(txtUsuario_ESA, " Ejemplo: Usuario2134");
+            txtUsuario_ESA.Leave += (s, v) => txtGuia.CuadroTexto_Enter(txtUsuario_ESA, " Ejemplo: Usuario2134");
+            txtUsuario_ESA.TextChanged += (s, v) => txtGuia.CuadroTexto_TextChanged(txtUsuario_ESA);
+            //Cuando se entra, sale o cambia el texto del control, se ejecutara el metodo en txtContrasena_ESA
+            txtContraseña_ESA.Enter += (s, v) => txtGuia.CuadroTexto_Enter(txtContraseña_ESA, " Ejemplo: Password2781");
+            txtContraseña_ESA.Leave += (s, v) => txtGuia.CuadroTexto_Enter(txtContraseña_ESA, " Ejemplo: Password2781");
+            txtContraseña_ESA.TextChanged += (s, v) => txtGuia.CuadroTexto_TextChangedPassword(txtContraseña_ESA);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

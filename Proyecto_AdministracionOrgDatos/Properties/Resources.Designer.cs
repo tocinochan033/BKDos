@@ -63,6 +63,16 @@ namespace Proyecto_AdministracionOrgDatos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _5bbd9abb_5618_4750_ad86_7379fc3a08a0 {
+            get {
+                object obj = ResourceManager.GetObject("5bbd9abb-5618-4750-ad86-7379fc3a08a0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ajolote {
             get {
                 object obj = ResourceManager.GetObject("Ajolote", resourceCulture);
