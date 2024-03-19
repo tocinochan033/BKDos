@@ -17,7 +17,7 @@ namespace Proyecto_AdministracionOrgDatos
     {
         //crea aleatoriamente numeros de 6 digitos para la contraseña
         Random rnd = new Random();
-
+        FuentePersonalizada fontPers = new FuentePersonalizada();
 
         public frmRegistroAdmin()
         {
@@ -140,6 +140,20 @@ namespace Proyecto_AdministracionOrgDatos
             }
             //Se terminan de guardar los datos y se cierra el archivo
             login.Close();
+        }
+
+        public void CargarFuentes()
+        {
+            // Cargar las fuente desde el archivo TTF
+            string nombreFuente = "coolveticaRG.otf";
+            fontPers.CargarFuentePersonalizada(nombreFuente);
+            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
+            fontPers.AplicarFuente(label1, 28, FontStyle.Regular);
+        }
+
+        private void frmRegistroAdmin_Load(object sender, EventArgs e)
+        {
+            CargarFuentes();
         }
     }
 }

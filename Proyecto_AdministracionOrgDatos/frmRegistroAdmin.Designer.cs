@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.newAdminButton = new System.Windows.Forms.Button();
@@ -49,40 +48,36 @@
             this.correoData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.administradoresDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 22);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 25);
+            this.label1.Size = new System.Drawing.Size(267, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nuevo Administrador";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(172, 261);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Insertar Imagen";
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(387, 101);
+            this.tabControl1.Location = new System.Drawing.Point(311, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(463, 340);
+            this.tabControl1.Size = new System.Drawing.Size(466, 292);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -99,16 +94,16 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(455, 314);
+            this.tabPage1.Size = new System.Drawing.Size(458, 266);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nuevo Admin...";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // newAdminButton
             // 
-            this.newAdminButton.Location = new System.Drawing.Point(36, 247);
+            this.newAdminButton.Location = new System.Drawing.Point(31, 208);
             this.newAdminButton.Name = "newAdminButton";
-            this.newAdminButton.Size = new System.Drawing.Size(114, 22);
+            this.newAdminButton.Size = new System.Drawing.Size(389, 27);
             this.newAdminButton.TabIndex = 8;
             this.newAdminButton.Text = "Nuevo Administrador";
             this.newAdminButton.UseVisualStyleBackColor = true;
@@ -120,71 +115,75 @@
             this.rolCombo.Items.AddRange(new object[] {
             "mamaoso",
             "obrera"});
-            this.rolCombo.Location = new System.Drawing.Point(31, 198);
+            this.rolCombo.Location = new System.Drawing.Point(31, 162);
             this.rolCombo.Name = "rolCombo";
-            this.rolCombo.Size = new System.Drawing.Size(153, 21);
+            this.rolCombo.Size = new System.Drawing.Size(123, 21);
             this.rolCombo.TabIndex = 7;
             // 
             // Rol
             // 
             this.Rol.AutoSize = true;
-            this.Rol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rol.Location = new System.Drawing.Point(27, 176);
+            this.Rol.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.Rol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.Rol.Location = new System.Drawing.Point(27, 138);
             this.Rol.Name = "Rol";
-            this.Rol.Size = new System.Drawing.Size(33, 20);
+            this.Rol.Size = new System.Drawing.Size(38, 21);
             this.Rol.TabIndex = 6;
-            this.Rol.Text = "Rol";
+            this.Rol.Text = "Rol:";
             // 
             // correoTxt
             // 
-            this.correoTxt.Location = new System.Drawing.Point(31, 119);
+            this.correoTxt.Location = new System.Drawing.Point(31, 103);
             this.correoTxt.Name = "correoTxt";
-            this.correoTxt.Size = new System.Drawing.Size(186, 20);
+            this.correoTxt.Size = new System.Drawing.Size(389, 20);
             this.correoTxt.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 96);
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label5.Location = new System.Drawing.Point(27, 79);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 20);
+            this.label5.Size = new System.Drawing.Size(65, 21);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Correo";
+            this.label5.Text = "Correo:";
             // 
             // numeroTxt
             // 
-            this.numeroTxt.Location = new System.Drawing.Point(236, 199);
+            this.numeroTxt.Location = new System.Drawing.Point(173, 162);
             this.numeroTxt.Name = "numeroTxt";
-            this.numeroTxt.Size = new System.Drawing.Size(186, 20);
+            this.numeroTxt.Size = new System.Drawing.Size(247, 20);
             this.numeroTxt.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(232, 176);
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label4.Location = new System.Drawing.Point(169, 138);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 20);
+            this.label4.Size = new System.Drawing.Size(74, 21);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Numero";
+            this.label4.Text = "Numero:";
             // 
             // nombreTxt
             // 
-            this.nombreTxt.Location = new System.Drawing.Point(31, 55);
+            this.nombreTxt.Location = new System.Drawing.Point(31, 49);
             this.nombreTxt.Name = "nombreTxt";
-            this.nombreTxt.Size = new System.Drawing.Size(186, 20);
+            this.nombreTxt.Size = new System.Drawing.Size(389, 20);
             this.nombreTxt.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 32);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label3.Location = new System.Drawing.Point(27, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.Size = new System.Drawing.Size(75, 21);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Nombre";
+            this.label3.Text = "Nombre:";
             // 
             // tabPage2
             // 
@@ -194,16 +193,16 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(455, 314);
+            this.tabPage2.Size = new System.Drawing.Size(458, 266);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Borrar Admin...";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // confirmarTodoButton
             // 
-            this.confirmarTodoButton.Location = new System.Drawing.Point(140, 26);
+            this.confirmarTodoButton.Location = new System.Drawing.Point(176, 16);
             this.confirmarTodoButton.Name = "confirmarTodoButton";
-            this.confirmarTodoButton.Size = new System.Drawing.Size(112, 23);
+            this.confirmarTodoButton.Size = new System.Drawing.Size(157, 33);
             this.confirmarTodoButton.TabIndex = 2;
             this.confirmarTodoButton.Text = "Confirmar todo";
             this.confirmarTodoButton.UseVisualStyleBackColor = true;
@@ -211,9 +210,9 @@
             // 
             // eliminarAdminButton
             // 
-            this.eliminarAdminButton.Location = new System.Drawing.Point(12, 26);
+            this.eliminarAdminButton.Location = new System.Drawing.Point(12, 16);
             this.eliminarAdminButton.Name = "eliminarAdminButton";
-            this.eliminarAdminButton.Size = new System.Drawing.Size(122, 23);
+            this.eliminarAdminButton.Size = new System.Drawing.Size(158, 33);
             this.eliminarAdminButton.TabIndex = 1;
             this.eliminarAdminButton.Text = "Eliminar Administrador";
             this.eliminarAdminButton.UseVisualStyleBackColor = true;
@@ -252,21 +251,45 @@
             this.telefonoData.HeaderText = "Num. Telefono";
             this.telefonoData.Name = "telefonoData";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.pictureBox1.Location = new System.Drawing.Point(-6, -10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(299, 335);
+            this.pictureBox1.TabIndex = 74;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.pictureBox2.Image = global::Proyecto_AdministracionOrgDatos.Properties.Resources.AddAdminImagen;
+            this.pictureBox2.Location = new System.Drawing.Point(11, 82);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(256, 241);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 75;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmRegistroAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 459);
+            this.ClientSize = new System.Drawing.Size(790, 317);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "frmRegistroAdmin";
             this.Text = "frmRegistroAdmin";
+            this.Load += new System.EventHandler(this.frmRegistroAdmin_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.administradoresDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,7 +298,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -295,5 +317,7 @@
         private System.Windows.Forms.Button newAdminButton;
         private System.Windows.Forms.Button confirmarTodoButton;
         private System.Windows.Forms.Button eliminarAdminButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

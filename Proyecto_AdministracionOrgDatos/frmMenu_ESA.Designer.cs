@@ -38,8 +38,8 @@
             this.FechaHora1 = new System.Windows.Forms.Timer(this.components);
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.timerInactividad = new System.Windows.Forms.Timer(this.components);
             this.label4 = new System.Windows.Forms.Label();
+            this.timerInactividad = new System.Windows.Forms.Timer(this.components);
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,10 +57,11 @@
             this.btnSubirDocumentos_ESA.Location = new System.Drawing.Point(2, 159);
             this.btnSubirDocumentos_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubirDocumentos_ESA.Name = "btnSubirDocumentos_ESA";
-            this.btnSubirDocumentos_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnSubirDocumentos_ESA.Size = new System.Drawing.Size(189, 56);
+            this.btnSubirDocumentos_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
+            this.btnSubirDocumentos_ESA.Size = new System.Drawing.Size(193, 56);
             this.btnSubirDocumentos_ESA.TabIndex = 24;
             this.btnSubirDocumentos_ESA.Text = "Subir documentos";
+            this.btnSubirDocumentos_ESA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSubirDocumentos_ESA.UseVisualStyleBackColor = false;
             // 
             // btnRegistrarUsuarios_ESA
@@ -76,8 +77,8 @@
             this.btnRegistrarUsuarios_ESA.Location = new System.Drawing.Point(2, 99);
             this.btnRegistrarUsuarios_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrarUsuarios_ESA.Name = "btnRegistrarUsuarios_ESA";
-            this.btnRegistrarUsuarios_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnRegistrarUsuarios_ESA.Size = new System.Drawing.Size(189, 56);
+            this.btnRegistrarUsuarios_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
+            this.btnRegistrarUsuarios_ESA.Size = new System.Drawing.Size(193, 56);
             this.btnRegistrarUsuarios_ESA.TabIndex = 22;
             this.btnRegistrarUsuarios_ESA.Text = "Registrar y Modificar";
             this.btnRegistrarUsuarios_ESA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -97,8 +98,8 @@
             this.btnCerrarSesion_ESA.Location = new System.Drawing.Point(2, 339);
             this.btnCerrarSesion_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarSesion_ESA.Name = "btnCerrarSesion_ESA";
-            this.btnCerrarSesion_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnCerrarSesion_ESA.Size = new System.Drawing.Size(189, 56);
+            this.btnCerrarSesion_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
+            this.btnCerrarSesion_ESA.Size = new System.Drawing.Size(193, 56);
             this.btnCerrarSesion_ESA.TabIndex = 21;
             this.btnCerrarSesion_ESA.Text = "        Cerrar Sesión";
             this.btnCerrarSesion_ESA.UseVisualStyleBackColor = false;
@@ -117,10 +118,11 @@
             this.btnGenerarPDF_ESA.Location = new System.Drawing.Point(2, 219);
             this.btnGenerarPDF_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerarPDF_ESA.Name = "btnGenerarPDF_ESA";
-            this.btnGenerarPDF_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnGenerarPDF_ESA.Size = new System.Drawing.Size(189, 56);
+            this.btnGenerarPDF_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 35, 0);
+            this.btnGenerarPDF_ESA.Size = new System.Drawing.Size(193, 56);
             this.btnGenerarPDF_ESA.TabIndex = 26;
             this.btnGenerarPDF_ESA.Text = "Generar PDF";
+            this.btnGenerarPDF_ESA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGenerarPDF_ESA.UseVisualStyleBackColor = false;
             // 
             // btnConsultar_ESA
@@ -136,8 +138,8 @@
             this.btnConsultar_ESA.Location = new System.Drawing.Point(2, 279);
             this.btnConsultar_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultar_ESA.Name = "btnConsultar_ESA";
-            this.btnConsultar_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnConsultar_ESA.Size = new System.Drawing.Size(189, 56);
+            this.btnConsultar_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
+            this.btnConsultar_ESA.Size = new System.Drawing.Size(193, 56);
             this.btnConsultar_ESA.TabIndex = 27;
             this.btnConsultar_ESA.Text = "       Consultar";
             this.btnConsultar_ESA.UseVisualStyleBackColor = false;
@@ -154,7 +156,7 @@
             this.sidebar.Controls.Add(this.btnCerrarSesion_ESA);
             this.sidebar.Location = new System.Drawing.Point(-1, 1);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(195, 539);
+            this.sidebar.Size = new System.Drawing.Size(195, 611);
             this.sidebar.TabIndex = 35;
             // 
             // panel1
@@ -165,11 +167,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 91);
             this.panel1.TabIndex = 36;
-            // 
-            // timerInactividad
-            // 
-            this.timerInactividad.Interval = 1000;
-            this.timerInactividad.Tick += new System.EventHandler(this.timerInactividad_Tick);
             // 
             // label4
             // 
@@ -182,13 +179,19 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "BK2";
             // 
+            // timerInactividad
+            // 
+            this.timerInactividad.Interval = 1000;
+            this.timerInactividad.Tick += new System.EventHandler(this.timerInactividad_Tick);
+            // 
             // frmMenu_ESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(871, 533);
+            this.ClientSize = new System.Drawing.Size(1198, 612);
             this.Controls.Add(this.sidebar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);

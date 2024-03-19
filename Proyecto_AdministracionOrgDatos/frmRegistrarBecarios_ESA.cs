@@ -845,5 +845,14 @@ namespace Proyecto_AdministracionOrgDatos
 
         }
 
+        private void txtMunicipio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

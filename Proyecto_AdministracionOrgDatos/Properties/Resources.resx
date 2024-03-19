@@ -118,22 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="basura" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\basura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="plantillacontacto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plantillacontacto.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="plantilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plantilla.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="plantillaAcademica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plantillaAcademica.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="5bbd9abb-5618-4750-ad86-7379fc3a08a0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5bbd9abb-5618-4750-ad86-7379fc3a08a0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Ajolote" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ajolote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="5bbd9abb-5618-4750-ad86-7379fc3a08a0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5bbd9abb-5618-4750-ad86-7379fc3a08a0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="plantillaAcademica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plantillaAcademica.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="basura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\basura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plantilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plantilla.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="plantillacontacto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plantillacontacto.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="AddAdminImagen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddAdminImagen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

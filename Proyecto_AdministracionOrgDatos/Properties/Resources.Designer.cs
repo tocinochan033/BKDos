@@ -73,6 +73,16 @@ namespace Proyecto_AdministracionOrgDatos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddAdminImagen {
+            get {
+                object obj = ResourceManager.GetObject("AddAdminImagen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ajolote {
             get {
                 object obj = ResourceManager.GetObject("Ajolote", resourceCulture);
