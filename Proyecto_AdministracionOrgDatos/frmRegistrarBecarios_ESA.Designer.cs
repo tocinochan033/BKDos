@@ -103,6 +103,7 @@
             this.txtCarrera = new System.Windows.Forms.TextBox();
             this.lblCarrera = new System.Windows.Forms.Label();
             this.btnGuardarMod = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Agregar)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1024,12 +1025,26 @@
             this.btnGuardarMod.UseVisualStyleBackColor = false;
             this.btnGuardarMod.Click += new System.EventHandler(this.btnGuardarMod_Click);
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Black;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSalir.Location = new System.Drawing.Point(967, 405);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(187, 50);
+            this.btnSalir.TabIndex = 70;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // frmRegistrarBecarios_ESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGuardarMod);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.HoraC);
@@ -1151,5 +1166,6 @@
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGuardarMod;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

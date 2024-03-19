@@ -202,12 +202,11 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnRegresarMenu_ESA_Click(object sender, EventArgs e)
         {
+            Conectar();
             //Guarda los datos y regresa a la pantalla anterior
             Guardar();
-            Form objMenu_ESA = new frmMenu_ESA();
-            objMenu_ESA.Show();
-            this.Hide();
 
+            Conexion.Close();  
         }
 
         private bool camposImcompletos()
@@ -344,28 +343,30 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void Guardar()
         {
-            Conectar();
-            /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
-            /*Insercion de primera tabla Datos generales*/
-            Sql = "insert into DatosGenerales (ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero)";
-            Comando = new SqlCommand(Sql, Conexion);
-
-            /*Insercion de segunda tabla Datos Contacto*/
-            Sql = "insert into DatosContacto (Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono) values (@Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio, @Correo, @Telefono)";
-            Comando = new SqlCommand(Sql, Conexion);
-
-            /*Insercion de tercera tabla Datos academicos*/
-            Sql = "insert into DatosAcademicos (Carrera, Periodo, Promedio, Modelo, Id_cct) values (@Carrera, @Periodo, @Promedio, @Modelo)";
-            Comando = new SqlCommand(Sql, Conexion);
-
-            /*Insercion de cuarta tabla CCT*/
-            Sql = "insert into TablaCCT (Id_cct, CCT, NombreEscuela) values (@Id_cct, @CCT, @NombreEscuela)";
-
+            //Conectar();
             /*Seleccionar id de escuela, le asigno una variable para guardar el valor*/
             string Nam_Escuela;
             Nam_Escuela = txtEscuela.Text;
+
+
+            /*Insercion de tercera tabla Datos academicos*/
+            Sql = "";
+            Sql = "insert into DatosAcademicos (Carrera, Periodo, Promedio, Modelo, Id_cct) values (@Carrera, @Periodo, @Promedio, @Modelo, @Id_cct)";
+            Comando = new SqlCommand(Sql, Conexion);
+            /*Tercera tabla*/
            
-            //Añandiendo parametros y campos a agregar
+            Comando.Parameters.AddWithValue("@Carrera", txtCarrera.Text);
+            Comando.Parameters.AddWithValue("@Periodo", txtPeriodo.Text);
+            Comando.Parameters.AddWithValue("@Promedio", txtPromedio.Text);
+            Comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
+            Comando.Parameters.AddWithValue("@Id_cct", selectIDCCT(Nam_Escuela));
+
+            /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
+            /*Insercion de primera tabla Datos generales*/
+            Sql = "";
+            Sql = "insert into DatosGenerales (ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero)";
+            Comando = new SqlCommand(Sql, Conexion);
+            //Insercion de la primera tabla
             Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
             Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
             Comando.Parameters.AddWithValue("@Nombres", txtNombres.Text);
@@ -374,6 +375,13 @@ namespace Proyecto_AdministracionOrgDatos
             Comando.Parameters.AddWithValue("@Curp", txtCURP.Text);
             Comando.Parameters.AddWithValue("@EstadoCivil", txtEstadoCivil.Text);
             Comando.Parameters.AddWithValue("@Genero", CBGenero.Text);
+
+
+            /*Insercion de segunda tabla Datos Contacto*/
+            Sql = "";
+            Sql = "insert into DatosContacto (Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono) values (@Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio, @Correo, @Telefono)";
+            Comando = new SqlCommand(Sql, Conexion);
+            //Insercion de segunda tabla
             Comando.Parameters.AddWithValue("@Domicilio", txtDomicilio.Text);
             Comando.Parameters.AddWithValue("@CodigoPostal", txtCodigoPostal.Text);
             Comando.Parameters.AddWithValue("@Nacionalidad", txtNacionalidad.Text);
@@ -381,18 +389,25 @@ namespace Proyecto_AdministracionOrgDatos
             Comando.Parameters.AddWithValue("@Municipio", txtMunicipio.Text);
             Comando.Parameters.AddWithValue("@Correo", txtCorreoElectronico.Text);
             Comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-            Comando.Parameters.AddWithValue("@Carrera", txtCarrera.Text);
-            Comando.Parameters.AddWithValue("@Periodo", txtPeriodo.Text);
-            Comando.Parameters.AddWithValue("@Promedio", txtPromedio.Text);
-            Comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
-            Comando.Parameters.AddWithValue("@Id_cct", selectIDCCT(Nam_Escuela));
-            Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
-            Comando.Parameters.AddWithValue("@NombreEscuela", txtEscuela.Text);
+
+
+            /*Insercion de cuarta tabla CCT*/
+            Sql = "";
+            Sql = "insert into TablaCCT (CCT, NombreEscuela) values (@CCT, @NombreEscuela)";
+
+          
+           
+            //Añandiendo parametros y campos a agregar
+           
+           
+          
+           Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
+           Comando.Parameters.AddWithValue("@NombreEscuela", txtEscuela.Text);
 
         
             try
             {
-                //Ejecutamos la instruccion del sql para afectar las filas
+               
                 Comando.ExecuteNonQuery();
 
                 MessageBox.Show("Registro insertardo");
@@ -406,7 +421,7 @@ namespace Proyecto_AdministracionOrgDatos
 
            
             //Se terminan de guardar los datos y se cierra el archiv
-            Conexion.Close();    
+          //  Conexion.Close();    
         }
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
@@ -553,8 +568,7 @@ namespace Proyecto_AdministracionOrgDatos
         {
             Conectar();
             /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
-            Sql = "update DatosGenerales set ApellidoPaterno = @ApellidoPaterno, ApellidoMaterno = @ApellidoMaterno, Nombres = @Nombres, FechaNacimiento=@FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT, NombreEscuela) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio, @Correo, @Telefono, @Carrera, @Periodo, @Promedio, @Modelo, @CCT, @NombreEscuela)";
-            Comando = new SqlCommand(Sql, Conexion);
+
 
             /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
             /*Insercion de primera tabla Datos generales*/
@@ -646,6 +660,13 @@ namespace Proyecto_AdministracionOrgDatos
             //Comentado hasta que vea la forma de modificar 3 tablas a la vez
 
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Form objMenu_ESA = new frmMenu_ESA();
+            objMenu_ESA.Show();
+            this.Hide();
         }
     }
 }
