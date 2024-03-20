@@ -149,6 +149,12 @@ namespace Proyecto_AdministracionOrgDatos
             fontPers.CargarFuentePersonalizada(nombreFuente);
             // Aplicar la fuente a la etiqueta en lblTitulo_ESA
             fontPers.AplicarFuente(label1, 28, FontStyle.Regular);
+
+            // Cargar las fuente desde el archivo TTF
+            string nombreFuente2 = "coolveticaRG.otf";
+            fontPers.CargarFuentePersonalizada(nombreFuente);
+            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
+            fontPers.AplicarFuente(label2, 28, FontStyle.Regular);
         }
 
         private void frmRegistroAdmin_Load(object sender, EventArgs e)
