@@ -60,20 +60,28 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void newAdminButton_Click(object sender, EventArgs e)
         {
-            //Añadir nuevo administrador
-            SystemSounds.Exclamation.Play();
-            string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
+            try
+            {
+                //Añadir nuevo administrador
+                SystemSounds.Exclamation.Play();
+                string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
 
-            if (int.Parse(confirmacion) == 2) //Cada nuevo administrador requiere confirmacion de contraseña: 2
-            {
-                guardarDatos();
-                camposLimpieza();
+                if (int.Parse(confirmacion) == 2) //Cada nuevo administrador requiere confirmacion de contraseña: 2
+                {
+                    guardarDatos();
+                    camposLimpieza();
+                }
+                else
+                {
+                    MessageBox.Show("Favor de no olvidar todos los datos en casa.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                //login.Close();
             }
-            else
+            catch
             {
-                MessageBox.Show("Favor de no olvidar todos los datos en casa.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Console.WriteLine("hay errores wtf");
             }
-            //login.Close();
+
         }
 
         private void guardarDatos() //campo para guarda los datos dentro de una linea nuevo del archivo
@@ -99,17 +107,24 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void eliminarAdminButton_Click(object sender, EventArgs e)
         {
-            //Utiliza la misma logica para borrar datos de becarios. A excepcion de pedir contraseña: 2
-            if (administradoresDataGrid.CurrentRow.Index > -1)
+            try
             {
-                SystemSounds.Exclamation.Play();
-                string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
-
-                if (int.Parse(confirmacion) == 2)
+                //Utiliza la misma logica para borrar datos de becarios. A excepcion de pedir contraseña: 2
+                if (administradoresDataGrid.CurrentRow.Index > -1)
                 {
+                    SystemSounds.Exclamation.Play();
+                    string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
 
-                    administradoresDataGrid.Rows.RemoveAt(administradoresDataGrid.CurrentRow.Index);
+                    if (int.Parse(confirmacion) == 2)
+                    {
+
+                        administradoresDataGrid.Rows.RemoveAt(administradoresDataGrid.CurrentRow.Index);
+                    }
                 }
+            }
+            catch
+            {
+
             }
         }
 
