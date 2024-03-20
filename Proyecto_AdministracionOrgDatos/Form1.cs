@@ -90,14 +90,22 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void frmRegistrarButton_Click(object sender, EventArgs e)
         {
-            login.Close();
-            string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
-
-            if (int.Parse(confirmacion) == 2) //Cada nuevo administrador requiere confirmacion de contraseña: 2
+            try
             {
-                Form adminRegistro = new frmRegistroAdmin();
-                adminRegistro.Show();
+                login.Close();
+                string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
+
+                if (int.Parse(confirmacion) == 2) //Cada nuevo administrador requiere confirmacion de contraseña: 2
+                {
+                    Form adminRegistro = new frmRegistroAdmin();
+                    adminRegistro.Show();
+                }
             }
+            catch(Exception ex)
+            {
+                Console.WriteLine("No se agrego ninguna contraseña");
+            }
+
         }
 
 

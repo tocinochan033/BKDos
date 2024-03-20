@@ -80,6 +80,7 @@
             this.txtAmaterno = new System.Windows.Forms.TextBox();
             this.lblAmaterno = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.cmbMunicipio = new System.Windows.Forms.ComboBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -91,6 +92,7 @@
             this.lblTelefono = new System.Windows.Forms.Label();
             this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
             this.lblCorreoElectronico = new System.Windows.Forms.Label();
+            this.txtMunicipio = new System.Windows.Forms.TextBox();
             this.lblMunicipio = new System.Windows.Forms.Label();
             this.lblEstadoNac = new System.Windows.Forms.Label();
             this.txtNacionalidad = new System.Windows.Forms.TextBox();
@@ -122,8 +124,6 @@
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.lblInstruccionModificar = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.txtMunicipio = new System.Windows.Forms.TextBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Agregar)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -133,6 +133,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -148,7 +149,6 @@
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar_ESA
@@ -199,7 +199,7 @@
             this.btnRegresarMenu_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresarMenu_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresarMenu_ESA.ForeColor = System.Drawing.Color.Snow;
-            this.btnRegresarMenu_ESA.Location = new System.Drawing.Point(733, 350);
+            this.btnRegresarMenu_ESA.Location = new System.Drawing.Point(969, 350);
             this.btnRegresarMenu_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresarMenu_ESA.Name = "btnRegresarMenu_ESA";
             this.btnRegresarMenu_ESA.Size = new System.Drawing.Size(190, 40);
@@ -214,7 +214,7 @@
             this.FechaC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaC.ForeColor = System.Drawing.Color.White;
-            this.FechaC.Location = new System.Drawing.Point(840, 41);
+            this.FechaC.Location = new System.Drawing.Point(1076, 41);
             this.FechaC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FechaC.Name = "FechaC";
             this.FechaC.Size = new System.Drawing.Size(79, 15);
@@ -227,7 +227,7 @@
             this.lblTitulo_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblTitulo_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo_ESA.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo_ESA.Location = new System.Drawing.Point(34, 41);
+            this.lblTitulo_ESA.Location = new System.Drawing.Point(270, 41);
             this.lblTitulo_ESA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo_ESA.Name = "lblTitulo_ESA";
             this.lblTitulo_ESA.Size = new System.Drawing.Size(238, 31);
@@ -262,7 +262,7 @@
             this.Column15});
             this.dgv_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgv_Agregar.GridColor = System.Drawing.Color.Silver;
-            this.dgv_Agregar.Location = new System.Drawing.Point(39, 413);
+            this.dgv_Agregar.Location = new System.Drawing.Point(275, 413);
             this.dgv_Agregar.Name = "dgv_Agregar";
             this.dgv_Agregar.ReadOnly = true;
             this.dgv_Agregar.RowHeadersWidth = 51;
@@ -469,7 +469,7 @@
             this.HoraC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoraC.ForeColor = System.Drawing.Color.White;
-            this.HoraC.Location = new System.Drawing.Point(848, 56);
+            this.HoraC.Location = new System.Drawing.Point(1084, 56);
             this.HoraC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HoraC.Name = "HoraC";
             this.HoraC.Size = new System.Drawing.Size(71, 15);
@@ -487,7 +487,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(40, 117);
+            this.tabControl1.Location = new System.Drawing.Point(276, 117);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(687, 277);
@@ -745,6 +745,16 @@
             this.tabPage2.Text = "Contacto";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Location = new System.Drawing.Point(409, 179);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(113, 10);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox13.TabIndex = 88;
+            this.pictureBox13.TabStop = false;
+            // 
             // cmbMunicipio
             // 
             this.cmbMunicipio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -865,6 +875,18 @@
             this.lblCorreoElectronico.Size = new System.Drawing.Size(160, 21);
             this.lblCorreoElectronico.TabIndex = 78;
             this.lblCorreoElectronico.Text = "Correo electronico : ";
+            // 
+            // txtMunicipio
+            // 
+            this.txtMunicipio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMunicipio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.txtMunicipio.Location = new System.Drawing.Point(218, 157);
+            this.txtMunicipio.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMunicipio.Name = "txtMunicipio";
+            this.txtMunicipio.Size = new System.Drawing.Size(196, 31);
+            this.txtMunicipio.TabIndex = 75;
+            this.txtMunicipio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMunicipio_KeyPress);
             // 
             // lblMunicipio
             // 
@@ -1183,7 +1205,7 @@
             // 
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Location = new System.Drawing.Point(733, 139);
+            this.tabControl2.Location = new System.Drawing.Point(969, 139);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(190, 206);
@@ -1242,40 +1264,18 @@
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.pictureBox9.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox9.Location = new System.Drawing.Point(235, 0);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(979, 96);
             this.pictureBox9.TabIndex = 72;
             this.pictureBox9.TabStop = false;
-            // 
-            // txtMunicipio
-            // 
-            this.txtMunicipio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMunicipio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtMunicipio.Location = new System.Drawing.Point(218, 157);
-            this.txtMunicipio.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMunicipio.Name = "txtMunicipio";
-            this.txtMunicipio.Size = new System.Drawing.Size(196, 31);
-            this.txtMunicipio.TabIndex = 75;
-            this.txtMunicipio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMunicipio_KeyPress);
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(409, 179);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(113, 10);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 88;
-            this.pictureBox13.TabStop = false;
             // 
             // frmRegistrarBecarios_ESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(964, 602);
+            this.ClientSize = new System.Drawing.Size(1214, 651);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.btnRegresarMenu_ESA);
             this.Controls.Add(this.tabControl1);
@@ -1287,6 +1287,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximumSize = new System.Drawing.Size(1214, 651);
+            this.MinimumSize = new System.Drawing.Size(1214, 651);
             this.Name = "frmRegistrarBecarios_ESA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
@@ -1302,6 +1304,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -1319,7 +1322,6 @@
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

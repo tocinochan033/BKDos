@@ -82,7 +82,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Snow;
-            this.btnEliminar.Location = new System.Drawing.Point(88, 666);
+            this.btnEliminar.Location = new System.Drawing.Point(361, 362);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(204, 53);
             this.btnEliminar.TabIndex = 62;
@@ -96,7 +96,7 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Snow;
-            this.btnSalir.Location = new System.Drawing.Point(871, 112);
+            this.btnSalir.Location = new System.Drawing.Point(1033, 99);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(122, 49);
             this.btnSalir.TabIndex = 63;
@@ -107,7 +107,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(296, 671);
+            this.pictureBox1.Location = new System.Drawing.Point(569, 367);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(57, 39);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -119,7 +119,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.label1.Location = new System.Drawing.Point(28, 36);
+            this.label1.Location = new System.Drawing.Point(190, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(282, 31);
             this.label1.TabIndex = 66;
@@ -131,7 +131,7 @@
             this.btnImprimirPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimirPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimirPDF.ForeColor = System.Drawing.Color.Snow;
-            this.btnImprimirPDF.Location = new System.Drawing.Point(630, 664);
+            this.btnImprimirPDF.Location = new System.Drawing.Point(903, 360);
             this.btnImprimirPDF.Name = "btnImprimirPDF";
             this.btnImprimirPDF.Size = new System.Drawing.Size(204, 53);
             this.btnImprimirPDF.TabIndex = 67;
@@ -142,7 +142,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(567, 671);
+            this.pictureBox2.Location = new System.Drawing.Point(840, 367);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(57, 39);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -154,7 +154,7 @@
             this.FechaC.AutoSize = true;
             this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.FechaC.Location = new System.Drawing.Point(865, 47);
+            this.FechaC.Location = new System.Drawing.Point(1027, 34);
             this.FechaC.Name = "FechaC";
             this.FechaC.Size = new System.Drawing.Size(160, 31);
             this.FechaC.TabIndex = 69;
@@ -166,7 +166,7 @@
             this.HoraC.AutoSize = true;
             this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoraC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.HoraC.Location = new System.Drawing.Point(875, 75);
+            this.HoraC.Location = new System.Drawing.Point(1037, 62);
             this.HoraC.Name = "HoraC";
             this.HoraC.Size = new System.Drawing.Size(143, 31);
             this.HoraC.TabIndex = 70;
@@ -180,7 +180,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(25, 673);
+            this.pictureBox3.Location = new System.Drawing.Point(298, 369);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(57, 39);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -214,11 +214,11 @@
             this.CCT,
             this.Modelo});
             this.dgvMostrar.GridColor = System.Drawing.Color.Silver;
-            this.dgvMostrar.Location = new System.Drawing.Point(35, 165);
+            this.dgvMostrar.Location = new System.Drawing.Point(197, 152);
             this.dgvMostrar.Name = "dgvMostrar";
             this.dgvMostrar.ReadOnly = true;
             this.dgvMostrar.RowHeadersWidth = 51;
-            this.dgvMostrar.Size = new System.Drawing.Size(867, 491);
+            this.dgvMostrar.Size = new System.Drawing.Size(867, 193);
             this.dgvMostrar.TabIndex = 73;
             this.dgvMostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrar_CellContentClick);
             // 
@@ -385,7 +385,7 @@
             // lblEscuela
             // 
             this.lblEscuela.AutoSize = true;
-            this.lblEscuela.Location = new System.Drawing.Point(400, 31);
+            this.lblEscuela.Location = new System.Drawing.Point(562, 18);
             this.lblEscuela.Name = "lblEscuela";
             this.lblEscuela.Size = new System.Drawing.Size(0, 13);
             this.lblEscuela.TabIndex = 75;
@@ -396,7 +396,7 @@
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFiltrar.Location = new System.Drawing.Point(363, 39);
+            this.btnFiltrar.Location = new System.Drawing.Point(525, 26);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(161, 53);
             this.btnFiltrar.TabIndex = 76;
@@ -454,7 +454,7 @@
             this.btnResetFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResetFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetFiltro.ForeColor = System.Drawing.Color.Transparent;
-            this.btnResetFiltro.Location = new System.Drawing.Point(545, 39);
+            this.btnResetFiltro.Location = new System.Drawing.Point(707, 26);
             this.btnResetFiltro.Name = "btnResetFiltro";
             this.btnResetFiltro.Size = new System.Drawing.Size(231, 53);
             this.btnResetFiltro.TabIndex = 81;
@@ -471,7 +471,7 @@
             this.panel1.Controls.Add(this.txtFiltro);
             this.panel1.Controls.Add(this.cmbFiltro);
             this.panel1.Controls.Add(this.lblCategoria);
-            this.panel1.Location = new System.Drawing.Point(35, 98);
+            this.panel1.Location = new System.Drawing.Point(197, 85);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(819, 61);
             this.panel1.TabIndex = 82;
@@ -502,7 +502,7 @@
             this.cmbPDFeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPDFeleccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbPDFeleccion.FormattingEnabled = true;
-            this.cmbPDFeleccion.Location = new System.Drawing.Point(359, 672);
+            this.cmbPDFeleccion.Location = new System.Drawing.Point(632, 368);
             this.cmbPDFeleccion.Name = "cmbPDFeleccion";
             this.cmbPDFeleccion.Size = new System.Drawing.Size(204, 24);
             this.cmbPDFeleccion.TabIndex = 89;
@@ -511,7 +511,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1201, 780);
+            this.ClientSize = new System.Drawing.Size(1214, 651);
             this.Controls.Add(this.cmbPDFeleccion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnResetFiltro);
@@ -529,8 +529,8 @@
             this.Controls.Add(this.btnEliminar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1201, 780);
-            this.MinimumSize = new System.Drawing.Size(1201, 780);
+            this.MaximumSize = new System.Drawing.Size(1214, 651);
+            this.MinimumSize = new System.Drawing.Size(1214, 651);
             this.Name = "Mostrar_datos";
             this.Text = "Consulta ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
