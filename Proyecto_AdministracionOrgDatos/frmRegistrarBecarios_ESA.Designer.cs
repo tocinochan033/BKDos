@@ -1290,9 +1290,8 @@
             this.MaximumSize = new System.Drawing.Size(1214, 651);
             this.MinimumSize = new System.Drawing.Size(1214, 651);
             this.Name = "frmRegistrarBecarios_ESA";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRegistrarBecarios_ESA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Agregar)).EndInit();
             this.tabControl1.ResumeLayout(false);
