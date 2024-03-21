@@ -173,7 +173,7 @@
             this.lblApaterno.AutoSize = true;
             this.lblApaterno.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblApaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblApaterno.Location = new System.Drawing.Point(260, 23);
+            this.lblApaterno.Location = new System.Drawing.Point(297, 22);
             this.lblApaterno.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApaterno.Name = "lblApaterno";
             this.lblApaterno.Size = new System.Drawing.Size(141, 21);
@@ -185,7 +185,7 @@
             this.txtApaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtApaterno.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtApaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtApaterno.Location = new System.Drawing.Point(264, 46);
+            this.txtApaterno.Location = new System.Drawing.Point(301, 45);
             this.txtApaterno.Margin = new System.Windows.Forms.Padding(2);
             this.txtApaterno.Name = "txtApaterno";
             this.txtApaterno.Size = new System.Drawing.Size(155, 22);
@@ -199,7 +199,7 @@
             this.btnRegresarMenu_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresarMenu_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresarMenu_ESA.ForeColor = System.Drawing.Color.Snow;
-            this.btnRegresarMenu_ESA.Location = new System.Drawing.Point(733, 350);
+            this.btnRegresarMenu_ESA.Location = new System.Drawing.Point(971, 349);
             this.btnRegresarMenu_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresarMenu_ESA.Name = "btnRegresarMenu_ESA";
             this.btnRegresarMenu_ESA.Size = new System.Drawing.Size(190, 40);
@@ -214,7 +214,7 @@
             this.FechaC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaC.ForeColor = System.Drawing.Color.White;
-            this.FechaC.Location = new System.Drawing.Point(840, 41);
+            this.FechaC.Location = new System.Drawing.Point(1078, 40);
             this.FechaC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FechaC.Name = "FechaC";
             this.FechaC.Size = new System.Drawing.Size(79, 15);
@@ -227,12 +227,13 @@
             this.lblTitulo_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.lblTitulo_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo_ESA.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo_ESA.Location = new System.Drawing.Point(34, 41);
+            this.lblTitulo_ESA.Location = new System.Drawing.Point(272, 40);
             this.lblTitulo_ESA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo_ESA.Name = "lblTitulo_ESA";
             this.lblTitulo_ESA.Size = new System.Drawing.Size(238, 31);
             this.lblTitulo_ESA.TabIndex = 49;
             this.lblTitulo_ESA.Text = "Registrar Becarios";
+            this.lblTitulo_ESA.Click += new System.EventHandler(this.lblTitulo_ESA_Click);
             // 
             // dgv_Agregar
             // 
@@ -262,11 +263,11 @@
             this.Column15});
             this.dgv_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgv_Agregar.GridColor = System.Drawing.Color.Silver;
-            this.dgv_Agregar.Location = new System.Drawing.Point(39, 413);
+            this.dgv_Agregar.Location = new System.Drawing.Point(277, 412);
             this.dgv_Agregar.Name = "dgv_Agregar";
             this.dgv_Agregar.ReadOnly = true;
             this.dgv_Agregar.RowHeadersWidth = 51;
-            this.dgv_Agregar.Size = new System.Drawing.Size(884, 156);
+            this.dgv_Agregar.Size = new System.Drawing.Size(884, 206);
             this.dgv_Agregar.TabIndex = 60;
             this.dgv_Agregar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Agregar_CellContentClick);
             // 
@@ -469,7 +470,7 @@
             this.HoraC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoraC.ForeColor = System.Drawing.Color.White;
-            this.HoraC.Location = new System.Drawing.Point(848, 56);
+            this.HoraC.Location = new System.Drawing.Point(1086, 55);
             this.HoraC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HoraC.Name = "HoraC";
             this.HoraC.Size = new System.Drawing.Size(71, 15);
@@ -487,7 +488,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(40, 117);
+            this.tabControl1.Location = new System.Drawing.Point(278, 116);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(687, 277);
@@ -535,7 +536,7 @@
             "UNION LIBRE",
             "DIVORCIADO",
             "VIUDO"});
-            this.cmbEstCivil.Location = new System.Drawing.Point(302, 109);
+            this.cmbEstCivil.Location = new System.Drawing.Point(339, 108);
             this.cmbEstCivil.Name = "cmbEstCivil";
             this.cmbEstCivil.Size = new System.Drawing.Size(117, 25);
             this.cmbEstCivil.TabIndex = 91;
@@ -543,7 +544,7 @@
             // pictureBox15
             // 
             this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(430, 67);
+            this.pictureBox15.Location = new System.Drawing.Point(467, 66);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(155, 10);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -553,7 +554,7 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(264, 67);
+            this.pictureBox14.Location = new System.Drawing.Point(301, 66);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(155, 10);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -563,7 +564,7 @@
             // pictureBox12
             // 
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(22, 130);
+            this.pictureBox12.Location = new System.Drawing.Point(59, 129);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(129, 10);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -573,7 +574,7 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(20, 67);
+            this.pictureBox11.Location = new System.Drawing.Point(57, 66);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(233, 10);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -585,7 +586,7 @@
             this.txtFechanac.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtFechanac.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechanac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtFechanac.Location = new System.Drawing.Point(430, 109);
+            this.txtFechanac.Location = new System.Drawing.Point(467, 108);
             this.txtFechanac.Name = "txtFechanac";
             this.txtFechanac.Size = new System.Drawing.Size(155, 25);
             this.txtFechanac.TabIndex = 70;
@@ -595,7 +596,7 @@
             this.lblEstado_Civil.AutoSize = true;
             this.lblEstado_Civil.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblEstado_Civil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblEstado_Civil.Location = new System.Drawing.Point(298, 86);
+            this.lblEstado_Civil.Location = new System.Drawing.Point(335, 85);
             this.lblEstado_Civil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEstado_Civil.Name = "lblEstado_Civil";
             this.lblEstado_Civil.Size = new System.Drawing.Size(101, 21);
@@ -613,7 +614,7 @@
             "HOMBRE",
             "MUJER",
             "OTROS..."});
-            this.CBGenero.Location = new System.Drawing.Point(165, 109);
+            this.CBGenero.Location = new System.Drawing.Point(202, 108);
             this.CBGenero.Name = "CBGenero";
             this.CBGenero.Size = new System.Drawing.Size(128, 25);
             this.CBGenero.TabIndex = 67;
@@ -623,7 +624,7 @@
             this.lblGenero.AutoSize = true;
             this.lblGenero.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblGenero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblGenero.Location = new System.Drawing.Point(161, 86);
+            this.lblGenero.Location = new System.Drawing.Point(198, 85);
             this.lblGenero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(72, 21);
@@ -635,7 +636,7 @@
             this.txtEdad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEdad.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtEdad.Location = new System.Drawing.Point(21, 109);
+            this.txtEdad.Location = new System.Drawing.Point(58, 108);
             this.txtEdad.Margin = new System.Windows.Forms.Padding(2);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(129, 22);
@@ -647,7 +648,7 @@
             this.lblEdad.AutoSize = true;
             this.lblEdad.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblEdad.Location = new System.Drawing.Point(17, 88);
+            this.lblEdad.Location = new System.Drawing.Point(54, 87);
             this.lblEdad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEdad.Name = "lblEdad";
             this.lblEdad.Size = new System.Drawing.Size(54, 21);
@@ -659,7 +660,7 @@
             this.lblfechanac.AutoSize = true;
             this.lblfechanac.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblfechanac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblfechanac.Location = new System.Drawing.Point(426, 88);
+            this.lblfechanac.Location = new System.Drawing.Point(463, 87);
             this.lblfechanac.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblfechanac.Name = "lblfechanac";
             this.lblfechanac.Size = new System.Drawing.Size(168, 21);
@@ -671,7 +672,7 @@
             this.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombres.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtNombres.Location = new System.Drawing.Point(20, 46);
+            this.txtNombres.Location = new System.Drawing.Point(57, 45);
             this.txtNombres.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(233, 22);
@@ -683,7 +684,7 @@
             this.lblNombres.AutoSize = true;
             this.lblNombres.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblNombres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblNombres.Location = new System.Drawing.Point(17, 23);
+            this.lblNombres.Location = new System.Drawing.Point(54, 22);
             this.lblNombres.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombres.Name = "lblNombres";
             this.lblNombres.Size = new System.Drawing.Size(86, 21);
@@ -695,7 +696,7 @@
             this.txtAmaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAmaterno.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtAmaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtAmaterno.Location = new System.Drawing.Point(430, 46);
+            this.txtAmaterno.Location = new System.Drawing.Point(467, 45);
             this.txtAmaterno.Margin = new System.Windows.Forms.Padding(2);
             this.txtAmaterno.Name = "txtAmaterno";
             this.txtAmaterno.Size = new System.Drawing.Size(155, 22);
@@ -707,7 +708,7 @@
             this.lblAmaterno.AutoSize = true;
             this.lblAmaterno.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblAmaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblAmaterno.Location = new System.Drawing.Point(426, 23);
+            this.lblAmaterno.Location = new System.Drawing.Point(463, 22);
             this.lblAmaterno.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAmaterno.Name = "lblAmaterno";
             this.lblAmaterno.Size = new System.Drawing.Size(147, 21);
@@ -1011,7 +1012,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(443, 67);
+            this.pictureBox4.Location = new System.Drawing.Point(479, 66);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(132, 10);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1021,7 +1022,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(260, 67);
+            this.pictureBox3.Location = new System.Drawing.Point(296, 66);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(178, 10);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1031,7 +1032,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(21, 67);
+            this.pictureBox2.Location = new System.Drawing.Point(57, 66);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(232, 10);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1041,7 +1042,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(581, 109);
+            this.pictureBox1.Location = new System.Drawing.Point(617, 108);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(26, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1058,7 +1059,7 @@
             this.txtModelo.Items.AddRange(new object[] {
             "Semestral",
             "Cuatrimestral"});
-            this.txtModelo.Location = new System.Drawing.Point(442, 109);
+            this.txtModelo.Location = new System.Drawing.Point(478, 108);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(133, 25);
             this.txtModelo.TabIndex = 83;
@@ -1069,7 +1070,7 @@
             this.lblModelo.AutoSize = true;
             this.lblModelo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblModelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblModelo.Location = new System.Drawing.Point(438, 83);
+            this.lblModelo.Location = new System.Drawing.Point(474, 82);
             this.lblModelo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblModelo.Name = "lblModelo";
             this.lblModelo.Size = new System.Drawing.Size(76, 21);
@@ -1081,7 +1082,7 @@
             this.lblCCT.AutoSize = true;
             this.lblCCT.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblCCT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblCCT.Location = new System.Drawing.Point(17, 83);
+            this.lblCCT.Location = new System.Drawing.Point(53, 82);
             this.lblCCT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCCT.Name = "lblCCT";
             this.lblCCT.Size = new System.Drawing.Size(47, 21);
@@ -1095,7 +1096,7 @@
             this.cmbCCT.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCCT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbCCT.FormattingEnabled = true;
-            this.cmbCCT.Location = new System.Drawing.Point(22, 109);
+            this.cmbCCT.Location = new System.Drawing.Point(58, 108);
             this.cmbCCT.Name = "cmbCCT";
             this.cmbCCT.Size = new System.Drawing.Size(402, 25);
             this.cmbCCT.TabIndex = 79;
@@ -1106,7 +1107,7 @@
             this.txtPromedio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPromedio.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtPromedio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtPromedio.Location = new System.Drawing.Point(443, 49);
+            this.txtPromedio.Location = new System.Drawing.Point(479, 48);
             this.txtPromedio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPromedio.Name = "txtPromedio";
             this.txtPromedio.Size = new System.Drawing.Size(132, 22);
@@ -1119,7 +1120,7 @@
             this.lblPromedio.AutoSize = true;
             this.lblPromedio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblPromedio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblPromedio.Location = new System.Drawing.Point(438, 23);
+            this.lblPromedio.Location = new System.Drawing.Point(474, 22);
             this.lblPromedio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPromedio.Name = "lblPromedio";
             this.lblPromedio.Size = new System.Drawing.Size(90, 21);
@@ -1131,7 +1132,7 @@
             this.txtPeriodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPeriodo.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtPeriodo.Location = new System.Drawing.Point(260, 49);
+            this.txtPeriodo.Location = new System.Drawing.Point(296, 48);
             this.txtPeriodo.Margin = new System.Windows.Forms.Padding(2);
             this.txtPeriodo.Name = "txtPeriodo";
             this.txtPeriodo.Size = new System.Drawing.Size(178, 22);
@@ -1143,7 +1144,7 @@
             this.lblPeriodo.AutoSize = true;
             this.lblPeriodo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblPeriodo.Location = new System.Drawing.Point(255, 23);
+            this.lblPeriodo.Location = new System.Drawing.Point(291, 22);
             this.lblPeriodo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPeriodo.Name = "lblPeriodo";
             this.lblPeriodo.Size = new System.Drawing.Size(75, 21);
@@ -1155,7 +1156,7 @@
             this.txtCarrera.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCarrera.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtCarrera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtCarrera.Location = new System.Drawing.Point(21, 49);
+            this.txtCarrera.Location = new System.Drawing.Point(57, 48);
             this.txtCarrera.Margin = new System.Windows.Forms.Padding(2);
             this.txtCarrera.Name = "txtCarrera";
             this.txtCarrera.Size = new System.Drawing.Size(232, 22);
@@ -1167,7 +1168,7 @@
             this.lblCarrera.AutoSize = true;
             this.lblCarrera.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblCarrera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblCarrera.Location = new System.Drawing.Point(17, 23);
+            this.lblCarrera.Location = new System.Drawing.Point(53, 22);
             this.lblCarrera.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCarrera.Name = "lblCarrera";
             this.lblCarrera.Size = new System.Drawing.Size(71, 21);
@@ -1205,7 +1206,7 @@
             // 
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Location = new System.Drawing.Point(733, 139);
+            this.tabControl2.Location = new System.Drawing.Point(971, 138);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(190, 206);
@@ -1264,9 +1265,9 @@
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.pictureBox9.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox9.Location = new System.Drawing.Point(197, -1);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(979, 96);
+            this.pictureBox9.Size = new System.Drawing.Size(1019, 96);
             this.pictureBox9.TabIndex = 72;
             this.pictureBox9.TabStop = false;
             // 
@@ -1275,7 +1276,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1019, 651);
+            this.ClientSize = new System.Drawing.Size(1214, 651);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.btnRegresarMenu_ESA);
             this.Controls.Add(this.tabControl1);
@@ -1287,8 +1288,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(1019, 651);
-            this.MinimumSize = new System.Drawing.Size(1019, 651);
+            this.MaximumSize = new System.Drawing.Size(1214, 651);
+            this.MinimumSize = new System.Drawing.Size(1214, 651);
             this.Name = "frmRegistrarBecarios_ESA";
             this.Text = "Registro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

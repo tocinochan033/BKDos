@@ -80,6 +80,7 @@ namespace Proyecto_AdministracionOrgDatos
                 PantallaRegistro.FormClosed += PantallasCerradas;
                 PantallaRegistro.MdiParent = this;
                 PantallaRegistro.Show();
+                
             }
             DatosInactividad.control = true; //Indicador
             timerInactividad.Enabled = false; //Detener temporizador(aplica solo al menu)

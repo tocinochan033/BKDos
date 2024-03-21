@@ -199,13 +199,6 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
 
-        //Aqui estan las propiedades para agregar la fecha y la hora al programa
-        private void FechaHora3_Tick(object sender, EventArgs e)
-        {
-            HoraC.Text = DateTime.Now.ToShortTimeString();
-            FechaC.Text = DateTime.Now.ToShortDateString();
-        }
-
         /* private void filtroTextBox_TextChanged_1(object sender, EventArgs e)
          {
              if (filtroTextBox.Text != null)
@@ -551,5 +544,6 @@ namespace Proyecto_AdministracionOrgDatos
         {
             this.FormBorderStyle = FormBorderStyle.None;
         }
+
     }
 }

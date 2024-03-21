@@ -854,5 +854,10 @@ namespace Proyecto_AdministracionOrgDatos
         {
 
         }
+
+        private void lblTitulo_ESA_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
