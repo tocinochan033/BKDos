@@ -34,7 +34,6 @@
             this.lblApaterno = new System.Windows.Forms.Label();
             this.txtApaterno = new System.Windows.Forms.TextBox();
             this.btnRegresarMenu_ESA = new System.Windows.Forms.Button();
-            this.FechaC = new System.Windows.Forms.Label();
             this.lblTitulo_ESA = new System.Windows.Forms.Label();
             this.dgv_Agregar = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +58,6 @@
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.HoraC = new System.Windows.Forms.Label();
             this.FechaHora2 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -207,19 +205,6 @@
             this.btnRegresarMenu_ESA.Text = "Guardar y Salir";
             this.btnRegresarMenu_ESA.UseVisualStyleBackColor = false;
             this.btnRegresarMenu_ESA.Click += new System.EventHandler(this.btnRegresarMenu_ESA_Click);
-            // 
-            // FechaC
-            // 
-            this.FechaC.AutoSize = true;
-            this.FechaC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaC.ForeColor = System.Drawing.Color.White;
-            this.FechaC.Location = new System.Drawing.Point(1078, 40);
-            this.FechaC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.FechaC.Name = "FechaC";
-            this.FechaC.Size = new System.Drawing.Size(79, 15);
-            this.FechaC.TabIndex = 51;
-            this.FechaC.Text = "00/00/0000";
             // 
             // lblTitulo_ESA
             // 
@@ -463,23 +448,9 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // HoraC
-            // 
-            this.HoraC.AutoSize = true;
-            this.HoraC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoraC.ForeColor = System.Drawing.Color.White;
-            this.HoraC.Location = new System.Drawing.Point(1086, 55);
-            this.HoraC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.HoraC.Name = "HoraC";
-            this.HoraC.Size = new System.Drawing.Size(71, 15);
-            this.HoraC.TabIndex = 67;
-            this.HoraC.Text = "00:00 a.m";
-            // 
             // FechaHora2
             // 
             this.FechaHora2.Enabled = true;
-            this.FechaHora2.Tick += new System.EventHandler(this.FechaHora2_Tick);
             // 
             // tabControl1
             // 
@@ -1279,9 +1250,7 @@
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.btnRegresarMenu_ESA);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.HoraC);
             this.Controls.Add(this.dgv_Agregar);
-            this.Controls.Add(this.FechaC);
             this.Controls.Add(this.lblTitulo_ESA);
             this.Controls.Add(this.pictureBox9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1331,12 +1300,10 @@
         private System.Windows.Forms.Label lblApaterno;
         private System.Windows.Forms.TextBox txtApaterno;
         private System.Windows.Forms.Button btnRegresarMenu_ESA;
-        private System.Windows.Forms.Label FechaC;
         private System.Windows.Forms.Label lblTitulo_ESA;
         private System.Windows.Forms.DataGridView dgv_Agregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Label HoraC;
         private System.Windows.Forms.Timer FechaHora2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;

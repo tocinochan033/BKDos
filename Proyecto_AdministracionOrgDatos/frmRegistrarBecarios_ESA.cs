@@ -515,13 +515,6 @@ namespace Proyecto_AdministracionOrgDatos
             becados.Close();
         }
 
-        //Aqui estan las propiedades para agregar la fecha y la hora al programa
-        private void FechaHora2_Tick(object sender, EventArgs e)
-        {
-            HoraC.Text = DateTime.Now.ToShortTimeString();
-            FechaC.Text = DateTime.Now.ToShortDateString();
-        }
-
         private void frmRegistrarBecarios_ESA_Load(object sender, EventArgs e)
         {
             CargarFuentes();

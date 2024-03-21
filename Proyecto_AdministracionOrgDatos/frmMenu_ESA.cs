@@ -167,6 +167,11 @@ namespace Proyecto_AdministracionOrgDatos
             fontPers.AplicarFuente(label4, 48, FontStyle.Regular);
         }
 
-
+        //Aqui estan las propiedades para agregar la fecha y la hora al programa
+        private void FechaHora1_Tick(object sender, EventArgs e)
+        {
+                HoraC.Text = DateTime.Now.ToShortTimeString();
+                FechaC.Text = DateTime.Now.ToShortDateString();
+        }
     }
 }
