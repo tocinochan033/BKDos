@@ -49,7 +49,7 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.txtFechanac = new System.Windows.Forms.DateTimePicker();
+            this.DTMFechanac = new System.Windows.Forms.DateTimePicker();
             this.txtEstadoCivil = new System.Windows.Forms.TextBox();
             this.lblEstado_Civil = new System.Windows.Forms.Label();
             this.CBGenero = new System.Windows.Forms.ComboBox();
@@ -292,7 +292,7 @@
             this.tabPage1.Controls.Add(this.pictureBox13);
             this.tabPage1.Controls.Add(this.pictureBox12);
             this.tabPage1.Controls.Add(this.pictureBox11);
-            this.tabPage1.Controls.Add(this.txtFechanac);
+            this.tabPage1.Controls.Add(this.DTMFechanac);
             this.tabPage1.Controls.Add(this.txtEstadoCivil);
             this.tabPage1.Controls.Add(this.lblEstado_Civil);
             this.tabPage1.Controls.Add(this.CBGenero);
@@ -377,15 +377,15 @@
             this.pictureBox11.TabIndex = 86;
             this.pictureBox11.TabStop = false;
             // 
-            // txtFechanac
+            // DTMFechanac
             // 
-            this.txtFechanac.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtFechanac.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechanac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtFechanac.Location = new System.Drawing.Point(452, 227);
-            this.txtFechanac.Name = "txtFechanac";
-            this.txtFechanac.Size = new System.Drawing.Size(400, 38);
-            this.txtFechanac.TabIndex = 70;
+            this.DTMFechanac.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DTMFechanac.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTMFechanac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTMFechanac.Location = new System.Drawing.Point(452, 227);
+            this.DTMFechanac.Name = "DTMFechanac";
+            this.DTMFechanac.Size = new System.Drawing.Size(400, 38);
+            this.DTMFechanac.TabIndex = 70;
             // 
             // txtEstadoCivil
             // 
@@ -1143,7 +1143,7 @@
         private System.Windows.Forms.Label lblCarrera;
         private System.Windows.Forms.Label lblCCT;
         private System.Windows.Forms.Label lblModelo;
-        private System.Windows.Forms.DateTimePicker txtFechanac;
+        private System.Windows.Forms.DateTimePicker DTMFechanac;
         private System.Windows.Forms.ComboBox txtModelo;
         private System.Windows.Forms.ComboBox txtEstadoNac;
         private System.Windows.Forms.PictureBox pictureBox1;

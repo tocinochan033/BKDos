@@ -15,7 +15,7 @@ namespace Proyecto_AdministracionOrgDatos
     public partial class frmRegistrarBecarios_ESA : Form
     {
         /*llamamiento de clase*/
-        ClaseBD ClaseBd = new ClaseBD();
+      //  ClaseBD ClaseBd = new ClaseBD();
 
         /*-------------------------INSTANCIAS-----------------------------*/
         //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
@@ -86,7 +86,7 @@ namespace Proyecto_AdministracionOrgDatos
                 txtApaterno.Text = fila["ApellidoPaterno"].ToString(); ;
                 txtAmaterno.Text = fila["ApellidoMaterno"].ToString();
                 txtNombres.Text = fila["Nombres"].ToString();
-                txtFechanac.Text = fila["FechaNacimiento"].ToString();
+                DTMFechanac.Text = fila["FechaNacimiento"].ToString();
                 txtEdad.Text = fila["Edad"].ToString();
                 txtCURP.Text = fila["Curp"].ToString();
                 txtEstadoCivil.Text = fila["EstadoCivil"].ToString();
@@ -205,16 +205,16 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnRegresarMenu_ESA_Click(object sender, EventArgs e)
         {
-            Conectar();
+           
             //Guarda los datos y regresa a la pantalla anterior
             Guardar();
 
-            Conexion.Close();  
+          
         }
 
         private bool camposImcompletos()
         {
-            return txtApaterno.Text == "" || txtAmaterno.Text == "" || txtNombres.Text == "" || txtFechanac.Text == ""
+            return txtApaterno.Text == "" || txtAmaterno.Text == "" || txtNombres.Text == "" || DTMFechanac.Text == ""
                || txtEdad.Text == "" || txtCURP.Text == "" || CBGenero.Text == "" || txtEstadoCivil.Text == "" || txtDomicilio.Text == ""
                || txtCodigoPostal.Text == "" || txtNacionalidad.Text == "" || txtEstadoNac.Text == "" || txtMunicipio.Text == "" || txtCorreoElectronico.Text == ""
                || txtTelefono.Text == "" || txtCarrera.Text == "" || txtPeriodo.Text == "" || txtPromedio.Text == "" || cmbCCT.Text == "" || txtModelo.Text == "";
@@ -225,7 +225,7 @@ namespace Proyecto_AdministracionOrgDatos
             txtApaterno.Text = "";
             txtAmaterno.Text = "";
             txtNombres.Text = "";
-            txtFechanac.Text = "";
+            DTMFechanac.Text = "";
             txtEdad.Text = "";
             txtCURP.Text = "";
             CBGenero.Text = "";
@@ -263,7 +263,7 @@ namespace Proyecto_AdministracionOrgDatos
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[1].Value = txtApaterno.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[2].Value = txtAmaterno.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[3].Value = txtNombres.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[4].Value = txtFechanac.Text;
+                dgv_Agregar.Rows[indiceNuevaFila].Cells[4].Value = DTMFechanac.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[5].Value = txtEdad.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[6].Value = txtCURP.Text;
                 dgv_Agregar.Rows[indiceNuevaFila].Cells[7].Value = CBGenero.Text;
@@ -346,23 +346,11 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void Guardar()
         {
-            //Conectar();
+            Conectar();
             /*Seleccionar id de escuela, le asigno una variable para guardar el valor*/
-            /*string Nam_Escuela;
+            string Nam_Escuela;
             Nam_Escuela = txtEscuela.Text;
 
-
-            /*Insercion de tercera tabla Datos academicos*/
-          /*  Sql = "";
-            Sql = "insert into DatosAcademicos (Carrera, Periodo, Promedio, Modelo, Id_cct) values (@Carrera, @Periodo, @Promedio, @Modelo, @Id_cct)";
-            Comando = new SqlCommand(Sql, Conexion);*/
-            /*Tercera tabla*/
-           
-           /* Comando.Parameters.AddWithValue("@Carrera", txtCarrera.Text);
-            Comando.Parameters.AddWithValue("@Periodo", txtPeriodo.Text);
-            Comando.Parameters.AddWithValue("@Promedio", txtPromedio.Text);
-            Comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
-            Comando.Parameters.AddWithValue("@Id_cct", selectIDCCT(Nam_Escuela));*/
 
             /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
             /*Insercion de primera tabla Datos generales*/
@@ -373,11 +361,46 @@ namespace Proyecto_AdministracionOrgDatos
             Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
             Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
             Comando.Parameters.AddWithValue("@Nombres", txtNombres.Text);
-            Comando.Parameters.AddWithValue("@FechaNacimiento", txtFechanac.Text);
+            Comando.Parameters.AddWithValue("@FechaNacimiento", DTMFechanac.Value);
             Comando.Parameters.AddWithValue("@Edad", txtEdad.Text);
             Comando.Parameters.AddWithValue("@Curp", txtCURP.Text);
             Comando.Parameters.AddWithValue("@EstadoCivil", txtEstadoCivil.Text);
             Comando.Parameters.AddWithValue("@Genero", CBGenero.Text);
+            try
+            {
+
+                Comando.ExecuteNonQuery();
+
+                MessageBox.Show("Registro General Insertado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+
+
+            /*Insercion de tercera tabla Datos academicos*/
+            Sql = "";
+              Sql = "insert into DatosAcademicos (Carrera, Periodo, Promedio, Modelo, Id_cct) values (@Carrera, @Periodo, @Promedio, @Modelo, @Id_cct)";
+              Comando = new SqlCommand(Sql, Conexion);
+            /*Tercera tabla*/
+
+             Comando.Parameters.AddWithValue("@Carrera", txtCarrera.Text);
+             Comando.Parameters.AddWithValue("@Periodo", txtPeriodo.Text);
+             Comando.Parameters.AddWithValue("@Promedio", txtPromedio.Text);
+             Comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
+             Comando.Parameters.AddWithValue("@Id_cct", selectIDCCT(Nam_Escuela));
+            try
+            {
+
+                Comando.ExecuteNonQuery();
+
+                MessageBox.Show("Registro Academicos Insertados");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
 
 
             /*Insercion de segunda tabla Datos Contacto*/
@@ -392,19 +415,30 @@ namespace Proyecto_AdministracionOrgDatos
             Comando.Parameters.AddWithValue("@Municipio", txtMunicipio.Text);
             Comando.Parameters.AddWithValue("@Correo", txtCorreoElectronico.Text);
             Comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+            try
+            {
+
+                Comando.ExecuteNonQuery();
+
+                MessageBox.Show("Registro Contacto Insertado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
 
 
             /*Insercion de cuarta tabla CCT*/
             Sql = "";
             Sql = "insert into TablaCCT (CCT, NombreEscuela) values (@CCT, @NombreEscuela)";
+            Comando = new SqlCommand(Sql, Conexion);
 
-          
-           
+
             //Añandiendo parametros y campos a agregar
-           
-           
-          
-           Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
+
+
+
+            Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
            Comando.Parameters.AddWithValue("@NombreEscuela", txtEscuela.Text);
 
         
@@ -413,7 +447,7 @@ namespace Proyecto_AdministracionOrgDatos
                
                 Comando.ExecuteNonQuery();
 
-                MessageBox.Show("Registro insertardo");
+                MessageBox.Show("Registro CCT");
             }
             catch(Exception ex)
             {
@@ -423,8 +457,8 @@ namespace Proyecto_AdministracionOrgDatos
             /*-----------------------------------Fin de metodo con base de datos-------------------------------------*/
 
            
-            //Se terminan de guardar los datos y se cierra el archiv
-          //  Conexion.Close();    
+            //Se terminan de guardar los datos y se cierra el archivo
+          Conexion.Close();    
         }
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
@@ -598,7 +632,7 @@ namespace Proyecto_AdministracionOrgDatos
             Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
             Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
             Comando.Parameters.AddWithValue("@Nombres", txtNombres.Text);
-            Comando.Parameters.AddWithValue("@FechaNacimiento", txtFechanac.Text);
+            Comando.Parameters.AddWithValue("@FechaNacimiento", DTMFechanac.Text);
             Comando.Parameters.AddWithValue("@Edad", txtEdad.Text);
             Comando.Parameters.AddWithValue("@Curp", txtCURP.Text);
             Comando.Parameters.AddWithValue("@EstadoCivil", txtEstadoCivil.Text);
@@ -641,7 +675,7 @@ namespace Proyecto_AdministracionOrgDatos
             txtApaterno.Text = dgv_Agregar.SelectedCells[1].Value.ToString();
             txtAmaterno.Text = dgv_Agregar.SelectedCells[2].Value.ToString();
             txtNombres.Text = dgv_Agregar.SelectedCells[3].Value.ToString();
-            txtFechanac.Text = dgv_Agregar.SelectedCells[4].Value.ToString();
+            DTMFechanac.Text = dgv_Agregar.SelectedCells[4].Value.ToString();
             txtEdad.Text = dgv_Agregar.SelectedCells[5].Value.ToString();
             txtCURP.Text = dgv_Agregar.SelectedCells[6].Value.ToString();
             txtEstadoCivil.Text = dgv_Agregar.SelectedCells[7].Value.ToString();
