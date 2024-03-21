@@ -233,7 +233,6 @@
             this.lblTitulo_ESA.Size = new System.Drawing.Size(238, 31);
             this.lblTitulo_ESA.TabIndex = 49;
             this.lblTitulo_ESA.Text = "Registrar Becarios";
-            this.lblTitulo_ESA.Click += new System.EventHandler(this.lblTitulo_ESA_Click);
             // 
             // dgv_Agregar
             // 

@@ -63,7 +63,7 @@
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.cmbPDFeleccion = new System.Windows.Forms.ComboBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitulo_ESA = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -155,11 +155,11 @@
             this.CCT,
             this.Modelo});
             this.dgvMostrar.GridColor = System.Drawing.Color.Silver;
-            this.dgvMostrar.Location = new System.Drawing.Point(209, 183);
+            this.dgvMostrar.Location = new System.Drawing.Point(209, 198);
             this.dgvMostrar.Name = "dgvMostrar";
             this.dgvMostrar.ReadOnly = true;
             this.dgvMostrar.RowHeadersWidth = 51;
-            this.dgvMostrar.Size = new System.Drawing.Size(982, 390);
+            this.dgvMostrar.Size = new System.Drawing.Size(982, 375);
             this.dgvMostrar.TabIndex = 73;
             this.dgvMostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrar_CellContentClick);
             // 
@@ -326,7 +326,7 @@
             // lblEscuela
             // 
             this.lblEscuela.AutoSize = true;
-            this.lblEscuela.Location = new System.Drawing.Point(725, 167);
+            this.lblEscuela.Location = new System.Drawing.Point(725, 186);
             this.lblEscuela.Name = "lblEscuela";
             this.lblEscuela.Size = new System.Drawing.Size(0, 13);
             this.lblEscuela.TabIndex = 75;
@@ -337,7 +337,7 @@
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnFiltrar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFiltrar.Location = new System.Drawing.Point(1126, 117);
+            this.btnFiltrar.Location = new System.Drawing.Point(1126, 136);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(65, 31);
             this.btnFiltrar.TabIndex = 76;
@@ -395,7 +395,7 @@
             this.btnResetFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResetFiltro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetFiltro.ForeColor = System.Drawing.Color.Transparent;
-            this.btnResetFiltro.Location = new System.Drawing.Point(1025, 117);
+            this.btnResetFiltro.Location = new System.Drawing.Point(1025, 136);
             this.btnResetFiltro.Name = "btnResetFiltro";
             this.btnResetFiltro.Size = new System.Drawing.Size(91, 31);
             this.btnResetFiltro.TabIndex = 81;
@@ -412,7 +412,7 @@
             this.panel1.Controls.Add(this.txtFiltro);
             this.panel1.Controls.Add(this.cmbFiltro);
             this.panel1.Controls.Add(this.lblCategoria);
-            this.panel1.Location = new System.Drawing.Point(209, 103);
+            this.panel1.Location = new System.Drawing.Point(209, 122);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(810, 61);
             this.panel1.TabIndex = 82;
@@ -457,24 +457,24 @@
             this.pictureBox9.TabIndex = 90;
             this.pictureBox9.TabStop = false;
             // 
-            // label1
+            // lblTitulo_ESA
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(214, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 31);
-            this.label1.TabIndex = 91;
-            this.label1.Text = "Consulta de Registros";
+            this.lblTitulo_ESA.AutoSize = true;
+            this.lblTitulo_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.lblTitulo_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo_ESA.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo_ESA.Location = new System.Drawing.Point(272, 40);
+            this.lblTitulo_ESA.Name = "lblTitulo_ESA";
+            this.lblTitulo_ESA.Size = new System.Drawing.Size(282, 31);
+            this.lblTitulo_ESA.TabIndex = 91;
+            this.lblTitulo_ESA.Text = "Consulta de Registros";
             // 
             // Mostrar_datos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1214, 651);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitulo_ESA);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.cmbPDFeleccion);
             this.Controls.Add(this.panel1);
@@ -546,6 +546,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CCT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitulo_ESA;
     }
 }

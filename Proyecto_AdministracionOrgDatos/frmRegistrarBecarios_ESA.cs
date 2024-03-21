@@ -526,6 +526,7 @@ namespace Proyecto_AdministracionOrgDatos
         {
             CargarFuentes();
             this.FormBorderStyle = FormBorderStyle.None;
+            
         }
 
         // Cambio en el ComboBox
