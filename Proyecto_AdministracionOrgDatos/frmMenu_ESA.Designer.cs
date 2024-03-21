@@ -38,8 +38,8 @@
             this.FechaHora1 = new System.Windows.Forms.Timer(this.components);
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.timerInactividad = new System.Windows.Forms.Timer(this.components);
+            this.label4 = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -168,6 +168,11 @@
             this.panel1.Size = new System.Drawing.Size(188, 91);
             this.panel1.TabIndex = 36;
             // 
+            // timerInactividad
+            // 
+            this.timerInactividad.Interval = 1000;
+            this.timerInactividad.Tick += new System.EventHandler(this.timerInactividad_Tick);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -178,11 +183,6 @@
             this.label4.Size = new System.Drawing.Size(157, 73);
             this.label4.TabIndex = 0;
             this.label4.Text = "BK2";
-            // 
-            // timerInactividad
-            // 
-            this.timerInactividad.Interval = 1000;
-            this.timerInactividad.Tick += new System.EventHandler(this.timerInactividad_Tick);
             // 
             // frmMenu_ESA
             // 
