@@ -105,6 +105,11 @@ namespace Proyecto_AdministracionOrgDatos
             string carrera, periodo, promedio, cct, modelo;
             int indicieNuevoRenglon;
 
+            /*METODO CON BD PARA LLENAR DGV*/
+            //LlenarDGV();
+
+
+
             //Abrimos el archivo de texto en modo lectura
             FileStream becados = new FileStream("Becados.txt", FileMode.OpenOrCreate, FileAccess.Read);
 
@@ -190,6 +195,10 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void Guardar()
         {
+            /*Metodo con base de datos*/
+
+
+
             //Se guardan los datos de los becados en el archivo txt
             //Se tiene que sobreescribir ya que si es que se eliminan datos
             //los indices estarian mal para las siguientes veces que se desplegara el programa

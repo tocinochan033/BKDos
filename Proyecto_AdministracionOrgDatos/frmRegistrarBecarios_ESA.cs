@@ -14,6 +14,9 @@ namespace Proyecto_AdministracionOrgDatos
 {
     public partial class frmRegistrarBecarios_ESA : Form
     {
+        /*llamamiento de clase*/
+        ClaseBD ClaseBd = new ClaseBD();
+
         /*-------------------------INSTANCIAS-----------------------------*/
         //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
         SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
@@ -345,21 +348,21 @@ namespace Proyecto_AdministracionOrgDatos
         {
             //Conectar();
             /*Seleccionar id de escuela, le asigno una variable para guardar el valor*/
-            string Nam_Escuela;
+            /*string Nam_Escuela;
             Nam_Escuela = txtEscuela.Text;
 
 
             /*Insercion de tercera tabla Datos academicos*/
-            Sql = "";
+          /*  Sql = "";
             Sql = "insert into DatosAcademicos (Carrera, Periodo, Promedio, Modelo, Id_cct) values (@Carrera, @Periodo, @Promedio, @Modelo, @Id_cct)";
-            Comando = new SqlCommand(Sql, Conexion);
+            Comando = new SqlCommand(Sql, Conexion);*/
             /*Tercera tabla*/
            
-            Comando.Parameters.AddWithValue("@Carrera", txtCarrera.Text);
+           /* Comando.Parameters.AddWithValue("@Carrera", txtCarrera.Text);
             Comando.Parameters.AddWithValue("@Periodo", txtPeriodo.Text);
             Comando.Parameters.AddWithValue("@Promedio", txtPromedio.Text);
             Comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
-            Comando.Parameters.AddWithValue("@Id_cct", selectIDCCT(Nam_Escuela));
+            Comando.Parameters.AddWithValue("@Id_cct", selectIDCCT(Nam_Escuela));*/
 
             /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
             /*Insercion de primera tabla Datos generales*/
