@@ -48,10 +48,14 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.VerContra = new System.Windows.Forms.PictureBox();
+            this.NoVerContra = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VerContra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NoVerContra)).BeginInit();
             this.SuspendLayout();
             // 
             // btnInicioSesion_ESA
@@ -80,7 +84,7 @@
             this.txtContraseña_ESA.Location = new System.Drawing.Point(22, 190);
             this.txtContraseña_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseña_ESA.Name = "txtContraseña_ESA";
-            this.txtContraseña_ESA.Size = new System.Drawing.Size(279, 18);
+            this.txtContraseña_ESA.Size = new System.Drawing.Size(254, 18);
             this.txtContraseña_ESA.TabIndex = 13;
             // 
             // txtUsuario_ESA
@@ -199,7 +203,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(22, 208);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(280, 10);
+            this.pictureBox2.Size = new System.Drawing.Size(255, 10);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 92;
             this.pictureBox2.TabStop = false;
@@ -261,12 +265,36 @@
             this.label4.TabIndex = 97;
             this.label4.Text = "BK2";
             // 
+            // VerContra
+            // 
+            this.VerContra.Image = ((System.Drawing.Image)(resources.GetObject("VerContra.Image")));
+            this.VerContra.Location = new System.Drawing.Point(281, 190);
+            this.VerContra.Name = "VerContra";
+            this.VerContra.Size = new System.Drawing.Size(25, 23);
+            this.VerContra.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.VerContra.TabIndex = 99;
+            this.VerContra.TabStop = false;
+            this.VerContra.Click += new System.EventHandler(this.VerContra_Click);
+            // 
+            // NoVerContra
+            // 
+            this.NoVerContra.Image = ((System.Drawing.Image)(resources.GetObject("NoVerContra.Image")));
+            this.NoVerContra.Location = new System.Drawing.Point(281, 190);
+            this.NoVerContra.Name = "NoVerContra";
+            this.NoVerContra.Size = new System.Drawing.Size(25, 23);
+            this.NoVerContra.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.NoVerContra.TabIndex = 100;
+            this.NoVerContra.TabStop = false;
+            this.NoVerContra.Click += new System.EventHandler(this.NoVerContra_Click);
+            // 
             // FormLogin_ESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(510, 307);
+            this.Controls.Add(this.NoVerContra);
+            this.Controls.Add(this.VerContra);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox3);
@@ -294,6 +322,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VerContra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NoVerContra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,6 +348,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox VerContra;
+        private System.Windows.Forms.PictureBox NoVerContra;
     }
 }
 
