@@ -19,6 +19,7 @@ namespace Proyecto_AdministracionOrgDatos
 {
     public partial class Mostrar_datos : Form
     {
+        private FuentePersonalizada fontPers;
         //Variables para las diferentes pantallas
         frmMenu_ESA PantallaMenu;
 
@@ -32,7 +33,7 @@ namespace Proyecto_AdministracionOrgDatos
         public Mostrar_datos()
         {
             InitializeComponent();
-
+            fontPers = new FuentePersonalizada();
 
             //Creacion del temporizador y su tiempo
             temporizadorInactividad = new Timer();
@@ -198,13 +199,6 @@ namespace Proyecto_AdministracionOrgDatos
             PantallaMenu = null;
         }
 
-
-        //Aqui estan las propiedades para agregar la fecha y la hora al programa
-        private void FechaHora3_Tick(object sender, EventArgs e)
-        {
-            HoraC.Text = DateTime.Now.ToShortTimeString();
-            FechaC.Text = DateTime.Now.ToShortDateString();
-        }
 
         /* private void filtroTextBox_TextChanged_1(object sender, EventArgs e)
          {
@@ -549,7 +543,22 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void Mostrar_datos_Load(object sender, EventArgs e)
         {
+            CargarFuentes();
             this.FormBorderStyle = FormBorderStyle.None;
+        }
+
+        public void CargarFuentes()
+        {
+            // Cargar las fuente desde el archivo TTF
+            string nombreFuente = "coolveticaRG.otf";
+            fontPers.CargarFuentePersonalizada(nombreFuente);
+            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
+            fontPers.AplicarFuente(lblTitulo_ESA, 28, FontStyle.Regular);
+        }
+
+        private void cmbPDFeleccion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

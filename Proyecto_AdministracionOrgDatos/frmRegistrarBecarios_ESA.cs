@@ -31,7 +31,7 @@ namespace Proyecto_AdministracionOrgDatos
             LlenarComboBoxEscuelas();
 
             fontPers = new FuentePersonalizada();
-            Munic = new Municipios(cmbEstadoNac, cmbMunicipio);
+            Munic = new Municipios(cmbEstadoNac, txtMunicipio);
 
 
             //Creacion del temporizador y su tiempo
@@ -277,17 +277,24 @@ namespace Proyecto_AdministracionOrgDatos
         //Metodo para la generacion de CURP
         public string GeneracionCURP()
         {
-            string nombre = txtNombres.Text.ToUpper();
-            string ApellidoPaterno = txtApaterno.Text.ToUpper();
-            string ApellidoMaterno = txtAmaterno.Text.ToUpper();
-            string fechaNacimiento = txtFechanac.Text;
-            string Sexo = CBGenero.Text.ToUpper();
-            string estado = cmbEstadoNac.Text;
-            var random = new Random().Next(0, 99);
+            try
+            {
+                string nombre = txtNombres.Text.ToUpper();
+                string ApellidoPaterno = txtApaterno.Text.ToUpper();
+                string ApellidoMaterno = txtAmaterno.Text.ToUpper();
+                string fechaNacimiento = txtFechanac.Text;
+                string Sexo = CBGenero.Text.ToUpper();
+                string estado = cmbEstadoNac.Text;
+                var random = new Random().Next(0, 99);
 
-            return (ApellidoPaterno[0] + ObtencionDeVocal(ApellidoPaterno) + ApellidoMaterno[0] + nombre[0] + fechaNacimiento.Substring(8, 2) +
-                fechaNacimiento.Substring(3, 2) + fechaNacimiento.Substring(0, 2) + Sexo[0] + ESTADO(estado) + ObtencionDeConsonantes(ApellidoPaterno) +
-                ObtencionDeConsonantes(ApellidoMaterno) + ObtencionDeConsonantes(nombre) + random.ToString());
+                return (ApellidoPaterno[0] + ObtencionDeVocal(ApellidoPaterno) + ApellidoMaterno[0] + nombre[0] + fechaNacimiento.Substring(8, 2) +
+                    fechaNacimiento.Substring(3, 2) + fechaNacimiento.Substring(0, 2) + Sexo[0] + ESTADO(estado) + ObtencionDeConsonantes(ApellidoPaterno) +
+                    ObtencionDeConsonantes(ApellidoMaterno) + ObtencionDeConsonantes(nombre) + random.ToString());
+            }
+            catch
+            {
+                return "XXXXXXXXXXXXXXX";
+            }
         }
 
         //Metodo para asignar clave a los estados
@@ -515,17 +522,11 @@ namespace Proyecto_AdministracionOrgDatos
             becados.Close();
         }
 
-        //Aqui estan las propiedades para agregar la fecha y la hora al programa
-        private void FechaHora2_Tick(object sender, EventArgs e)
-        {
-            HoraC.Text = DateTime.Now.ToShortTimeString();
-            FechaC.Text = DateTime.Now.ToShortDateString();
-        }
-
         private void frmRegistrarBecarios_ESA_Load(object sender, EventArgs e)
         {
             CargarFuentes();
             this.FormBorderStyle = FormBorderStyle.None;
+            
         }
 
         // Cambio en el ComboBox
@@ -851,6 +852,16 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
         private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTitulo_ESA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }

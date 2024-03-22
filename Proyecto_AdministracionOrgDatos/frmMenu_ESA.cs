@@ -80,6 +80,7 @@ namespace Proyecto_AdministracionOrgDatos
                 PantallaRegistro.FormClosed += PantallasCerradas;
                 PantallaRegistro.MdiParent = this;
                 PantallaRegistro.Show();
+                
             }
             DatosInactividad.control = true; //Indicador
             timerInactividad.Enabled = false; //Detener temporizador(aplica solo al menu)
@@ -166,6 +167,17 @@ namespace Proyecto_AdministracionOrgDatos
             fontPers.AplicarFuente(label4, 48, FontStyle.Regular);
         }
 
+        //Aqui estan las propiedades para agregar la fecha y la hora al programa
+        private void FechaHora1_Tick(object sender, EventArgs e)
+        {
+                HoraC.Text = DateTime.Now.ToShortTimeString();
+                FechaC.Text = DateTime.Now.ToShortDateString();
+        }
 
+        private void btnGenerarPDF_ESA_Click(object sender, EventArgs e)
+        {
+            Form objgenPdf = new generarPDF();
+            objgenPdf.Show();
+        }
     }
 }
