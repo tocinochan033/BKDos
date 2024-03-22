@@ -353,33 +353,9 @@ namespace Proyecto_AdministracionOrgDatos
 
 
             /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
-            /*Insercion de primera tabla Datos generales*/
-            Sql = "";
-            Sql = "insert into DatosGenerales (ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero)";
-            Comando = new SqlCommand(Sql, Conexion);
-            //Insercion de la primera tabla
-            Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
-            Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
-            Comando.Parameters.AddWithValue("@Nombres", txtNombres.Text);
-            Comando.Parameters.AddWithValue("@FechaNacimiento", DTMFechanac.Value);
-            Comando.Parameters.AddWithValue("@Edad", txtEdad.Text);
-            Comando.Parameters.AddWithValue("@Curp", txtCURP.Text);
-            Comando.Parameters.AddWithValue("@EstadoCivil", txtEstadoCivil.Text);
-            Comando.Parameters.AddWithValue("@Genero", CBGenero.Text);
-            try
-            {
+           
 
-                Comando.ExecuteNonQuery();
-
-                MessageBox.Show("Registro General Insertado");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex.Message);
-            }
-
-
-            /*Insercion de tercera tabla Datos academicos*/
+            /*Insercion de tabla Datos academicos*/
             Sql = "";
               Sql = "insert into DatosAcademicos (Carrera, Periodo, Promedio, Modelo, Id_cct) values (@Carrera, @Periodo, @Promedio, @Modelo, @Id_cct)";
               Comando = new SqlCommand(Sql, Conexion);
@@ -403,7 +379,7 @@ namespace Proyecto_AdministracionOrgDatos
             }
 
 
-            /*Insercion de segunda tabla Datos Contacto*/
+            /*Insercion de tabla Datos Contacto*/
             Sql = "";
             Sql = "insert into DatosContacto (Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono) values (@Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio, @Correo, @Telefono)";
             Comando = new SqlCommand(Sql, Conexion);
@@ -421,6 +397,30 @@ namespace Proyecto_AdministracionOrgDatos
                 Comando.ExecuteNonQuery();
 
                 MessageBox.Show("Registro Contacto Insertado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+            /*Insercion de tabla Datos generales*/
+            Sql = "";
+            Sql = "insert into DatosGenerales(ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero)";
+            Comando = new SqlCommand(Sql, Conexion);
+            //Insercion de la primera tabla
+            Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
+            Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
+            Comando.Parameters.AddWithValue("@Nombres", txtNombres.Text);
+            Comando.Parameters.AddWithValue("@FechaNacimiento", DTMFechanac.Value);
+            Comando.Parameters.AddWithValue("@Edad", txtEdad.Text);
+            Comando.Parameters.AddWithValue("@Curp", txtCURP.Text);
+            Comando.Parameters.AddWithValue("@EstadoCivil", txtEstadoCivil.Text);
+            Comando.Parameters.AddWithValue("@Genero", CBGenero.Text);
+            try
+            {
+
+                Comando.ExecuteNonQuery();
+
+                MessageBox.Show("Registro General Insertado");
             }
             catch (Exception ex)
             {
