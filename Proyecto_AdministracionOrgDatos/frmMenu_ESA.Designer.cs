@@ -40,8 +40,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.timerInactividad = new System.Windows.Forms.Timer(this.components);
+            this.HoraC = new System.Windows.Forms.Label();
+            this.FechaC = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSubirDocumentos_ESA
@@ -145,6 +149,11 @@
             this.btnConsultar_ESA.UseVisualStyleBackColor = false;
             this.btnConsultar_ESA.Click += new System.EventHandler(this.btnConsultar_ESA_Click);
             // 
+            // FechaHora1
+            // 
+            this.FechaHora1.Enabled = true;
+            this.FechaHora1.Tick += new System.EventHandler(this.FechaHora1_Tick);
+            // 
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
@@ -154,6 +163,7 @@
             this.sidebar.Controls.Add(this.btnGenerarPDF_ESA);
             this.sidebar.Controls.Add(this.btnConsultar_ESA);
             this.sidebar.Controls.Add(this.btnCerrarSesion_ESA);
+            this.sidebar.Controls.Add(this.panel2);
             this.sidebar.Location = new System.Drawing.Point(-1, 1);
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(195, 611);
@@ -161,7 +171,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -173,7 +183,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(26, 2);
+            this.label4.Location = new System.Drawing.Point(10, 5);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(157, 73);
             this.label4.TabIndex = 0;
@@ -184,6 +194,41 @@
             this.timerInactividad.Interval = 1000;
             this.timerInactividad.Tick += new System.EventHandler(this.timerInactividad_Tick);
             // 
+            // HoraC
+            // 
+            this.HoraC.AutoSize = true;
+            this.HoraC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.HoraC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoraC.ForeColor = System.Drawing.Color.White;
+            this.HoraC.Location = new System.Drawing.Point(56, 187);
+            this.HoraC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.HoraC.Name = "HoraC";
+            this.HoraC.Size = new System.Drawing.Size(71, 15);
+            this.HoraC.TabIndex = 69;
+            this.HoraC.Text = "00:00 a.m";
+            // 
+            // FechaC
+            // 
+            this.FechaC.AutoSize = true;
+            this.FechaC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.FechaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaC.ForeColor = System.Drawing.Color.White;
+            this.FechaC.Location = new System.Drawing.Point(48, 172);
+            this.FechaC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FechaC.Name = "FechaC";
+            this.FechaC.Size = new System.Drawing.Size(79, 15);
+            this.FechaC.TabIndex = 68;
+            this.FechaC.Text = "00/00/0000";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.FechaC);
+            this.panel2.Controls.Add(this.HoraC);
+            this.panel2.Location = new System.Drawing.Point(3, 400);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(192, 211);
+            this.panel2.TabIndex = 37;
+            // 
             // frmMenu_ESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,7 +236,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1198, 612);
             this.Controls.Add(this.sidebar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -203,6 +248,8 @@
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -218,5 +265,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timerInactividad;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label FechaC;
+        private System.Windows.Forms.Label HoraC;
+        private System.Windows.Forms.Panel panel2;
     }
 }

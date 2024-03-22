@@ -146,6 +146,20 @@ namespace Proyecto_AdministracionOrgDatos
         {
 
         }
+
+        //Codigo para lo de ver y no ver la contraseña
+        private void VerContra_Click(object sender, EventArgs e)
+        {
+            NoVerContra.BringToFront();
+            txtContraseña_ESA.PasswordChar = '*';
+        }
+
+        private void NoVerContra_Click(object sender, EventArgs e)
+        {
+            VerContra.BringToFront();
+            txtContraseña_ESA.PasswordChar = '\0';
+        }
+        //----------------------------------------------
     }
 }
 
