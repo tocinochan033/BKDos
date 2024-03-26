@@ -342,10 +342,11 @@ namespace Proyecto_AdministracionOrgDatos
             }
         }
         
-      
 
         private void Guardar()
         {
+            int Id_DatosAcademicos;
+            int Id_DatosContacto;
             Conectar();
             /*Seleccionar id de escuela, le asigno una variable para guardar el valor*/
             string Nam_Escuela;
@@ -357,8 +358,8 @@ namespace Proyecto_AdministracionOrgDatos
 
             /*Insercion de tabla Datos academicos*/
             Sql = "";
-              Sql = "insert into DatosAcademicos (Carrera, Periodo, Promedio, Modelo, Id_cct) values (@Carrera, @Periodo, @Promedio, @Modelo, @Id_cct)";
-              Comando = new SqlCommand(Sql, Conexion);
+            Sql = "insert into DatosAcademicos (Carrera, Periodo, Promedio, Modelo, Id_cct) values (@Carrera, @Periodo, @Promedio, @Modelo, @Id_cct)";
+            Comando = new SqlCommand(Sql, Conexion);
             /*Tercera tabla*/
 
              Comando.Parameters.AddWithValue("@Carrera", txtCarrera.Text);
@@ -427,21 +428,15 @@ namespace Proyecto_AdministracionOrgDatos
                 MessageBox.Show("Error " + ex.Message);
             }
 
-
             /*Insercion de cuarta tabla CCT*/
             Sql = "";
             Sql = "insert into TablaCCT (CCT, NombreEscuela) values (@CCT, @NombreEscuela)";
             Comando = new SqlCommand(Sql, Conexion);
 
-
             //Añandiendo parametros y campos a agregar
 
-
-
-            Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
+           Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
            Comando.Parameters.AddWithValue("@NombreEscuela", txtEscuela.Text);
-
-        
             try
             {
                
@@ -458,7 +453,62 @@ namespace Proyecto_AdministracionOrgDatos
 
            
             //Se terminan de guardar los datos y se cierra el archivo
-          Conexion.Close();    
+          Conexion.Close();
+
+            /*--------------------------------------Insertar los id datos academicos-------------------------------------*/
+            Conectar();
+            //ID DATOS ACADEMICOS
+            Sql = "";
+            //Consulta
+           
+            Sql = "SELECT MAX(Id_DatosAcademicos) From DatosAcademicos;";
+         
+            Comando = new SqlCommand(Sql, Conexion);
+            Id_DatosAcademicos = Convert.ToInt32(Comando.ExecuteScalar());
+            //Insercion
+            Sql = "update DatosGenerales set Id_DatosAcademicos = @Id_DatosAcademicos";
+            Comando = new SqlCommand(Sql, Conexion);
+            Comando.Parameters.AddWithValue("@Id_DatosAcademicos", Id_DatosAcademicos);
+            /* Sql = "update estudiantes set Pri_nom = @Pri_nom, Seg_nom = @Seg_nom, Pri_ape = @Pri_ape, Seg_ape = @Seg_ape, Genero = @Genero, Telefono = @Telefono, Direccion = @Direccion where Identificacion = @Identificacion";
+            Comando = new SqlCommand (Sql, Conexion);*/
+            //Comando Try
+            try
+            {
+                Comando.ExecuteNonQuery();
+
+                MessageBox.Show("Registro ID academicos");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+            Conexion.Close();
+            /*Terminacion de insericon de id datos academicos*/
+            //ID DATOS CONTACTO
+            /*   Sql = "";
+               //Consulta
+
+               Sql = "SELECT Id_DatosContacto From DatosContactos";
+               Sql="SELECT LAST_INSERT_ID()";
+               Adaptador = new SqlDataAdapter(Sql, Conexion);
+               Id_DatosAcademicos = int.Parse(Sql);
+               //Insercion
+               Sql = "insert into DatosGenerales (Id_DatosAcademicos) values (@Id_DatosAcademicos)";
+               Comando.Parameters.AddWithValue("@Id_DatosAcademicos", Id_DatosAcademicos);
+               //Comando Try
+               try
+               {
+
+                   Comando.ExecuteNonQuery();
+
+                   MessageBox.Show("Registro ID academicos");
+               }
+               catch (Exception ex)
+               {
+                   MessageBox.Show("Error " + ex.Message);
+               }*/
+
+
         }
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
