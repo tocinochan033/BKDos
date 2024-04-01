@@ -355,7 +355,7 @@ namespace Proyecto_AdministracionOrgDatos
 
             /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
            
-
+              
             /*Insercion de tabla Datos academicos*/
             Sql = "";
             Sql = "insert into DatosAcademicos (Carrera, Periodo, Promedio, Modelo, Id_cct) values (@Carrera, @Periodo, @Promedio, @Modelo, @Id_cct)";
@@ -428,26 +428,7 @@ namespace Proyecto_AdministracionOrgDatos
                 MessageBox.Show("Error " + ex.Message);
             }
 
-            /*Insercion de cuarta tabla CCT*/
-            Sql = "";
-            Sql = "insert into TablaCCT (CCT, NombreEscuela) values (@CCT, @NombreEscuela)";
-            Comando = new SqlCommand(Sql, Conexion);
-
-            //Añandiendo parametros y campos a agregar
-
-           Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
-           Comando.Parameters.AddWithValue("@NombreEscuela", txtEscuela.Text);
-            try
-            {
-               
-                Comando.ExecuteNonQuery();
-
-                MessageBox.Show("Registro CCT");
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error " + ex.Message);
-            }
+           
 
             /*-----------------------------------Fin de metodo con base de datos-------------------------------------*/
 
