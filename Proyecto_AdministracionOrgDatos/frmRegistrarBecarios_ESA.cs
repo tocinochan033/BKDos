@@ -434,15 +434,14 @@ namespace Proyecto_AdministracionOrgDatos
 
            
             //Se terminan de guardar los datos y se cierra el archivo
-          Conexion.Close();
+            Conexion.Close();
 
             /*--------------------------------------Insertar los id datos academicos-------------------------------------*/
             Conectar();
             //ID DATOS ACADEMICOS
             Sql = "";
             //Consulta
-           
-            Sql = "SELECT MAX(Id_DatosAcademicos) From DatosAcademicos;";
+            Sql = "SELECT MAX(Id_DatosAcademicos) From DatosAcademicos";
          
             Comando = new SqlCommand(Sql, Conexion);
             Id_DatosAcademicos = Convert.ToInt32(Comando.ExecuteScalar());
@@ -450,8 +449,7 @@ namespace Proyecto_AdministracionOrgDatos
             Sql = "update DatosGenerales set Id_DatosAcademicos = @Id_DatosAcademicos";
             Comando = new SqlCommand(Sql, Conexion);
             Comando.Parameters.AddWithValue("@Id_DatosAcademicos", Id_DatosAcademicos);
-            /* Sql = "update estudiantes set Pri_nom = @Pri_nom, Seg_nom = @Seg_nom, Pri_ape = @Pri_ape, Seg_ape = @Seg_ape, Genero = @Genero, Telefono = @Telefono, Direccion = @Direccion where Identificacion = @Identificacion";
-            Comando = new SqlCommand (Sql, Conexion);*/
+            
             //Comando Try
             try
             {
@@ -465,31 +463,33 @@ namespace Proyecto_AdministracionOrgDatos
             }
             Conexion.Close();
             /*Terminacion de insericon de id datos academicos*/
+
             //ID DATOS CONTACTO
-            /*   Sql = "";
-               //Consulta
+            Conectar();
+            Sql = "";
+            Sql = "SELECT MAX(Id_DatosContacto) From DatosContacto";
 
-               Sql = "SELECT Id_DatosContacto From DatosContactos";
-               Sql="SELECT LAST_INSERT_ID()";
-               Adaptador = new SqlDataAdapter(Sql, Conexion);
-               Id_DatosAcademicos = int.Parse(Sql);
-               //Insercion
-               Sql = "insert into DatosGenerales (Id_DatosAcademicos) values (@Id_DatosAcademicos)";
-               Comando.Parameters.AddWithValue("@Id_DatosAcademicos", Id_DatosAcademicos);
-               //Comando Try
-               try
-               {
+            Comando = new SqlCommand(Sql, Conexion);
+            Id_DatosContacto = Convert.ToInt32(Comando.ExecuteScalar());
+            //Insercion
+            Sql = "update DatosGenerales set Id_DatosContacto = @Id_DatosContacto";
+            Comando = new SqlCommand(Sql, Conexion);
+            Comando.Parameters.AddWithValue("@Id_DatosContacto",Id_DatosContacto);
 
-                   Comando.ExecuteNonQuery();
-
-                   MessageBox.Show("Registro ID academicos");
-               }
-               catch (Exception ex)
-               {
-                   MessageBox.Show("Error " + ex.Message);
-               }*/
+            //Comando Try
+            try
+            {
+                Comando.ExecuteNonQuery();
+                MessageBox.Show("Registro ID contacto");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
 
 
+            Conexion.Close();
+            /*Teminacion de insercion de datos de contacto*/
         }
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
