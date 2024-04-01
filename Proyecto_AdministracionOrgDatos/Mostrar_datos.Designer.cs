@@ -26,8 +26,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mostrar_datos));
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnImprimirPDF = new System.Windows.Forms.Button();
             this.FechaHora3 = new System.Windows.Forms.Timer(this.components);
             this.dgvMostrar = new System.Windows.Forms.DataGridView();
             this.APaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,10 +59,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.cmbPDFeleccion = new System.Windows.Forms.ComboBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.lblTitulo_ESA = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -99,30 +95,6 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(335, 595);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 65;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnImprimirPDF
-            // 
-            this.btnImprimirPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.btnImprimirPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimirPDF.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnImprimirPDF.ForeColor = System.Drawing.Color.Snow;
-            this.btnImprimirPDF.Location = new System.Drawing.Point(602, 597);
-            this.btnImprimirPDF.Name = "btnImprimirPDF";
-            this.btnImprimirPDF.Size = new System.Drawing.Size(83, 33);
-            this.btnImprimirPDF.TabIndex = 67;
-            this.btnImprimirPDF.Text = "Imprimir PDF";
-            this.btnImprimirPDF.UseVisualStyleBackColor = false;
-            this.btnImprimirPDF.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // FechaHora3
             // 
@@ -437,18 +409,6 @@
             this.pictureBox11.TabIndex = 87;
             this.pictureBox11.TabStop = false;
             // 
-            // cmbPDFeleccion
-            // 
-            this.cmbPDFeleccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPDFeleccion.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmbPDFeleccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.cmbPDFeleccion.FormattingEnabled = true;
-            this.cmbPDFeleccion.Location = new System.Drawing.Point(389, 599);
-            this.cmbPDFeleccion.Name = "cmbPDFeleccion";
-            this.cmbPDFeleccion.Size = new System.Drawing.Size(204, 29);
-            this.cmbPDFeleccion.TabIndex = 89;
-            this.cmbPDFeleccion.SelectedIndexChanged += new System.EventHandler(this.cmbPDFeleccion_SelectedIndexChanged);
-            // 
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
@@ -477,14 +437,11 @@
             this.ClientSize = new System.Drawing.Size(1214, 651);
             this.Controls.Add(this.lblTitulo_ESA);
             this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.cmbPDFeleccion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnResetFiltro);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.lblEscuela);
             this.Controls.Add(this.dgvMostrar);
-            this.Controls.Add(this.btnImprimirPDF);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -495,7 +452,6 @@
             this.Text = "Consulta ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Mostrar_datos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -510,8 +466,6 @@
         #endregion
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnImprimirPDF;
         private System.Windows.Forms.Timer FechaHora3;
         private System.Windows.Forms.DataGridView dgvMostrar;
         private System.Windows.Forms.Label lblEscuela;
@@ -525,7 +479,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.ComboBox cmbPDFeleccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn APaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn AMaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;

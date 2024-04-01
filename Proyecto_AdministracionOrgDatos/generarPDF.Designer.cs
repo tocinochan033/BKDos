@@ -259,7 +259,7 @@
             "Informacion Personal",
             "Informacion de Contacto",
             "Informacion Academica"});
-            this.cmbPDFeleccion.Location = new System.Drawing.Point(12, 54);
+            this.cmbPDFeleccion.Location = new System.Drawing.Point(12, 84);
             this.cmbPDFeleccion.Name = "cmbPDFeleccion";
             this.cmbPDFeleccion.Size = new System.Drawing.Size(145, 23);
             this.cmbPDFeleccion.TabIndex = 90;
@@ -270,7 +270,7 @@
             this.btnImprimirPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimirPDF.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnImprimirPDF.ForeColor = System.Drawing.Color.Snow;
-            this.btnImprimirPDF.Location = new System.Drawing.Point(12, 269);
+            this.btnImprimirPDF.Location = new System.Drawing.Point(12, 113);
             this.btnImprimirPDF.Name = "btnImprimirPDF";
             this.btnImprimirPDF.Size = new System.Drawing.Size(84, 31);
             this.btnImprimirPDF.TabIndex = 91;
