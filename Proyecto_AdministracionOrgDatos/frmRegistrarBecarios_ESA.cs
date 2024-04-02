@@ -71,71 +71,31 @@ namespace Proyecto_AdministracionOrgDatos
 
         /*------------------------METODO PARA CARGAR DATOS--------------------*/
         
-        public void CargarDatos (int indice)
-        {
-            
-            //Se crea la fila del objeto de la tabla
-
-            //En caso de que la tabla de la base de datos no tenga informacion se utiliza esta condicion
-            if (Tabla.Rows.Count >0)
-            {
-                //Asignamos los valores correspondientes de cada registro
-                //DataRow representa una fila de datos
-                DataRow fila = Tabla.Rows[indice];
-                /*Primera tabla datos*/
-                txtApaterno.Text = fila["ApellidoPaterno"].ToString(); ;
-                txtAmaterno.Text = fila["ApellidoMaterno"].ToString();
-                txtNombres.Text = fila["Nombres"].ToString();
-                DTMFechanac.Text = fila["FechaNacimiento"].ToString();
-                txtEdad.Text = fila["Edad"].ToString();
-                txtCURP.Text = fila["Curp"].ToString();
-                txtEstadoCivil.Text = fila["EstadoCivil"].ToString();
-                CBGenero.Text = fila["Genero"].ToString();
-
-                //------------------- Segunda tabla de datos contactos -------------------------
-                txtDomicilio.Text = fila["Domicilio"].ToString();
-                txtCodigoPostal.Text = fila["CodigoPostal"].ToString();
-                txtNacionalidad.Text = fila["Nacionalidad"].ToString();
-                txtEstadoNac.Text = fila["EstadoNacimiento"].ToString();
-                txtMunicipio.Text = fila["Municipio"].ToString();
-                txtCorreoElectronico.Text = fila["Correo"].ToString();
-                txtTelefono.Text = fila["Telefono"].ToString();
-               
-                /*---------------------Tercera tabla Datos academicos-------------------------*/
-                txtCarrera.Text = fila["Carrera"].ToString();
-                txtPeriodo.Text = fila["Periodo"].ToString();
-                txtPromedio.Text = fila["Promedio"].ToString();
-                txtPromedio.Text = fila["Modelo"].ToString();
-                cmbCCT.Text = fila["CCT"].ToString();
-                txtModelo.Text = fila["NombreEscuela"].ToString();
-            }
-            else
-            {
-                MessageBox.Show("No hay registros guardados");
-            }
-           
-
-        }
-       /*----------------------Refrescar datos-----------------------*/
-       public void RefrescarDatos()
-        {
-            //Se selecciona la tabl de donde sacar los datos
-            Sql = "select * from DatosGenerales ";
-            //Pasamos los parametros al adaptador
-            Adaptador = new SqlDataAdapter(Sql, Conexion);
-            //Se limpia la tabla
-            Tabla.Clear();
-            //Se vuelve a llenar
-            Adaptador.Fill(Tabla);
-        }
+       
+    
 
         /*--------------------------------------------------------------------*/
         public void LlenarDGV()
         {
             Conectar();
             //Se selecciona la tabl de donde sacar los datos
-            Sql = "select * from DatosGenerales, DatosAcademicos, DatosContacto, TablaCCT";
+            Sql = "select * from DatosGenerales, DatosAcademicos, DatosContacto";
             Adaptador = new SqlDataAdapter(Sql, Conexion);
+            Adaptador.Fill(Tabla);
+            dgv_Agregar.DataSource = Tabla;
+            Conexion.Close();
+            
+        }
+        public void RefresacarDatos()
+        {
+            Conectar();
+            //Se selecciona la tabl de donde sacar los datos
+            Sql = "select * from DatosGenerales, DatosAcademicos, DatosContacto";
+            Adaptador = new SqlDataAdapter(Sql, Conexion);
+            
+            Tabla.Clear();
+            dgv_Agregar.ClearSelection();
+
             Adaptador.Fill(Tabla);
             dgv_Agregar.DataSource = Tabla;
             Conexion.Close();
@@ -146,12 +106,9 @@ namespace Proyecto_AdministracionOrgDatos
             InitializeComponent();
             LlenarComboBoxEscuelas();
 
-            /*
-            //Inicializacion de combo box del modelo 
-            txtModelo.Items.Add("Semestre");
-            txtModelo.Items.Add("Cuatrimestre");
-            */
-
+          
+            //Este metodo llena el dgv
+            LlenarDGV();
             //Inicializacion de los estados de la republica
             txtEstadoNac.Items.Add("Aguascalientes");
             txtEstadoNac.Items.Add("Baja California");
@@ -192,13 +149,9 @@ namespace Proyecto_AdministracionOrgDatos
             string carrera, periodo, promedio, cct, modelo;
             int indicieNuevoRenglon;
 
-            /*Cargar los datos en el datagridview*/
-           /* Conexion.Open();
-            RefrescarDatos();
-            CargarDatos(indice);*/
+          
            
-            //Este metodo llena el dgv
-            LlenarDGV();
+            
            // Conexion.Close();
             
         }
@@ -290,40 +243,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-           /* RefrescarDatos();
           
-
-            
-           //Verificamos si hay una celda seleccionada
-            if (this.dgv_Agregar.SelectedRows.Count == 1)
-            {
-                //Se cargan los datos actuales en los textbox en el datagridview para actualizar sus valores
-                int seleccion = dgv_Agregar.CurrentRow.Index;
-                dgv_Agregar.Rows[seleccion].Cells[1].Value = txtApaterno.Text;
-                dgv_Agregar.Rows[seleccion].Cells[2].Value = txtAmaterno.Text;
-                dgv_Agregar.Rows[seleccion].Cells[3].Value = txtNombres.Text;
-                dgv_Agregar.Rows[seleccion].Cells[4].Value = txtFechanac.Text;
-                dgv_Agregar.Rows[seleccion].Cells[5].Value = txtEdad.Text;
-                dgv_Agregar.Rows[seleccion].Cells[6].Value = txtCURP.Text;
-                dgv_Agregar.Rows[seleccion].Cells[7].Value = CBGenero.Text;
-                dgv_Agregar.Rows[seleccion].Cells[8].Value = txtEstadoCivil.Text;
-                dgv_Agregar.Rows[seleccion].Cells[9].Value = txtDomicilio.Text;
-                dgv_Agregar.Rows[seleccion].Cells[10].Value = txtCodigoPostal.Text;
-                dgv_Agregar.Rows[seleccion].Cells[11].Value = txtNacionalidad.Text;
-                dgv_Agregar.Rows[seleccion].Cells[12].Value = txtEstadoNac.Text;
-                dgv_Agregar.Rows[seleccion].Cells[13].Value = txtMunicipio.Text;
-                dgv_Agregar.Rows[seleccion].Cells[14].Value = txtCorreoElectronico.Text;
-                dgv_Agregar.Rows[seleccion].Cells[15].Value = txtTelefono.Text;
-                dgv_Agregar.Rows[seleccion].Cells[16].Value = txtCarrera.Text;
-                dgv_Agregar.Rows[seleccion].Cells[17].Value = txtPeriodo.Text;
-                dgv_Agregar.Rows[seleccion].Cells[18].Value = txtPromedio.Text;
-                dgv_Agregar.Rows[seleccion].Cells[19].Value = txtModelo.Text;
-                dgv_Agregar.Rows[seleccion].Cells[20].Value = cmbCCT.Text;
-                dgv_Agregar.Rows[seleccion].Cells[21].Value = txtEscuela.Text;
-             
-
-                camposLimpieza();
-            }*/
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -585,9 +505,7 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
         private void cmbCCT_SelectedIndexChanged(object sender, EventArgs e)
-        {/*
-            Sql = "select  CCT, NombreEscuela FROM [TablaCCT]";
-            Comando = new SqlCommand(Sql, Conexion);*/
+        {
             // Obtén el nombre de la escuela seleccionada
             string escuelaSeleccionada = cmbCCT.Text;
 
@@ -634,70 +552,95 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnGuardarMod_Click(object sender, EventArgs e)
         {
+            /*Orden
+             * Sql
+             * Comando
+             * Comando con parametros
+             * try/catch
+             */
+           
+            /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
             Conectar();
-            /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
-
-
-            /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
-            /*Insercion de primera tabla Datos generales*/
-            Sql = "update DatosGenerales set ApellidoPaterno = @ApellidoPaterno, ApellidoMaterno = @ApellidoMaterno, Nombres = @Nombres, FechaNacimiento = @FechaNacimiento, Edad = @Edad, Curp = @Curp, EstadoCivil = @EstadoCivil, Genero = @Genero";
-            Comando = new SqlCommand(Sql, Conexion);
-
-            /*Insercion de segunda tabla Datos Contacto*/
-            Sql = "update DatosContacto set Domicilio = @Domicilio, CodigoPostal = @CodigoPostal, Nacionalidad = @Nacionalidad, EstadoNacimiento = @EstadoNacimiento, Municipio = @Municipio, Correo = @Correo, Telefono = @Telefono";
-            Comando = new SqlCommand(Sql, Conexion);
-
             /*Insercion de tercera tabla Datos academicos*/
-            Sql = "update DatosAcademicos set Carrera = @Carrera, Periodo = @Periodo, Promedio = @Promedio, Modelo = @Modelo, Id_cct = @Id_cct";
-            Comando = new SqlCommand(Sql, Conexion);
-
-            /*Insercion de cuarta tabla CCT*/
-            Sql = "update TablaCCT CCT = @CCT, NombreEscuela = @NombreEscuela";
-            Comando = new SqlCommand(Sql, Conexion);
-
-            /*Seleccionar id de escuela, le asigno una variable para guardar el valor*/
+            //Seleccionar id de escuela, le asigno una variable para guardar el valor
             string Nam_Escuela;
             Nam_Escuela = txtEscuela.Text;
-           
-            //Añandiendo parametros y campos a agregar
-            Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
-            Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
-            Comando.Parameters.AddWithValue("@Nombres", txtNombres.Text);
-            Comando.Parameters.AddWithValue("@FechaNacimiento", DTMFechanac.Text);
-            Comando.Parameters.AddWithValue("@Edad", txtEdad.Text);
-            Comando.Parameters.AddWithValue("@Curp", txtCURP.Text);
-            Comando.Parameters.AddWithValue("@EstadoCivil", txtEstadoCivil.Text);
-            Comando.Parameters.AddWithValue("@Genero", CBGenero.Text);
-            Comando.Parameters.AddWithValue("@Domicilio", txtDomicilio.Text);
-            Comando.Parameters.AddWithValue("@CodigoPostal", txtCodigoPostal.Text);
-            Comando.Parameters.AddWithValue("@Nacionalidad", txtNacionalidad.Text);
-            Comando.Parameters.AddWithValue("@EstadoNacimiento", txtEstadoNac.Text);
-            Comando.Parameters.AddWithValue("@Municipio", txtMunicipio.Text);
-            Comando.Parameters.AddWithValue("@Correo", txtCorreoElectronico.Text);
-            Comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+            Sql = "";
+            Sql = "update DatosAcademicos set Carrera = @Carrera, Periodo = @Periodo, Promedio = @Promedio, Modelo = @Modelo, Id_cct = @Id_cct Where Id_DatosAcademicos = @Id_DatosAcademicos";
+            Comando = new SqlCommand(Sql, Conexion);
+
             Comando.Parameters.AddWithValue("@Carrera", txtCarrera.Text);
             Comando.Parameters.AddWithValue("@Periodo", txtPeriodo.Text);
             Comando.Parameters.AddWithValue("@Promedio", txtPromedio.Text);
             Comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
             Comando.Parameters.AddWithValue("@Id_cct", selectIDCCT(Nam_Escuela));
-            Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
-            Comando.Parameters.AddWithValue("@NombreEscuela", txtEscuela.Text);
 
+            try
+            { 
+                Comando.ExecuteNonQuery();
+                MessageBox.Show("Registro Actualizado: Tabla datos ACADEMICOS");
+                RefresacarDatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.StackTrace);
+            }
+
+            /*Insercion de segunda tabla Datos Contacto*/
+            Sql = "";
+            Sql = "update DatosContacto set Domicilio = @Domicilio, CodigoPostal = @CodigoPostal, Nacionalidad = @Nacionalidad, EstadoNacimiento = @EstadoNacimiento, Municipio = @Municipio, Correo = @Correo, Telefono = @Telefono where Id_DatosContacto = @Id_DatosContacto";
+            Comando = new SqlCommand(Sql, Conexion);
+            Comando.Parameters.AddWithValue("@Domicilio", txtDomicilio);
+            Comando.Parameters.AddWithValue("@CodigoPostal", txtCodigoPostal);
+            Comando.Parameters.AddWithValue("@Nacionalidad", txtNacionalidad);
+            Comando.Parameters.AddWithValue("@EstadoNacimiento", txtEstadoNac);
+            Comando.Parameters.AddWithValue("@Municipio", txtMunicipio.Text);
+            Comando.Parameters.AddWithValue("@Correo", txtCorreoElectronico.Text);
+            Comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
 
             try
             {
                 //Ejecutamos la instruccion del sql para afectar las filas
                 Comando.ExecuteNonQuery();
 
-                MessageBox.Show("Registro insertardo");
+                MessageBox.Show("Registro Actualizado: Tabla datos CONTACTO");
+                RefresacarDatos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.Message);
+                MessageBox.Show("Error " + ex.StackTrace);
             }
 
+            /*Insercion de primera tabla Datos generales*/
+            Sql = "";
+            Sql = "update DatosGenerales set ApellidoPaterno = @ApellidoPaterno, ApellidoMaterno = @ApellidoMaterno, Nombres = @Nombres, FechaNacimiento = @FechaNacimiento, Edad = @Edad, Curp = @Curp, EstadoCivil = @EstadoCivil, Genero = @Genero where Id_Alumno = @Id_Alumno";
+            Comando = new SqlCommand (Sql, Conexion);
+            Comando.Parameters.AddWithValue("@ApellidoPaterno",txtApaterno.Text);
+            Comando.Parameters.AddWithValue("@ApellidoMaterno",txtAmaterno.Text);
+            Comando.Parameters.AddWithValue("@Nombre",txtNombres);
+            Comando.Parameters.AddWithValue("@FechaNacimiento", DTMFechanac.Value);
+            Comando.Parameters.AddWithValue("@Edad",txtEdad.Text);
+            Comando.Parameters.AddWithValue("@Curp",txtCURP.Text);
+            Comando.Parameters.AddWithValue("@EstadoCivil",txtEstadoCivil.Text);
+            Comando.Parameters.AddWithValue("@Genero",CBGenero.Text);
+
+            try
+            {
+                //Ejecutamos la instruccion del sql para afectar las filas
+                Comando.ExecuteNonQuery();
+
+                MessageBox.Show("Registro Actualizado: Tabla datos generales");
+                RefresacarDatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.StackTrace);
+            }
+          
+
+           
             /*-----------------------------------Fin de metodo con base de datos-------------------------------------*/
-            Conexion.Close();
+            
         }
 
         //Evento para que al seleccionar una celda se refleje en su respectivo text box
@@ -711,20 +654,25 @@ namespace Proyecto_AdministracionOrgDatos
             txtCURP.Text = dgv_Agregar.SelectedCells[6].Value.ToString();
             txtEstadoCivil.Text = dgv_Agregar.SelectedCells[7].Value.ToString();
             CBGenero.Text = dgv_Agregar.SelectedCells[8].Value.ToString();
-            
-            txtDomicilio.Text = dgv_Agregar.SelectedCells[9].Value.ToString();
-            txtCodigoPostal.Text = dgv_Agregar.SelectedCells[10].Value.ToString();
-            txtNacionalidad.Text = dgv_Agregar.SelectedCells[11].Value.ToString();
-            txtEstadoNac.Text = dgv_Agregar.SelectedCells[12].Value.ToString();
-            txtMunicipio.Text = dgv_Agregar.SelectedCells[13].Value.ToString();
-            txtCorreoElectronico.Text = dgv_Agregar.SelectedCells[14].Value.ToString();
-            txtTelefono.Text = dgv_Agregar.SelectedCells[15].Value.ToString();
-            txtCarrera.Text = dgv_Agregar.SelectedCells[16].Value.ToString();
-            txtPeriodo.Text = dgv_Agregar.SelectedCells[17].Value.ToString();
-            txtPromedio.Text = dgv_Agregar.SelectedCells[18].Value.ToString();
-            txtModelo.Text = dgv_Agregar.SelectedCells[19].Value.ToString();
-            cmbCCT.Text = dgv_Agregar.SelectedCells[20].Value.ToString();
-            txtEscuela.Text = dgv_Agregar.SelectedCells[21].Value.ToString();
+            /*9 y 10 son las llaves foraneas de la tabla general*/
+
+            /*Inicia tabla Datos de contacto, debo adelantar 6 campos para a tabla de datos contacto*/
+            //iniciaria en 11 + 6=17, mas 1 por el id 18
+            txtDomicilio.Text = dgv_Agregar.SelectedCells[18].Value.ToString();
+            txtCodigoPostal.Text = dgv_Agregar.SelectedCells[19].Value.ToString();
+            txtNacionalidad.Text = dgv_Agregar.SelectedCells[20].Value.ToString();
+            txtEstadoNac.Text = dgv_Agregar.SelectedCells[21].Value.ToString();
+            txtMunicipio.Text = dgv_Agregar.SelectedCells[22].Value.ToString();
+            txtCorreoElectronico.Text = dgv_Agregar.SelectedCells[23].Value.ToString();
+            txtTelefono.Text = dgv_Agregar.SelectedCells[24].Value.ToString();
+
+            /*Inicio de tablas de datos ACADEMICOS, Inicia desde 12*/
+            txtCarrera.Text = dgv_Agregar.SelectedCells[12].Value.ToString();
+            txtPeriodo.Text = dgv_Agregar.SelectedCells[13].Value.ToString();
+            txtPromedio.Text = dgv_Agregar.SelectedCells[14].Value.ToString();
+            txtModelo.Text = dgv_Agregar.SelectedCells[15].Value.ToString();
+            cmbCCT.Text = dgv_Agregar.SelectedCells[16].Value.ToString();
+          //  txtEscuela.Text = dgv_Agregar.SelectedCells[17].Value.ToString();
             //Comentado hasta que vea la forma de modificar 3 tablas a la vez
 
 
