@@ -21,6 +21,7 @@ namespace Proyecto_AdministracionOrgDatos
         //Variables para las diferentes pantallas
         frmRegistrarBecarios_ESA PantallaRegistro;
         Mostrar_datos PantallaConsulta;
+        generarPDF PantallaPDF;
 
         //Variable para el calculo de la inactividad
         private Timer temporizadorInactividad;
@@ -176,8 +177,17 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnGenerarPDF_ESA_Click(object sender, EventArgs e)
         {
-            Form objgenPdf = new generarPDF();
-            objgenPdf.Show();
+            
+            if (formIsOpen("generarPDF") == false)
+            {
+                PantallaPDF = new generarPDF();
+                PantallaPDF.FormClosed += PantallasCerradas;
+                PantallaPDF.MdiParent = this;
+                PantallaPDF.Show();
+
+            }
+            DatosInactividad.control = true; //Indicador
+            timerInactividad.Enabled = false; //Detener temporizador(aplica solo al menu)
         }
     }
 }

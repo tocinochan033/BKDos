@@ -822,48 +822,8 @@ namespace Proyecto_AdministracionOrgDatos
             fontPers.AplicarFuente(lblTitulo_ESA, 28, FontStyle.Regular);
         }
 
-        private void txtModelo_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-        private void cmbFiltroModificar_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-        private void txtModificacion_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-        private void txtCorreoElectronico_TextChanged(object sender, EventArgs e)
-        {
-        }
-        private void dgv_Agregar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMunicipio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTitulo_ESA_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

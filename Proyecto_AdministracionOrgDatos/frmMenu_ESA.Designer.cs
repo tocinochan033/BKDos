@@ -102,7 +102,7 @@
             this.btnCerrarSesion_ESA.Location = new System.Drawing.Point(2, 339);
             this.btnCerrarSesion_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarSesion_ESA.Name = "btnCerrarSesion_ESA";
-            this.btnCerrarSesion_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
+            this.btnCerrarSesion_ESA.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
             this.btnCerrarSesion_ESA.Size = new System.Drawing.Size(193, 56);
             this.btnCerrarSesion_ESA.TabIndex = 21;
             this.btnCerrarSesion_ESA.Text = "        Cerrar Sesión";
