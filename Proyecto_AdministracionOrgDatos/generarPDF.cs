@@ -16,10 +16,12 @@ namespace Proyecto_AdministracionOrgDatos
 {
     public partial class generarPDF : Form
     {
+        private FuentePersonalizada fontPers;
         public generarPDF()
         {
             InitializeComponent();
             cargaData();
+            fontPers = new FuentePersonalizada();
         }
 
         private void generarPDF_Load(object sender, EventArgs e)
@@ -320,6 +322,27 @@ namespace Proyecto_AdministracionOrgDatos
             }
             //Finalizamos la carga y cerramos el archivo
             becados.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form LienzoF = new FirmaElectronica();
+            LienzoF.Show();
+        }
+
+        public void CargarFuentes()
+        {
+            // Cargar las fuente desde el archivo TTF
+            string nombreFuente = "coolveticaRG.otf";
+            fontPers.CargarFuentePersonalizada(nombreFuente);
+            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
+            fontPers.AplicarFuente(lblTitulo_ESA, 28, FontStyle.Regular);
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            DatosInactividad.control = false; //Indicador al cerrar este formulario
+            this.Close();
         }
     }
 }

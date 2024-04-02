@@ -217,6 +217,7 @@
             this.lblTitulo_ESA.Size = new System.Drawing.Size(238, 31);
             this.lblTitulo_ESA.TabIndex = 49;
             this.lblTitulo_ESA.Text = "Registrar Becarios";
+
             // 
             // dgv_Agregar
             // 
@@ -252,7 +253,7 @@
             this.dgv_Agregar.RowHeadersWidth = 51;
             this.dgv_Agregar.Size = new System.Drawing.Size(884, 206);
             this.dgv_Agregar.TabIndex = 60;
-            this.dgv_Agregar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Agregar_CellContentClick);
+
             // 
             // Nombre
             // 
@@ -490,7 +491,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos personales";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+
             // 
             // cmbEstCivil
             // 
@@ -713,7 +714,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Contacto";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+
             // 
             // pictureBox13
             // 
@@ -832,7 +833,7 @@
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Size = new System.Drawing.Size(341, 22);
             this.txtCorreoElectronico.TabIndex = 77;
-            this.txtCorreoElectronico.TextChanged += new System.EventHandler(this.txtCorreoElectronico_TextChanged);
+
             // 
             // lblCorreoElectronico
             // 
@@ -1020,7 +1021,7 @@
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(133, 25);
             this.txtModelo.TabIndex = 83;
-            this.txtModelo.SelectedIndexChanged += new System.EventHandler(this.txtModelo_SelectedIndexChanged);
+
             // 
             // lblModelo
             // 
@@ -1143,7 +1144,7 @@
             this.txtModificacion.Size = new System.Drawing.Size(147, 31);
             this.txtModificacion.TabIndex = 69;
             this.toolTip1.SetToolTip(this.txtModificacion, "Dato por modificar.");
-            this.txtModificacion.TextChanged += new System.EventHandler(this.txtModificacion_TextChanged);
+
             // 
             // cmbFiltroModificar
             // 
@@ -1157,7 +1158,7 @@
             this.cmbFiltroModificar.Size = new System.Drawing.Size(146, 25);
             this.cmbFiltroModificar.TabIndex = 70;
             this.toolTip1.SetToolTip(this.cmbFiltroModificar, "Seleccione la columna por modificar.");
-            this.cmbFiltroModificar.SelectedIndexChanged += new System.EventHandler(this.cmbFiltroModificar_SelectedIndexChanged);
+
             // 
             // tabControl2
             // 
@@ -1180,7 +1181,7 @@
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Adicion y eliminacion";
             this.tabPage4.UseVisualStyleBackColor = true;
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+  
             // 
             // tabPage5
             // 

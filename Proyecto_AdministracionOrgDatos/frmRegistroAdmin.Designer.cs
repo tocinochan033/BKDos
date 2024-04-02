@@ -102,12 +102,15 @@
             // 
             // newAdminButton
             // 
-            this.newAdminButton.Location = new System.Drawing.Point(31, 208);
+            this.newAdminButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.newAdminButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newAdminButton.ForeColor = System.Drawing.Color.White;
+            this.newAdminButton.Location = new System.Drawing.Point(57, 233);
             this.newAdminButton.Name = "newAdminButton";
-            this.newAdminButton.Size = new System.Drawing.Size(306, 27);
+            this.newAdminButton.Size = new System.Drawing.Size(258, 32);
             this.newAdminButton.TabIndex = 8;
             this.newAdminButton.Text = "Nuevo Administrador";
-            this.newAdminButton.UseVisualStyleBackColor = true;
+            this.newAdminButton.UseVisualStyleBackColor = false;
             this.newAdminButton.Click += new System.EventHandler(this.newAdminButton_Click);
             // 
             // rolCombo
@@ -201,7 +204,7 @@
             // 
             // confirmarTodoButton
             // 
-            this.confirmarTodoButton.Location = new System.Drawing.Point(176, 16);
+            this.confirmarTodoButton.Location = new System.Drawing.Point(197, 16);
             this.confirmarTodoButton.Name = "confirmarTodoButton";
             this.confirmarTodoButton.Size = new System.Drawing.Size(157, 33);
             this.confirmarTodoButton.TabIndex = 2;

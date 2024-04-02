@@ -60,6 +60,12 @@
   <ItemGroup>
     <Compile Include="Additional_Effects.cs" />
     <Compile Include="DatosInactividad.cs" />
+    <Compile Include="FirmaElectronica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirmaElectronica.Designer.cs">
+      <DependentUpon>FirmaElectronica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Municipios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FirmaElectronica.resx">
+      <DependentUpon>FirmaElectronica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
