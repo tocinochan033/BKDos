@@ -187,6 +187,7 @@
             this.errorLogin.Text = "Usuario y/o Contraseña incorrecto.";
             this.errorLogin.UseWaitCursor = true;
             this.errorLogin.Visible = false;
+            this.errorLogin.Click += new System.EventHandler(this.errorLogin_Click);
             // 
             // pictureBox15
             // 

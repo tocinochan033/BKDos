@@ -56,27 +56,36 @@ namespace Proyecto_AdministracionOrgDatos
 
         private bool archivoAdmin() //Verifica si el usuario y contraseña coinciden en la misma fila de archivo
         {
-            using (StreamReader sr = new StreamReader(login))
+            try
             {
-                string linea;
-                while ((linea = sr.ReadLine()) != null)
+                using (StreamReader sr = new StreamReader(login))
                 {
-                    string[] datos = linea.Split(',');
-                    if (datos.Length >= 5)
+                    string linea;
+                    while ((linea = sr.ReadLine()) != null)
                     {
-                        //Posiciones dentro del arhivo
-                        //nombre,correo,numero,rol,contraseña
-                        string usuarioArchivo = datos[0];
-                        string contrasenaArchivo = datos[4];
-
-                        if (usuarioArchivo == txtUsuario_ESA.Text && contrasenaArchivo == txtContraseña_ESA.Text)
+                        string[] datos = linea.Split(',');
+                        if (datos.Length >= 5)
                         {
-                            return true;
+                            //Posiciones dentro del arhivo
+                            //nombre,correo,numero,rol,contraseña
+                            string usuarioArchivo = datos[0];
+                            string contrasenaArchivo = datos[4];
+
+                            if (usuarioArchivo == txtUsuario_ESA.Text && contrasenaArchivo == txtContraseña_ESA.Text)
+                            {
+                                return true;
+                            }
                         }
                     }
+                    login.Close();
                 }
-                login.Close();
             }
+            catch
+            {
+                errorLogin.Visible = true;
+                SystemSounds.Exclamation.Play();
+            }
+            
             return false;
         }
 
@@ -158,6 +167,11 @@ namespace Proyecto_AdministracionOrgDatos
         {
             VerContra.BringToFront();
             txtContraseña_ESA.PasswordChar = '\0';
+        }
+
+        private void errorLogin_Click(object sender, EventArgs e)
+        {
+
         }
         //----------------------------------------------
     }
