@@ -29,7 +29,7 @@ namespace Proyecto_AdministracionOrgDatos
         {
             //Imprime los datos guardados del archivo al datagridview
             int indiceNuevoRenglon;
-            string nombre, correo, numero, rol;
+            string nombre, correo, numero, rol, contraseña;
 
             FileStream loginStream = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.Read);
 
@@ -46,11 +46,13 @@ namespace Proyecto_AdministracionOrgDatos
                     correo = datos[1];
                     rol = datos[2];
                     numero = datos[3];
+                    contraseña = datos[4];
 
                     administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[0].Value = nombre;
                     administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[1].Value = correo;
                     administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[2].Value = rol;
                     administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[3].Value = numero;
+                    administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[4].Value = contraseña;
 
                     renglon = lector.ReadLine();
                 }

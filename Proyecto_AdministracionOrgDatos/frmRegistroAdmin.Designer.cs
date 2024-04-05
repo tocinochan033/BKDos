@@ -44,13 +44,14 @@
             this.confirmarTodoButton = new System.Windows.Forms.Button();
             this.eliminarAdminButton = new System.Windows.Forms.Button();
             this.administradoresDataGrid = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.nombreData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correoData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.contraseñaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -229,31 +230,12 @@
             this.nombreData,
             this.correoData,
             this.rolData,
-            this.telefonoData});
+            this.telefonoData,
+            this.contraseñaData});
             this.administradoresDataGrid.Location = new System.Drawing.Point(12, 55);
             this.administradoresDataGrid.Name = "administradoresDataGrid";
             this.administradoresDataGrid.Size = new System.Drawing.Size(342, 246);
             this.administradoresDataGrid.TabIndex = 0;
-            // 
-            // nombreData
-            // 
-            this.nombreData.HeaderText = "Nombre";
-            this.nombreData.Name = "nombreData";
-            // 
-            // correoData
-            // 
-            this.correoData.HeaderText = "Correo";
-            this.correoData.Name = "correoData";
-            // 
-            // rolData
-            // 
-            this.rolData.HeaderText = "Rol";
-            this.rolData.Name = "rolData";
-            // 
-            // telefonoData
-            // 
-            this.telefonoData.HeaderText = "Num. Telefono";
-            this.telefonoData.Name = "telefonoData";
             // 
             // pictureBox1
             // 
@@ -286,6 +268,31 @@
             this.label2.Size = new System.Drawing.Size(181, 31);
             this.label2.TabIndex = 76;
             this.label2.Text = "Administrador";
+            // 
+            // nombreData
+            // 
+            this.nombreData.HeaderText = "Nombre";
+            this.nombreData.Name = "nombreData";
+            // 
+            // correoData
+            // 
+            this.correoData.HeaderText = "Correo";
+            this.correoData.Name = "correoData";
+            // 
+            // rolData
+            // 
+            this.rolData.HeaderText = "Rol";
+            this.rolData.Name = "rolData";
+            // 
+            // telefonoData
+            // 
+            this.telefonoData.HeaderText = "Num. Telefono";
+            this.telefonoData.Name = "telefonoData";
+            // 
+            // contraseñaData
+            // 
+            this.contraseñaData.HeaderText = "contraseña";
+            this.contraseñaData.Name = "contraseñaData";
             // 
             // frmRegistroAdmin
             // 
@@ -327,15 +334,16 @@
         private System.Windows.Forms.TextBox nombreTxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView administradoresDataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correoData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rolData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoData;
         private System.Windows.Forms.Button newAdminButton;
         private System.Windows.Forms.Button confirmarTodoButton;
         private System.Windows.Forms.Button eliminarAdminButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correoData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rolData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contraseñaData;
     }
 }
