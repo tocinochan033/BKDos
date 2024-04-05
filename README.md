@@ -7,7 +7,10 @@ Bienvenido a **BkDos**, programa de registro de becas
 ## Instalación y uso
 
 1. Abre  Visual Studio 
-2. Haz clic en "Clonar repositorio" y pega la URL del repositorio: `https://github.com/tocinochan033/BKDos.git`
+2. Haz clic en "Clonar repositorio" y pega la URL del repositorio: 
+    ```
+	https://github.com/tocinochan033/BKDos.git
+	```
 3. Selecciona la ubicación donde deseas clonar el repositorio y haz clic en "Clonar".
 4. Abre la solución (`Proyecto_AdministracionOrgDatos.sln`) en Visual Studio.
 5. Presiona F5 para compilar y ejecutar el proyecto en modo de depuración.
