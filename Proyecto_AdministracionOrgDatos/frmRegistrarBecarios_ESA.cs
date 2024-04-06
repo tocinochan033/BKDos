@@ -715,5 +715,100 @@ namespace Proyecto_AdministracionOrgDatos
             objMenu_ESA.Show();
             this.Hide();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            /*Orden
+            * Sql
+            * Comando
+            * Comando con parametros
+            * try/catch
+            */
+
+            /*-----------------------------------Inicio de ELIMINAR metodo con base de datos-------------------------------------*/
+            Conectar();
+          
+            string Nam_Escuela;
+            int IdDatosAcademicos, IdAlumno, IdDatosContactos;
+            //Asignacion
+        /*    IdAlumno = int.Parse(dgv_Agregar.SelectedCells[0].Value.ToString());
+            IdDatosAcademicos = int.Parse(dgv_Agregar.SelectedCells[10].Value.ToString());
+            IdDatosContactos = int.Parse(dgv_Agregar.SelectedCells[9].Value.ToString());
+        */
+            //  txtApaterno.Text = dgv_Agregar.SelectedCells[1].Value.ToString();
+
+            Nam_Escuela = txtEscuela.Text;
+            //Busqueda del ID academicos
+            /*  Sql = "";
+              Sql = "Select Id_DatosAcademicos from DatosAcademicos";*/
+            //IdDatosAcademicos=
+            /*Insercion de primera tabla Datos generales*/
+
+            /*Eliminacion de segunda tabla Datos Contacto*/
+            ;
+
+            Sql = "";
+            Sql = "Delete from DatosContacto Where Id_DatosContacto=@Id_DatosContacto";
+            Comando = new SqlCommand(Sql, Conexion);
+            Comando.Parameters.AddWithValue("@Id_DatosContacto", txtIdContacto.Text);
+
+            try
+            {
+                //Ejecutamos la instruccion del sql para afectar las filas
+                Comando.ExecuteNonQuery();
+
+                MessageBox.Show("Registro Eliminado: Tabla datos CONTACTO");
+                //  RefresacarDatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Tabla Contacto: " + ex.Message);
+            }
+
+
+
+            Sql = "";
+            Sql = "Delete from DatosAcademicos Where Id_DatosAcademicos=@Id_DatosAcademicos";
+            Comando = new SqlCommand(Sql, Conexion);
+            Comando.Parameters.AddWithValue("@Id_DatosAcademicos", txtIdAcademicos.Text);
+            try
+            {
+                Comando.ExecuteNonQuery();
+                MessageBox.Show("Registro Eliminado: Tabla datos ACADEMICOS");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Tabla Academicos" + ex.Message);
+            }
+
+            Sql = "";
+            Sql = "Delete from DatosGenerales Where Id_Alumno=@Id_Alumno";
+            Comando = new SqlCommand(Sql, Conexion);
+            Comando.Parameters.AddWithValue("@Id_Alumno", txtIdAlumno.Text);
+
+            try
+            {
+                //Ejecutamos la instruccion del sql para afectar las filas
+                Comando.ExecuteNonQuery();
+
+                MessageBox.Show("Registro Eliminado: Tabla datos generales");
+                //  RefresacarDatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error tabla general: " + ex.Message);
+            }
+
+
+
+         
+            Conexion.Close();
+
+
+            RefresacarDatos();
+            camposLimpieza();
+            /*-----------------------------------Fin de metodo con base de datos-------------------------------------*/
+        }
     }
 }

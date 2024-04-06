@@ -43,6 +43,7 @@
             this.FechaHora2 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtIdAlumno = new System.Windows.Forms.TextBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
@@ -64,6 +65,7 @@
             this.txtAmaterno = new System.Windows.Forms.TextBox();
             this.lblAmaterno = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtIdContacto = new System.Windows.Forms.TextBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -85,6 +87,7 @@
             this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.lblDomicilio = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txtIdAcademicos = new System.Windows.Forms.TextBox();
             this.txtEscuela = new System.Windows.Forms.TextBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -104,9 +107,7 @@
             this.lblCarrera = new System.Windows.Forms.Label();
             this.btnGuardarMod = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.txtIdAlumno = new System.Windows.Forms.TextBox();
-            this.txtIdContacto = new System.Windows.Forms.TextBox();
-            this.txtIdAcademicos = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Agregar)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -320,6 +321,14 @@
             this.tabPage1.Text = "Datos personales";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // txtIdAlumno
+            // 
+            this.txtIdAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdAlumno.Location = new System.Drawing.Point(140, 23);
+            this.txtIdAlumno.Name = "txtIdAlumno";
+            this.txtIdAlumno.Size = new System.Drawing.Size(100, 26);
+            this.txtIdAlumno.TabIndex = 92;
             // 
             // pictureBox16
             // 
@@ -576,6 +585,14 @@
             this.tabPage2.Text = "Contacto";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtIdContacto
+            // 
+            this.txtIdContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdContacto.Location = new System.Drawing.Point(225, 20);
+            this.txtIdContacto.Name = "txtIdContacto";
+            this.txtIdContacto.Size = new System.Drawing.Size(100, 26);
+            this.txtIdContacto.TabIndex = 93;
+            // 
             // pictureBox10
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
@@ -825,6 +842,14 @@
             this.tabPage3.Text = "Datos academicos";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // txtIdAcademicos
+            // 
+            this.txtIdAcademicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdAcademicos.Location = new System.Drawing.Point(127, 23);
+            this.txtIdAcademicos.Name = "txtIdAcademicos";
+            this.txtIdAcademicos.Size = new System.Drawing.Size(100, 26);
+            this.txtIdAcademicos.TabIndex = 94;
+            // 
             // txtEscuela
             // 
             this.txtEscuela.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1044,29 +1069,21 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // txtIdAlumno
+            // btnDelete
             // 
-            this.txtIdAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdAlumno.Location = new System.Drawing.Point(140, 23);
-            this.txtIdAlumno.Name = "txtIdAlumno";
-            this.txtIdAlumno.Size = new System.Drawing.Size(100, 26);
-            this.txtIdAlumno.TabIndex = 92;
-            // 
-            // txtIdContacto
-            // 
-            this.txtIdContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdContacto.Location = new System.Drawing.Point(225, 20);
-            this.txtIdContacto.Name = "txtIdContacto";
-            this.txtIdContacto.Size = new System.Drawing.Size(100, 26);
-            this.txtIdContacto.TabIndex = 93;
-            // 
-            // txtIdAcademicos
-            // 
-            this.txtIdAcademicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdAcademicos.Location = new System.Drawing.Point(127, 23);
-            this.txtIdAcademicos.Name = "txtIdAcademicos";
-            this.txtIdAcademicos.Size = new System.Drawing.Size(100, 26);
-            this.txtIdAcademicos.TabIndex = 94;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Snow;
+            this.btnDelete.Location = new System.Drawing.Point(967, 259);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(187, 51);
+            this.btnDelete.TabIndex = 71;
+            this.btnDelete.Text = "Eliminar campo";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmRegistrarBecarios_ESA
             // 
@@ -1074,6 +1091,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGuardarMod);
             this.Controls.Add(this.tabControl1);
@@ -1200,5 +1218,6 @@
         private System.Windows.Forms.TextBox txtIdAlumno;
         private System.Windows.Forms.TextBox txtIdContacto;
         private System.Windows.Forms.TextBox txtIdAcademicos;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
