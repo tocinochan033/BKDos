@@ -25,7 +25,7 @@ Bienvenido a **BkDos**, programa de registro de becas
 - iTextSharp [5.5.13.3]()
 - itextsharp.xmlworker [5.5.13]()
 
-Puedes verificar las dependencias de ITextSharp puede consultar dentro de **Administrador de paquetes NuGet** en Visual Studio.
+Puedes verificar las dependencias de ITextSharp dentro de **Administrador de paquetes NuGet** en Visual Studio.
 
 ## Guía de Uso
 
