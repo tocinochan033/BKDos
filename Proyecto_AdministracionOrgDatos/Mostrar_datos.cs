@@ -131,7 +131,7 @@ namespace Proyecto_AdministracionOrgDatos
         {
 
         }
-
+        /*Boton para eliminar, queda obsoleto*/
         private void button1_Click(object sender, EventArgs e)
         {
             //Verificamos si hay una fila seleccionada
@@ -209,7 +209,7 @@ namespace Proyecto_AdministracionOrgDatos
                  }
              }
          }*/
-
+        /*Boton para seleccionar reportes, se queda igual*/
         private void button1_Click_2(object sender, EventArgs e)
         {
             if (cmbPDFeleccion.Text == "")
