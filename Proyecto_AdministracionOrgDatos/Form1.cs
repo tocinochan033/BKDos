@@ -78,12 +78,12 @@ namespace Proyecto_AdministracionOrgDatos
         /// </summary>
         private FuentePersonalizada fontPers = new FuentePersonalizada();
         private TextoGuia txtGuia = new TextoGuia();
-        private FileStream login;
+       // private FileStream login;
 
 
         public FormLogin_ESA()
         {
-            login = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+         //   login = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
             InitializeComponent();
         }
 
@@ -137,11 +137,12 @@ namespace Proyecto_AdministracionOrgDatos
                         SystemSounds.Exclamation.Play();
                         txtContraseña_ESA.Text = "";
                         txtUsuario_ESA.Text = "";
-                        Conexion.Close();
+                       
 
                        
                     }
                 }
+                Conexion.Close();
             }
             catch (Exception ex)
             {
@@ -149,7 +150,7 @@ namespace Proyecto_AdministracionOrgDatos
             }
         }
 
-        private bool archivoAdmin() //Verifica si el usuario y contraseña coinciden en la misma fila de archivo
+       /* private bool archivoAdmin() //Verifica si el usuario y contraseña coinciden en la misma fila de archivo
         {
             try
             {
@@ -172,7 +173,7 @@ namespace Proyecto_AdministracionOrgDatos
                             }
                         }
                     }
-                    login.Close();
+                   // login.Close();
                 }
 
 
@@ -184,7 +185,7 @@ namespace Proyecto_AdministracionOrgDatos
             }
             
             return false;
-        }
+        }*/
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
         private void HoraFecha_Tick(object sender, EventArgs e)
@@ -211,7 +212,7 @@ namespace Proyecto_AdministracionOrgDatos
             catch(Exception ex)
             {
                 Console.WriteLine("No se agrego ninguna contraseña");
-            }*/
+            }*/ 
 
             try
             {
@@ -230,11 +231,12 @@ namespace Proyecto_AdministracionOrgDatos
                     }
                     
                 }
-
+                Conexion.Close();
             }
             catch(Exception ex)
             {
                 Console.WriteLine("No se agrego ninguna contraseña");
+                Conexion.Close();
             }
 
 
