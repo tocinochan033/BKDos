@@ -9,6 +9,9 @@ using System.Media;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+//Se agrega libreria dataclient
+//Espacio de nombres requerido para interactuar con SQL SERVER
+using System.Data.SqlClient;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 
@@ -16,6 +19,60 @@ namespace Proyecto_AdministracionOrgDatos
 {
     public partial class FormLogin_ESA : Form
     {
+        /// <summary>
+        /// Creacion de instancias y metodo conectar
+        /// </summary>
+        /// 
+        /*CREACION DE INSTANCIAS*/
+        /*-------------------------INSTANCIAS-----------------------------*/
+        //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
+        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
+
+        //Comando objeto del tipo SQLcommand para representar las instrucciones SQL
+        SqlCommand Comando;
+
+        //Adaptador objeto del tipo sqlDataAdapter para intercambiar datos entre una
+        //fuente de datos (en este caso sql server) y un almacen de datos
+        SqlDataAdapter Adaptador = null;
+
+        //Tabla objeto del tipo DATATABLE respresenta una coleccion de registros en memoria del cliente
+        DataTable Tabla = new DataTable();
+
+        //------------------------------------Variables-----------------------
+        //Almacenar instrucciones SQL
+        String Sql = "";
+        // DESKTOP-LRR3RR8\SQLEXPRESS
+        //DESKTOP-JGTCE3J
+        //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER
+        String Servidor = @"DESKTOP-JGTCE3J";
+
+        //Variable de tipo string para almacenar el nombre de la base de datos
+        String Base_Datos = "BKDOS";
+        int indice = 0;
+        /*--------------------------Metodo Conectar--------------------------*/
+        void Conectar()
+        {
+            try
+            {
+                Conexion.ConnectionString = "Data Source =" + Servidor + ";" +
+                "Initial Catalog =" + Base_Datos + ";" + "Integrated security = true";
+                try
+                //Bloque try catch para capturar de excepciones en ejecucion
+                {
+                    Conexion.Open();
+
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Error al tratar de establecer la conexión " + ex.Message);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error en la conexión: " + ex.Message);
+            }
+        }
+        /**********************************************************************/
         /// <summary>
         /// LOGIN EN HIATUS
         /// </summary>
@@ -38,7 +95,7 @@ namespace Proyecto_AdministracionOrgDatos
         private void btnInicioSesion_ESA_Click(object sender, EventArgs e)
         {
             //Si el usuario contraseña son identificables, carga al siguiente usuario. A la vez, compara el rol
-            if (archivoAdmin() || txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1" || txtUsuario_ESA.Text == "admin" && txtContraseña_ESA.Text == "123456")
+           /* if (archivoAdmin() || txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1" || txtUsuario_ESA.Text == "admin" && txtContraseña_ESA.Text == "123456")
             {
                 Form objMenu_ACO = new frmMenu_ESA();
                 objMenu_ACO.Show();
@@ -51,6 +108,44 @@ namespace Proyecto_AdministracionOrgDatos
                 errorLogin.Visible = true;
                 txtUsuario_ESA.Focus();
                 SystemSounds.Exclamation.Play();
+            }*/
+            /*Metodo con bd*/
+            try
+            {
+
+                //Invocacion del metodo conectar
+                Conectar();
+                //comando sql para seleccionar los campos de que tablas se obtendran
+                using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contrasena FROM Usuarios WHERE Usuario='" + txtUsuario_ESA.Text + "' AND Contrasena='" + txtContraseña_ESA.Text + "'", Conexion))
+                {
+                    //se ejecuta la variable para leer el comando de ejecutar
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    //si lee los datos corrrectos
+                    if (dr.Read())
+                    {
+                        //Se muestra los otros datos
+                        Form objMenu_ACO = new frmMenu_ESA();
+                        objMenu_ACO.Show();
+                        this.Hide();
+
+                    }
+                    else
+                    {
+                        //Cuando no se encontro la informacion
+                        errorLogin.Visible = true;
+                        txtUsuario_ESA.Focus();
+                        SystemSounds.Exclamation.Play();
+                        txtContraseña_ESA.Text = "";
+                        txtUsuario_ESA.Text = "";
+                        Conexion.Close();
+
+                       
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -79,6 +174,8 @@ namespace Proyecto_AdministracionOrgDatos
                     }
                     login.Close();
                 }
+
+
             }
             catch
             {
@@ -99,7 +196,8 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void frmRegistrarButton_Click(object sender, EventArgs e)
         {
-            try
+            //Se tiene que acceder por medio por contraseña
+          /*  try
             {
                 login.Close();
                 string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
@@ -113,7 +211,32 @@ namespace Proyecto_AdministracionOrgDatos
             catch(Exception ex)
             {
                 Console.WriteLine("No se agrego ninguna contraseña");
+            }*/
+
+            try
+            {
+                //Invocacion del metodo conectar
+                Conectar();
+                string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña");
+                //using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contrasena FROM Usuarios WHERE Usuario='" + txtUsuario_ESA.Text + "' AND Contrasena='" + txtContraseña_ESA.Text + "'", Conexion))
+                using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contra_admin FROM Usuarios WHERE Usuario='" + txtUsuario_ESA.Text + "' AND Contra_admin='" + confirmacion + "'",Conexion))
+                {
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    if(dr.Read())
+                    {
+                        Form adminRegistro = new frmRegistroAdmin();
+                        adminRegistro.Show();
+                    }
+                    
+                }
+
             }
+            catch(Exception ex)
+            {
+                Console.WriteLine("No se agrego ninguna contraseña");
+            }
+
 
         }
 
@@ -151,10 +274,7 @@ namespace Proyecto_AdministracionOrgDatos
             txtContraseña_ESA.TextChanged += (s, v) => txtGuia.CuadroTexto_TextChangedPassword(txtContraseña_ESA);
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         //Codigo para lo de ver y no ver la contraseña
         private void VerContra_Click(object sender, EventArgs e)
@@ -169,11 +289,16 @@ namespace Proyecto_AdministracionOrgDatos
             txtContraseña_ESA.PasswordChar = '\0';
         }
 
+       
+        //----------------------------------------------
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
         private void errorLogin_Click(object sender, EventArgs e)
         {
 
         }
-        //----------------------------------------------
     }
 }
 
