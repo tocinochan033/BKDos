@@ -39,7 +39,7 @@ Puedes verificar las dependencias de ITextSharp dentro de **Administrador de paq
 ## Configurar
 Para que el proyecto funcione correctamente es necesario realizar los siguientes pasos:
 
-1. Abre el explorador de archivos y navega hasta el directorio del proyecto, o utiliza el atajo `Ctrl + O` dentro de Visual Studio y dirigete al directorio `~\BKDos\Proyecto_AdministracionOrgDatos\Resources` 
+1. Abre el explorador de archivos y navega hasta el directorio del proyecto, o utiliza el atajo `Ctrl + O` dentro de Visual Studio y dirigete al directorio `~\BKDos\` 
 2. Copia la carpeta `Fuentes`
 3. Pega la carpeta en la direccion especificada `~\BKDos\Proyecto_AdministracionOrgDatos\bin\Debug\`
 
