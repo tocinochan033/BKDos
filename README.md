@@ -45,13 +45,13 @@ Para que el proyecto funcione correctamente es necesario realizar los siguientes
 
 ## Créditos
 
-- Jesus Mejia (@Sujez)
-- Cesar Garcia (@ArdillaTragona)
-- Sandra Megumi (@MegumiUwU)
-- Carlos Noberto (@cxrlosL15)
-- Zeus Andrade(@DonChampi)
-- Abraham Estrada (@Aleluyo)
-- Omar Sanchez (@IngeOmar)
+- Jesus Mejia ([@Sujez](https://github.com/Sujez))
+- Cesar Garcia ([@ArdillaTragona](https://github.com/ArdillaTragona))
+- Sandra Megumi ([@MeguimiUwU](https://github.com/MegumiUwU))
+- Carlos Noberto ([@cxrlosL15](https://github.com/cxrlosL15))
+- Zeus Andrade([@DonChampi](https://github.com/DonChampi))
+- Abraham Estrada ([@Aleluyo](https://github.com/Aleluyo))
+- Omar Sanchez ([@IngeOmar](https://github.com/IngeOmar))
 
 ## Licencia
 
