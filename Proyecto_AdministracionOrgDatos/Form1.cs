@@ -197,10 +197,10 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void frmRegistrarButton_Click(object sender, EventArgs e)
         {
-            //Se tiene que acceder por medio por contraseña
-          /*  try
+          /*  //Se tiene que acceder por medio por contraseña
+           try
             {
-                login.Close();
+                //login.Close();
                 string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
 
                 if (int.Parse(confirmacion) == 2) //Cada nuevo administrador requiere confirmacion de contraseña: 2
@@ -212,15 +212,16 @@ namespace Proyecto_AdministracionOrgDatos
             catch(Exception ex)
             {
                 Console.WriteLine("No se agrego ninguna contraseña");
-            }*/ 
+            }*/
 
             try
             {
                 //Invocacion del metodo conectar
                 Conectar();
-                string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña");
+                string usuario = Interaction.InputBox("Favor de confirmar usuario", "Usuario");
+                string confirmacion = Interaction.InputBox("Favor de confirmar contraseña de administrador", "Contraseña");
                 //using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contrasena FROM Usuarios WHERE Usuario='" + txtUsuario_ESA.Text + "' AND Contrasena='" + txtContraseña_ESA.Text + "'", Conexion))
-                using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contra_admin FROM Usuarios WHERE Usuario='" + txtUsuario_ESA.Text + "' AND Contra_admin='" + confirmacion + "'",Conexion))
+                using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contra_admin FROM Usuarios WHERE Usuario='" + usuario + "' AND Contra_admin='" + confirmacion + "'", Conexion))
                 {
                     SqlDataReader dr = cmd.ExecuteReader();
 
