@@ -216,6 +216,7 @@ namespace Proyecto_AdministracionOrgDatos
 
             try
             {
+                // Verificar cuando se equivoca el usuario
                 //Invocacion del metodo conectar
                 Conectar();
                 string usuario = Interaction.InputBox("Favor de confirmar usuario", "Usuario");
