@@ -133,7 +133,7 @@ namespace Proyecto_AdministracionOrgDatos
             string aPaterno, aMaterno, nombres, fechanac, edad, curp, genero, estado_civil;
             string domicilio, codigo_postal, nacionalidad, estado_nacimiento, municipio, correo_electronico, telefono;
             string carrera, periodo, promedio, cct, modelo;
-            int indicieNuevoRenglon;
+            //int indicieNuevoRenglon;
 
             /*
             //Abrimos el archivo de texto en modo lectura
