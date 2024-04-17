@@ -7,6 +7,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//Se agrega libreria dataclient
+//Espacio de nombres requerido para interactuar con SQL SERVER
+using System.Data.SqlClient;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 
@@ -14,7 +17,62 @@ namespace Proyecto_AdministracionOrgDatos
 {
     public partial class frmRegistrarBecarios_ESA : Form
     {
+        /*llamamiento de clase*/
+        //  ClaseBD ClaseBd = new ClaseBD();
 
+        /*-------------------------INSTANCIAS-----------------------------*/
+        //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
+        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
+
+        //Comando objeto del tipo SQLcommand para representar las instrucciones SQL
+        SqlCommand Comando;
+
+        //Adaptador objeto del tipo sqlDataAdapter para intercambiar datos entre una
+        //fuente de datos (en este caso sql server) y un almacen de datos
+        SqlDataAdapter Adaptador = null;
+
+        //Tabla objeto del tipo DATATABLE respresenta una coleccion de registros en memoria del cliente
+        DataTable Tabla = new DataTable();
+
+        //------------------------------------Variables-----------------------
+        //Almacenar instrucciones SQL
+        String Sql = "";
+        // DESKTOP-LRR3RR8\SQLEXPRESS
+        //DESKTOP-JGTCE3J
+        //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER
+        String Servidor = @"DESKTOP-JGTCE3J";
+
+        //Variable de tipo string para almacenar el nombre de la base de datos
+        String Base_Datos = "BKDOS";
+        int indice = 0;
+
+        /*--------------------------Metodo Conectar--------------------------*/
+        public void Conectar()
+        {
+            try
+            {
+                Conexion.ConnectionString = "Data Source =" + Servidor + ";" +
+                "Initial Catalog =" + Base_Datos + ";" + "Integrated security = true";
+                try
+                //Bloque try catch para capturar de excepciones en ejecucion
+                {
+                    Conexion.Open();
+
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Error al tratar de establecer la conexión " + ex.Message);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error en la conexión: " + ex.Message);
+            }
+        }
+        /**********************************************************************/
+
+
+        /*------------------------METODO PARA CARGAR DATOS--------------------*/
         private FuentePersonalizada fontPers;
 
         //Variable para el calculo de la inactividad
@@ -77,7 +135,7 @@ namespace Proyecto_AdministracionOrgDatos
             string carrera, periodo, promedio, cct, modelo;
             int indicieNuevoRenglon;
 
-
+            /*
             //Abrimos el archivo de texto en modo lectura
             FileStream becados = new FileStream("Becados.txt", FileMode.OpenOrCreate, FileAccess.Read);
 
@@ -142,7 +200,8 @@ namespace Proyecto_AdministracionOrgDatos
                     renglon = lector.ReadLine();
                 }
             }
-            becados.Close();
+            becados.Close();*/
+            LlenarDGV();
         }
 
         private void btnRegresarMenu_ESA_Click(object sender, EventArgs e)
@@ -822,6 +881,55 @@ namespace Proyecto_AdministracionOrgDatos
             fontPers.AplicarFuente(lblTitulo_ESA, 28, FontStyle.Regular);
         }
 
+        public void LlenarDGV()
+        {
+            Conectar();
+            //Query Primera Tabla
+
+            Sql = "SELECT ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo FROM DatosGenerales, DatosContacto, DatosAcademicos";
+            Adaptador = new SqlDataAdapter(Sql, Conexion);
+            Adaptador.Fill(Tabla);
+            dgv_Agregar.DataSource = Tabla;
+
+            //Query Segunda tabla
+           /* Sql = "SELECT Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono FROM DatosContacto";
+            Adaptador = new SqlDataAdapter(Sql, Conexion);
+            Adaptador.Fill(Tabla);
+            dgv_Agregar.DataSource = Tabla;
+
+            //Query tercera tabla
+            Sql = "SELECT Carrera, Periodo, Promedio, Modelo FROM DatosAcademicos";
+            Adaptador = new SqlDataAdapter(Sql, Conexion);
+            Adaptador.Fill(Tabla);
+            dgv_Agregar.DataSource = Tabla;*/
+
+            Conexion.Close();
+        }
+        public void RefrescarDatos()
+        {
+            Tabla.Clear();
+            dgv_Agregar.ClearSelection();
+
+            Sql = "SELECT ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo FROM DatosGenerales, DatosContacto, DatosAcademicos";
+            Adaptador = new SqlDataAdapter(Sql, Conexion);
+            Adaptador.Fill(Tabla);
+            dgv_Agregar.DataSource = Tabla;
+
+              //Query Segunda tabla
+            /*  Sql = "SELECT Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono FROM DatosContacto";
+              Adaptador = new SqlDataAdapter(Sql, Conexion);
+              Adaptador.Fill(Tabla);
+              dgv_Agregar.DataSource = Tabla;
+
+              //Query tercera tabla
+              Sql = "SELECT Carrera, Periodo, Promedio, Modelo FROM DatosAcademicos";
+              Adaptador = new SqlDataAdapter(Sql, Conexion);
+              Adaptador.Fill(Tabla);
+              dgv_Agregar.DataSource = Tabla;*/
+
+            Conexion.Close();
+
+        }
 
 
 
