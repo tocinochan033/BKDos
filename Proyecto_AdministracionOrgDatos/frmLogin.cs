@@ -230,8 +230,17 @@ namespace Proyecto_AdministracionOrgDatos
                     {
                         Form adminRegistro = new frmRegistroAdmin();
                         adminRegistro.Show();
+                        this.Hide();
                     }
-                    
+                    else
+                    {
+                        Form login = new FormLogin_ESA();
+                        MessageBox.Show("El Usuario y/o Contraseña Administrador INCORRECTOS");
+                        login.Show();
+                        this.Hide();
+                       
+                        
+                    }
                 }
                 Conexion.Close();
             }
