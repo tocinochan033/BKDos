@@ -1213,6 +1213,8 @@ namespace Proyecto_AdministracionOrgDatos
 
                 int Id_DatosAcademicos;
                 int Id_DatosContacto;
+                int Id_DatosGenerales;
+               
                 Conectar();
                 /*Seleccionar id de escuela, le asigno una variable para guardar el valor*/
                
@@ -1310,9 +1312,19 @@ namespace Proyecto_AdministracionOrgDatos
 
                 Comando = new SqlCommand(Sql, Conexion);
                 Id_DatosAcademicos = Convert.ToInt32(Comando.ExecuteScalar());
-                //Insercion
-                Sql = "update DatosGenerales set Id_DatosAcademicos = @Id_DatosAcademicos";
+
+                //Seleccion del id mas reciente de Datos generales
+                Sql = "";
+                
+                Sql = "SELECT MAX(Id_Alumno) From DatosGenerales";
+
                 Comando = new SqlCommand(Sql, Conexion);
+                Id_DatosGenerales = Convert.ToInt32(Comando.ExecuteScalar());
+                //Insercion
+
+                Sql = "update DatosGenerales set Id_DatosAcademicos = @Id_DatosAcademicos WHERE Id_Alumno = @Id_Alumno";
+                Comando = new SqlCommand(Sql, Conexion);
+                Comando.Parameters.AddWithValue("@Id_Alumno", Id_DatosGenerales);
                 Comando.Parameters.AddWithValue("@Id_DatosAcademicos", Id_DatosAcademicos);
 
                 //Comando Try
@@ -1336,9 +1348,18 @@ namespace Proyecto_AdministracionOrgDatos
 
                 Comando = new SqlCommand(Sql, Conexion);
                 Id_DatosContacto = Convert.ToInt32(Comando.ExecuteScalar());
-                //Insercion
-                Sql = "update DatosGenerales set Id_DatosContacto = @Id_DatosContacto";
+
+                //Seleccion del id mas reciente de Datos generales
+                Sql = "";
+
+                Sql = "SELECT MAX(Id_Alumno) From DatosGenerales";
+
                 Comando = new SqlCommand(Sql, Conexion);
+                Id_DatosGenerales = Convert.ToInt32(Comando.ExecuteScalar());
+                //Insercion
+                Sql = "update DatosGenerales set Id_DatosContacto = @Id_DatosContacto WHERE Id_Alumno = @Id_Alumno";
+                Comando = new SqlCommand(Sql, Conexion);
+                Comando.Parameters.AddWithValue("@Id_Alumno", Id_DatosGenerales);
                 Comando.Parameters.AddWithValue("@Id_DatosContacto", Id_DatosContacto);
 
                 //Comando Try
@@ -1384,17 +1405,6 @@ namespace Proyecto_AdministracionOrgDatos
             Adaptador.Fill(Tabla);
             dgv_Agregar.DataSource = Tabla;
 
-            //Query Segunda tabla
-           /* Sql = "SELECT Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono FROM DatosContacto";
-            Adaptador = new SqlDataAdapter(Sql, Conexion);
-            Adaptador.Fill(Tabla);
-            dgv_Agregar.DataSource = Tabla;
-
-            //Query tercera tabla
-            Sql = "SELECT Carrera, Periodo, Promedio, Modelo FROM DatosAcademicos";
-            Adaptador = new SqlDataAdapter(Sql, Conexion);
-            Adaptador.Fill(Tabla);
-            dgv_Agregar.DataSource = Tabla;*/
 
             Conexion.Close();
         }
@@ -1411,17 +1421,6 @@ namespace Proyecto_AdministracionOrgDatos
             dgv_Agregar.DataSource = Tabla;
 
 
-            //Query Segunda tabla
-            /*  Sql = "SELECT Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono FROM DatosContacto";
-              Adaptador = new SqlDataAdapter(Sql, Conexion);
-              Adaptador.Fill(Tabla);
-              dgv_Agregar.DataSource = Tabla;
-
-              //Query tercera tabla
-              Sql = "SELECT Carrera, Periodo, Promedio, Modelo FROM DatosAcademicos";
-              Adaptador = new SqlDataAdapter(Sql, Conexion);
-              Adaptador.Fill(Tabla);
-              dgv_Agregar.DataSource = Tabla;*/
 
             Conexion.Close();
 

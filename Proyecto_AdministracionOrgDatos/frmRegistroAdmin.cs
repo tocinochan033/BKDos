@@ -122,41 +122,77 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void newAdminButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Conectar();
+          
                 //Añadir nuevo administrador
-                SystemSounds.Exclamation.Play();
-                string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
-                using(SqlCommand cmd = new SqlCommand("SELECT Contra_admin FROM Usuario WHERE Contra_admin = '" + confirmacion,Conexion))
+                //SystemSounds.Exclamation.Play();
+                // string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
+                //  using(SqlCommand cmd = new SqlCommand("SELECT Contra_admin FROM Usuario WHERE Contra_admin = '" + confirmacion,Conexion))
+                // {
+                /*  SqlDataReader dr = cmd.ExecuteReader();
+                  if (dr.Read()) //Cada nuevo administrador requiere confirmacion de contraseña: 2
+                  {*/
+
+                Conectar();
+                Sql = "";
+                Sql = "INSERT INTO Usuarios (Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin) values (@Usuario, @Contrasena, @Correo,@Rol, @NumeroTelefonico, @Contra_admin)";
+                Comando = new SqlCommand(Sql, Conexion);
+                Comando.Parameters.AddWithValue("@Usuario", nombreTxt.Text);
+                Comando.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
+                Comando.Parameters.AddWithValue("@Correo", correoTxt.Text);
+                Comando.Parameters.AddWithValue("@Rol", Rol.Text);
+                Comando.Parameters.AddWithValue("@NumeroTelefonico", numeroTxt.Text);
+                Comando.Parameters.AddWithValue("@Contra_admin", txtAdminContra.Text);
+
+                try
                 {
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.Read()) //Cada nuevo administrador requiere confirmacion de contraseña: 2
-                    {
-                        
-                        guardarDatos();
-                        camposLimpieza();
-                    }
+
+                    Comando.ExecuteNonQuery();
+
+                    MessageBox.Show("Registro Administrador Insertado");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex.Message);
+                }
+                Conexion.Close();
+                camposLimpieza();
+                  /*  }
                     else
                     {
                         MessageBox.Show("Favor de no olvidar todos los datos en casa.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                }
+                    }*/
+               // }
                 Conexion.Close();
                 
-                //login.Close();
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine("ERROR AL AGREGAR ADMINISTRADOR: " + ex.Message);
-            }
+           
 
         }
 
-        private void guardarDatos() //campo para guarda los datos dentro de una linea nuevo del archivo
+        public void guardarDatos() //campo para guarda los datos dentro de una linea nuevo del archivo
         {
+            Conectar();
             Sql="";
-            Sql = "INSERT INTO Usuarios ()";
+            Sql = "INSERT INTO Usuarios (Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin) values (@Usuario, @Contrasena, @Correo,@Rol, @NumeroTelefonico, @Contra_admin)";
+            Comando = new SqlCommand(Sql,Conexion);
+            Comando.Parameters.AddWithValue("@Usuario",nombreTxt.Text);
+            Comando.Parameters.AddWithValue("@Contrasena",txtContrasena.Text);
+            Comando.Parameters.AddWithValue("@Correo", correoTxt.Text);
+            Comando.Parameters.AddWithValue("@Rol", Rol.Text);
+            Comando.Parameters.AddWithValue("@NumeroTelefonico",numeroTxt.Text);
+            Comando.Parameters.AddWithValue("@Contra_admin",txtAdminContra.Text);
+
+            try
+            {
+
+                Comando.ExecuteNonQuery();
+
+                MessageBox.Show("Registro Administrador Insertado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+            Conexion.Close();
         }
 
         public void camposLimpieza()
@@ -253,6 +289,35 @@ namespace Proyecto_AdministracionOrgDatos
          
 
             Conexion.Close();
+        }
+        public void RefrescarDatos()
+        {
+            Conectar();
+            Tabla.Clear();
+            administradoresDataGrid.ClearSelection();
+
+            // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
+            Sql = "SELECT Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin from Usuarios";
+            Adaptador = new SqlDataAdapter(Sql, Conexion);
+            Adaptador.Fill(Tabla);
+            administradoresDataGrid.DataSource = Tabla;
+
+
+
+            //Query Segunda tabla
+            /*  Sql = "SELECT Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono FROM DatosContacto";
+              Adaptador = new SqlDataAdapter(Sql, Conexion);
+              Adaptador.Fill(Tabla);
+              dgv_Agregar.DataSource = Tabla;
+
+              //Query tercera tabla
+              Sql = "SELECT Carrera, Periodo, Promedio, Modelo FROM DatosAcademicos";
+              Adaptador = new SqlDataAdapter(Sql, Conexion);
+              Adaptador.Fill(Tabla);
+              dgv_Agregar.DataSource = Tabla;*/
+
+            Conexion.Close();
+
         }
     }
 }

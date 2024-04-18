@@ -47,6 +47,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtAdminContra = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -79,6 +83,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.txtAdminContra);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.txtContrasena);
+            this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.newAdminButton);
             this.tabPage1.Controls.Add(this.rolCombo);
             this.tabPage1.Controls.Add(this.Rol);
@@ -101,7 +109,7 @@
             this.newAdminButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.newAdminButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newAdminButton.ForeColor = System.Drawing.Color.White;
-            this.newAdminButton.Location = new System.Drawing.Point(57, 233);
+            this.newAdminButton.Location = new System.Drawing.Point(54, 259);
             this.newAdminButton.Name = "newAdminButton";
             this.newAdminButton.Size = new System.Drawing.Size(258, 32);
             this.newAdminButton.TabIndex = 8;
@@ -258,6 +266,42 @@
             this.label2.TabIndex = 76;
             this.label2.Text = "Administrador";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label6.Location = new System.Drawing.Point(27, 186);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 21);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Contraseña:";
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Location = new System.Drawing.Point(31, 210);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Size = new System.Drawing.Size(123, 20);
+            this.txtContrasena.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label7.Location = new System.Drawing.Point(169, 186);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(148, 21);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Contraseña Admin:";
+            // 
+            // txtAdminContra
+            // 
+            this.txtAdminContra.Location = new System.Drawing.Point(173, 210);
+            this.txtAdminContra.Name = "txtAdminContra";
+            this.txtAdminContra.Size = new System.Drawing.Size(164, 20);
+            this.txtAdminContra.TabIndex = 12;
+            // 
             // frmRegistroAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,5 +348,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtAdminContra;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtContrasena;
+        private System.Windows.Forms.Label label6;
     }
 }
