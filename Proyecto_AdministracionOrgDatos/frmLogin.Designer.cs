@@ -66,7 +66,7 @@
             this.btnInicioSesion_ESA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicioSesion_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnInicioSesion_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInicioSesion_ESA.Location = new System.Drawing.Point(180, 268);
+            this.btnInicioSesion_ESA.Location = new System.Drawing.Point(180, 273);
             this.btnInicioSesion_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnInicioSesion_ESA.Name = "btnInicioSesion_ESA";
             this.btnInicioSesion_ESA.Size = new System.Drawing.Size(122, 24);

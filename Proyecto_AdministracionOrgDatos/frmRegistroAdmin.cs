@@ -81,7 +81,8 @@ namespace Proyecto_AdministracionOrgDatos
         public frmRegistroAdmin()
         {
             InitializeComponent();
-            cargaDatos();
+            LlenarDGV();
+           
         }
 
         private void cargaDatos() //Carga los datos al datagridview
@@ -123,39 +124,39 @@ namespace Proyecto_AdministracionOrgDatos
         {
             try
             {
+                Conectar();
                 //Añadir nuevo administrador
                 SystemSounds.Exclamation.Play();
                 string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
-
-                if (int.Parse(confirmacion) == 2) //Cada nuevo administrador requiere confirmacion de contraseña: 2
+                using(SqlCommand cmd = new SqlCommand("SELECT Contra_admin FROM Usuario WHERE Contra_admin = '" + confirmacion,Conexion))
                 {
-                    guardarDatos();
-                    camposLimpieza();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read()) //Cada nuevo administrador requiere confirmacion de contraseña: 2
+                    {
+                        
+                        guardarDatos();
+                        camposLimpieza();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Favor de no olvidar todos los datos en casa.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Favor de no olvidar todos los datos en casa.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                Conexion.Close();
+                
                 //login.Close();
             }
-            catch
+            catch(Exception ex)
             {
-                Console.WriteLine("hay errores wtf");
+                Console.WriteLine("ERROR AL AGREGAR ADMINISTRADOR: " + ex.Message);
             }
 
         }
 
         private void guardarDatos() //campo para guarda los datos dentro de una linea nuevo del archivo
         {
-            using (FileStream login = new FileStream("login.txt", FileMode.Append, FileAccess.Write))
-            {
-                using (StreamWriter writer = new StreamWriter(login))
-                {
-                    //nombre,correo,numero,rol,contraseña
-                    writer.WriteLine($"{nombreTxt.Text.ToLower()},{correoTxt.Text.ToLower()},{numeroTxt.Text},{rolCombo.Text},{rnd.Next(9999999)}");
-                }
-                login.Close();
-            }
+            Sql="";
+            Sql = "INSERT INTO Usuarios ()";
         }
 
         public void camposLimpieza()
@@ -236,6 +237,22 @@ namespace Proyecto_AdministracionOrgDatos
         private void frmRegistroAdmin_Load(object sender, EventArgs e)
         {
             CargarFuentes();
+        }
+
+        public void LlenarDGV()
+        {
+            Conectar();
+            //Query Primera Tabla
+
+            //Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
+            Sql = "SELECT Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin from Usuarios";
+            Adaptador = new SqlDataAdapter(Sql, Conexion);
+            Adaptador.Fill(Tabla);
+            administradoresDataGrid.DataSource = Tabla;
+
+         
+
+            Conexion.Close();
         }
     }
 }
