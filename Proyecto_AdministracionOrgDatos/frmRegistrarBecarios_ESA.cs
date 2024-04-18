@@ -878,7 +878,9 @@ namespace Proyecto_AdministracionOrgDatos
         {
             try
             {
-
+                Conectar();
+                //Se cargan los datos actuales en los textbox en el datagridview para actualizar sus valores
+                int seleccion = dgv_Agregar.CurrentRow.Index;
                 // Verificamos si hay una fila seleccionada
                 if (dgv_Agregar.CurrentRow != null && dgv_Agregar.CurrentRow.Index > -1)
                 {
@@ -888,13 +890,32 @@ namespace Proyecto_AdministracionOrgDatos
                     // Usuario confirma eliminación
                     if (confirmacion == DialogResult.Yes)
                     {
-                        dgv_Agregar.Rows.RemoveAt(dgv_Agregar.CurrentRow.Index);
+                        //dgv_Agregar.Rows.RemoveAt(dgv_Agregar.CurrentRow.Index);
+                        Sql = "update DatosGenerales set Estado = @Estado WHERE Id_Alumno = @Id_Alumno";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
+                        
+                        Comando.Parameters.AddWithValue("@Estado", 2);
+
+                        //Comando Try
+                        try
+                        {
+                            Comando.ExecuteNonQuery();
+
+                            MessageBox.Show("Registro Eliminado");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error " + ex.Message);
+                        }
+                        Conexion.Close();
                     }
                 }
                 else
                 {
                     throw new Exception("Seleccione una fila para eliminar.");
                 }
+               RefrescarDatos();
             }
             catch (Exception ex)
             {
@@ -1272,7 +1293,7 @@ namespace Proyecto_AdministracionOrgDatos
                 }
                 /*Insercion de tabla Datos generales*/
                 Sql = "";
-                Sql = "insert into DatosGenerales(ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero)";
+                Sql = "insert into DatosGenerales(ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Estado) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Estado)";
                 Comando = new SqlCommand(Sql, Conexion);
                 //Insercion de la primera tabla
                 Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
@@ -1283,6 +1304,7 @@ namespace Proyecto_AdministracionOrgDatos
                 Comando.Parameters.AddWithValue("@Curp", GeneracionCURP());
                 Comando.Parameters.AddWithValue("@EstadoCivil", cmbEstCivil.Text);
                 Comando.Parameters.AddWithValue("@Genero", CBGenero.Text);
+                Comando.Parameters.AddWithValue("@Estado", 1);
                 try
                 {
 
@@ -1401,7 +1423,7 @@ namespace Proyecto_AdministracionOrgDatos
 
             Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
                 "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
-                "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos";
+                "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 1 ";
            // Sql = "SELECT * from DatosGenerales, DatosAcademicos, DatosContacto";
             Adaptador = new SqlDataAdapter(Sql, Conexion);
             Adaptador.Fill(Tabla);
@@ -1418,8 +1440,8 @@ namespace Proyecto_AdministracionOrgDatos
 
             // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
             Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
-                "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
-                "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos";
+              "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
+              "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 1 ";
             Adaptador = new SqlDataAdapter(Sql, Conexion);
             Adaptador.Fill(Tabla);
             dgv_Agregar.DataSource = Tabla;
