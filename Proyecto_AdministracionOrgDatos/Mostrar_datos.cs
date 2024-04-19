@@ -108,76 +108,7 @@ namespace Proyecto_AdministracionOrgDatos
             cmbFiltro.Items.Add("CCT");
             cmbFiltro.Items.Add("Promedio");
 
-            //Se inicializan variables 
-            string aPaterno, aMaterno, nombres, fechanac, edad, curp, genero, estado_civil;
-            string domicilio, codigo_postal, nacionalidad, estado_nacimiento, municipio, correo_electronico, telefono;
-            string carrera, periodo, promedio, cct, modelo;
-            int indicieNuevoRenglon;
-
-            //Abrimos el archivo de texto en modo lectura
-            FileStream becados = new FileStream("Becados.txt", FileMode.OpenOrCreate, FileAccess.Read);
-
-            //Leemos linea por linea y cargamos esta misma en el datagridview
-            using (StreamReader lector = new StreamReader(becados))
-            {
-                string renglon = lector.ReadLine();
-                while (renglon != null)
-                {
-                    //Se usa el metodo split para leer los datos de manera individual
-                    string[] datos = renglon.Split(',');
-
-                    //Adicionamos nuevo renglon y regresamos su indice
-                    indicieNuevoRenglon = dgvMostrar.Rows.Add();
-
-                    //Asignamos el valor a las variables
-                    aPaterno = datos[0];
-                    aMaterno = datos[1];
-                    nombres = datos[2];
-                    fechanac = datos[3];
-                    edad = datos[4];
-                    curp = datos[5];
-                    genero = datos[6];
-                    estado_civil = datos[7];
-                    domicilio = datos[8];
-                    codigo_postal = datos[9];
-                    nacionalidad = datos[10];
-                    estado_nacimiento = datos[11];
-                    municipio = datos[12];
-                    correo_electronico = datos[13];
-                    telefono = datos[14];
-                    carrera = datos[15];
-                    periodo = datos[16];
-                    promedio = datos[17];
-                    cct = datos[18];
-                    modelo = datos[19];
-
-                    //Colocamos la informacion en el datagridview
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[0].Value = aPaterno;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[1].Value = aMaterno;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[2].Value = nombres;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[3].Value = fechanac;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[4].Value = edad;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[5].Value = curp;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[6].Value = genero;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[7].Value = estado_civil;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[8].Value = domicilio;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[9].Value = codigo_postal;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[10].Value = nacionalidad;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[11].Value = estado_nacimiento;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[12].Value = municipio;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[13].Value = correo_electronico;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[14].Value = telefono;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[15].Value = carrera;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[16].Value = periodo;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[17].Value = promedio;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[18].Value = cct;
-                    dgvMostrar.Rows[indicieNuevoRenglon].Cells[19].Value = modelo;
-
-                    renglon = lector.ReadLine();
-                }
-            }
-            //Finalizamos la carga y cerramos el archivo
-            becados.Close();
+            LlenarDGV();
         }
 
         private void Verificarlnactividad()
@@ -396,6 +327,41 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void cmbPDFeleccion_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+        public void LlenarDGV()
+        {
+            Conectar();
+            //Query Primera Tabla
+
+            Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
+                "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
+                "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 1 ";
+            // Sql = "SELECT * from DatosGenerales, DatosAcademicos, DatosContacto";
+            Adaptador = new SqlDataAdapter(Sql, Conexion);
+            Adaptador.Fill(Tabla);
+            dgvMostrar.DataSource = Tabla;
+
+
+            Conexion.Close();
+        }
+        public void RefrescarDatos()
+        {
+            Conectar();
+            Tabla.Clear();
+            dgvMostrar.ClearSelection();
+
+            // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
+            Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
+              "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
+              "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 1 ";
+            Adaptador = new SqlDataAdapter(Sql, Conexion);
+            Adaptador.Fill(Tabla);
+            dgvMostrar.DataSource = Tabla;
+
+
+
+            Conexion.Close();
 
         }
     }
