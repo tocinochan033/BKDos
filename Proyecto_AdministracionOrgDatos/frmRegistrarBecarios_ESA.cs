@@ -356,6 +356,32 @@ namespace Proyecto_AdministracionOrgDatos
                 return "XXXXXXXXXXXXXXX";
             }
         }
+        public string CURPMODIFICACION()
+        {
+            try
+            {
+                int seleccion = dgv_Agregar.CurrentRow.Index;
+
+                // dgv_Agregar.Rows[seleccion].Cells[0].Value;
+                //string nombre = txtNombres.Text.ToUpper();
+               // string ApellidoPaterno = txtApaterno.Text.ToUpper();
+                string nombre = dgv_Agregar.Rows[seleccion].Cells[3].Value.ToString().ToUpper();
+                string ApellidoPaterno = dgv_Agregar.Rows[seleccion].Cells[1].Value.ToString().ToUpper();
+                string ApellidoMaterno = dgv_Agregar.Rows[seleccion].Cells[2].Value.ToString().ToUpper();
+                string fechaNacimiento = dgv_Agregar.Rows[seleccion].Cells[4].Value.ToString();
+                string Sexo = dgv_Agregar.Rows[seleccion].Cells[8].Value.ToString().ToUpper();
+                string estado = dgv_Agregar.Rows[seleccion].Cells[13].Value.ToString();
+                var random = new Random().Next(0, 99);
+
+                return (ApellidoPaterno[0] + ObtencionDeVocal(ApellidoPaterno) + ApellidoMaterno[0] + nombre[0] + fechaNacimiento.Substring(8, 2) +
+                    fechaNacimiento.Substring(3, 2) + fechaNacimiento.Substring(0, 2) + Sexo[0] + ESTADO(estado) + ObtencionDeConsonantes(ApellidoPaterno) +
+                    ObtencionDeConsonantes(ApellidoMaterno) + ObtencionDeConsonantes(nombre) + random.ToString());
+            }
+            catch
+            {
+                return "XXXXXXXXXXXXXXX";
+            }
+        }
 
         //Metodo para asignar clave a los estados
         public string ESTADO(string palabra)
@@ -511,6 +537,7 @@ namespace Proyecto_AdministracionOrgDatos
                     Sql = "";
                     Sql = "UPDATE DatosGenerales set FechaNacimiento = @FechaNacimiento WHERE Id_Alumno = @Id_Alumno";
                     Comando = new SqlCommand(Sql, Conexion);
+                   // Comando.Parameters.AddWithValue("@Id_DatosContacto", ((DateTime)(dgv_Agregar.Rows[seleccion].Cells[17].Value)).ToString("dd/MM/yyyy"));
                     Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
                     Comando.Parameters.AddWithValue("@FechaNacimiento", txtModificacion.Text);
                     try
@@ -556,6 +583,7 @@ namespace Proyecto_AdministracionOrgDatos
                     Sql = "UPDATE DatosGenerales set CURP = @CURP WHERE Id_Alumno = @Id_Alumno";
                     Comando = new SqlCommand(Sql, Conexion);
                     Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
+                    //txtModificacion.Text=CURPMODIFICACION();
                     Comando.Parameters.AddWithValue("@CURP", txtModificacion.Text);
                     try
                     {
@@ -688,6 +716,7 @@ namespace Proyecto_AdministracionOrgDatos
                     Sql = "";
                     Sql = "UPDATE DatosContacto set EstadoNacimiento = @EstadoNacimiento WHERE Id_DatosContacto = @Id_DatosContacto";
                     Comando = new SqlCommand(Sql, Conexion);
+                 
                     Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[17].Value);
                     Comando.Parameters.AddWithValue("@EstadoNacimiento", txtModificacion.Text);
                     try
