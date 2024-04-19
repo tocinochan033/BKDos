@@ -579,11 +579,12 @@ namespace Proyecto_AdministracionOrgDatos
                 }
                 else if (cmbFiltroModificar.Text == "CURP")
                 {
+                    
                     Sql = "";
                     Sql = "UPDATE DatosGenerales set CURP = @CURP WHERE Id_Alumno = @Id_Alumno";
                     Comando = new SqlCommand(Sql, Conexion);
                     Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
-                    //txtModificacion.Text=CURPMODIFICACION();
+                    
                     Comando.Parameters.AddWithValue("@CURP", txtModificacion.Text);
                     try
                     {
