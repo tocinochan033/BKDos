@@ -579,7 +579,7 @@ namespace Proyecto_AdministracionOrgDatos
                 }
                 else if (cmbFiltroModificar.Text == "CURP")
                 {
-                    
+                    txtModificacion.Text = CURPMODIFICACION();
                     Sql = "";
                     Sql = "UPDATE DatosGenerales set CURP = @CURP WHERE Id_Alumno = @Id_Alumno";
                     Comando = new SqlCommand(Sql, Conexion);
@@ -650,7 +650,7 @@ namespace Proyecto_AdministracionOrgDatos
                     Sql = "";
                     Sql = "UPDATE DatosContacto set Domicilio = @Domicilio WHERE Id_DatosContacto = @Id_DatosContacto";
                     Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[17].Value);
+                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
                     Comando.Parameters.AddWithValue("@Domicilio", txtModificacion.Text);
                     try
                     {
@@ -672,7 +672,7 @@ namespace Proyecto_AdministracionOrgDatos
                     Sql = "";
                     Sql = "UPDATE DatosContacto set CodigoPostal = @CodigoPostal WHERE Id_DatosContacto = @Id_DatosContacto";
                     Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[17].Value);
+                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
                     Comando.Parameters.AddWithValue("@CodigoPostal", txtModificacion.Text);
                     try
                     {
@@ -695,7 +695,7 @@ namespace Proyecto_AdministracionOrgDatos
                     Sql = "";
                     Sql = "UPDATE DatosContacto set Nacionalidad = @Nacionalidad WHERE Id_DatosContacto = @Id_DatosContacto";
                     Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[17].Value);
+                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
                     Comando.Parameters.AddWithValue("@Nacionalidad", txtModificacion.Text);
                     try
                     {
@@ -718,7 +718,7 @@ namespace Proyecto_AdministracionOrgDatos
                     Sql = "UPDATE DatosContacto set EstadoNacimiento = @EstadoNacimiento WHERE Id_DatosContacto = @Id_DatosContacto";
                     Comando = new SqlCommand(Sql, Conexion);
                  
-                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[17].Value);
+                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
                     Comando.Parameters.AddWithValue("@EstadoNacimiento", txtModificacion.Text);
                     try
                     {
@@ -738,7 +738,7 @@ namespace Proyecto_AdministracionOrgDatos
                     Sql = "";
                     Sql = "UPDATE DatosContacto set Municipio = @Municipio WHERE Id_DatosContacto = @Id_DatosContacto";
                     Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[17].Value);
+                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
                     Comando.Parameters.AddWithValue("@Municipio", txtModificacion.Text);
                     try
                     {
@@ -757,7 +757,7 @@ namespace Proyecto_AdministracionOrgDatos
                     Sql = "";
                     Sql = "UPDATE DatosContacto set Correo = @Correo WHERE Id_DatosContacto = @Id_DatosContacto";
                     Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[17].Value);
+                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
                     Comando.Parameters.AddWithValue("@Correo", txtModificacion.Text);
                     try
                     {
@@ -777,7 +777,7 @@ namespace Proyecto_AdministracionOrgDatos
                     Sql = "";
                     Sql = "UPDATE DatosContacto set Telefono = @Telefono WHERE Id_DatosContacto = @Id_DatosContacto";
                     Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[17].Value);
+                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
                     Comando.Parameters.AddWithValue("@Telefono", txtModificacion.Text);
                     try
                     {
@@ -799,7 +799,7 @@ namespace Proyecto_AdministracionOrgDatos
                     //MessageBox.Show(dgv_Agregar.Rows[seleccion].Cells[11].Value.ToString());
                     /*MessageBox.Show(txtModificai);*/
                     //Comando.Parameters.AddWithValue("@Id_DatosAcademicos", int.Parse(dgv_Agregar.Rows[seleccion].Cells[11].Value.ToString()));
-                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[11].Value);
+                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
                     Comando.Parameters.AddWithValue("@Carrera", txtModificacion.Text);
                     try
                     {
@@ -818,10 +818,8 @@ namespace Proyecto_AdministracionOrgDatos
                     Sql = "";
                     Sql = "UPDATE DatosAcademicos set Periodo = @Periodo WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
                     Comando = new SqlCommand(Sql, Conexion);
-                    //MessageBox.Show(dgv_Agregar.Rows[seleccion].Cells[11].Value.ToString());
-                    /*MessageBox.Show(txtModificai);*/
-                    //Comando.Parameters.AddWithValue("@Id_DatosAcademicos", int.Parse(dgv_Agregar.Rows[seleccion].Cells[11].Value.ToString()));
-                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[11].Value);
+                   
+                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
                     Comando.Parameters.AddWithValue("@Periodo", txtModificacion.Text);
                     try
                     {
@@ -840,7 +838,7 @@ namespace Proyecto_AdministracionOrgDatos
                     Sql = "UPDATE DatosAcademicos set Promedio = @Promedio WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
                     Comando = new SqlCommand(Sql, Conexion);
                     
-                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[11].Value);
+                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
                     Comando.Parameters.AddWithValue("@Promedio", txtModificacion.Text);
                     try
                     {
@@ -860,7 +858,7 @@ namespace Proyecto_AdministracionOrgDatos
                     Sql = "UPDATE DatosAcademicos set CCT = @CCT WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
                     Comando = new SqlCommand(Sql, Conexion);
 
-                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[11].Value);
+                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
                     Comando.Parameters.AddWithValue("@CCT", txtModificacion.Text);
                     try
                     {
@@ -876,10 +874,10 @@ namespace Proyecto_AdministracionOrgDatos
                 else if (cmbFiltroModificar.Text == "Modelo")
                 {
                     Sql = "";
-                    Sql = "UPDATE DatosAcademicos set Modelo = @CCT WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
+                    Sql = "UPDATE DatosAcademicos set Modelo = @Modelo WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
                     Comando = new SqlCommand(Sql, Conexion);
 
-                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[11].Value);
+                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
                     Comando.Parameters.AddWithValue("@Modelo", txtModificacion.Text);
                     try
                     {

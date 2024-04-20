@@ -138,13 +138,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Verificamos si hay una fila seleccionada
-            if (dgvMostrar.CurrentRow.Index > -1)
-            {
-                //Nota: "RemoveAt" borra lo seleccionado en base al index
-                dgvMostrar.Rows.RemoveAt(dgvMostrar.CurrentRow.Index);
-                Guardar();
-            }
+            
 
         }
 
@@ -184,29 +178,6 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
 
-        /* private void filtroTextBox_TextChanged_1(object sender, EventArgs e)
-         {
-             if (filtroTextBox.Text != null)
-             {
-                 dgvMostrar.CurrentCell = null;
-                 foreach (DataGridViewRow row in dgvMostrar.Rows)
-                 {
-                     row.Visible = false;
-                 }
-
-                 foreach (DataGridViewRow row in dgvMostrar.Rows)
-                 {
-                     foreach (DataGridViewCell cell in row.Cells)
-                     {
-                         if (cell.Value.ToString().ToUpper().IndexOf(filtroTextBox.Text.ToUpper()) == 0)
-                         {
-                             row.Visible = true;
-                             break;
-                         }
-                     }
-                 }
-             }
-         }*/
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
@@ -220,13 +191,13 @@ namespace Proyecto_AdministracionOrgDatos
                     switch (auxiliar)
                     {
                         case "Nombre":
-                            auxiliar = "2";
+                            auxiliar = "3";
                             break;
                         case "CCT":
-                            auxiliar = "18";
+                            auxiliar = "22";
                             break;
                         case "Promedio":
-                            auxiliar = "17";
+                            auxiliar = "20";
                             break;
                     }
 
@@ -258,37 +229,7 @@ namespace Proyecto_AdministracionOrgDatos
             { MessageBox.Show("Faltan datos por colocar"); }
         }
 
-        /*public void CargarEscuelas()
-        {
-            //Abrimos archivo en modo lectura
-            //   FileStream becados = new FileStream("Becados.txt", FileMode.Create, FileAccess.Write);
-            FileStream becarios = new FileStream("Becados.txt", FileMode.OpenOrCreate, FileAccess.Read);
-
-            //Lee linea por linea
-            using (StreamReader reader = new StreamReader(becarios))
-            {
-                string linea = reader.ReadLine();
-                while(linea != null)
-                {
-                    //Reconstruye el objeto a partir de los datos
-
-                    string datos = linea;
-
-                    //Crear string para separar y mostrar datos
-                    datos = string.Join("",datos.Split(','));
-
-                    //Referencia al comboBox para agregarlo a los elementos
-                    cmbFiltrar.Items.Add(datos);
-
-                    linea = reader.ReadLine();
-                }
-
-            }
-            //Cerramos archivo
-            becarios.Close();
-            //Fin de lectura de archivo
-        }
-        */
+        
         private void cmbFiltrar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -307,7 +248,8 @@ namespace Proyecto_AdministracionOrgDatos
         private void btnResetFiltro_Click(object sender, EventArgs e)
         {
             txtFiltro.Text = "";
-            cmbFiltro.Text = "";
+            cmbFiltro.Text = null;
+            RefrescarDatos();
         }
 
         private void Mostrar_datos_Load(object sender, EventArgs e)

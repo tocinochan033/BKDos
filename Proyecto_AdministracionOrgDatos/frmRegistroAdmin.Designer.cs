@@ -31,6 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtAdminContra = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.newAdminButton = new System.Windows.Forms.Button();
             this.rolCombo = new System.Windows.Forms.ComboBox();
             this.Rol = new System.Windows.Forms.Label();
@@ -41,16 +45,12 @@
             this.nombreTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.confirmarTodoButton = new System.Windows.Forms.Button();
             this.eliminarAdminButton = new System.Windows.Forms.Button();
             this.administradoresDataGrid = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtContrasena = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtAdminContra = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -103,6 +103,42 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nuevo Admin...";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txtAdminContra
+            // 
+            this.txtAdminContra.Location = new System.Drawing.Point(173, 210);
+            this.txtAdminContra.Name = "txtAdminContra";
+            this.txtAdminContra.Size = new System.Drawing.Size(164, 20);
+            this.txtAdminContra.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label7.Location = new System.Drawing.Point(169, 186);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(148, 21);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Contraseña Admin:";
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Location = new System.Drawing.Point(31, 210);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Size = new System.Drawing.Size(123, 20);
+            this.txtContrasena.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label6.Location = new System.Drawing.Point(27, 186);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 21);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Contraseña:";
             // 
             // newAdminButton
             // 
@@ -195,7 +231,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.confirmarTodoButton);
+            this.tabPage2.Controls.Add(this.btnBack);
             this.tabPage2.Controls.Add(this.eliminarAdminButton);
             this.tabPage2.Controls.Add(this.administradoresDataGrid);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -205,16 +241,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Borrar Admin...";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // confirmarTodoButton
-            // 
-            this.confirmarTodoButton.Location = new System.Drawing.Point(197, 16);
-            this.confirmarTodoButton.Name = "confirmarTodoButton";
-            this.confirmarTodoButton.Size = new System.Drawing.Size(157, 33);
-            this.confirmarTodoButton.TabIndex = 2;
-            this.confirmarTodoButton.Text = "Confirmar todo";
-            this.confirmarTodoButton.UseVisualStyleBackColor = true;
-            this.confirmarTodoButton.Click += new System.EventHandler(this.confirmarTodoButton_Click);
             // 
             // eliminarAdminButton
             // 
@@ -266,41 +292,15 @@
             this.label2.TabIndex = 76;
             this.label2.Text = "Administrador";
             // 
-            // label6
+            // btnBack
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.label6.Location = new System.Drawing.Point(27, 186);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 21);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Contraseña:";
-            // 
-            // txtContrasena
-            // 
-            this.txtContrasena.Location = new System.Drawing.Point(31, 210);
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(123, 20);
-            this.txtContrasena.TabIndex = 10;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.label7.Location = new System.Drawing.Point(169, 186);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(148, 21);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Contraseña Admin:";
-            // 
-            // txtAdminContra
-            // 
-            this.txtAdminContra.Location = new System.Drawing.Point(173, 210);
-            this.txtAdminContra.Name = "txtAdminContra";
-            this.txtAdminContra.Size = new System.Drawing.Size(164, 20);
-            this.txtAdminContra.TabIndex = 12;
+            this.btnBack.Location = new System.Drawing.Point(196, 16);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(158, 33);
+            this.btnBack.TabIndex = 2;
+            this.btnBack.Text = "Regresar LOGIN";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // frmRegistroAdmin
             // 
@@ -343,7 +343,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView administradoresDataGrid;
         private System.Windows.Forms.Button newAdminButton;
-        private System.Windows.Forms.Button confirmarTodoButton;
         private System.Windows.Forms.Button eliminarAdminButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -352,5 +351,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnBack;
     }
 }

@@ -85,7 +85,7 @@ namespace Proyecto_AdministracionOrgDatos
            
         }
 
-        private void cargaDatos() //Carga los datos al datagridview
+       /* private void cargaDatos() //Carga los datos al datagridview
         {
             //Imprime los datos guardados del archivo al datagridview
             int indiceNuevoRenglon;
@@ -118,23 +118,16 @@ namespace Proyecto_AdministracionOrgDatos
                 }
                 loginStream.Close();
             }
-        }
+        }*/
 
         private void newAdminButton_Click(object sender, EventArgs e)
         {
           
-                //Añadir nuevo administrador
-                //SystemSounds.Exclamation.Play();
-                // string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
-                //  using(SqlCommand cmd = new SqlCommand("SELECT Contra_admin FROM Usuario WHERE Contra_admin = '" + confirmacion,Conexion))
-                // {
-                /*  SqlDataReader dr = cmd.ExecuteReader();
-                  if (dr.Read()) //Cada nuevo administrador requiere confirmacion de contraseña: 2
-                  {*/
+             
 
                 Conectar();
                 Sql = "";
-                Sql = "INSERT INTO Usuarios (Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin) values (@Usuario, @Contrasena, @Correo,@Rol, @NumeroTelefonico, @Contra_admin)";
+                Sql = "INSERT INTO Usuarios (Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin, Estado) values (@Usuario, @Contrasena, @Correo,@Rol, @NumeroTelefonico, @Contra_admin, @Estado)";
                 Comando = new SqlCommand(Sql, Conexion);
                 Comando.Parameters.AddWithValue("@Usuario", nombreTxt.Text);
                 Comando.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
@@ -142,6 +135,7 @@ namespace Proyecto_AdministracionOrgDatos
                 Comando.Parameters.AddWithValue("@Rol", Rol.Text);
                 Comando.Parameters.AddWithValue("@NumeroTelefonico", numeroTxt.Text);
                 Comando.Parameters.AddWithValue("@Contra_admin", txtAdminContra.Text);
+                Comando.Parameters.AddWithValue("@Estado", 1);
 
                 try
                 {
@@ -154,46 +148,17 @@ namespace Proyecto_AdministracionOrgDatos
                 {
                     MessageBox.Show("Error " + ex.Message);
                 }
-                Conexion.Close();
-                camposLimpieza();
-                  /*  }
-                    else
-                    {
-                        MessageBox.Show("Favor de no olvidar todos los datos en casa.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }*/
-               // }
-                Conexion.Close();
+               
                 
-           
+                camposLimpieza();
+                Conexion.Close();
+                RefrescarDatos();
+
+
 
         }
 
-        public void guardarDatos() //campo para guarda los datos dentro de una linea nuevo del archivo
-        {
-            Conectar();
-            Sql="";
-            Sql = "INSERT INTO Usuarios (Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin) values (@Usuario, @Contrasena, @Correo,@Rol, @NumeroTelefonico, @Contra_admin)";
-            Comando = new SqlCommand(Sql,Conexion);
-            Comando.Parameters.AddWithValue("@Usuario",nombreTxt.Text);
-            Comando.Parameters.AddWithValue("@Contrasena",txtContrasena.Text);
-            Comando.Parameters.AddWithValue("@Correo", correoTxt.Text);
-            Comando.Parameters.AddWithValue("@Rol", Rol.Text);
-            Comando.Parameters.AddWithValue("@NumeroTelefonico",numeroTxt.Text);
-            Comando.Parameters.AddWithValue("@Contra_admin",txtAdminContra.Text);
-
-            try
-            {
-
-                Comando.ExecuteNonQuery();
-
-                MessageBox.Show("Registro Administrador Insertado");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex.Message);
-            }
-            Conexion.Close();
-        }
+       
 
         public void camposLimpieza()
         {
@@ -201,39 +166,100 @@ namespace Proyecto_AdministracionOrgDatos
             correoTxt.Text = null;
             numeroTxt.Text = null;
             rolCombo.Text = null;
+            txtAdminContra.Text = null;
+            txtContrasena.Text = null;
         }
 
         private void eliminarAdminButton_Click(object sender, EventArgs e)
         {
             try
             {
-                //Utiliza la misma logica para borrar datos de becarios. A excepcion de pedir contraseña: 2
+                // Verificar cuando se equivoca el usuario
+                //Invocacion del metodo conectar
+                Conectar();
+
+                SystemSounds.Exclamation.Play();
+                string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
+
+                //using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contrasena FROM Usuarios WHERE Usuario='" + txtUsuario_ESA.Text + "' AND Contrasena='" + txtContraseña_ESA.Text + "'", Conexion))
                 if (administradoresDataGrid.CurrentRow.Index > -1)
                 {
-                    SystemSounds.Exclamation.Play();
-                    string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
-
-                    if (int.Parse(confirmacion) == 2)
+                    using (SqlCommand cmd = new SqlCommand("SELECT Contra_admin FROM Usuarios WHERE Contra_admin='" + confirmacion + "'", Conexion))
                     {
+                        SqlDataReader dr = cmd.ExecuteReader();
 
-                        administradoresDataGrid.Rows.RemoveAt(administradoresDataGrid.CurrentRow.Index);
+                        if (dr.Read())
+                        {
+                            EliminarAdmin();
+                            RefrescarDatos();
+                        }
+
+
+                        else
+                        {
+                            Form login = new FormLogin_ESA();
+                            MessageBox.Show("El Usuario y/o Contraseña Administrador INCORRECTOS");
+                            login.Show();
+                            this.Hide();
+
+                        }
                     }
+                  //  Conexion.Close();
                 }
-            }
-            catch
-            {
+                else
+
+                {
+                    MessageBox.Show("Seleccione una FILA DE DATOS");
+                }
+           
+                //Utiliza la misma logica para borrar datos de becarios. A excepcion de pedir contraseña: 2
 
             }
+
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+        }
+        public void EliminarAdmin()
+        {
+            Conexion.Close();
+            Conectar();
+            int seleccion = administradoresDataGrid.CurrentRow.Index;
+            //dgv_Agregar.Rows.RemoveAt(dgv_Agregar.CurrentRow.Index);
+            Sql = "DELETE FROM Usuarios WHERE Id_Usuario = @Id_Usuario";
+            Comando = new SqlCommand(Sql, Conexion);
+            Comando.Parameters.AddWithValue("@Id_Usuario", administradoresDataGrid.Rows[seleccion].Cells[0].Value);
+
+           
+
+            //Comando Try
+            try
+            {
+                Comando.ExecuteNonQuery();
+
+                MessageBox.Show("Registro Eliminado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+            Conexion.Close();
+            /*
+             
+             
+             */
         }
 
         private void confirmarTodoButton_Click(object sender, EventArgs e)
         {
             //Boton Confirmar todo
-            sobreescribirDatos();
+          //  sobreescribirDatos();
             this.Hide();
         }
 
-        private void sobreescribirDatos()
+       /* private void sobreescribirDatos()
         {
             ///Se guardan los datos de los becados en el archivo txt
             ///Se tiene que sobreescribir ya que si es que se eliminan datos
@@ -253,7 +279,7 @@ namespace Proyecto_AdministracionOrgDatos
             }
             //Se terminan de guardar los datos y se cierra el archivo
             login.Close();
-        }
+        }*/
 
         public void CargarFuentes()
         {
@@ -281,7 +307,7 @@ namespace Proyecto_AdministracionOrgDatos
             //Query Primera Tabla
 
             //Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
-            Sql = "SELECT Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin from Usuarios";
+            Sql = "SELECT Id_Usuario , Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin from Usuarios WHERE Estado = 1";
             Adaptador = new SqlDataAdapter(Sql, Conexion);
             Adaptador.Fill(Tabla);
             administradoresDataGrid.DataSource = Tabla;
@@ -297,7 +323,7 @@ namespace Proyecto_AdministracionOrgDatos
             administradoresDataGrid.ClearSelection();
 
             // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
-            Sql = "SELECT Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin from Usuarios";
+            Sql = "SELECT Id_Usuario, Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin from Usuarios WHERE Estado = 1";
             Adaptador = new SqlDataAdapter(Sql, Conexion);
             Adaptador.Fill(Tabla);
             administradoresDataGrid.DataSource = Tabla;
@@ -318,6 +344,13 @@ namespace Proyecto_AdministracionOrgDatos
 
             Conexion.Close();
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Form loginForm = new FormLogin_ESA();
+            this.Hide(); 
+            loginForm.Show();
         }
     }
 }
