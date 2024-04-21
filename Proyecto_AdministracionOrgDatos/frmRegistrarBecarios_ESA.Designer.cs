@@ -58,7 +58,6 @@
             this.txtAmaterno = new System.Windows.Forms.TextBox();
             this.lblAmaterno = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.txtMunicipio = new System.Windows.Forms.ComboBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -72,7 +71,6 @@
             this.lblCorreoElectronico = new System.Windows.Forms.Label();
             this.lblMunicipio = new System.Windows.Forms.Label();
             this.lblEstadoNac = new System.Windows.Forms.Label();
-            this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.lblNacionalidad = new System.Windows.Forms.Label();
             this.txtCodigoPostal = new System.Windows.Forms.TextBox();
             this.lblCodigoPostal = new System.Windows.Forms.Label();
@@ -102,6 +100,7 @@
             this.lblInstruccionModificar = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cmbNacionalidad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Agregar)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -110,7 +109,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -483,7 +481,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.pictureBox13);
+            this.tabPage2.Controls.Add(this.cmbNacionalidad);
             this.tabPage2.Controls.Add(this.txtMunicipio);
             this.tabPage2.Controls.Add(this.pictureBox10);
             this.tabPage2.Controls.Add(this.pictureBox8);
@@ -497,7 +495,6 @@
             this.tabPage2.Controls.Add(this.lblCorreoElectronico);
             this.tabPage2.Controls.Add(this.lblMunicipio);
             this.tabPage2.Controls.Add(this.lblEstadoNac);
-            this.tabPage2.Controls.Add(this.txtNacionalidad);
             this.tabPage2.Controls.Add(this.lblNacionalidad);
             this.tabPage2.Controls.Add(this.txtCodigoPostal);
             this.tabPage2.Controls.Add(this.lblCodigoPostal);
@@ -510,16 +507,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Contacto";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(409, 179);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(113, 10);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 88;
-            this.pictureBox13.TabStop = false;
             // 
             // txtMunicipio
             // 
@@ -664,18 +651,6 @@
             this.lblEstadoNac.Size = new System.Drawing.Size(175, 21);
             this.lblEstadoNac.TabIndex = 74;
             this.lblEstadoNac.Text = "Estado de nacimiento :";
-            // 
-            // txtNacionalidad
-            // 
-            this.txtNacionalidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNacionalidad.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtNacionalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtNacionalidad.Location = new System.Drawing.Point(409, 158);
-            this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNacionalidad.Name = "txtNacionalidad";
-            this.txtNacionalidad.Size = new System.Drawing.Size(113, 22);
-            this.txtNacionalidad.TabIndex = 71;
-            this.txtNacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNacionalidad_KeyPress);
             // 
             // lblNacionalidad
             // 
@@ -1019,6 +994,20 @@
             this.pictureBox9.TabIndex = 72;
             this.pictureBox9.TabStop = false;
             // 
+            // cmbNacionalidad
+            // 
+            this.cmbNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNacionalidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNacionalidad.FormattingEnabled = true;
+            this.cmbNacionalidad.Items.AddRange(new object[] {
+            "Mexicano",
+            "Extranjero"});
+            this.cmbNacionalidad.Location = new System.Drawing.Point(406, 160);
+            this.cmbNacionalidad.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbNacionalidad.Name = "cmbNacionalidad";
+            this.cmbNacionalidad.Size = new System.Drawing.Size(112, 25);
+            this.cmbNacionalidad.TabIndex = 89;
+            // 
             // frmRegistrarBecarios_ESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1050,7 +1039,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -1101,7 +1089,6 @@
         private System.Windows.Forms.Label lblCorreoElectronico;
         private System.Windows.Forms.Label lblMunicipio;
         private System.Windows.Forms.Label lblEstadoNac;
-        private System.Windows.Forms.TextBox txtNacionalidad;
         private System.Windows.Forms.Label lblNacionalidad;
         private System.Windows.Forms.TextBox txtCodigoPostal;
         private System.Windows.Forms.Label lblCodigoPostal;
@@ -1144,7 +1131,7 @@
         private System.Windows.Forms.ComboBox cmbEstCivil;
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ComboBox cmbNacionalidad;
     }
 }

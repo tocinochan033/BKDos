@@ -45,12 +45,12 @@
             this.nombreTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnBack = new System.Windows.Forms.Button();
             this.eliminarAdminButton = new System.Windows.Forms.Button();
             this.administradoresDataGrid = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnBack = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -109,7 +109,7 @@
             this.txtAdminContra.Location = new System.Drawing.Point(173, 210);
             this.txtAdminContra.Name = "txtAdminContra";
             this.txtAdminContra.Size = new System.Drawing.Size(164, 20);
-            this.txtAdminContra.TabIndex = 12;
+            this.txtAdminContra.TabIndex = 6;
             // 
             // label7
             // 
@@ -127,7 +127,7 @@
             this.txtContrasena.Location = new System.Drawing.Point(31, 210);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(123, 20);
-            this.txtContrasena.TabIndex = 10;
+            this.txtContrasena.TabIndex = 5;
             // 
             // label6
             // 
@@ -157,12 +157,12 @@
             // 
             this.rolCombo.FormattingEnabled = true;
             this.rolCombo.Items.AddRange(new object[] {
-            "mamaoso",
-            "obrera"});
+            "Gerente",
+            "Administrador general"});
             this.rolCombo.Location = new System.Drawing.Point(31, 162);
             this.rolCombo.Name = "rolCombo";
             this.rolCombo.Size = new System.Drawing.Size(123, 21);
-            this.rolCombo.TabIndex = 7;
+            this.rolCombo.TabIndex = 3;
             // 
             // Rol
             // 
@@ -180,7 +180,7 @@
             this.correoTxt.Location = new System.Drawing.Point(31, 103);
             this.correoTxt.Name = "correoTxt";
             this.correoTxt.Size = new System.Drawing.Size(306, 20);
-            this.correoTxt.TabIndex = 5;
+            this.correoTxt.TabIndex = 2;
             // 
             // label5
             // 
@@ -198,7 +198,7 @@
             this.numeroTxt.Location = new System.Drawing.Point(173, 162);
             this.numeroTxt.Name = "numeroTxt";
             this.numeroTxt.Size = new System.Drawing.Size(164, 20);
-            this.numeroTxt.TabIndex = 3;
+            this.numeroTxt.TabIndex = 4;
             // 
             // label4
             // 
@@ -231,7 +231,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.btnBack);
             this.tabPage2.Controls.Add(this.eliminarAdminButton);
             this.tabPage2.Controls.Add(this.administradoresDataGrid);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -241,6 +240,19 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Borrar Admin...";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(90)))), ((int)(((byte)(150)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(12, 293);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(64, 42);
+            this.btnBack.TabIndex = 2;
+            this.btnBack.Text = "Regresar LOGIN";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // eliminarAdminButton
             // 
@@ -273,7 +285,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.pictureBox2.Image = global::Proyecto_AdministracionOrgDatos.Properties.Resources.AddAdminImagen;
-            this.pictureBox2.Location = new System.Drawing.Point(21, 137);
+            this.pictureBox2.Location = new System.Drawing.Point(52, 137);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(232, 212);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -292,21 +304,12 @@
             this.label2.TabIndex = 76;
             this.label2.Text = "Administrador";
             // 
-            // btnBack
-            // 
-            this.btnBack.Location = new System.Drawing.Point(196, 16);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(158, 33);
-            this.btnBack.TabIndex = 2;
-            this.btnBack.Text = "Regresar LOGIN";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // frmRegistroAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 347);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tabControl1);

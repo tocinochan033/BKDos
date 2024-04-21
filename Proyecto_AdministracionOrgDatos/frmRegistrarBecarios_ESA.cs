@@ -22,7 +22,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         /*-------------------------INSTANCIAS-----------------------------*/
         //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
-        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
+        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-1M2HN6J; Initial Catalog = BKDOS; integrated security=true");
 
         //Comando objeto del tipo SQLcommand para representar las instrucciones SQL
         SqlCommand Comando;
@@ -40,7 +40,7 @@ namespace Proyecto_AdministracionOrgDatos
         // DESKTOP-LRR3RR8\SQLEXPRESS
         //DESKTOP-JGTCE3J
         //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER
-        String Servidor = @"DESKTOP-JGTCE3J";
+        String Servidor = @"DESKTOP-1M2HN6J";
 
         //Variable de tipo string para almacenar el nombre de la base de datos
         String Base_Datos = "BKDOS";
@@ -244,7 +244,7 @@ namespace Proyecto_AdministracionOrgDatos
             cmbEstCivil.Text = "";
             txtDomicilio.Text = "";
             txtCodigoPostal.Text = "";
-            txtNacionalidad.Text = "";
+            cmbNacionalidad.Text = "";
             cmbEstadoNac.Text = "";
             txtMunicipio.Text = "";
             txtCorreoElectronico.Text = "";
@@ -254,7 +254,11 @@ namespace Proyecto_AdministracionOrgDatos
             txtPromedio.Text = "";
             cmbCCT.Text = "";
             txtModelo.Text = "";
-            
+            CBGenero.Text = "";
+            cmbEstCivil.Text = "";
+            cmbEstadoNac.Text = "";
+            txtMunicipio.Text = "";
+            cmbNacionalidad.Text = "";
         }
 
         private void btnAgregar_ESA_Click(object sender, EventArgs e)
@@ -461,445 +465,446 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Conectar();
-            //Verificamos si hay una celda seleccionada
-            if (this.dgv_Agregar.SelectedRows.Count == 1)
-            {
-                //Se cargan los datos actuales en los textbox en el datagridview para actualizar sus valores
-                int seleccion = dgv_Agregar.CurrentRow.Index;
 
-                if (cmbFiltroModificar.Text == "A.Paterno")
+                Conectar();
+                //Verificamos si hay una celda seleccionada
+                if (dgv_Agregar.CurrentRow.Index > -1)
                 {
-                    Sql = "";
-                    Sql = "UPDATE DatosGenerales set ApellidoPaterno = @ApellidoPaterno WHERE Id_Alumno = @Id_Alumno";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
-                    Comando.Parameters.AddWithValue("@ApellidoPaterno", txtModificacion.Text);
-                    try
-                    {
-                        //Ejecutamos la instruccion del sql para afectar las filas
-                        Comando.ExecuteNonQuery();
+                    //Se cargan los datos actuales en los textbox en el datagridview para actualizar sus valores
+                    int seleccion = dgv_Agregar.CurrentRow.Index;
 
-                        MessageBox.Show("Registro Actualizado: Apellido Paterno");
-                        //  RefresacarDatos();
-                    }
-                    catch (Exception ex)
+                    if (cmbFiltroModificar.Text == "A.Paterno")
                     {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
+                        Sql = "";
+                        Sql = "UPDATE DatosGenerales set ApellidoPaterno = @ApellidoPaterno WHERE Id_Alumno = @Id_Alumno";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
+                        Comando.Parameters.AddWithValue("@ApellidoPaterno", txtModificacion.Text);
+                        try
+                        {
+                            //Ejecutamos la instruccion del sql para afectar las filas
+                            Comando.ExecuteNonQuery();
 
+                            MessageBox.Show("Registro Actualizado: Apellido Paterno");
+                            //  RefresacarDatos();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+                    }
+                    else if (cmbFiltroModificar.Text == "A.Materno")
+                    {
+                        Sql = "";
+                        Sql = "UPDATE DatosGenerales set ApellidoMaterno = @ApellidoMaterno WHERE Id_Alumno = @Id_Alumno";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
+                        Comando.Parameters.AddWithValue("@ApellidoMaterno", txtModificacion.Text);
+                        try
+                        {
+                            //Ejecutamos la instruccion del sql para afectar las filas
+                            Comando.ExecuteNonQuery();
+
+                            MessageBox.Show("Registro Actualizado: Apellido Materno");
+                            //  RefresacarDatos();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+                    }
+                    else if (cmbFiltroModificar.Text == "Nombres")
+                    {
+
+                        Sql = "";
+                        Sql = "UPDATE DatosGenerales set Nombres = @Nombres WHERE Id_Alumno = @Id_Alumno";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
+                        Comando.Parameters.AddWithValue("@Nombres", txtModificacion.Text);
+                        try
+                        {
+                            //Ejecutamos la instruccion del sql para afectar las filas
+                            Comando.ExecuteNonQuery();
+
+                            MessageBox.Show("Registro Actualizado: Nombres");
+                            //  RefresacarDatos();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+                    }
+                    else if (cmbFiltroModificar.Text == "FechaNac")
+                    {
+                        Sql = "";
+                        Sql = "UPDATE DatosGenerales set FechaNacimiento = @FechaNacimiento WHERE Id_Alumno = @Id_Alumno";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        // Comando.Parameters.AddWithValue("@Id_DatosContacto", ((DateTime)(dgv_Agregar.Rows[seleccion].Cells[17].Value)).ToString("dd/MM/yyyy"));
+                        Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
+                        Comando.Parameters.AddWithValue("@FechaNacimiento", txtModificacion.Text);
+                        try
+                        {
+                            //Ejecutamos la instruccion del sql para afectar las filas
+                            Comando.ExecuteNonQuery();
+
+                            MessageBox.Show("Registro Actualizado: Fecha Nacimiento");
+                            //  RefresacarDatos();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+
+                    }
+                    else if (cmbFiltroModificar.Text == "Edad")
+                    {
+                        Sql = "";
+                        Sql = "UPDATE DatosGenerales set Edad = @Edad WHERE Id_Alumno = @Id_Alumno";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
+                        Comando.Parameters.AddWithValue("@Edad", txtModificacion.Text);
+                        try
+                        {
+                            //Ejecutamos la instruccion del sql para afectar las filas
+                            Comando.ExecuteNonQuery();
+
+                            MessageBox.Show("Registro Actualizado: Edad");
+                            //  RefresacarDatos();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+
+                    }
+                    else if (cmbFiltroModificar.Text == "CURP")
+                    {
+                        txtModificacion.Text = CURPMODIFICACION();
+                        Sql = "";
+                        Sql = "UPDATE DatosGenerales set CURP = @CURP WHERE Id_Alumno = @Id_Alumno";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
+
+                        Comando.Parameters.AddWithValue("@CURP", txtModificacion.Text);
+                        try
+                        {
+                            //Ejecutamos la instruccion del sql para afectar las filas
+                            Comando.ExecuteNonQuery();
+
+                            MessageBox.Show("Registro Actualizado: CURP");
+                            //  RefresacarDatos();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+                    }
+                    else if (cmbFiltroModificar.Text == "Genero")
+                    {
+
+                        Sql = "";
+                        Sql = "UPDATE DatosGenerales set Genero = @Genero WHERE Id_Alumno = @Id_Alumno";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
+                        Comando.Parameters.AddWithValue("@Genero", txtModificacion.Text);
+                        try
+                        {
+                            //Ejecutamos la instruccion del sql para afectar las filas
+                            Comando.ExecuteNonQuery();
+
+                            MessageBox.Show("Registro Actualizado: Genero");
+                            //  RefresacarDatos();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+                    }
+                    else if (cmbFiltroModificar.Text == "Estado Civil")
+                    {
+
+                        Sql = "";
+                        Sql = "UPDATE DatosGenerales set EstadoCivil = @EstadoCivil WHERE Id_Alumno = @Id_Alumno";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
+                        Comando.Parameters.AddWithValue("@EstadoCivil", txtModificacion.Text);
+                        try
+                        {
+                            //Ejecutamos la instruccion del sql para afectar las filas
+                            Comando.ExecuteNonQuery();
+
+                            MessageBox.Show("Registro Actualizado: EstadoCivil");
+                            //  RefresacarDatos();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+                    }
+                    else if (cmbFiltroModificar.Text == "Domicilio")
+                    {
+
+                        Sql = "";
+                        Sql = "UPDATE DatosContacto set Domicilio = @Domicilio WHERE Id_DatosContacto = @Id_DatosContacto";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
+                        Comando.Parameters.AddWithValue("@Domicilio", txtModificacion.Text);
+                        try
+                        {
+                            //Ejecutamos la instruccion del sql para afectar las filas
+                            Comando.ExecuteNonQuery();
+
+                            MessageBox.Show("Registro Actualizado: Domicilio");
+                            //  RefresacarDatos();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+                    }
+                    else if (cmbFiltroModificar.Text == "Codigo Postal")
+                    {
+
+                        Sql = "";
+                        Sql = "UPDATE DatosContacto set CodigoPostal = @CodigoPostal WHERE Id_DatosContacto = @Id_DatosContacto";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
+                        Comando.Parameters.AddWithValue("@CodigoPostal", txtModificacion.Text);
+                        try
+                        {
+                            //Ejecutamos la instruccion del sql para afectar las filas
+                            Comando.ExecuteNonQuery();
+
+                            MessageBox.Show("Registro Actualizado: Codigo Postal");
+                            //  RefresacarDatos();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+
+                    }
+                    else if (cmbFiltroModificar.Text == "Nacionalidad")
+                    {
+
+                        Sql = "";
+                        Sql = "UPDATE DatosContacto set Nacionalidad = @Nacionalidad WHERE Id_DatosContacto = @Id_DatosContacto";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
+                        Comando.Parameters.AddWithValue("@Nacionalidad", txtModificacion.Text);
+                        try
+                        {
+                            //Ejecutamos la instruccion del sql para afectar las filas
+                            Comando.ExecuteNonQuery();
+
+                            MessageBox.Show("Registro Actualizado: Nacionalidad");
+                            //  RefresacarDatos();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+                    }
+                    else if (cmbFiltroModificar.Text == "EstadoNac")
+                    {
+
+                        Sql = "";
+                        Sql = "UPDATE DatosContacto set EstadoNacimiento = @EstadoNacimiento WHERE Id_DatosContacto = @Id_DatosContacto";
+                        Comando = new SqlCommand(Sql, Conexion);
+
+                        Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
+                        Comando.Parameters.AddWithValue("@EstadoNacimiento", txtModificacion.Text);
+                        try
+                        {
+                            Comando.ExecuteNonQuery();
+                            MessageBox.Show("Registro Actualizado: Estado Nacimiento");
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+                    }
+                    else if (cmbFiltroModificar.Text == "Municipio")
+                    {
+
+                        Sql = "";
+                        Sql = "UPDATE DatosContacto set Municipio = @Municipio WHERE Id_DatosContacto = @Id_DatosContacto";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
+                        Comando.Parameters.AddWithValue("@Municipio", txtModificacion.Text);
+                        try
+                        {
+                            Comando.ExecuteNonQuery();
+                            MessageBox.Show("Registro Actualizado: Municipio");
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+                    }
+                    else if (cmbFiltroModificar.Text == "Correo")
+                    {
+                        Sql = "";
+                        Sql = "UPDATE DatosContacto set Correo = @Correo WHERE Id_DatosContacto = @Id_DatosContacto";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
+                        Comando.Parameters.AddWithValue("@Correo", txtModificacion.Text);
+                        try
+                        {
+                            Comando.ExecuteNonQuery();
+                            MessageBox.Show("Registro Actualizado: Correo Electronico");
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+                    }
+                    else if (cmbFiltroModificar.Text == "Telefono")
+                    {
+
+                        Sql = "";
+                        Sql = "UPDATE DatosContacto set Telefono = @Telefono WHERE Id_DatosContacto = @Id_DatosContacto";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
+                        Comando.Parameters.AddWithValue("@Telefono", txtModificacion.Text);
+                        try
+                        {
+                            Comando.ExecuteNonQuery();
+                            MessageBox.Show("Registro Actualizado: Telefono");
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+                    }
+                    else if (cmbFiltroModificar.Text == "Carrera")
+                    {
+                        Sql = "";
+                        Sql = "UPDATE DatosAcademicos set Carrera = @Carrera WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
+                        Comando = new SqlCommand(Sql, Conexion);
+                        //MessageBox.Show(dgv_Agregar.Rows[seleccion].Cells[11].Value.ToString());
+                        /*MessageBox.Show(txtModificai);*/
+                        //Comando.Parameters.AddWithValue("@Id_DatosAcademicos", int.Parse(dgv_Agregar.Rows[seleccion].Cells[11].Value.ToString()));
+                        Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
+                        Comando.Parameters.AddWithValue("@Carrera", txtModificacion.Text);
+                        try
+                        {
+                            Comando.ExecuteNonQuery();
+                            MessageBox.Show("Registro Actualizado: Carrera");
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+                    }
+                    else if (cmbFiltroModificar.Text == "Periodo")
+                    {
+                        Sql = "";
+                        Sql = "UPDATE DatosAcademicos set Periodo = @Periodo WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
+                        Comando = new SqlCommand(Sql, Conexion);
+
+                        Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
+                        Comando.Parameters.AddWithValue("@Periodo", txtModificacion.Text);
+                        try
+                        {
+                            Comando.ExecuteNonQuery();
+                            MessageBox.Show("Registro Actualizado: Periodo");
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+                    }
+                    else if (cmbFiltroModificar.Text == "Promedio")
+                    {
+                        Sql = "";
+                        Sql = "UPDATE DatosAcademicos set Promedio = @Promedio WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
+                        Comando = new SqlCommand(Sql, Conexion);
+
+                        Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
+                        Comando.Parameters.AddWithValue("@Promedio", txtModificacion.Text);
+                        try
+                        {
+                            Comando.ExecuteNonQuery();
+                            MessageBox.Show("Registro Actualizado: Promedio");
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+
+                    }
+                    else if (cmbFiltroModificar.Text == "CCT")
+                    {
+                        Sql = "";
+                        Sql = "UPDATE DatosAcademicos set CCT = @CCT WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
+                        Comando = new SqlCommand(Sql, Conexion);
+
+                        Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
+                        Comando.Parameters.AddWithValue("@CCT", txtModificacion.Text);
+                        try
+                        {
+                            Comando.ExecuteNonQuery();
+                            MessageBox.Show("Registro Actualizado: CCT");
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+                    }
+                    else if (cmbFiltroModificar.Text == "Modelo")
+                    {
+                        Sql = "";
+                        Sql = "UPDATE DatosAcademicos set Modelo = @Modelo WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
+                        Comando = new SqlCommand(Sql, Conexion);
+
+                        Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
+                        Comando.Parameters.AddWithValue("@Modelo", txtModificacion.Text);
+                        try
+                        {
+                            Comando.ExecuteNonQuery();
+                            MessageBox.Show("Registro Actualizado: Modelo");
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error tabla general: " + ex.Message);
+                        }
+                    }
+                    Conexion.Close();
+                    //Se limpian los campos para mayor comodidad del usuario
+                    txtModificacion.Text = "";
+                    cmbFiltroModificar.Text = "";
+                    RefrescarDatos();
                 }
-                else if (cmbFiltroModificar.Text == "A.Materno")
+                else
                 {
-                    Sql = "";
-                    Sql = "UPDATE DatosGenerales set ApellidoMaterno = @ApellidoMaterno WHERE Id_Alumno = @Id_Alumno";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
-                    Comando.Parameters.AddWithValue("@ApellidoMaterno", txtModificacion.Text);
-                    try
-                    {
-                        //Ejecutamos la instruccion del sql para afectar las filas
-                        Comando.ExecuteNonQuery();
-
-                        MessageBox.Show("Registro Actualizado: Apellido Materno");
-                        //  RefresacarDatos();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-
+                    MessageBox.Show("Favor de seleccionar lo que desea modificar", "Eleccion incompleta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (cmbFiltroModificar.Text == "Nombres")
-                {
-
-                    Sql = "";
-                    Sql = "UPDATE DatosGenerales set Nombres = @Nombres WHERE Id_Alumno = @Id_Alumno";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
-                    Comando.Parameters.AddWithValue("@Nombres", txtModificacion.Text);
-                    try
-                    {
-                        //Ejecutamos la instruccion del sql para afectar las filas
-                        Comando.ExecuteNonQuery();
-
-                        MessageBox.Show("Registro Actualizado: Nombres");
-                        //  RefresacarDatos();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-
-                }
-                else if (cmbFiltroModificar.Text == "FechaNac")
-                {
-                    Sql = "";
-                    Sql = "UPDATE DatosGenerales set FechaNacimiento = @FechaNacimiento WHERE Id_Alumno = @Id_Alumno";
-                    Comando = new SqlCommand(Sql, Conexion);
-                   // Comando.Parameters.AddWithValue("@Id_DatosContacto", ((DateTime)(dgv_Agregar.Rows[seleccion].Cells[17].Value)).ToString("dd/MM/yyyy"));
-                    Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
-                    Comando.Parameters.AddWithValue("@FechaNacimiento", txtModificacion.Text);
-                    try
-                    {
-                        //Ejecutamos la instruccion del sql para afectar las filas
-                        Comando.ExecuteNonQuery();
-
-                        MessageBox.Show("Registro Actualizado: Fecha Nacimiento");
-                        //  RefresacarDatos();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-
-
-                }
-                else if (cmbFiltroModificar.Text == "Edad")
-                {
-                    Sql = "";
-                    Sql = "UPDATE DatosGenerales set Edad = @Edad WHERE Id_Alumno = @Id_Alumno";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
-                    Comando.Parameters.AddWithValue("@Edad", txtModificacion.Text);
-                    try
-                    {
-                        //Ejecutamos la instruccion del sql para afectar las filas
-                        Comando.ExecuteNonQuery();
-
-                        MessageBox.Show("Registro Actualizado: Edad");
-                        //  RefresacarDatos();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-
-
-                }
-                else if (cmbFiltroModificar.Text == "CURP")
-                {
-                    txtModificacion.Text = CURPMODIFICACION();
-                    Sql = "";
-                    Sql = "UPDATE DatosGenerales set CURP = @CURP WHERE Id_Alumno = @Id_Alumno";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
-                    
-                    Comando.Parameters.AddWithValue("@CURP", txtModificacion.Text);
-                    try
-                    {
-                        //Ejecutamos la instruccion del sql para afectar las filas
-                        Comando.ExecuteNonQuery();
-
-                        MessageBox.Show("Registro Actualizado: CURP");
-                        //  RefresacarDatos();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-
-                }
-                else if (cmbFiltroModificar.Text == "Genero")
-                {
-
-                    Sql = "";
-                    Sql = "UPDATE DatosGenerales set Genero = @Genero WHERE Id_Alumno = @Id_Alumno";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
-                    Comando.Parameters.AddWithValue("@Genero", txtModificacion.Text);
-                    try
-                    {
-                        //Ejecutamos la instruccion del sql para afectar las filas
-                        Comando.ExecuteNonQuery();
-
-                        MessageBox.Show("Registro Actualizado: Genero");
-                        //  RefresacarDatos();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-
-                }
-                else if (cmbFiltroModificar.Text == "Estado Civil")
-                {
-
-                    Sql = "";
-                    Sql = "UPDATE DatosGenerales set EstadoCivil = @EstadoCivil WHERE Id_Alumno = @Id_Alumno";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
-                    Comando.Parameters.AddWithValue("@EstadoCivil", txtModificacion.Text);
-                    try
-                    {
-                        //Ejecutamos la instruccion del sql para afectar las filas
-                        Comando.ExecuteNonQuery();
-
-                        MessageBox.Show("Registro Actualizado: EstadoCivil");
-                        //  RefresacarDatos();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-
-                }
-                else if (cmbFiltroModificar.Text == "Domicilio")
-                {
-
-                    Sql = "";
-                    Sql = "UPDATE DatosContacto set Domicilio = @Domicilio WHERE Id_DatosContacto = @Id_DatosContacto";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
-                    Comando.Parameters.AddWithValue("@Domicilio", txtModificacion.Text);
-                    try
-                    {
-                        //Ejecutamos la instruccion del sql para afectar las filas
-                        Comando.ExecuteNonQuery();
-
-                        MessageBox.Show("Registro Actualizado: Domicilio");
-                        //  RefresacarDatos();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-
-                }
-                else if (cmbFiltroModificar.Text == "Codigo Postal")
-                {
-
-                    Sql = "";
-                    Sql = "UPDATE DatosContacto set CodigoPostal = @CodigoPostal WHERE Id_DatosContacto = @Id_DatosContacto";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
-                    Comando.Parameters.AddWithValue("@CodigoPostal", txtModificacion.Text);
-                    try
-                    {
-                        //Ejecutamos la instruccion del sql para afectar las filas
-                        Comando.ExecuteNonQuery();
-
-                        MessageBox.Show("Registro Actualizado: Codigo Postal");
-                        //  RefresacarDatos();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-
-
-                }
-                else if (cmbFiltroModificar.Text == "Nacionalidad")
-                {
-
-                    Sql = "";
-                    Sql = "UPDATE DatosContacto set Nacionalidad = @Nacionalidad WHERE Id_DatosContacto = @Id_DatosContacto";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
-                    Comando.Parameters.AddWithValue("@Nacionalidad", txtModificacion.Text);
-                    try
-                    {
-                        //Ejecutamos la instruccion del sql para afectar las filas
-                        Comando.ExecuteNonQuery();
-
-                        MessageBox.Show("Registro Actualizado: Nacionalidad");
-                        //  RefresacarDatos();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-
-                }
-                else if (cmbFiltroModificar.Text == "EstadoNac")
-                {
-
-                    Sql = "";
-                    Sql = "UPDATE DatosContacto set EstadoNacimiento = @EstadoNacimiento WHERE Id_DatosContacto = @Id_DatosContacto";
-                    Comando = new SqlCommand(Sql, Conexion);
-                 
-                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
-                    Comando.Parameters.AddWithValue("@EstadoNacimiento", txtModificacion.Text);
-                    try
-                    {
-                        Comando.ExecuteNonQuery();
-                        MessageBox.Show("Registro Actualizado: Estado Nacimiento");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-
-                }
-                else if (cmbFiltroModificar.Text == "Municipio")
-                {
-
-                    Sql = "";
-                    Sql = "UPDATE DatosContacto set Municipio = @Municipio WHERE Id_DatosContacto = @Id_DatosContacto";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
-                    Comando.Parameters.AddWithValue("@Municipio", txtModificacion.Text);
-                    try
-                    {
-                        Comando.ExecuteNonQuery();
-                        MessageBox.Show("Registro Actualizado: Municipio");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-
-                }
-                else if (cmbFiltroModificar.Text == "Correo")
-                {
-                    Sql = "";
-                    Sql = "UPDATE DatosContacto set Correo = @Correo WHERE Id_DatosContacto = @Id_DatosContacto";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
-                    Comando.Parameters.AddWithValue("@Correo", txtModificacion.Text);
-                    try
-                    {
-                        Comando.ExecuteNonQuery();
-                        MessageBox.Show("Registro Actualizado: Correo Electronico");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-
-                }
-                else if (cmbFiltroModificar.Text == "Telefono")
-                {
-
-                    Sql = "";
-                    Sql = "UPDATE DatosContacto set Telefono = @Telefono WHERE Id_DatosContacto = @Id_DatosContacto";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
-                    Comando.Parameters.AddWithValue("@Telefono", txtModificacion.Text);
-                    try
-                    {
-                        Comando.ExecuteNonQuery();
-                        MessageBox.Show("Registro Actualizado: Telefono");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-
-                }
-                else if (cmbFiltroModificar.Text == "Carrera")
-                {
-                    Sql = "";
-                    Sql = "UPDATE DatosAcademicos set Carrera = @Carrera WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    //MessageBox.Show(dgv_Agregar.Rows[seleccion].Cells[11].Value.ToString());
-                    /*MessageBox.Show(txtModificai);*/
-                    //Comando.Parameters.AddWithValue("@Id_DatosAcademicos", int.Parse(dgv_Agregar.Rows[seleccion].Cells[11].Value.ToString()));
-                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
-                    Comando.Parameters.AddWithValue("@Carrera", txtModificacion.Text);
-                    try
-                    {
-                        Comando.ExecuteNonQuery();
-                        MessageBox.Show("Registro Actualizado: Carrera");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-             
-                }
-                else if (cmbFiltroModificar.Text == "Periodo")
-                {
-                    Sql = "";
-                    Sql = "UPDATE DatosAcademicos set Periodo = @Periodo WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
-                    Comando = new SqlCommand(Sql, Conexion);
-                   
-                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
-                    Comando.Parameters.AddWithValue("@Periodo", txtModificacion.Text);
-                    try
-                    {
-                        Comando.ExecuteNonQuery();
-                        MessageBox.Show("Registro Actualizado: Periodo");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-                }
-                else if (cmbFiltroModificar.Text == "Promedio")
-                {
-                    Sql = "";
-                    Sql = "UPDATE DatosAcademicos set Promedio = @Promedio WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
-                    Comando = new SqlCommand(Sql, Conexion);
-                    
-                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
-                    Comando.Parameters.AddWithValue("@Promedio", txtModificacion.Text);
-                    try
-                    {
-                        Comando.ExecuteNonQuery();
-                        MessageBox.Show("Registro Actualizado: Promedio");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-                   
-                }
-                else if (cmbFiltroModificar.Text == "CCT")
-                {
-                    Sql = "";
-                    Sql = "UPDATE DatosAcademicos set CCT = @CCT WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
-                    Comando = new SqlCommand(Sql, Conexion);
-
-                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
-                    Comando.Parameters.AddWithValue("@CCT", txtModificacion.Text);
-                    try
-                    {
-                        Comando.ExecuteNonQuery();
-                        MessageBox.Show("Registro Actualizado: CCT");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-                }
-                else if (cmbFiltroModificar.Text == "Modelo")
-                {
-                    Sql = "";
-                    Sql = "UPDATE DatosAcademicos set Modelo = @Modelo WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
-                    Comando = new SqlCommand(Sql, Conexion);
-
-                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
-                    Comando.Parameters.AddWithValue("@Modelo", txtModificacion.Text);
-                    try
-                    {
-                        Comando.ExecuteNonQuery();
-                        MessageBox.Show("Registro Actualizado: Modelo");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error tabla general: " + ex.Message);
-                    }
-                }
-                Conexion.Close();
-                //Se limpian los campos para mayor comodidad del usuario
-                txtModificacion.Text = "";
-                cmbFiltroModificar.Text = "";
-                RefrescarDatos();
-            }
-            else
-            {
-                MessageBox.Show("Favor de seleccionar lo que desea modificar", "Eleccion incompleta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -1121,7 +1126,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void txtDomicilio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
             {
                 MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
@@ -1131,7 +1136,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void txtCarrera_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
             {
                 MessageBox.Show("Solo se admiten letras", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
@@ -1303,7 +1308,7 @@ namespace Proyecto_AdministracionOrgDatos
                 //Insercion de segunda tabla
                 Comando.Parameters.AddWithValue("@Domicilio", txtDomicilio.Text);
                 Comando.Parameters.AddWithValue("@CodigoPostal", txtCodigoPostal.Text);
-                Comando.Parameters.AddWithValue("@Nacionalidad", txtNacionalidad.Text);
+                Comando.Parameters.AddWithValue("@Nacionalidad", cmbNacionalidad.Text);
                 Comando.Parameters.AddWithValue("@EstadoNacimiento", cmbEstadoNac.Text);
                 Comando.Parameters.AddWithValue("@Municipio", txtMunicipio.Text);
                 Comando.Parameters.AddWithValue("@Correo", txtCorreoElectronico.Text);
