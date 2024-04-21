@@ -247,7 +247,7 @@ namespace Proyecto_AdministracionOrgDatos
         }
         private void FormLogin_ESA_Load(object sender, EventArgs e)
         {
-            CargarTextoGuia();
+            //CargarTextoGuia();
 
             // Cargar las fuente desde el archivo TTF
             string nombreFuente = "coolveticaRG.otf";
@@ -273,8 +273,6 @@ namespace Proyecto_AdministracionOrgDatos
             txtContraseña_ESA.TextChanged += (s, v) => txtGuia.CuadroTexto_TextChangedPassword(txtContraseña_ESA);
         }
 
-      
-
         //Codigo para lo de ver y no ver la contraseña
         private void VerContra_Click(object sender, EventArgs e)
         {
@@ -297,6 +295,38 @@ namespace Proyecto_AdministracionOrgDatos
         private void errorLogin_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtUsuario_ESA_Enter(object sender, EventArgs e)
+        {
+            if(txtUsuario_ESA.Text == " Ejemplo: Usuario2134")
+            {
+                txtUsuario_ESA.Text = "";
+            }
+        }
+
+        private void txtUsuario_ESA_Leave(object sender, EventArgs e)
+        {
+            if(txtUsuario_ESA.Text == "")
+            {
+                txtUsuario_ESA.Text = " Ejemplo: Usuario2134";
+            }
+        }
+
+        private void txtContraseña_ESA_Enter(object sender, EventArgs e)
+        {
+            if (txtContraseña_ESA.Text == " Ejemplo: Password2781")
+            {
+                txtContraseña_ESA.Text = "";
+            }
+        }
+
+        private void txtContraseña_ESA_Leave(object sender, EventArgs e)
+        {
+            if(txtContraseña_ESA.Text == "")
+            {
+                txtContraseña_ESA.Text = " Ejemplo: Password2781";
+            }
         }
     }
 }

@@ -86,6 +86,8 @@
             this.txtContraseña_ESA.Name = "txtContraseña_ESA";
             this.txtContraseña_ESA.Size = new System.Drawing.Size(254, 18);
             this.txtContraseña_ESA.TabIndex = 13;
+            this.txtContraseña_ESA.Enter += new System.EventHandler(this.txtContraseña_ESA_Enter);
+            this.txtContraseña_ESA.Leave += new System.EventHandler(this.txtContraseña_ESA_Leave);
             // 
             // txtUsuario_ESA
             // 
@@ -98,6 +100,8 @@
             this.txtUsuario_ESA.Name = "txtUsuario_ESA";
             this.txtUsuario_ESA.Size = new System.Drawing.Size(279, 18);
             this.txtUsuario_ESA.TabIndex = 12;
+            this.txtUsuario_ESA.Enter += new System.EventHandler(this.txtUsuario_ESA_Enter);
+            this.txtUsuario_ESA.Leave += new System.EventHandler(this.txtUsuario_ESA_Leave);
             // 
             // lblNombreAlumno_ESA
             // 
