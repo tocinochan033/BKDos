@@ -85,6 +85,8 @@ namespace Proyecto_AdministracionOrgDatos
         {
          //   login = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
             InitializeComponent();
+            txtUsuario_ESA_Leave(txtUsuario_ESA, EventArgs.Empty);
+            txtContraseña_ESA_Leave(txtContraseña_ESA, EventArgs.Empty);
         }
 
         private void btnSalir_ESA_Click(object sender, EventArgs e)
@@ -299,7 +301,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void txtUsuario_ESA_Enter(object sender, EventArgs e)
         {
-            if(txtUsuario_ESA.Text == " Ejemplo: Usuario2134")
+            if(txtUsuario_ESA.Text == " Ejemplo: Gerente")
             {
                 txtUsuario_ESA.Text = "";
             }
@@ -309,13 +311,13 @@ namespace Proyecto_AdministracionOrgDatos
         {
             if(txtUsuario_ESA.Text == "")
             {
-                txtUsuario_ESA.Text = " Ejemplo: Usuario2134";
+                txtUsuario_ESA.Text = " Ejemplo: Gerente";
             }
         }
 
         private void txtContraseña_ESA_Enter(object sender, EventArgs e)
         {
-            if (txtContraseña_ESA.Text == " Ejemplo: Password2781")
+            if (txtContraseña_ESA.Text == " Ejemplo: 2024")
             {
                 txtContraseña_ESA.Text = "";
             }
@@ -325,7 +327,7 @@ namespace Proyecto_AdministracionOrgDatos
         {
             if(txtContraseña_ESA.Text == "")
             {
-                txtContraseña_ESA.Text = " Ejemplo: Password2781";
+                txtContraseña_ESA.Text = " Ejemplo: 2024";
             }
         }
     }
