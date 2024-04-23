@@ -130,10 +130,10 @@ namespace Proyecto_AdministracionOrgDatos
             cmbFiltroModificar.Items.Add("CCT");
             cmbFiltroModificar.Items.Add("Modelo");
 
-            string aPaterno, aMaterno, nombres, fechanac, edad, curp, genero, estado_civil;
-            string domicilio, codigo_postal, nacionalidad, estado_nacimiento, municipio, correo_electronico, telefono;
-            string carrera, periodo, promedio, cct, modelo;
-            int indicieNuevoRenglon;
+            //string aPaterno, aMaterno, nombres, fechanac, edad, curp, genero, estado_civil;
+            //string domicilio, codigo_postal, nacionalidad, estado_nacimiento, municipio, correo_electronico, telefono;
+            //string carrera, periodo, promedio, cct, modelo;
+            //int indicieNuevoRenglon;
 
             /*
             //Abrimos el archivo de texto en modo lectura
@@ -1212,7 +1212,7 @@ namespace Proyecto_AdministracionOrgDatos
             }
             else
             {
-                int indiceNuevaFila;
+                //int indiceNuevaFila;
                 // Validar que el campo "Correo Electrónico" contenga "@" y termine con ".com"
                 string correoElectronico = txtCorreoElectronico.Text;
                 if (!correoElectronico.Contains("@") || !correoElectronico.EndsWith(".com") || !correoElectronico.EndsWith(".edu.mx"))

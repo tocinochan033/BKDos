@@ -24,7 +24,7 @@ namespace Proyecto_AdministracionOrgDatos
         generarPDF PantallaPDF;
 
         //Variable para el calculo de la inactividad
-        private Timer temporizadorInactividad;
+        //private Timer temporizadorInactividad;
 
         private static frmMenu_ESA instancia = null; //Inicializacion del formulario estatico
 

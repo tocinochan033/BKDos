@@ -234,9 +234,9 @@ namespace Proyecto_AdministracionOrgDatos
                 }
                 Conexion.Close();
             }
-            catch(Exception ex)
+            catch(Exception es)
             {
-                Console.WriteLine("No se agrego ninguna contraseña"); 
+                Console.WriteLine("No se agrego ninguna contraseña" + es); 
                 Conexion.Close();
             }
 
