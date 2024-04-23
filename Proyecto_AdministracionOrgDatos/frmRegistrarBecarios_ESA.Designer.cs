@@ -36,26 +36,6 @@
             this.btnRegresarMenu_ESA = new System.Windows.Forms.Button();
             this.lblTitulo_ESA = new System.Windows.Forms.Label();
             this.dgv_Agregar = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.FechaHora2 = new System.Windows.Forms.Timer(this.components);
@@ -78,7 +58,7 @@
             this.txtAmaterno = new System.Windows.Forms.TextBox();
             this.lblAmaterno = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.cmbNacionalidad = new System.Windows.Forms.ComboBox();
             this.txtMunicipio = new System.Windows.Forms.ComboBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -92,7 +72,6 @@
             this.lblCorreoElectronico = new System.Windows.Forms.Label();
             this.lblMunicipio = new System.Windows.Forms.Label();
             this.lblEstadoNac = new System.Windows.Forms.Label();
-            this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.lblNacionalidad = new System.Windows.Forms.Label();
             this.txtCodigoPostal = new System.Windows.Forms.TextBox();
             this.lblCodigoPostal = new System.Windows.Forms.Label();
@@ -130,7 +109,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -217,34 +195,12 @@
             this.lblTitulo_ESA.Size = new System.Drawing.Size(238, 31);
             this.lblTitulo_ESA.TabIndex = 49;
             this.lblTitulo_ESA.Text = "Registrar Becarios";
-
             // 
             // dgv_Agregar
             // 
             this.dgv_Agregar.AllowUserToAddRows = false;
             this.dgv_Agregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgv_Agregar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Agregar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nombre,
-            this.Telefono,
-            this.Correo,
-            this.Estado,
-            this.Column1,
-            this.Column2,
-            this.Genero,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15});
             this.dgv_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgv_Agregar.GridColor = System.Drawing.Color.Silver;
             this.dgv_Agregar.Location = new System.Drawing.Point(277, 412);
@@ -253,167 +209,6 @@
             this.dgv_Agregar.RowHeadersWidth = 51;
             this.dgv_Agregar.Size = new System.Drawing.Size(884, 206);
             this.dgv_Agregar.TabIndex = 60;
-
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "A.Paterno";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 125;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "A.Materno";
-            this.Telefono.MinimumWidth = 6;
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            this.Telefono.Width = 125;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Nombres";
-            this.Correo.MinimumWidth = 6;
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            this.Correo.Width = 125;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "FechaNac.";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Edad";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Curp";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 125;
-            // 
-            // Genero
-            // 
-            this.Genero.HeaderText = "Genero";
-            this.Genero.MinimumWidth = 6;
-            this.Genero.Name = "Genero";
-            this.Genero.ReadOnly = true;
-            this.Genero.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "EstadoCivil";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Domicilio";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "C.P";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Nacionalidad";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Estd.Nacimiento";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Municipio";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 125;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Correo";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 125;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Telefono";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 125;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Carrera";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 125;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Periodo";
-            this.Column12.MinimumWidth = 6;
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Width = 125;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Promedio";
-            this.Column13.MinimumWidth = 6;
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Width = 125;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "CCT";
-            this.Column14.MinimumWidth = 6;
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Width = 125;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Modelo";
-            this.Column15.MinimumWidth = 6;
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            this.Column15.Width = 125;
             // 
             // btnModificar
             // 
@@ -491,7 +286,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos personales";
             this.tabPage1.UseVisualStyleBackColor = true;
-
             // 
             // cmbEstCivil
             // 
@@ -687,7 +481,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.pictureBox13);
+            this.tabPage2.Controls.Add(this.cmbNacionalidad);
             this.tabPage2.Controls.Add(this.txtMunicipio);
             this.tabPage2.Controls.Add(this.pictureBox10);
             this.tabPage2.Controls.Add(this.pictureBox8);
@@ -701,7 +495,6 @@
             this.tabPage2.Controls.Add(this.lblCorreoElectronico);
             this.tabPage2.Controls.Add(this.lblMunicipio);
             this.tabPage2.Controls.Add(this.lblEstadoNac);
-            this.tabPage2.Controls.Add(this.txtNacionalidad);
             this.tabPage2.Controls.Add(this.lblNacionalidad);
             this.tabPage2.Controls.Add(this.txtCodigoPostal);
             this.tabPage2.Controls.Add(this.lblCodigoPostal);
@@ -714,17 +507,20 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Contacto";
             this.tabPage2.UseVisualStyleBackColor = true;
-
             // 
-            // pictureBox13
+            // cmbNacionalidad
             // 
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(409, 179);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(113, 10);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 88;
-            this.pictureBox13.TabStop = false;
+            this.cmbNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNacionalidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNacionalidad.FormattingEnabled = true;
+            this.cmbNacionalidad.Items.AddRange(new object[] {
+            "Mexicano",
+            "Extranjero"});
+            this.cmbNacionalidad.Location = new System.Drawing.Point(406, 160);
+            this.cmbNacionalidad.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbNacionalidad.Name = "cmbNacionalidad";
+            this.cmbNacionalidad.Size = new System.Drawing.Size(112, 25);
+            this.cmbNacionalidad.TabIndex = 89;
             // 
             // txtMunicipio
             // 
@@ -786,6 +582,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 70;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // cmbEstadoNac
             // 
@@ -833,7 +630,7 @@
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Size = new System.Drawing.Size(341, 22);
             this.txtCorreoElectronico.TabIndex = 77;
-
+            this.txtCorreoElectronico.TextChanged += new System.EventHandler(this.txtCorreoElectronico_TextChanged);
             // 
             // lblCorreoElectronico
             // 
@@ -870,18 +667,6 @@
             this.lblEstadoNac.Size = new System.Drawing.Size(175, 21);
             this.lblEstadoNac.TabIndex = 74;
             this.lblEstadoNac.Text = "Estado de nacimiento :";
-            // 
-            // txtNacionalidad
-            // 
-            this.txtNacionalidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNacionalidad.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtNacionalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtNacionalidad.Location = new System.Drawing.Point(409, 158);
-            this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNacionalidad.Name = "txtNacionalidad";
-            this.txtNacionalidad.Size = new System.Drawing.Size(113, 22);
-            this.txtNacionalidad.TabIndex = 71;
-            this.txtNacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNacionalidad_KeyPress);
             // 
             // lblNacionalidad
             // 
@@ -1021,7 +806,6 @@
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(133, 25);
             this.txtModelo.TabIndex = 83;
-
             // 
             // lblModelo
             // 
@@ -1136,15 +920,14 @@
             // txtModificacion
             // 
             this.txtModificacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModificacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtModificacion.Location = new System.Drawing.Point(20, 93);
             this.txtModificacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtModificacion.Name = "txtModificacion";
-            this.txtModificacion.Size = new System.Drawing.Size(147, 31);
+            this.txtModificacion.Size = new System.Drawing.Size(147, 22);
             this.txtModificacion.TabIndex = 69;
             this.toolTip1.SetToolTip(this.txtModificacion, "Dato por modificar.");
-
             // 
             // cmbFiltroModificar
             // 
@@ -1158,7 +941,6 @@
             this.cmbFiltroModificar.Size = new System.Drawing.Size(146, 25);
             this.cmbFiltroModificar.TabIndex = 70;
             this.toolTip1.SetToolTip(this.cmbFiltroModificar, "Seleccione la columna por modificar.");
-
             // 
             // tabControl2
             // 
@@ -1181,7 +963,6 @@
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Adicion y eliminacion";
             this.tabPage4.UseVisualStyleBackColor = true;
-  
             // 
             // tabPage5
             // 
@@ -1260,7 +1041,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -1311,7 +1091,6 @@
         private System.Windows.Forms.Label lblCorreoElectronico;
         private System.Windows.Forms.Label lblMunicipio;
         private System.Windows.Forms.Label lblEstadoNac;
-        private System.Windows.Forms.TextBox txtNacionalidad;
         private System.Windows.Forms.Label lblNacionalidad;
         private System.Windows.Forms.TextBox txtCodigoPostal;
         private System.Windows.Forms.Label lblCodigoPostal;
@@ -1327,26 +1106,6 @@
         private System.Windows.Forms.TextBox txtCarrera;
         private System.Windows.Forms.Label lblCarrera;
         private System.Windows.Forms.Label lblCCT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Genero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.Label lblModelo;
         private System.Windows.Forms.DateTimePicker txtFechanac;
         private System.Windows.Forms.ComboBox txtModelo;
@@ -1374,7 +1133,7 @@
         private System.Windows.Forms.ComboBox cmbEstCivil;
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ComboBox cmbNacionalidad;
     }
 }

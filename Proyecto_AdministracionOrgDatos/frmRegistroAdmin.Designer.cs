@@ -31,6 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtAdminContra = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.newAdminButton = new System.Windows.Forms.Button();
             this.rolCombo = new System.Windows.Forms.ComboBox();
             this.Rol = new System.Windows.Forms.Label();
@@ -41,17 +45,12 @@
             this.nombreTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.confirmarTodoButton = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.eliminarAdminButton = new System.Windows.Forms.Button();
             this.administradoresDataGrid = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.nombreData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correoData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rolData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contraseñaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -84,6 +83,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.txtAdminContra);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.txtContrasena);
+            this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.newAdminButton);
             this.tabPage1.Controls.Add(this.rolCombo);
             this.tabPage1.Controls.Add(this.Rol);
@@ -101,12 +104,48 @@
             this.tabPage1.Text = "Nuevo Admin...";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // txtAdminContra
+            // 
+            this.txtAdminContra.Location = new System.Drawing.Point(173, 210);
+            this.txtAdminContra.Name = "txtAdminContra";
+            this.txtAdminContra.Size = new System.Drawing.Size(164, 20);
+            this.txtAdminContra.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label7.Location = new System.Drawing.Point(169, 186);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(148, 21);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Contraseña Admin:";
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Location = new System.Drawing.Point(31, 210);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Size = new System.Drawing.Size(123, 20);
+            this.txtContrasena.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label6.Location = new System.Drawing.Point(27, 186);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 21);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Contraseña:";
+            // 
             // newAdminButton
             // 
             this.newAdminButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.newAdminButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newAdminButton.ForeColor = System.Drawing.Color.White;
-            this.newAdminButton.Location = new System.Drawing.Point(57, 233);
+            this.newAdminButton.Location = new System.Drawing.Point(54, 259);
             this.newAdminButton.Name = "newAdminButton";
             this.newAdminButton.Size = new System.Drawing.Size(258, 32);
             this.newAdminButton.TabIndex = 8;
@@ -118,12 +157,12 @@
             // 
             this.rolCombo.FormattingEnabled = true;
             this.rolCombo.Items.AddRange(new object[] {
-            "mamaoso",
-            "obrera"});
+            "Gerente",
+            "Administrador general"});
             this.rolCombo.Location = new System.Drawing.Point(31, 162);
             this.rolCombo.Name = "rolCombo";
             this.rolCombo.Size = new System.Drawing.Size(123, 21);
-            this.rolCombo.TabIndex = 7;
+            this.rolCombo.TabIndex = 3;
             // 
             // Rol
             // 
@@ -141,7 +180,7 @@
             this.correoTxt.Location = new System.Drawing.Point(31, 103);
             this.correoTxt.Name = "correoTxt";
             this.correoTxt.Size = new System.Drawing.Size(306, 20);
-            this.correoTxt.TabIndex = 5;
+            this.correoTxt.TabIndex = 2;
             // 
             // label5
             // 
@@ -159,7 +198,7 @@
             this.numeroTxt.Location = new System.Drawing.Point(173, 162);
             this.numeroTxt.Name = "numeroTxt";
             this.numeroTxt.Size = new System.Drawing.Size(164, 20);
-            this.numeroTxt.TabIndex = 3;
+            this.numeroTxt.TabIndex = 4;
             // 
             // label4
             // 
@@ -192,7 +231,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.confirmarTodoButton);
             this.tabPage2.Controls.Add(this.eliminarAdminButton);
             this.tabPage2.Controls.Add(this.administradoresDataGrid);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -203,15 +241,18 @@
             this.tabPage2.Text = "Borrar Admin...";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // confirmarTodoButton
+            // btnBack
             // 
-            this.confirmarTodoButton.Location = new System.Drawing.Point(197, 16);
-            this.confirmarTodoButton.Name = "confirmarTodoButton";
-            this.confirmarTodoButton.Size = new System.Drawing.Size(157, 33);
-            this.confirmarTodoButton.TabIndex = 2;
-            this.confirmarTodoButton.Text = "Confirmar todo";
-            this.confirmarTodoButton.UseVisualStyleBackColor = true;
-            this.confirmarTodoButton.Click += new System.EventHandler(this.confirmarTodoButton_Click);
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(90)))), ((int)(((byte)(150)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(12, 293);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(64, 42);
+            this.btnBack.TabIndex = 2;
+            this.btnBack.Text = "Regresar LOGIN";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // eliminarAdminButton
             // 
@@ -226,12 +267,6 @@
             // administradoresDataGrid
             // 
             this.administradoresDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.administradoresDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombreData,
-            this.correoData,
-            this.rolData,
-            this.telefonoData,
-            this.contraseñaData});
             this.administradoresDataGrid.Location = new System.Drawing.Point(12, 55);
             this.administradoresDataGrid.Name = "administradoresDataGrid";
             this.administradoresDataGrid.Size = new System.Drawing.Size(342, 246);
@@ -250,7 +285,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.pictureBox2.Image = global::Proyecto_AdministracionOrgDatos.Properties.Resources.AddAdminImagen;
-            this.pictureBox2.Location = new System.Drawing.Point(21, 137);
+            this.pictureBox2.Location = new System.Drawing.Point(52, 137);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(232, 212);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -269,36 +304,12 @@
             this.label2.TabIndex = 76;
             this.label2.Text = "Administrador";
             // 
-            // nombreData
-            // 
-            this.nombreData.HeaderText = "Nombre";
-            this.nombreData.Name = "nombreData";
-            // 
-            // correoData
-            // 
-            this.correoData.HeaderText = "Correo";
-            this.correoData.Name = "correoData";
-            // 
-            // rolData
-            // 
-            this.rolData.HeaderText = "Rol";
-            this.rolData.Name = "rolData";
-            // 
-            // telefonoData
-            // 
-            this.telefonoData.HeaderText = "Num. Telefono";
-            this.telefonoData.Name = "telefonoData";
-            // 
-            // contraseñaData
-            // 
-            this.contraseñaData.HeaderText = "contraseña";
-            this.contraseñaData.Name = "contraseñaData";
-            // 
             // frmRegistroAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 347);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tabControl1);
@@ -335,15 +346,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView administradoresDataGrid;
         private System.Windows.Forms.Button newAdminButton;
-        private System.Windows.Forms.Button confirmarTodoButton;
         private System.Windows.Forms.Button eliminarAdminButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correoData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rolData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contraseñaData;
+        private System.Windows.Forms.TextBox txtAdminContra;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtContrasena;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnBack;
     }
 }
