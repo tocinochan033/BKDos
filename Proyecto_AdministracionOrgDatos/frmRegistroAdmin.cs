@@ -23,7 +23,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         /*-------------------------INSTANCIAS-----------------------------*/
         //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
-        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-1M2HN6J; Initial Catalog = BKDOS; integrated security=true");
+        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
 
         //Comando objeto del tipo SQLcommand para representar las instrucciones SQL
         SqlCommand Comando;
@@ -41,7 +41,7 @@ namespace Proyecto_AdministracionOrgDatos
         // DESKTOP-LRR3RR8\SQLEXPRESS
         //DESKTOP-JGTCE3J
         //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER
-        String Servidor = @"DESKTOP-1M2HN6J";
+        String Servidor = @"DESKTOP-JGTCE3J";
 
         //Variable de tipo string para almacenar el nombre de la base de datos
         String Base_Datos = "BKDOS";
@@ -85,54 +85,57 @@ namespace Proyecto_AdministracionOrgDatos
            
         }
 
-       /* private void cargaDatos() //Carga los datos al datagridview
-        {
-            //Imprime los datos guardados del archivo al datagridview
-            int indiceNuevoRenglon;
-            string nombre, correo, numero, rol, contraseña;
+        /* private void cargaDatos() //Carga los datos al datagridview
+         {
+             //Imprime los datos guardados del archivo al datagridview
+             int indiceNuevoRenglon;
+             string nombre, correo, numero, rol, contraseña;
 
-            FileStream loginStream = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.Read);
+             FileStream loginStream = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.Read);
 
-            using (StreamReader lector = new StreamReader(loginStream))
-            {
-                string renglon = lector.ReadLine();
-                while (renglon != null)
-                {
-                    string[] datos = renglon.Split(',');
+             using (StreamReader lector = new StreamReader(loginStream))
+             {
+                 string renglon = lector.ReadLine();
+                 while (renglon != null)
+                 {
+                     string[] datos = renglon.Split(',');
 
-                    indiceNuevoRenglon = administradoresDataGrid.Rows.Add();
+                     indiceNuevoRenglon = administradoresDataGrid.Rows.Add();
 
-                    nombre = datos[0];
-                    correo = datos[1];
-                    rol = datos[2];
-                    numero = datos[3];
-                    contraseña = datos[4];
+                     nombre = datos[0];
+                     correo = datos[1];
+                     rol = datos[2];
+                     numero = datos[3];
+                     contraseña = datos[4];
 
-                    administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[0].Value = nombre;
-                    administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[1].Value = correo;
-                    administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[2].Value = rol;
-                    administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[3].Value = numero;
-                    administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[4].Value = contraseña;
+                     administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[0].Value = nombre;
+                     administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[1].Value = correo;
+                     administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[2].Value = rol;
+                     administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[3].Value = numero;
+                     administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[4].Value = contraseña;
 
-                    renglon = lector.ReadLine();
-                }
-                loginStream.Close();
-            }
-        }*/
+                     renglon = lector.ReadLine();
+                 }
+                 loginStream.Close();
+             }
+         }*/
 
         private void newAdminButton_Click(object sender, EventArgs e)
         {
-          
-             
+            if (!correoTxt.Contains("@") || correoTxt)
+            {
 
-                Conectar();
+            }
+
+
+            Conectar();
                 Sql = "";
                 Sql = "INSERT INTO Usuarios (Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin, Estado) values (@Usuario, @Contrasena, @Correo,@Rol, @NumeroTelefonico, @Contra_admin, @Estado)";
                 Comando = new SqlCommand(Sql, Conexion);
                 Comando.Parameters.AddWithValue("@Usuario", nombreTxt.Text);
                 Comando.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
                 Comando.Parameters.AddWithValue("@Correo", correoTxt.Text);
-                Comando.Parameters.AddWithValue("@Rol", Rol.Text);
+                Comando.Parameters.AddWithValue("@Rol", rolCombo.Text);
                 Comando.Parameters.AddWithValue("@NumeroTelefonico", numeroTxt.Text);
                 Comando.Parameters.AddWithValue("@Contra_admin", txtAdminContra.Text);
                 Comando.Parameters.AddWithValue("@Estado", 1);

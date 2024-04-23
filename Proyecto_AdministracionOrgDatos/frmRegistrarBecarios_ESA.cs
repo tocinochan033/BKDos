@@ -22,7 +22,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         /*-------------------------INSTANCIAS-----------------------------*/
         //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
-        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-1M2HN6J; Initial Catalog = BKDOS; integrated security=true");
+        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
 
         //Comando objeto del tipo SQLcommand para representar las instrucciones SQL
         SqlCommand Comando;
@@ -40,7 +40,7 @@ namespace Proyecto_AdministracionOrgDatos
         // DESKTOP-LRR3RR8\SQLEXPRESS
         //DESKTOP-JGTCE3J
         //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER
-        String Servidor = @"DESKTOP-1M2HN6J";
+        String Servidor = @"DESKTOP-JGTCE3J";
 
         //Variable de tipo string para almacenar el nombre de la base de datos
         String Base_Datos = "BKDOS";
@@ -1215,7 +1215,7 @@ namespace Proyecto_AdministracionOrgDatos
                 //int indiceNuevaFila;
                 // Validar que el campo "Correo Electrónico" contenga "@" y termine con ".com"
                 string correoElectronico = txtCorreoElectronico.Text;
-                if (!correoElectronico.Contains("@") || !correoElectronico.EndsWith(".com") || !correoElectronico.EndsWith(".edu.mx"))
+                if (!correoElectronico.Contains("@") || !correoElectronico.EndsWith(".com"))
                 {
                     MessageBox.Show("Por favor, ingrese una dirección de correo electrónico válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtCorreoElectronico.Focus();
