@@ -352,13 +352,13 @@ namespace Proyecto_AdministracionOrgDatos
                 string curp = "";
                 var random = new Random().Next(0, 99);
 
-                if(ApellidoMaterno == "")
+                if(ApellidoMaterno == "X")
                 {
                    curp = (ApellidoPaterno[0] + ObtencionDeVocal(ApellidoPaterno) + "X" + nombre[0] + fechaNacimiento.Substring(8, 2) +
                    fechaNacimiento.Substring(3, 2) + fechaNacimiento.Substring(0, 2) + Sexo[0] + ESTADO(estado) + ObtencionDeConsonantes(ApellidoPaterno) +
                    "X" + ObtencionDeConsonantes(nombre) + random.ToString());
                 }
-                else if(ApellidoMaterno !="" || ApellidoPaterno != "")
+                else if(ApellidoMaterno !="X")
                 {
                    curp = (ApellidoPaterno[0] + ObtencionDeVocal(ApellidoPaterno) + ApellidoMaterno[0] + nombre[0] + fechaNacimiento.Substring(8, 2) +
                    fechaNacimiento.Substring(3, 2) + fechaNacimiento.Substring(0, 2) + Sexo[0] + ESTADO(estado) + ObtencionDeConsonantes(ApellidoPaterno) +
@@ -1188,10 +1188,8 @@ namespace Proyecto_AdministracionOrgDatos
                     //Si hay un control de tipo Textbox y su valor string esta nulo o vacio, regresara true
                     if (control is System.Windows.Forms.TextBox textBox && string.IsNullOrEmpty(textBox.Text))
                     {
-                        if(txtAmaterno.Text ==null || txtAmaterno.Text == null)
-                        {
-                            return false;
-                        }
+                        return true;
+           
                     }
                     //Si hay un control de tipo ComboBox y su valor string esta nulo o vacio, regresara true
                     else if (control is System.Windows.Forms.ComboBox comboBox && comboBox.SelectedIndex == -1)
@@ -1514,6 +1512,11 @@ namespace Proyecto_AdministracionOrgDatos
         private void cmbEstadoNac_SelectedIndexChanged(object sender, EventArgs e)
         {
          
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
