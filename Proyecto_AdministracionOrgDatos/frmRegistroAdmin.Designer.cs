@@ -45,12 +45,14 @@
             this.nombreTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnBack = new System.Windows.Forms.Button();
             this.eliminarAdminButton = new System.Windows.Forms.Button();
             this.administradoresDataGrid = new System.Windows.Forms.DataGridView();
+            this.btnBack = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -83,6 +85,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.txtAdminContra);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.txtContrasena);
@@ -207,9 +211,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.label4.Location = new System.Drawing.Point(169, 138);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 21);
+            this.label4.Size = new System.Drawing.Size(142, 21);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Numero:";
+            this.label4.Text = "Numero Telefono:";
             // 
             // nombreTxt
             // 
@@ -241,19 +245,6 @@
             this.tabPage2.Text = "Borrar Admin...";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(90)))), ((int)(((byte)(150)))));
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(12, 293);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(64, 42);
-            this.btnBack.TabIndex = 2;
-            this.btnBack.Text = "Regresar LOGIN";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // eliminarAdminButton
             // 
             this.eliminarAdminButton.Location = new System.Drawing.Point(12, 16);
@@ -271,6 +262,19 @@
             this.administradoresDataGrid.Name = "administradoresDataGrid";
             this.administradoresDataGrid.Size = new System.Drawing.Size(342, 246);
             this.administradoresDataGrid.TabIndex = 0;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(90)))), ((int)(((byte)(150)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(12, 293);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(64, 42);
+            this.btnBack.TabIndex = 2;
+            this.btnBack.Text = "Regresar LOGIN";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // pictureBox1
             // 
@@ -303,6 +307,28 @@
             this.label2.Size = new System.Drawing.Size(181, 31);
             this.label2.TabIndex = 76;
             this.label2.Text = "Administrador";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label8.Location = new System.Drawing.Point(98, 79);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 21);
+            this.label8.TabIndex = 12;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe MDL2 Assets", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label9.Location = new System.Drawing.Point(99, 84);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(211, 12);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "El correo debe contener un @ y terminar en .com";
             // 
             // frmRegistroAdmin
             // 
@@ -355,5 +381,7 @@
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
