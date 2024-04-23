@@ -25,7 +25,7 @@ Bienvenido a **BkDos**, programa de registro de becas
 - iTextSharp [5.5.13.3]()
 - itextsharp.xmlworker [5.5.13]()
 
-Puedes verificar las dependencias de ITextSharp puede consultar dentro de **Administrador de paquetes NuGet** en Visual Studio.
+Puedes verificar las dependencias de ITextSharp dentro de **Administrador de paquetes NuGet** en Visual Studio.
 
 ## Guía de Uso
 
@@ -39,19 +39,19 @@ Puedes verificar las dependencias de ITextSharp puede consultar dentro de **Admi
 ## Configurar
 Para que el proyecto funcione correctamente es necesario realizar los siguientes pasos:
 
-1. Abre el explorador de archivos y navega hasta el directorio del proyecto, o utiliza el atajo `Ctrl + O` dentro de Visual Studio y dirigete al directorio `~\BKDos\Proyecto_AdministracionOrgDatos\Resources` 
+1. Abre el explorador de archivos y navega hasta el directorio del proyecto, o utiliza el atajo `Ctrl + O` dentro de Visual Studio y dirigete al directorio `~\BKDos\` 
 2. Copia la carpeta `Fuentes`
 3. Pega la carpeta en la direccion especificada `~\BKDos\Proyecto_AdministracionOrgDatos\bin\Debug\`
 
 ## Créditos
 
-- Jesus Mejia (@Sujez)
-- Cesar Garcia (@ArdillaTragona)
-- Sandra Megumi (@MegumiUwU)
-- Carlos Noberto (@cxrlosL15)
-- Zeus Andrade(@DonChampi)
-- Abraham Estrada (@Aleluyo)
-- Omar Sanchez (@IngeOmar)
+- Jesus Mejia ([@Sujez](https://github.com/Sujez))
+- Cesar Garcia ([@ArdillaTragona](https://github.com/ArdillaTragona))
+- Sandra Megumi ([@MeguimiUwU](https://github.com/MegumiUwU))
+- Carlos Noberto ([@cxrlosL15](https://github.com/cxrlosL15))
+- Zeus Andrade([@DonChampi](https://github.com/DonChampi))
+- Abraham Estrada ([@Aleluyo](https://github.com/Aleluyo))
+- Omar Sanchez ([@IngeOmar](https://github.com/IngeOmar))
 
 ## Licencia
 

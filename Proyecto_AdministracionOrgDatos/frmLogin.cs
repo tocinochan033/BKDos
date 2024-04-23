@@ -85,6 +85,8 @@ namespace Proyecto_AdministracionOrgDatos
         {
          //   login = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
             InitializeComponent();
+
+            //Carga de placeholder
             txtUsuario_ESA_Leave(txtUsuario_ESA, EventArgs.Empty);
             txtContraseña_ESA_Leave(txtContraseña_ESA, EventArgs.Empty);
         }
