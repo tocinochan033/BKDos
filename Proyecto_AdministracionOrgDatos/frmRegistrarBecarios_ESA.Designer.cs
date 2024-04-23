@@ -58,6 +58,7 @@
             this.txtAmaterno = new System.Windows.Forms.TextBox();
             this.lblAmaterno = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cmbNacionalidad = new System.Windows.Forms.ComboBox();
             this.txtMunicipio = new System.Windows.Forms.ComboBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -100,7 +101,6 @@
             this.lblInstruccionModificar = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.cmbNacionalidad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Agregar)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -508,6 +508,20 @@
             this.tabPage2.Text = "Contacto";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // cmbNacionalidad
+            // 
+            this.cmbNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNacionalidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNacionalidad.FormattingEnabled = true;
+            this.cmbNacionalidad.Items.AddRange(new object[] {
+            "Mexicano",
+            "Extranjero"});
+            this.cmbNacionalidad.Location = new System.Drawing.Point(406, 160);
+            this.cmbNacionalidad.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbNacionalidad.Name = "cmbNacionalidad";
+            this.cmbNacionalidad.Size = new System.Drawing.Size(112, 25);
+            this.cmbNacionalidad.TabIndex = 89;
+            // 
             // txtMunicipio
             // 
             this.txtMunicipio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -568,6 +582,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 70;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // cmbEstadoNac
             // 
@@ -615,6 +630,7 @@
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Size = new System.Drawing.Size(341, 22);
             this.txtCorreoElectronico.TabIndex = 77;
+            this.txtCorreoElectronico.TextChanged += new System.EventHandler(this.txtCorreoElectronico_TextChanged);
             // 
             // lblCorreoElectronico
             // 
@@ -993,20 +1009,6 @@
             this.pictureBox9.Size = new System.Drawing.Size(1019, 96);
             this.pictureBox9.TabIndex = 72;
             this.pictureBox9.TabStop = false;
-            // 
-            // cmbNacionalidad
-            // 
-            this.cmbNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNacionalidad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbNacionalidad.FormattingEnabled = true;
-            this.cmbNacionalidad.Items.AddRange(new object[] {
-            "Mexicano",
-            "Extranjero"});
-            this.cmbNacionalidad.Location = new System.Drawing.Point(406, 160);
-            this.cmbNacionalidad.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbNacionalidad.Name = "cmbNacionalidad";
-            this.cmbNacionalidad.Size = new System.Drawing.Size(112, 25);
-            this.cmbNacionalidad.TabIndex = 89;
             // 
             // frmRegistrarBecarios_ESA
             // 

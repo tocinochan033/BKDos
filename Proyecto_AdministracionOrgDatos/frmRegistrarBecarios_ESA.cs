@@ -1215,7 +1215,7 @@ namespace Proyecto_AdministracionOrgDatos
                 int indiceNuevaFila;
                 // Validar que el campo "Correo Electrónico" contenga "@" y termine con ".com"
                 string correoElectronico = txtCorreoElectronico.Text;
-                if (!correoElectronico.Contains("@") || !correoElectronico.EndsWith(".com"))
+                if (!correoElectronico.Contains("@") || !correoElectronico.EndsWith(".com") || !correoElectronico.EndsWith(".edu.mx"))
                 {
                     MessageBox.Show("Por favor, ingrese una dirección de correo electrónico válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtCorreoElectronico.Focus();
@@ -1485,7 +1485,14 @@ namespace Proyecto_AdministracionOrgDatos
 
         }
 
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void txtCorreoElectronico_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
