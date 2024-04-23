@@ -40,7 +40,7 @@ namespace Proyecto_AdministracionOrgDatos
         // DESKTOP-LRR3RR8\SQLEXPRESS
         //DESKTOP-JGTCE3J
         //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER
-        String Servidor = @"DESKTOP-1M2HN6J";
+        String Servidor = @"DESKTOP-JGTCE3J";
 
         //Variable de tipo string para almacenar el nombre de la base de datos
         String Base_Datos = "BKDOS";
@@ -349,11 +349,22 @@ namespace Proyecto_AdministracionOrgDatos
                 string fechaNacimiento = txtFechanac.Text;
                 string Sexo = CBGenero.Text.ToUpper();
                 string estado = cmbEstadoNac.Text;
+                string curp = "";
                 var random = new Random().Next(0, 99);
 
-                return (ApellidoPaterno[0] + ObtencionDeVocal(ApellidoPaterno) + ApellidoMaterno[0] + nombre[0] + fechaNacimiento.Substring(8, 2) +
-                    fechaNacimiento.Substring(3, 2) + fechaNacimiento.Substring(0, 2) + Sexo[0] + ESTADO(estado) + ObtencionDeConsonantes(ApellidoPaterno) +
-                    ObtencionDeConsonantes(ApellidoMaterno) + ObtencionDeConsonantes(nombre) + random.ToString());
+                if(ApellidoMaterno == "")
+                {
+                   curp = (ApellidoPaterno[0] + ObtencionDeVocal(ApellidoPaterno) + "X" + nombre[0] + fechaNacimiento.Substring(8, 2) +
+                   fechaNacimiento.Substring(3, 2) + fechaNacimiento.Substring(0, 2) + Sexo[0] + ESTADO(estado) + ObtencionDeConsonantes(ApellidoPaterno) +
+                   "X" + ObtencionDeConsonantes(nombre) + random.ToString());
+                }
+                else if(ApellidoMaterno !="" || ApellidoPaterno != "")
+                {
+                   curp = (ApellidoPaterno[0] + ObtencionDeVocal(ApellidoPaterno) + ApellidoMaterno[0] + nombre[0] + fechaNacimiento.Substring(8, 2) +
+                   fechaNacimiento.Substring(3, 2) + fechaNacimiento.Substring(0, 2) + Sexo[0] + ESTADO(estado) + ObtencionDeConsonantes(ApellidoPaterno) +
+                   ObtencionDeConsonantes(ApellidoMaterno) + ObtencionDeConsonantes(nombre) + random.ToString());
+                }
+                return curp;
             }
             catch
             {
@@ -1176,7 +1187,12 @@ namespace Proyecto_AdministracionOrgDatos
                 {
                     //Si hay un control de tipo Textbox y su valor string esta nulo o vacio, regresara true
                     if (control is System.Windows.Forms.TextBox textBox && string.IsNullOrEmpty(textBox.Text))
-                        return true;
+                    {
+                        if(txtAmaterno.Text ==null || txtAmaterno.Text == null)
+                        {
+                            return false;
+                        }
+                    }
                     //Si hay un control de tipo ComboBox y su valor string esta nulo o vacio, regresara true
                     else if (control is System.Windows.Forms.ComboBox comboBox && comboBox.SelectedIndex == -1)
                         return true;
@@ -1215,7 +1231,7 @@ namespace Proyecto_AdministracionOrgDatos
                 //int indiceNuevaFila;
                 // Validar que el campo "Correo Electrónico" contenga "@" y termine con ".com"
                 string correoElectronico = txtCorreoElectronico.Text;
-                if (!correoElectronico.Contains("@") || !correoElectronico.EndsWith(".com") || !correoElectronico.EndsWith(".edu.mx"))
+                if (!correoElectronico.Contains("@") || !correoElectronico.EndsWith(".com"))
                 {
                     MessageBox.Show("Por favor, ingrese una dirección de correo electrónico válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtCorreoElectronico.Focus();
@@ -1493,6 +1509,11 @@ namespace Proyecto_AdministracionOrgDatos
         private void txtCorreoElectronico_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbEstadoNac_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
         }
     }
 }
