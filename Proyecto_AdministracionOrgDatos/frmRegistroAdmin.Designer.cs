@@ -51,6 +51,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -83,6 +85,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.txtAdminContra);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.txtContrasena);
@@ -304,6 +308,28 @@
             this.label2.TabIndex = 76;
             this.label2.Text = "Administrador";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.label8.Location = new System.Drawing.Point(98, 79);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 21);
+            this.label8.TabIndex = 12;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe MDL2 Assets", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label9.Location = new System.Drawing.Point(99, 84);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(211, 12);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "El correo debe contener un @ y terminar en .com";
+            // 
             // frmRegistroAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,5 +381,7 @@
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }

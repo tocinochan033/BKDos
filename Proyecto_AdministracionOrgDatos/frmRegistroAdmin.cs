@@ -126,7 +126,20 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void newAdminButton_Click(object sender, EventArgs e)
         {
+            string correo = correoTxt.Text;
 
+            if (valiCorreo(correo)==true)
+            {
+                MessageBox.Show("Dirección de correo electrónico válidada.");
+                //return;
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese una dirección de correo electrónico válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+           
+           
             Conectar();
                 Sql = "";
                 Sql = "INSERT INTO Usuarios (Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin, Estado) values (@Usuario, @Contrasena, @Correo,@Rol, @NumeroTelefonico, @Contra_admin, @Estado)";
@@ -353,6 +366,23 @@ namespace Proyecto_AdministracionOrgDatos
             Form loginForm = new FormLogin_ESA();
             this.Hide(); 
             loginForm.Show();
+        }
+
+        public bool valiCorreo(string email)
+        {
+            if (email.Contains("@") && email.EndsWith(".com"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
