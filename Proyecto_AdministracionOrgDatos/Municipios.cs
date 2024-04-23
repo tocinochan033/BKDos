@@ -516,10 +516,7 @@ namespace Proyecto_AdministracionOrgDatos
             "Tlaltenango de Sánchez Román", "Valparaíso", "Vetagrande", "Villa de Cos", "Villa García", "Villa González Ortega",
             "Villa Hidalgo", "Villanueva", "Zacatecas", "Trancoso"
         });
-
-            municipiosPorEstado.Add("Extranjero", new List<string> {
-    "Extranjero"
-});
+            
         }
 
         public void LlenarComboBoxMunicipios(string estado)
