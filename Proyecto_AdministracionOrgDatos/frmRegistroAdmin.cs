@@ -122,10 +122,38 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void newAdminButton_Click(object sender, EventArgs e)
         {
-          
-             
+            if (HayCamposVacios())
+            {
+                MessageBox.Show("Favor de no olvidar todos los datos en casa.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                
+                for (int i = 0; i < tabControl1.TabPages.Count; i++)
+                {
+                    foreach (Control control in tabControl1.TabPages[i].Controls)
+                    {
+                        if (control is System.Windows.Forms.TextBox textBox && string.IsNullOrEmpty(textBox.Text))
+                        {
+                            tabControl1.SelectTab(i);
+                            textBox.Focus();
+                            return; // Terminamos la búsqueda después de moverse a la pestaña adecuada
+                        }
+                        else if (control is System.Windows.Forms.ComboBox comboBox && comboBox.SelectedIndex == -1)
+                        {
+                            tabControl1.SelectTab(i);
+                            comboBox.Focus();
+                            return; // Terminamos la búsqueda después de moverse a la pestaña adecuada
+                        }
+                    }
+                }
+            }
 
-                Conectar();
+            string correoElectronico = correoTxt.Text;
+            if (!correoElectronico.Contains("@") || !correoElectronico.EndsWith(".com"))
+            {
+                MessageBox.Show("Por favor, ingrese una dirección de correo electrónico válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;//Detener la ejecucion del metodo si el correo electronico no es valido
+            }
+
+            Conectar();
                 Sql = "";
                 Sql = "INSERT INTO Usuarios (Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin, Estado) values (@Usuario, @Contrasena, @Correo,@Rol, @NumeroTelefonico, @Contra_admin, @Estado)";
                 Comando = new SqlCommand(Sql, Conexion);
@@ -351,6 +379,29 @@ namespace Proyecto_AdministracionOrgDatos
             Form loginForm = new FormLogin_ESA();
             this.Hide(); 
             loginForm.Show();
+        }
+
+        private bool HayCamposVacios()
+        {
+            // Suponiendo que los controles están directamente en los TabPage
+            // foreach (tipo elemento in colección) .TabPages(Toma todas las paginas del TabControl
+            foreach (TabPage tabPage in tabControl1.TabPages)
+            {
+                // foreach (tipo elemento in colección) .Controls(Obtiene todos los controles dentro del tabPage)
+                foreach (Control control in tabPage.Controls)
+                {
+                    //Si hay un control de tipo Textbox y su valor string esta nulo o vacio, regresara true
+                    if (control is System.Windows.Forms.TextBox textBox && string.IsNullOrEmpty(textBox.Text))
+                    {
+                        return true;
+
+                    }
+                    //Si hay un control de tipo ComboBox y su valor string esta nulo o vacio, regresara true
+                    else if (control is System.Windows.Forms.ComboBox comboBox && comboBox.SelectedIndex == -1)
+                        return true;
+                }
+            }
+            return false; //Regresa falso si ningun campo esta vacio
         }
     }
 }

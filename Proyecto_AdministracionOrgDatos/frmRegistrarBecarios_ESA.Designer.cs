@@ -101,6 +101,7 @@
             this.lblInstruccionModificar = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblInstruccionApellidoMaterno = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Agregar)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -202,7 +203,7 @@
             this.dgv_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgv_Agregar.GridColor = System.Drawing.Color.Silver;
             this.dgv_Agregar.Location = new System.Drawing.Point(369, 507);
-            this.dgv_Agregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_Agregar.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_Agregar.Name = "dgv_Agregar";
             this.dgv_Agregar.ReadOnly = true;
             this.dgv_Agregar.RowHeadersWidth = 51;
@@ -253,7 +254,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(371, 143);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(916, 341);
@@ -261,6 +262,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lblInstruccionApellidoMaterno);
             this.tabPage1.Controls.Add(this.cmbEstCivil);
             this.tabPage1.Controls.Add(this.pictureBox15);
             this.tabPage1.Controls.Add(this.pictureBox14);
@@ -280,9 +282,9 @@
             this.tabPage1.Controls.Add(this.txtApaterno);
             this.tabPage1.Controls.Add(this.lblApaterno);
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(908, 311);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos personales";
@@ -302,7 +304,7 @@
             "DIVORCIADO",
             "VIUDO"});
             this.cmbEstCivil.Location = new System.Drawing.Point(452, 133);
-            this.cmbEstCivil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEstCivil.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEstCivil.Name = "cmbEstCivil";
             this.cmbEstCivil.Size = new System.Drawing.Size(155, 29);
             this.cmbEstCivil.TabIndex = 91;
@@ -311,7 +313,7 @@
             // 
             this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
             this.pictureBox15.Location = new System.Drawing.Point(623, 81);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(207, 12);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -322,7 +324,7 @@
             // 
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
             this.pictureBox14.Location = new System.Drawing.Point(401, 81);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(207, 12);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -333,7 +335,7 @@
             // 
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
             this.pictureBox12.Location = new System.Drawing.Point(79, 159);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(172, 12);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -344,7 +346,7 @@
             // 
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
             this.pictureBox11.Location = new System.Drawing.Point(76, 81);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(311, 12);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -357,7 +359,7 @@
             this.txtFechanac.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechanac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtFechanac.Location = new System.Drawing.Point(623, 133);
-            this.txtFechanac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFechanac.Margin = new System.Windows.Forms.Padding(4);
             this.txtFechanac.Name = "txtFechanac";
             this.txtFechanac.Size = new System.Drawing.Size(205, 29);
             this.txtFechanac.TabIndex = 70;
@@ -385,7 +387,7 @@
             "MUJER",
             "OTROS..."});
             this.CBGenero.Location = new System.Drawing.Point(269, 133);
-            this.CBGenero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CBGenero.Margin = new System.Windows.Forms.Padding(4);
             this.CBGenero.Name = "CBGenero";
             this.CBGenero.Size = new System.Drawing.Size(169, 29);
             this.CBGenero.TabIndex = 67;
@@ -503,9 +505,9 @@
             this.tabPage2.Controls.Add(this.txtDomicilio);
             this.tabPage2.Controls.Add(this.lblDomicilio);
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(908, 311);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Contacto";
@@ -540,7 +542,7 @@
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
             this.pictureBox10.Location = new System.Drawing.Point(860, 325);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(299, 12);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -551,7 +553,7 @@
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(708, 220);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(163, 12);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -562,7 +564,7 @@
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.Location = new System.Drawing.Point(140, 135);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(731, 12);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -573,7 +575,7 @@
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(485, 85);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(385, 12);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -584,7 +586,7 @@
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(24, 85);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(455, 12);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -600,7 +602,7 @@
             this.cmbEstadoNac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbEstadoNac.FormattingEnabled = true;
             this.cmbEstadoNac.Location = new System.Drawing.Point(24, 197);
-            this.cmbEstadoNac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEstadoNac.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEstadoNac.Name = "cmbEstadoNac";
             this.cmbEstadoNac.Size = new System.Drawing.Size(260, 29);
             this.cmbEstadoNac.TabIndex = 81;
@@ -748,9 +750,9 @@
             this.tabPage3.Controls.Add(this.txtCarrera);
             this.tabPage3.Controls.Add(this.lblCarrera);
             this.tabPage3.Location = new System.Drawing.Point(4, 26);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(908, 311);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Datos academicos";
@@ -760,7 +762,7 @@
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(639, 81);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(176, 12);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -771,7 +773,7 @@
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(395, 81);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(237, 12);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -782,7 +784,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(76, 81);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(309, 12);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -793,7 +795,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(823, 133);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -811,7 +813,7 @@
             "Semestral",
             "Cuatrimestral"});
             this.txtModelo.Location = new System.Drawing.Point(637, 133);
-            this.txtModelo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtModelo.Margin = new System.Windows.Forms.Padding(4);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(176, 29);
             this.txtModelo.TabIndex = 83;
@@ -846,7 +848,7 @@
             this.cmbCCT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbCCT.FormattingEnabled = true;
             this.cmbCCT.Location = new System.Drawing.Point(77, 133);
-            this.cmbCCT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCCT.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCCT.Name = "cmbCCT";
             this.cmbCCT.Size = new System.Drawing.Size(535, 29);
             this.cmbCCT.TabIndex = 79;
@@ -942,7 +944,7 @@
             this.cmbFiltroModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbFiltroModificar.FormattingEnabled = true;
             this.cmbFiltroModificar.Location = new System.Drawing.Point(27, 66);
-            this.cmbFiltroModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbFiltroModificar.Margin = new System.Windows.Forms.Padding(4);
             this.cmbFiltroModificar.Name = "cmbFiltroModificar";
             this.cmbFiltroModificar.Size = new System.Drawing.Size(193, 29);
             this.cmbFiltroModificar.TabIndex = 70;
@@ -953,7 +955,7 @@
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Location = new System.Drawing.Point(1295, 170);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(253, 254);
@@ -964,9 +966,9 @@
             this.tabPage4.Controls.Add(this.btnAgregar_ESA);
             this.tabPage4.Controls.Add(this.btnEliminar);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage4.Size = new System.Drawing.Size(245, 225);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Adicion y eliminacion";
@@ -980,9 +982,9 @@
             this.tabPage5.Controls.Add(this.txtModificacion);
             this.tabPage5.Controls.Add(this.btnModificar);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage5.Size = new System.Drawing.Size(245, 225);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Modificacion";
@@ -992,7 +994,7 @@
             // 
             this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
             this.pictureBox17.Location = new System.Drawing.Point(27, 142);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(195, 12);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1014,11 +1016,23 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
             this.pictureBox9.Location = new System.Drawing.Point(263, -1);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(1359, 118);
             this.pictureBox9.TabIndex = 72;
             this.pictureBox9.TabStop = false;
+            // 
+            // lblInstruccionApellidoMaterno
+            // 
+            this.lblInstruccionApellidoMaterno.AutoSize = true;
+            this.lblInstruccionApellidoMaterno.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblInstruccionApellidoMaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.lblInstruccionApellidoMaterno.Location = new System.Drawing.Point(618, 7);
+            this.lblInstruccionApellidoMaterno.Name = "lblInstruccionApellidoMaterno";
+            this.lblInstruccionApellidoMaterno.Size = new System.Drawing.Size(247, 20);
+            this.lblInstruccionApellidoMaterno.TabIndex = 73;
+            this.lblInstruccionApellidoMaterno.Text = "(Escribir \"X\" en caso de no tenerlo)";
+            this.lblInstruccionApellidoMaterno.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmRegistrarBecarios_ESA
             // 
@@ -1145,5 +1159,6 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ComboBox cmbNacionalidad;
+        private System.Windows.Forms.Label lblInstruccionApellidoMaterno;
     }
 }
