@@ -200,6 +200,7 @@
             this.Name = "FirmaElectronica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FirmaElectronica";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FirmaElectronica_FormClosing);
             this.Load += new System.EventHandler(this.FirmaElectronica_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

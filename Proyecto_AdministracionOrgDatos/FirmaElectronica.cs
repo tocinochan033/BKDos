@@ -1,10 +1,12 @@
-﻿using System;
+﻿using iTextSharp.text.pdf.intern;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Media;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
@@ -108,6 +110,24 @@ namespace Proyecto_AdministracionOrgDatos
             {
                 Bitmap btm = BM.Clone(new Rectangle(0,0,Lienzo.Width,Lienzo.Height),BM.PixelFormat);
                 btm.Save(GuardarF.FileName,ImageFormat.Jpeg);
+            }
+        }
+
+        private void FirmaElectronica_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                SystemSounds.Exclamation.Play();
+                // El usuario ha hecho clic en la "X" para cerrar la ventana
+                // Puedes poner aquí el código que deseas ejecutar antes de que se cierre la ventana
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea cerrar la ventana?", "Confirmar cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Verificar la respuesta del usuario
+                if (result == DialogResult.No)
+                {
+                    // Cancelar el cierre de la ventana si el usuario selecciona "No"
+                    e.Cancel = true;
+                }
             }
         }
 
