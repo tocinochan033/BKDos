@@ -22,6 +22,9 @@ namespace Proyecto_AdministracionOrgDatos
         frmRegistrarBecarios_ESA PantallaRegistro;
         Mostrar_datos PantallaConsulta;
         generarPDF PantallaPDF;
+        frm_SubirPDF PantallaSubir;
+       
+
 
         //Variable para el calculo de la inactividad
         //private Timer temporizadorInactividad;
@@ -184,6 +187,21 @@ namespace Proyecto_AdministracionOrgDatos
                 PantallaPDF.FormClosed += PantallasCerradas;
                 PantallaPDF.MdiParent = this;
                 PantallaPDF.Show();
+
+            }
+            DatosInactividad.control = true; //Indicador
+            timerInactividad.Enabled = false; //Detener temporizador(aplica solo al menu)
+        }
+
+        private void btnSubirDocumentos_ESA_Click(object sender, EventArgs e)
+        {
+
+            if (formIsOpen("frm_SubirPDF") == false)
+            {
+                PantallaSubir = new frm_SubirPDF();
+                PantallaSubir.FormClosed += PantallasCerradas;
+                PantallaSubir.MdiParent = this;
+                PantallaSubir.Show();
 
             }
             DatosInactividad.control = true; //Indicador
