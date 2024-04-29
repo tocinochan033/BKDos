@@ -22,7 +22,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         /*-------------------------INSTANCIAS-----------------------------*/
         //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
-        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-1M2HN6J; Initial Catalog = BKDOS; integrated security=true");
+        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
 
         //Comando objeto del tipo SQLcommand para representar las instrucciones SQL
         SqlCommand Comando;
