@@ -24,7 +24,7 @@ namespace Proyecto_AdministracionOrgDatos
         /*-------------------------INSTANCIAS-----------------------------*/
         //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
 
-        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
+        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-EOG5OVI; Initial Catalog = BKDOS; integrated security=true");
         //SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-EOG5OVI; Initial Catalog = BKDOS; integrated security=true");
 
 
@@ -44,12 +44,14 @@ namespace Proyecto_AdministracionOrgDatos
         // DESKTOP-LRR3RR8\SQLEXPRESS
         //DESKTOP-JGTCE3J
         //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER
-        String Servidor = @"DESKTOP-JGTCE3J";
+        String Servidor = @"DESKTOP-EOG5OVI";
         //String Servidor = @"DESKTOP-EOG5OVI";
 
         //Variable de tipo string para almacenar el nombre de la base de datos
         String Base_Datos = "BKDOS";
         int indice = 0;
+
+        Form loginForm = new FormLogin_ESA();
 
         /*--------------------------Metodo Conectar--------------------------*/
         public void Conectar()
@@ -438,6 +440,28 @@ namespace Proyecto_AdministracionOrgDatos
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmRegistroAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                SystemSounds.Exclamation.Play();
+                // El usuario ha hecho clic en la "X" para cerrar la ventana
+                // Puedes poner aquí el código que deseas ejecutar antes de que se cierre la ventana
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea cerrar la ventana?", "Confirmar cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Verificar la respuesta del usuario
+                if (result == DialogResult.No)
+                {
+                    // Cancelar el cierre de la ventana si el usuario selecciona "No"
+                    e.Cancel = true;
+                }
+                else
+                {
+                    loginForm.Show();
+                }
+            }
         }
     }
 }

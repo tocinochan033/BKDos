@@ -24,7 +24,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         /*-------------------------INSTANCIAS-----------------------------*/
         //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
-        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
+        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-EOG5OVI; Initial Catalog = BKDOS; integrated security=true");
 
         //Comando objeto del tipo SQLcommand para representar las instrucciones SQL
         SqlCommand Comando;
@@ -42,7 +42,7 @@ namespace Proyecto_AdministracionOrgDatos
         // DESKTOP-LRR3RR8\SQLEXPRESS
         //DESKTOP-JGTCE3J
         //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER
-        String Servidor = @"DESKTOP-JGTCE3J";
+        String Servidor = @"DESKTOP-EOG5OVI";
 
         //Variable de tipo string para almacenar el nombre de la base de datos
         String Base_Datos = "BKDOS";

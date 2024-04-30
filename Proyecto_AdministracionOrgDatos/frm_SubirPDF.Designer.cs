@@ -40,11 +40,12 @@
             this.dgvMostrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMostrar.GridColor = System.Drawing.Color.Silver;
-            this.dgvMostrar.Location = new System.Drawing.Point(119, 157);
+            this.dgvMostrar.Location = new System.Drawing.Point(159, 193);
+            this.dgvMostrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvMostrar.Name = "dgvMostrar";
             this.dgvMostrar.ReadOnly = true;
             this.dgvMostrar.RowHeadersWidth = 51;
-            this.dgvMostrar.Size = new System.Drawing.Size(636, 185);
+            this.dgvMostrar.Size = new System.Drawing.Size(848, 228);
             this.dgvMostrar.TabIndex = 74;
             // 
             // btnSubir
@@ -53,9 +54,10 @@
             this.btnSubir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubir.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnSubir.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSubir.Location = new System.Drawing.Point(119, 366);
+            this.btnSubir.Location = new System.Drawing.Point(159, 450);
+            this.btnSubir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSubir.Name = "btnSubir";
-            this.btnSubir.Size = new System.Drawing.Size(113, 37);
+            this.btnSubir.Size = new System.Drawing.Size(151, 46);
             this.btnSubir.TabIndex = 77;
             this.btnSubir.Text = "Subir PDF";
             this.btnSubir.UseVisualStyleBackColor = false;
@@ -67,23 +69,26 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnSalir.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSalir.Location = new System.Drawing.Point(642, 366);
+            this.btnSalir.Location = new System.Drawing.Point(856, 450);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(113, 37);
+            this.btnSalir.Size = new System.Drawing.Size(151, 46);
             this.btnSalir.TabIndex = 78;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             // 
             // frm_SubirPDF
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnSubir);
             this.Controls.Add(this.dgvMostrar);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frm_SubirPDF";
             this.Text = "frm_SubirPDF";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_SubirPDF_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).EndInit();
             this.ResumeLayout(false);
 
