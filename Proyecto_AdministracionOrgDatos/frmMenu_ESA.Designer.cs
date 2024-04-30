@@ -67,6 +67,7 @@
             this.btnSubirDocumentos_ESA.Text = "Subir documentos";
             this.btnSubirDocumentos_ESA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSubirDocumentos_ESA.UseVisualStyleBackColor = false;
+            this.btnSubirDocumentos_ESA.Click += new System.EventHandler(this.btnSubirDocumentos_ESA_Click);
             // 
             // btnRegistrarUsuarios_ESA
             // 
