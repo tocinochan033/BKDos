@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="Additional_Effects.cs" />
     <Compile Include="DatosInactividad.cs" />
+    <Compile Include="DB_Conexion.cs" />
     <Compile Include="FirmaElectronica.cs">
       <SubType>Form</SubType>
     </Compile>
