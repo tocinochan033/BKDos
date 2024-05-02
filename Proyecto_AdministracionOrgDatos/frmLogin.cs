@@ -98,45 +98,49 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnInicioSesion_ESA_Click(object sender, EventArgs e)
         {
-            /*Metodo con bd*/
-            try
-            {
-
-                //Invocacion del metodo conectar
-                Conectar();
-                //comando sql para seleccionar los campos de que tablas se obtendran
-                using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contrasena FROM Usuarios WHERE Usuario='" + txtUsuario_ESA.Text + "' AND Contrasena='" + txtContraseña_ESA.Text + "'", Conexion))
+            /*using (SqlConnection con = DB_Conexion.GetConnection())
+            {*/
+                /*Metodo con bd*/
+                try
                 {
-                    //se ejecuta la variable para leer el comando de ejecutar
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    //si lee los datos corrrectos
-                    if (dr.Read())
-                    {
-                        //Se muestra los otros datos
-                        Form objMenu_ACO = new frmMenu_ESA();
-                        objMenu_ACO.Show();
-                        this.Hide();
 
-                    }
-                    else
+                    //Invocacion del metodo conectar
+                    Conectar();
+                    //comando sql para seleccionar los campos de que tablas se obtendran
+                    using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contrasena FROM Usuarios WHERE Usuario='" + txtUsuario_ESA.Text + "' AND Contrasena='" + txtContraseña_ESA.Text + "'", Conexion))
                     {
-                        //Cuando no se encontro la informacion
-                        errorLogin.Visible = true;
-                        txtUsuario_ESA.Focus();
-                        SystemSounds.Exclamation.Play();
-                        txtContraseña_ESA.Text = "";
-                        txtUsuario_ESA.Text = "";
-                       
+                        //se ejecuta la variable para leer el comando de ejecutar
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        //si lee los datos corrrectos
+                        if (dr.Read())
+                        {
+                            //Se muestra los otros datos
+                            Form objMenu_ACO = new frmMenu_ESA();
+                            objMenu_ACO.Show();
+                            this.Hide();
 
-                       
+                        }
+                        else
+                        {
+                            //Cuando no se encontro la informacion
+                            errorLogin.Visible = true;
+                            txtUsuario_ESA.Focus();
+                            SystemSounds.Exclamation.Play();
+                            txtContraseña_ESA.Text = "";
+                            txtUsuario_ESA.Text = "";
+
+
+
+                        }
                     }
+                   Conexion.Close();
                 }
-                Conexion.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+           // }
+              
         }
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
@@ -150,13 +154,14 @@ namespace Proyecto_AdministracionOrgDatos
         private void frmRegistrarButton_Click(object sender, EventArgs e)
         {
             //Se tiene que acceder por medio por contraseña
-        
-
             try
             {
+
+                /*using (SqlConnection con = DB_Conexion.GetConnection())
+                {*/
                 // Verificar cuando se equivoca el usuario
                 //Invocacion del metodo conectar
-                Conectar();
+               Conectar();
                 string usuario = Interaction.InputBox("Favor de confirmar usuario", "Usuario");
                 string confirmacion = Interaction.InputBox("Favor de confirmar contraseña de administrador", "Contraseña");
                 //using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contrasena FROM Usuarios WHERE Usuario='" + txtUsuario_ESA.Text + "' AND Contrasena='" + txtContraseña_ESA.Text + "'", Conexion))
@@ -164,7 +169,7 @@ namespace Proyecto_AdministracionOrgDatos
                 {
                     SqlDataReader dr = cmd.ExecuteReader();
 
-                    if(dr.Read())
+                    if (dr.Read())
                     {
                         Form adminRegistro = new frmRegistroAdmin();
                         adminRegistro.Show();
@@ -176,11 +181,14 @@ namespace Proyecto_AdministracionOrgDatos
                         MessageBox.Show("El Usuario y/o Contraseña Administrador INCORRECTOS");
                         login.Show();
                         this.Hide();
-                       
-                        
+
+
                     }
                 }
-                Conexion.Close();
+               Conexion.Close();
+            //}
+             
+               
             }
             catch(Exception es)
             {
