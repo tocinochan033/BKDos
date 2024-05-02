@@ -320,15 +320,6 @@ namespace Proyecto_AdministracionOrgDatos
             LienzoF.Show();
         }
 
-        public void CargarFuentes()
-        {
-            // Cargar las fuente desde el archivo TTF
-            string nombreFuente = "coolveticaRG.otf";
-            fontPers.CargarFuentePersonalizada(nombreFuente);
-            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
-            fontPers.AplicarFuente(lblTitulo_ESA, 28, FontStyle.Regular);
-        }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             DatosInactividad.control = false; //Indicador al cerrar este formulario
@@ -350,25 +341,6 @@ namespace Proyecto_AdministracionOrgDatos
 
 
             Conexion.Close();
-        }
-        public void RefrescarDatos()
-        {
-            Conectar();
-            Tabla.Clear();
-            dgvMostrar.ClearSelection();
-
-            // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
-            Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
-              "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
-              "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 1 ";
-            Adaptador = new SqlDataAdapter(Sql, Conexion);
-            Adaptador.Fill(Tabla);
-            dgvMostrar.DataSource = Tabla;
-
-
-
-            Conexion.Close();
-
-        }
+        }      
     }
 }

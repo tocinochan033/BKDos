@@ -89,42 +89,7 @@ namespace Proyecto_AdministracionOrgDatos
             InitializeComponent();
             LlenarDGV();
            
-        }
-
-        /* private void cargaDatos() //Carga los datos al datagridview
-         {
-             //Imprime los datos guardados del archivo al datagridview
-             int indiceNuevoRenglon;
-             string nombre, correo, numero, rol, contraseña;
-
-             FileStream loginStream = new FileStream("login.txt", FileMode.OpenOrCreate, FileAccess.Read);
-
-             using (StreamReader lector = new StreamReader(loginStream))
-             {
-                 string renglon = lector.ReadLine();
-                 while (renglon != null)
-                 {
-                     string[] datos = renglon.Split(',');
-
-                     indiceNuevoRenglon = administradoresDataGrid.Rows.Add();
-
-                     nombre = datos[0];
-                     correo = datos[1];
-                     rol = datos[2];
-                     numero = datos[3];
-                     contraseña = datos[4];
-
-                     administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[0].Value = nombre;
-                     administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[1].Value = correo;
-                     administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[2].Value = rol;
-                     administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[3].Value = numero;
-                     administradoresDataGrid.Rows[indiceNuevoRenglon].Cells[4].Value = contraseña;
-
-                     renglon = lector.ReadLine();
-                 }
-                 loginStream.Close();
-             }
-         }*/
+        }        
 
         private void newAdminButton_Click(object sender, EventArgs e)
         {
@@ -299,36 +264,7 @@ namespace Proyecto_AdministracionOrgDatos
              
              
              */
-        }
-
-        private void confirmarTodoButton_Click(object sender, EventArgs e)
-        {
-            //Boton Confirmar todo
-          //  sobreescribirDatos();
-            this.Hide();
-        }
-
-       /* private void sobreescribirDatos()
-        {
-            ///Se guardan los datos de los becados en el archivo txt
-            ///Se tiene que sobreescribir ya que si es que se eliminan datos
-            ///los indices estarian mal para las siguientes veces que se desplegara el programa
-            FileStream login = new FileStream("login.txt", FileMode.Create, FileAccess.Write);
-            using (StreamWriter writer = new StreamWriter(login))
-            {
-                //Se recorren todas las filas del datagridview
-                foreach (DataGridViewRow row in administradoresDataGrid.Rows)
-                {
-                    if (!row.IsNewRow) //borra las lineas vacios del archivo !NO BORRAR!
-                    {
-                        //nombre,correo,rol,numero
-                        writer.WriteLine($"{row.Cells[0].Value},{row.Cells[1].Value},{row.Cells[2].Value},{row.Cells[3].Value}");
-                    }
-                }
-            }
-            //Se terminan de guardar los datos y se cierra el archivo
-            login.Close();
-        }*/
+        }     
 
         public void CargarFuentes()
         {
@@ -375,31 +311,10 @@ namespace Proyecto_AdministracionOrgDatos
             Sql = "SELECT Id_Usuario, Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin from Usuarios WHERE Estado = 1";
             Adaptador = new SqlDataAdapter(Sql, Conexion);
             Adaptador.Fill(Tabla);
-            administradoresDataGrid.DataSource = Tabla;
-
-
-
-            //Query Segunda tabla
-            /*  Sql = "SELECT Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono FROM DatosContacto";
-              Adaptador = new SqlDataAdapter(Sql, Conexion);
-              Adaptador.Fill(Tabla);
-              dgv_Agregar.DataSource = Tabla;
-
-              //Query tercera tabla
-              Sql = "SELECT Carrera, Periodo, Promedio, Modelo FROM DatosAcademicos";
-              Adaptador = new SqlDataAdapter(Sql, Conexion);
-              Adaptador.Fill(Tabla);
-              dgv_Agregar.DataSource = Tabla;*/
+            administradoresDataGrid.DataSource = Tabla;     
 
             Conexion.Close();
 
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            Form loginForm = new FormLogin_ESA();
-            this.Hide(); 
-            loginForm.Show();
         }
 
         private bool HayCamposVacios()

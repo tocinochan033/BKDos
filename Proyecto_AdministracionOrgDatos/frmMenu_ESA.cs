@@ -71,12 +71,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         //Configuracion del boton de Registrar y modificar
         private void btnRegistrarUsuarios_ESA_Click(object sender, EventArgs e)
-        {
-            /*
-            Form objRegistrarUsuarios_ACO = new frmRegistrarBecarios_ESA();
-            objRegistrarUsuarios_ACO.Show();
-            this.Hide();*/
-
+        {        
             //Se comprueba si ese formulario existe para mostrarlo o crearlo
             if(formIsOpen("frmRegistrarBecarios_ESA")==false)
             {
@@ -112,11 +107,6 @@ namespace Proyecto_AdministracionOrgDatos
         //Configuracion del boton de Consultas
         private void btnConsultar_ESA_Click(object sender, EventArgs e)
         {
-            /*
-            Form pbjMostrarDatos = new Mostrar_datos();
-            pbjMostrarDatos.Show();
-            this.Hide();*/
-
             //Se comprueba si ese formulario existe para mostrarlo o crearlo
             if (formIsOpen("Mostrar_datos") == false)
             {
@@ -160,16 +150,7 @@ namespace Proyecto_AdministracionOrgDatos
             //validando la inactividad
             if (DatosInactividad.control == false)
             {    timerInactividad.Enabled = true; }
-        }
-
-        public void CargarFuentes()
-        {
-            // Cargar las fuente desde el archivo TTF
-            string nombreFuente = "coolveticaRG.otf";
-            fontPers.CargarFuentePersonalizada(nombreFuente);
-            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
-            fontPers.AplicarFuente(label4, 48, FontStyle.Regular);
-        }
+        }        
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
         private void FechaHora1_Tick(object sender, EventArgs e)

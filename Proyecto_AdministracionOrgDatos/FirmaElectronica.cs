@@ -130,16 +130,5 @@ namespace Proyecto_AdministracionOrgDatos
                 }
             }
         }
-
-        public void CargarFuentes()
-        {
-            // Cargar las fuente desde el archivo TTF
-            string nombreFuente = "coolveticaRG.otf";
-            fontPers.CargarFuentePersonalizada(nombreFuente);
-            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
-            fontPers.AplicarFuente(lblTitulo_ESA, 28, FontStyle.Regular);
-        }
-
-
     }
 }

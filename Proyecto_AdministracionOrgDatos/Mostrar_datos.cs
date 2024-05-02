@@ -140,44 +140,13 @@ namespace Proyecto_AdministracionOrgDatos
         {
             
 
-        }
-
-        private void Guardar()
-        {
-            //Se guardan los datos de los becados en el archivo txt
-            //Se tiene que sobreescribir ya que si es que se eliminan datos
-            //los indices estarian mal para las siguientes veces que se desplegara el programa
-            FileStream becados = new FileStream("Becados.txt", FileMode.Create, FileAccess.Write);
-            using (StreamWriter writer = new StreamWriter(becados))
-            {
-                //Se recorren todas las filas del datagridview
-                foreach (DataGridViewRow row in dgvMostrar.Rows)
-                {
-                    writer.WriteLine($"{row.Cells[0].Value},{row.Cells[1].Value},{row.Cells[2].Value},{row.Cells[3].Value}," +
-                     $"{row.Cells[4].Value},{row.Cells[5].Value},{row.Cells[6].Value},{row.Cells[7].Value}," +
-                     $"{row.Cells[8].Value},{row.Cells[9].Value},{row.Cells[10].Value},{row.Cells[11].Value}," +
-                     $"{row.Cells[12].Value},{row.Cells[13].Value},{row.Cells[14].Value},{row.Cells[15].Value}," +
-                     $"{row.Cells[16].Value},{row.Cells[17].Value},{row.Cells[18].Value},{row.Cells[19].Value}");
-
-                }
-            }
-            //Se terminan de guardar los datos y se cierra el archivo
-            becados.Close();
-
-        }
+        }        
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             DatosInactividad.control = false; //Indicador al cerrar este formulario
             this.Close();
         }
-
-        private void PantallaRegistroCerrada(object sender, FormClosedEventArgs e)
-        {
-            PantallaMenu = null;
-        }
-
-
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
@@ -240,11 +209,6 @@ namespace Proyecto_AdministracionOrgDatos
 
         }
 
-        private void FechaC_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnResetFiltro_Click(object sender, EventArgs e)
         {
             txtFiltro.Text = "";
@@ -266,11 +230,7 @@ namespace Proyecto_AdministracionOrgDatos
             // Aplicar la fuente a la etiqueta en lblTitulo_ESA
             fontPers.AplicarFuente(lblTitulo_ESA, 28, FontStyle.Regular);
         }
-
-        private void cmbPDFeleccion_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+    
         public void LlenarDGV()
         {
             Conectar();

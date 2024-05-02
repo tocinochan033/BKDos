@@ -22,7 +22,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         /*-------------------------INSTANCIAS-----------------------------*/
         //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
-        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
+        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-EOG5OVI; Initial Catalog = BKDOS; integrated security=true");
 
         //Comando objeto del tipo SQLcommand para representar las instrucciones SQL
         SqlCommand Comando;
@@ -40,7 +40,7 @@ namespace Proyecto_AdministracionOrgDatos
         // DESKTOP-LRR3RR8\SQLEXPRESS
         //DESKTOP-JGTCE3J
         //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER
-        String Servidor = @"DESKTOP-JGTCE3J";
+        String Servidor = @"DESKTOP-EOG5OVI";
 
         //Variable de tipo string para almacenar el nombre de la base de datos
         String Base_Datos = "BKDOS";
@@ -100,14 +100,6 @@ namespace Proyecto_AdministracionOrgDatos
             //Inicializacion del temporizador
             temporizadorInactividad.Start();
 
-            /*
-            //Inicializacion de combo box del modelo 
-            txtModelo.Items.Add("Semestre");
-            txtModelo.Items.Add("Cuatrimestre");
-            */
-
-
-
             //Inicializacion de las opciones de modificacion
             cmbFiltroModificar.Items.Add("A.Paterno");
             cmbFiltroModificar.Items.Add("A.Materno");
@@ -129,78 +121,7 @@ namespace Proyecto_AdministracionOrgDatos
             cmbFiltroModificar.Items.Add("Promedio");
             cmbFiltroModificar.Items.Add("CCT");
             cmbFiltroModificar.Items.Add("Modelo");
-
-            //string aPaterno, aMaterno, nombres, fechanac, edad, curp, genero, estado_civil;
-            //string domicilio, codigo_postal, nacionalidad, estado_nacimiento, municipio, correo_electronico, telefono;
-            //string carrera, periodo, promedio, cct, modelo;
-            //int indicieNuevoRenglon;
-
-            /*
-            //Abrimos el archivo de texto en modo lectura
-            FileStream becados = new FileStream("Becados.txt", FileMode.OpenOrCreate, FileAccess.Read);
-
-            //Leemos linea por linea y cargamos esta misma en el datagridview
-            using (StreamReader lector = new StreamReader(becados))
-            {
-                string renglon = lector.ReadLine();
-                while (renglon != null)
-                {
-                    //Se usa el metodo split para leer los datos de manera individual
-                    string[] datos = renglon.Split(',');
-
-                    //Adicionamos nuevo renglon y regresamos su indice
-                    indicieNuevoRenglon = dgv_Agregar.Rows.Add();
-
-                    //Asignamos el valor a las variables
-                    aPaterno = datos[0];
-                    aMaterno = datos[1];
-                    nombres = datos[2];
-                    fechanac = datos[3];
-                    edad = datos[4];
-                    curp = datos[5];
-                    genero = datos[6];
-                    estado_civil = datos[7];
-                    domicilio = datos[8];
-                    codigo_postal = datos[9];
-                    nacionalidad = datos[10];
-                    estado_nacimiento = datos[11];
-                    municipio = datos[12];
-                    correo_electronico = datos[13];
-                    telefono = datos[14];
-                    carrera = datos[15];
-                    periodo = datos[16];
-                    promedio = datos[17];
-                    cct = datos[18];
-                    modelo = datos[19];
-
-
-                    //Colocamos la informacion en el datagridview
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[0].Value = aPaterno;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[1].Value = aMaterno;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[2].Value = nombres;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[3].Value = fechanac;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[4].Value = edad;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[5].Value = curp;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[6].Value = genero;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[7].Value = estado_civil;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[8].Value = domicilio;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[9].Value = codigo_postal;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[10].Value = nacionalidad;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[11].Value = estado_nacimiento;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[12].Value = municipio;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[13].Value = correo_electronico;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[14].Value = telefono;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[15].Value = carrera;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[16].Value = periodo;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[17].Value = promedio;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[18].Value = cct;
-                    dgv_Agregar.Rows[indicieNuevoRenglon].Cells[19].Value = modelo;
-
-
-                    renglon = lector.ReadLine();
-                }
-            }
-            becados.Close();*/
+           
             LlenarDGV();
         }
 
@@ -377,9 +298,6 @@ namespace Proyecto_AdministracionOrgDatos
             {
                 int seleccion = dgv_Agregar.CurrentRow.Index;
 
-                // dgv_Agregar.Rows[seleccion].Cells[0].Value;
-                //string nombre = txtNombres.Text.ToUpper();
-               // string ApellidoPaterno = txtApaterno.Text.ToUpper();
                 string nombre = dgv_Agregar.Rows[seleccion].Cells[3].Value.ToString().ToUpper();
                 string ApellidoPaterno = dgv_Agregar.Rows[seleccion].Cells[1].Value.ToString().ToUpper();
                 string ApellidoMaterno = dgv_Agregar.Rows[seleccion].Cells[2].Value.ToString().ToUpper();
@@ -812,9 +730,6 @@ namespace Proyecto_AdministracionOrgDatos
                         Sql = "";
                         Sql = "UPDATE DatosAcademicos set Carrera = @Carrera WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
                         Comando = new SqlCommand(Sql, Conexion);
-                        //MessageBox.Show(dgv_Agregar.Rows[seleccion].Cells[11].Value.ToString());
-                        /*MessageBox.Show(txtModificai);*/
-                        //Comando.Parameters.AddWithValue("@Id_DatosAcademicos", int.Parse(dgv_Agregar.Rows[seleccion].Cells[11].Value.ToString()));
                         Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
                         Comando.Parameters.AddWithValue("@Carrera", txtModificacion.Text);
                         try
@@ -966,29 +881,7 @@ namespace Proyecto_AdministracionOrgDatos
                 MessageBox.Show("Se produjo un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void Guardar()
-        {
-            ///Se guardan los datos de los becados en el archivo txt
-            ///Se tiene que sobreescribir ya que si es que se eliminan datos
-            ///los indices estarian mal para las siguientes veces que se desplegara el programa
-            FileStream becados = new FileStream("Becados.txt", FileMode.Create, FileAccess.Write);
-            using (StreamWriter writer = new StreamWriter(becados))
-            {
-                //Se recorren todas las filas del datagridview
-                foreach (DataGridViewRow row in dgv_Agregar.Rows)
-                {
-                    writer.WriteLine($"{row.Cells[0].Value},{row.Cells[1].Value},{row.Cells[2].Value},{row.Cells[3].Value}," +
-                        $"{row.Cells[4].Value},{row.Cells[5].Value},{row.Cells[6].Value},{row.Cells[7].Value}," +
-                        $"{row.Cells[8].Value},{row.Cells[9].Value},{row.Cells[10].Value},{row.Cells[11].Value}," +
-                        $"{row.Cells[12].Value},{row.Cells[13].Value},{row.Cells[14].Value},{row.Cells[15].Value}," +
-                        $"{row.Cells[16].Value},{row.Cells[17].Value},{row.Cells[18].Value},{row.Cells[19].Value}");
-
-                }
-            }
-            //Se terminan de guardar los datos y se cierra el archivo
-            becados.Close();
-        }
+      
 
         private void frmRegistrarBecarios_ESA_Load(object sender, EventArgs e)
         {
@@ -1242,42 +1135,7 @@ namespace Proyecto_AdministracionOrgDatos
                     return;//Detener la ejecucion del metodo si el correo electronico no es valido
                 }
 
-                txtEdad.BorderStyle = BorderStyle.None;
-
-                /*---------------------------------------------Con ARCHIVOS TEXTO--------------------------------------------*/
-                //Sirve para adicionar un nuevo renglon y guardar el indice de este mismo
-              /*  indiceNuevaFila = dgv_Agregar.Rows.Add();
-
-                //Colocamos la informacion en el DataGridView
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[0].Value = txtApaterno.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[1].Value = txtAmaterno.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[2].Value = txtNombres.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[3].Value = txtFechanac.Text;
-
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[4].Value = txtEdad.Text;
-
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[5].Value = GeneracionCURP();
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[6].Value = CBGenero.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[7].Value = cmbEstCivil.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[8].Value = txtDomicilio.Text;
-
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[9].Value = txtCodigoPostal.Text;
-
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[10].Value = txtNacionalidad.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[11].Value = cmbEstadoNac.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[12].Value = txtMunicipio.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[13].Value = correoElectronico;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[14].Value = txtTelefono.Text;
-
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[15].Value = txtCarrera.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[16].Value = txtPeriodo.Text;
-
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[17].Value = txtPromedio.Text;
-
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[18].Value = cmbCCT.Text;
-                dgv_Agregar.Rows[indiceNuevaFila].Cells[19].Value = txtModelo.Text;*/
-
-                /*-----------------------------------------------------------------------------------------------*/
+                txtEdad.BorderStyle = BorderStyle.None;             
 
                 int Id_DatosAcademicos;
                 int Id_DatosContacto;

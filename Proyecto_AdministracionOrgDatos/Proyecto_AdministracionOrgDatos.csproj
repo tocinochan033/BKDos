@@ -126,6 +126,7 @@
     <Compile Include="Municipios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servidores.cs" />
     <EmbeddedResource Include="FirmaElectronica.resx">
       <DependentUpon>FirmaElectronica.cs</DependentUpon>
     </EmbeddedResource>

@@ -98,21 +98,6 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnInicioSesion_ESA_Click(object sender, EventArgs e)
         {
-            //Si el usuario contraseña son identificables, carga al siguiente usuario. A la vez, compara el rol
-           /* if (archivoAdmin() || txtUsuario_ESA.Text == "1" && txtContraseña_ESA.Text == "1" || txtUsuario_ESA.Text == "admin" && txtContraseña_ESA.Text == "123456")
-            {
-                Form objMenu_ACO = new frmMenu_ESA();
-                objMenu_ACO.Show();
-
-                this.Hide();
-                login.Close();
-            }
-            else
-            {
-                errorLogin.Visible = true;
-                txtUsuario_ESA.Focus();
-                SystemSounds.Exclamation.Play();
-            }*/
             /*Metodo con bd*/
             try
             {
@@ -153,43 +138,6 @@ namespace Proyecto_AdministracionOrgDatos
                 MessageBox.Show(ex.ToString());
             }
         }
-
-       /* private bool archivoAdmin() //Verifica si el usuario y contraseña coinciden en la misma fila de archivo
-        {
-            try
-            {
-                using (StreamReader sr = new StreamReader(login))
-                {
-                    string linea;
-                    while ((linea = sr.ReadLine()) != null)
-                    {
-                        string[] datos = linea.Split(',');
-                        if (datos.Length >= 5)
-                        {
-                            //Posiciones dentro del arhivo
-                            //nombre,correo,numero,rol,contraseña
-                            string usuarioArchivo = datos[0];
-                            string contrasenaArchivo = datos[4];
-
-                            if (usuarioArchivo == txtUsuario_ESA.Text && contrasenaArchivo == txtContraseña_ESA.Text)
-                            {
-                                return true;
-                            }
-                        }
-                    }
-                   // login.Close();
-                }
-
-
-            }
-            catch
-            {
-                errorLogin.Visible = true;
-                SystemSounds.Exclamation.Play();
-            }
-            
-            return false;
-        }*/
 
         //Aqui estan las propiedades para agregar la fecha y la hora al programa
         private void HoraFecha_Tick(object sender, EventArgs e)
@@ -251,7 +199,6 @@ namespace Proyecto_AdministracionOrgDatos
         }
         private void FormLogin_ESA_Load(object sender, EventArgs e)
         {
-            //CargarTextoGuia();
 
             // Cargar las fuente desde el archivo TTF
             string nombreFuente = "coolveticaRG.otf";
@@ -263,18 +210,6 @@ namespace Proyecto_AdministracionOrgDatos
             fontPers.CargarFuentePersonalizada(nombreFuenteBK2);
             // Aplicar la fuente a la etiqueta en lbl4
             fontPers.AplicarFuente(label4, 47, FontStyle.Regular);
-        }
-
-        public void CargarTextoGuia()
-        {
-            //Cuando se entra, sale o cambia el texto del control, se ejecutara el metodo en txtUsuario_ESA
-            txtUsuario_ESA.Enter += (s, v) => txtGuia.CuadroTexto_Enter(txtUsuario_ESA, " Ejemplo: Usuario2134");
-            txtUsuario_ESA.Leave += (s, v) => txtGuia.CuadroTexto_Enter(txtUsuario_ESA, " Ejemplo: Usuario2134");
-            txtUsuario_ESA.TextChanged += (s, v) => txtGuia.CuadroTexto_TextChanged(txtUsuario_ESA);
-            //Cuando se entra, sale o cambia el texto del control, se ejecutara el metodo en txtContrasena_ESA
-            txtContraseña_ESA.Enter += (s, v) => txtGuia.CuadroTexto_Enter(txtContraseña_ESA, " Ejemplo: Password2781");
-            txtContraseña_ESA.Leave += (s, v) => txtGuia.CuadroTexto_Enter(txtContraseña_ESA, " Ejemplo: Password2781");
-            txtContraseña_ESA.TextChanged += (s, v) => txtGuia.CuadroTexto_TextChangedPassword(txtContraseña_ESA);
         }
 
         //Codigo para lo de ver y no ver la contraseña
