@@ -22,9 +22,7 @@ namespace Proyecto_AdministracionOrgDatos
         //  ClaseBD ClaseBd = new ClaseBD();
 
         /*-------------------------INSTANCIAS-----------------------------*/
-        //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
-
-        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
+        
         //SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-EOG5OVI; Initial Catalog = BKDOS; integrated security=true");
 
 
@@ -43,8 +41,7 @@ namespace Proyecto_AdministracionOrgDatos
         String Sql = "";
         // DESKTOP-LRR3RR8\SQLEXPRESS
         //DESKTOP-JGTCE3J
-        //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER
-        String Servidor = @"DESKTOP-JGTCE3J";
+        
         //String Servidor = @"DESKTOP-EOG5OVI";
 
         //Variable de tipo string para almacenar el nombre de la base de datos
@@ -53,30 +50,6 @@ namespace Proyecto_AdministracionOrgDatos
 
         Form loginForm = new FormLogin_ESA();
 
-        /*--------------------------Metodo Conectar--------------------------*/
-        public void Conectar()
-        {
-            try
-            {
-                Conexion.ConnectionString = "Data Source =" + Servidor + ";" +
-                "Initial Catalog =" + Base_Datos + ";" + "Integrated security = true";
-                try
-                //Bloque try catch para capturar de excepciones en ejecucion
-                {
-                    Conexion.Open();
-
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("Error al tratar de establecer la conexión " + ex.Message);
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Error en la conexión: " + ex.Message);
-            }
-        }
-        /**********************************************************************/
 
 
         /*------------------------METODO PARA CARGAR DATOS--------------------*/
@@ -137,12 +110,12 @@ namespace Proyecto_AdministracionOrgDatos
                 MessageBox.Show("Por favor, ingrese una dirección de correo electrónico válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-           
-           
-            Conectar();
+            using(SqlConnection con = DB_Conexion.GetConnection())
+            {
+               
                 Sql = "";
                 Sql = "INSERT INTO Usuarios (Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin, Estado) values (@Usuario, @Contrasena, @Correo,@Rol, @NumeroTelefonico, @Contra_admin, @Estado)";
-                Comando = new SqlCommand(Sql, Conexion);
+                Comando = new SqlCommand(Sql, con);
                 Comando.Parameters.AddWithValue("@Usuario", nombreTxt.Text);
                 Comando.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
                 Comando.Parameters.AddWithValue("@Correo", correoTxt.Text);
@@ -162,10 +135,12 @@ namespace Proyecto_AdministracionOrgDatos
                 {
                     MessageBox.Show("Error " + ex.Message);
                 }
-               
-                
+
+            }
+
+
                 camposLimpieza();
-                Conexion.Close();
+               
                 RefrescarDatos();
 
 
@@ -190,7 +165,7 @@ namespace Proyecto_AdministracionOrgDatos
             {
                 // Verificar cuando se equivoca el usuario
                 //Invocacion del metodo conectar
-                Conectar();
+               
 
                 SystemSounds.Exclamation.Play();
                 string confirmacion = Interaction.InputBox("Favor de confirmar contraseña", "Contraseña"); //messageBox con textbos incluido. Confirma contraseña
@@ -198,27 +173,32 @@ namespace Proyecto_AdministracionOrgDatos
                 //using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contrasena FROM Usuarios WHERE Usuario='" + txtUsuario_ESA.Text + "' AND Contrasena='" + txtContraseña_ESA.Text + "'", Conexion))
                 if (administradoresDataGrid.CurrentRow.Index > -1)
                 {
-                    using (SqlCommand cmd = new SqlCommand("SELECT Contra_admin FROM Usuarios WHERE Contra_admin='" + confirmacion + "'", Conexion))
+                    using(SqlConnection con = DB_Conexion.GetConnection())
                     {
-                        SqlDataReader dr = cmd.ExecuteReader();
-
-                        if (dr.Read())
-                        {
-                            EliminarAdmin();
-                            RefrescarDatos();
-                        }
-
-
-                        else
-                        {
-                            Form login = new FormLogin_ESA();
-                            MessageBox.Show("El Usuario y/o Contraseña Administrador INCORRECTOS");
-                            login.Show();
-                            this.Hide();
-
-                        }
+                        EliminarAdmin();
                     }
-                  //  Conexion.Close();
+                    RefrescarDatos();
+                    /*   using (SqlCommand cmd = new SqlCommand("SELECT Contra_admin FROM Usuarios WHERE Contra_admin='" + confirmacion + "'", Conexion))
+                       {
+                           SqlDataReader dr = cmd.ExecuteReader();
+
+                           if (dr.Read())
+                           {
+
+                               RefrescarDatos();
+                           }
+
+
+                           else
+                           {
+                               Form login = new FormLogin_ESA();
+                               MessageBox.Show("El Usuario y/o Contraseña Administrador INCORRECTOS");
+                               login.Show();
+                               this.Hide();
+
+                           }
+                       }*/
+                    //  Conexion.Close();
                 }
                 else
 
@@ -238,32 +218,32 @@ namespace Proyecto_AdministracionOrgDatos
         }
         public void EliminarAdmin()
         {
-            Conexion.Close();
-            Conectar();
+
             int seleccion = administradoresDataGrid.CurrentRow.Index;
             //dgv_Agregar.Rows.RemoveAt(dgv_Agregar.CurrentRow.Index);
-            Sql = "DELETE FROM Usuarios WHERE Id_Usuario = @Id_Usuario";
-            Comando = new SqlCommand(Sql, Conexion);
-            Comando.Parameters.AddWithValue("@Id_Usuario", administradoresDataGrid.Rows[seleccion].Cells[0].Value);
 
+            using(SqlConnection con = DB_Conexion.GetConnection())
+            {
+                Sql = "DELETE FROM Usuarios WHERE Id_Usuario = @Id_Usuario";
+                Comando = new SqlCommand(Sql, con);
+                Comando.Parameters.AddWithValue("@Id_Usuario", administradoresDataGrid.Rows[seleccion].Cells[0].Value);
+
+
+
+                //Comando Try
+                try
+                {
+                    Comando.ExecuteNonQuery();
+
+                    MessageBox.Show("Registro Eliminado");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex.Message);
+                }
+            }
            
-
-            //Comando Try
-            try
-            {
-                Comando.ExecuteNonQuery();
-
-                MessageBox.Show("Registro Eliminado");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex.Message);
-            }
-            Conexion.Close();
-            /*
-             
-             
-             */
+           
         }     
 
         public void CargarFuentes()
@@ -288,32 +268,31 @@ namespace Proyecto_AdministracionOrgDatos
 
         public void LlenarDGV()
         {
-            Conectar();
             //Query Primera Tabla
-
-            //Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
-            Sql = "SELECT Id_Usuario , Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin from Usuarios WHERE Estado = 1";
-            Adaptador = new SqlDataAdapter(Sql, Conexion);
-            Adaptador.Fill(Tabla);
-            administradoresDataGrid.DataSource = Tabla;
-
-         
-
-            Conexion.Close();
+            using(SqlConnection con = DB_Conexion.GetConnection())
+            {
+                //Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
+                Sql = "SELECT Id_Usuario , Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin from Usuarios WHERE Estado = 1";
+                Adaptador = new SqlDataAdapter(Sql, con);
+                Adaptador.Fill(Tabla);
+                administradoresDataGrid.DataSource = Tabla;
+            }
+ 
+          
         }
         public void RefrescarDatos()
         {
-            Conectar();
             Tabla.Clear();
             administradoresDataGrid.ClearSelection();
-
-            // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
-            Sql = "SELECT Id_Usuario, Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin from Usuarios WHERE Estado = 1";
-            Adaptador = new SqlDataAdapter(Sql, Conexion);
-            Adaptador.Fill(Tabla);
-            administradoresDataGrid.DataSource = Tabla;     
-
-            Conexion.Close();
+            using (SqlConnection con = DB_Conexion.GetConnection())
+            {
+                // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
+                Sql = "SELECT Id_Usuario, Usuario, Contrasena, Correo, Rol, NumeroTelefonico, Contra_admin from Usuarios WHERE Estado = 1";
+                Adaptador = new SqlDataAdapter(Sql, con);
+                Adaptador.Fill(Tabla);
+                administradoresDataGrid.DataSource = Tabla;
+            }
+           
 
         }
 

@@ -23,8 +23,7 @@ namespace Proyecto_AdministracionOrgDatos
         //  ClaseBD ClaseBd = new ClaseBD();
 
         /*-------------------------INSTANCIAS-----------------------------*/
-        //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
-        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
+     
 
         //Comando objeto del tipo SQLcommand para representar las instrucciones SQL
         SqlCommand Comando;
@@ -41,37 +40,13 @@ namespace Proyecto_AdministracionOrgDatos
         String Sql = "";
         // DESKTOP-LRR3RR8\SQLEXPRESS
         //DESKTOP-JGTCE3J
-        //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER
-        String Servidor = @"DESKTOP-JGTCE3J";
+       
 
         //Variable de tipo string para almacenar el nombre de la base de datos
         String Base_Datos = "BKDOS";
         int indice = 0;
 
-        /*--------------------------Metodo Conectar--------------------------*/
-        public void Conectar()
-        {
-            try
-            {
-                Conexion.ConnectionString = "Data Source =" + Servidor + ";" +
-                "Initial Catalog =" + Base_Datos + ";" + "Integrated security = true";
-                try
-                //Bloque try catch para capturar de excepciones en ejecucion
-                {
-                    Conexion.Open();
-
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("Error al tratar de establecer la conexión " + ex.Message);
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Error en la conexión: " + ex.Message);
-            }
-        }
-        /**********************************************************************/
+       
 
 
         /*------------------------METODO PARA CARGAR DATOS--------------------*/
