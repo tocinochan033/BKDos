@@ -26,7 +26,7 @@ namespace Proyecto_AdministracionOrgDatos
         /*CREACION DE INSTANCIAS*/
         /*-------------------------INSTANCIAS-----------------------------*/
         //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
-        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-EOG5OVI; Initial Catalog = BKDOS; integrated security=true");
+        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
 
         //Comando objeto del tipo SQLcommand para representar las instrucciones SQL
         SqlCommand Comando;
@@ -44,7 +44,7 @@ namespace Proyecto_AdministracionOrgDatos
         // DESKTOP-LRR3RR8\SQLEXPRESS
         //DESKTOP-JGTCE3J
         //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER
-        String Servidor = @"DESKTOP-EOG5OVI";
+        String Servidor = @"DESKTOP-JGTCE3J";
 
         //Variable de tipo string para almacenar el nombre de la base de datos
         String Base_Datos = "BKDOS";
@@ -103,11 +103,33 @@ namespace Proyecto_AdministracionOrgDatos
                 /*Metodo con bd*/
                 try
                 {
-
+                    string username=txtUsuario_ESA.Text;
+                    string password = txtContraseña_ESA.Text;
                     //Invocacion del metodo conectar
-                    Conectar();
+                   // Conectar();
+
+                    /*------------------------------Correccion de login--------------------------------*/
+                    
+                    if(ValidLogin(username,password))
+                    {
+                        //Se muestra los otros datos
+                        Form objMenu_ACO = new frmMenu_ESA();
+                        objMenu_ACO.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        //Cuando no se encontro la informacion
+                        errorLogin.Visible = true;
+                        txtUsuario_ESA.Focus();
+                        SystemSounds.Exclamation.Play();
+                        txtContraseña_ESA.Text = "";
+                        txtUsuario_ESA.Text = "";
+                    }
+                    
+                    /*---------------------------------------------------------------------------------*/
                     //comando sql para seleccionar los campos de que tablas se obtendran
-                    using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contrasena FROM Usuarios WHERE Usuario='" + txtUsuario_ESA.Text + "' AND Contrasena='" + txtContraseña_ESA.Text + "'", Conexion))
+                   /* using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contrasena FROM Usuarios WHERE Usuario='" + txtUsuario_ESA.Text + "' AND Contrasena='" + txtContraseña_ESA.Text + "'", Conexion))
                     {
                         //se ejecuta la variable para leer el comando de ejecutar
                         SqlDataReader dr = cmd.ExecuteReader();
@@ -122,6 +144,7 @@ namespace Proyecto_AdministracionOrgDatos
                         }
                         else
                         {
+                            MessageBox.Show("Error");
                             //Cuando no se encontro la informacion
                             errorLogin.Visible = true;
                             txtUsuario_ESA.Focus();
@@ -133,13 +156,13 @@ namespace Proyecto_AdministracionOrgDatos
 
                         }
                     }
-                   Conexion.Close();
+                   Conexion.Close();*/
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
-           // }
+          
               
         }
 
@@ -149,7 +172,40 @@ namespace Proyecto_AdministracionOrgDatos
             HoraC.Text = DateTime.Now.ToShortTimeString();
             FechaC.Text = DateTime.Now.ToShortDateString();
         }
+        
+        private bool ValidLogin (string Usuario,string Passw)
+        {
+            using (SqlConnection con = DB_Conexion.GetConnection())
+            {
+                //COUNT (1) Que seleccione solo uno
+                string query = "SELECT COUNT(1) FROM Usuarios WHERE Usuario=@Usuario AND Contrasena=@Contrasena";
 
+                SqlCommand cmd = new SqlCommand(query,con);
+                cmd.Parameters.AddWithValue("Usuario",Usuario);
+                cmd.Parameters.AddWithValue("Contrasena", Passw);
+
+                int result = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return result == 1;
+            }
+        }
+        
+        private bool ValidAdmin(string users, string confir)
+        {
+            using (SqlConnection con = DB_Conexion.GetConnection())
+            {
+                //COUNT (1) Que seleccione solo uno
+                string query = "SELECT COUNT(1) FROM Usuarios WHERE Usuario=@Usuario AND Contra_admin=@Contra_admin";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("Usuario", users);
+                cmd.Parameters.AddWithValue("Contra_admin", confir);
+
+                int result = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return result == 1;
+            }
+        }
 
         private void frmRegistrarButton_Click(object sender, EventArgs e)
         {
@@ -161,7 +217,33 @@ namespace Proyecto_AdministracionOrgDatos
                 {*/
                 // Verificar cuando se equivoca el usuario
                 //Invocacion del metodo conectar
-               Conectar();
+
+                string usuario = Interaction.InputBox("Favor de confirmar usuario", "Usuario");
+                string confirmacion = Interaction.InputBox("Favor de confirmar contraseña de administrador", "Contraseña");
+                //Invocacion del metodo conectar
+                // Conectar();
+
+                /*------------------------------Correccion de login--------------------------------*/
+
+                if (ValidAdmin(usuario, confirmacion))
+                {
+                    //Se muestra los otros datos
+                    Form adminRegistro = new frmRegistroAdmin();
+                    adminRegistro.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    //Cuando no se encontro la informacion
+                    Form login = new FormLogin_ESA();
+                    MessageBox.Show("El Usuario y/o Contraseña Administrador INCORRECTOS");
+                    login.Show();
+                    this.Hide();
+                }
+
+                /*---------------------------------------------------------------------------------*/
+
+               /* Conectar();
                 string usuario = Interaction.InputBox("Favor de confirmar usuario", "Usuario");
                 string confirmacion = Interaction.InputBox("Favor de confirmar contraseña de administrador", "Contraseña");
                 //using (SqlCommand cmd = new SqlCommand("SELECT Usuario, Contrasena FROM Usuarios WHERE Usuario='" + txtUsuario_ESA.Text + "' AND Contrasena='" + txtContraseña_ESA.Text + "'", Conexion))
@@ -185,15 +267,16 @@ namespace Proyecto_AdministracionOrgDatos
 
                     }
                 }
-               Conexion.Close();
+               Conexion.Close();*/
             //}
              
                
             }
             catch(Exception es)
             {
+                MessageBox.Show(es.ToString());
                 Console.WriteLine("No se agrego ninguna contraseña" + es); 
-                Conexion.Close();
+                //Conexion.Close();
             }
 
 
