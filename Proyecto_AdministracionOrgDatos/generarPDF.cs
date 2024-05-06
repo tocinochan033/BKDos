@@ -328,19 +328,18 @@ namespace Proyecto_AdministracionOrgDatos
 
         public void LlenarDGV()
         {
-            Conectar();
-            //Query Primera Tabla
+            using(SqlConnection con= DB_Conexion.GetConnection())
+            {
+                Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
+               "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
+               "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 1 ";
+                // Sql = "SELECT * from DatosGenerales, DatosAcademicos, DatosContacto";
+                Adaptador = new SqlDataAdapter(Sql, con);
+                Adaptador.Fill(Tabla);
+                dgvMostrar.DataSource = Tabla;
+            }
 
-            Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
-                "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
-                "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 1 ";
-            // Sql = "SELECT * from DatosGenerales, DatosAcademicos, DatosContacto";
-            Adaptador = new SqlDataAdapter(Sql, Conexion);
-            Adaptador.Fill(Tabla);
-            dgvMostrar.DataSource = Tabla;
-
-
-            Conexion.Close();
+           
         }      
     }
 }

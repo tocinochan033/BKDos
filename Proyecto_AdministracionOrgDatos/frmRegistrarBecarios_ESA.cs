@@ -21,8 +21,7 @@ namespace Proyecto_AdministracionOrgDatos
         //  ClaseBD ClaseBd = new ClaseBD();
 
         /*-------------------------INSTANCIAS-----------------------------*/
-        //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos SE BORRA
-        SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
+       
 
         //Comando objeto del tipo SQLcommand para representar las instrucciones SQL NO SE BORRA
         SqlCommand Comando;
@@ -39,37 +38,13 @@ namespace Proyecto_AdministracionOrgDatos
         String Sql = "";
         // DESKTOP-LRR3RR8\SQLEXPRESS
         //DESKTOP-JGTCE3J
-        //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER SE BORRA
-        String Servidor = @"DESKTOP-JGTCE3J";
+       
 
         //Variable de tipo string para almacenar el nombre de la base de datos
         String Base_Datos = "BKDOS";
         int indice = 0;
 
-        /*--------------------------Metodo Conectar--------------------------*/
-        public void Conectar()
-        {
-            try
-            {
-                Conexion.ConnectionString = "Data Source =" + Servidor + ";" +
-                "Initial Catalog =" + Base_Datos + ";" + "Integrated security = true";
-                try
-                //Bloque try catch para capturar de excepciones en ejecucion
-                {
-                    Conexion.Open();
-
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("Error al tratar de establecer la conexión " + ex.Message);
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Error en la conexión: " + ex.Message);
-            }
-        }
-        /**********************************************************************/
+        
 
 
         /*------------------------METODO PARA CARGAR DATOS--------------------*/
@@ -840,7 +815,7 @@ namespace Proyecto_AdministracionOrgDatos
         {
             try
             {
-                Conectar();
+               
                 //Se cargan los datos actuales en los textbox en el datagridview para actualizar sus valores
                 int seleccion = dgv_Agregar.CurrentRow.Index;
                 // Verificamos si hay una fila seleccionada
@@ -852,25 +827,29 @@ namespace Proyecto_AdministracionOrgDatos
                     // Usuario confirma eliminación
                     if (confirmacion == DialogResult.Yes)
                     {
-                        //dgv_Agregar.Rows.RemoveAt(dgv_Agregar.CurrentRow.Index);
-                        Sql = "update DatosGenerales set Estado = @Estado WHERE Id_Alumno = @Id_Alumno";
-                        Comando = new SqlCommand(Sql, Conexion);
-                        Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
+                        using(SqlConnection con = DB_Conexion.GetConnection())
+                        {
+                            //dgv_Agregar.Rows.RemoveAt(dgv_Agregar.CurrentRow.Index);
+                            Sql = "update DatosGenerales set Estado = @Estado WHERE Id_Alumno = @Id_Alumno";
+                            Comando = new SqlCommand(Sql, con);
+                            Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
+
+                            Comando.Parameters.AddWithValue("@Estado", 2);
+
+                            //Comando Try
+                            try
+                            {
+                                Comando.ExecuteNonQuery();
+
+                                MessageBox.Show("Registro Eliminado");
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error " + ex.Message);
+                            }
+                        }
+                     
                         
-                        Comando.Parameters.AddWithValue("@Estado", 2);
-
-                        //Comando Try
-                        try
-                        {
-                            Comando.ExecuteNonQuery();
-
-                            MessageBox.Show("Registro Eliminado");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error " + ex.Message);
-                        }
-                        Conexion.Close();
                     }
                 }
                 else
