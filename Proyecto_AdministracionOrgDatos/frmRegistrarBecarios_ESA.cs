@@ -21,10 +21,10 @@ namespace Proyecto_AdministracionOrgDatos
         //  ClaseBD ClaseBd = new ClaseBD();
 
         /*-------------------------INSTANCIAS-----------------------------*/
-        //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos
+        //Conexion objeto del tipo sqlConnection para conectarnos fisicamente a la base de datos SE BORRA
         SqlConnection Conexion = new SqlConnection(@"server=pc\DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true");
 
-        //Comando objeto del tipo SQLcommand para representar las instrucciones SQL
+        //Comando objeto del tipo SQLcommand para representar las instrucciones SQL NO SE BORRA
         SqlCommand Comando;
 
         //Adaptador objeto del tipo sqlDataAdapter para intercambiar datos entre una
@@ -39,7 +39,7 @@ namespace Proyecto_AdministracionOrgDatos
         String Sql = "";
         // DESKTOP-LRR3RR8\SQLEXPRESS
         //DESKTOP-JGTCE3J
-        //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER
+        //Variable del tipo string para almacenar el nombre de la instancia SQLSERVER SE BORRA
         String Servidor = @"DESKTOP-JGTCE3J";
 
         //Variable de tipo string para almacenar el nombre de la base de datos
@@ -395,18 +395,19 @@ namespace Proyecto_AdministracionOrgDatos
         private void btnModificar_Click(object sender, EventArgs e)
         {
 
-                Conectar();
+             
                 //Verificamos si hay una celda seleccionada
                 if (dgv_Agregar.CurrentRow.Index > -1)
                 {
                     //Se cargan los datos actuales en los textbox en el datagridview para actualizar sus valores
                     int seleccion = dgv_Agregar.CurrentRow.Index;
-
+                    using (SqlConnection con = DB_Conexion.GetConnection())
+                    {
                     if (cmbFiltroModificar.Text == "A.Paterno")
                     {
                         Sql = "";
                         Sql = "UPDATE DatosGenerales set ApellidoPaterno = @ApellidoPaterno WHERE Id_Alumno = @Id_Alumno";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
                         Comando.Parameters.AddWithValue("@ApellidoPaterno", txtModificacion.Text);
                         try
@@ -427,7 +428,7 @@ namespace Proyecto_AdministracionOrgDatos
                     {
                         Sql = "";
                         Sql = "UPDATE DatosGenerales set ApellidoMaterno = @ApellidoMaterno WHERE Id_Alumno = @Id_Alumno";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
                         Comando.Parameters.AddWithValue("@ApellidoMaterno", txtModificacion.Text);
                         try
@@ -449,7 +450,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                         Sql = "";
                         Sql = "UPDATE DatosGenerales set Nombres = @Nombres WHERE Id_Alumno = @Id_Alumno";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
                         Comando.Parameters.AddWithValue("@Nombres", txtModificacion.Text);
                         try
@@ -470,7 +471,7 @@ namespace Proyecto_AdministracionOrgDatos
                     {
                         Sql = "";
                         Sql = "UPDATE DatosGenerales set FechaNacimiento = @FechaNacimiento WHERE Id_Alumno = @Id_Alumno";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         // Comando.Parameters.AddWithValue("@Id_DatosContacto", ((DateTime)(dgv_Agregar.Rows[seleccion].Cells[17].Value)).ToString("dd/MM/yyyy"));
                         Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
                         Comando.Parameters.AddWithValue("@FechaNacimiento", txtModificacion.Text);
@@ -493,7 +494,7 @@ namespace Proyecto_AdministracionOrgDatos
                     {
                         Sql = "";
                         Sql = "UPDATE DatosGenerales set Edad = @Edad WHERE Id_Alumno = @Id_Alumno";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
                         Comando.Parameters.AddWithValue("@Edad", txtModificacion.Text);
                         try
@@ -516,7 +517,7 @@ namespace Proyecto_AdministracionOrgDatos
                         txtModificacion.Text = CURPMODIFICACION();
                         Sql = "";
                         Sql = "UPDATE DatosGenerales set CURP = @CURP WHERE Id_Alumno = @Id_Alumno";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
 
                         Comando.Parameters.AddWithValue("@CURP", txtModificacion.Text);
@@ -539,7 +540,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                         Sql = "";
                         Sql = "UPDATE DatosGenerales set Genero = @Genero WHERE Id_Alumno = @Id_Alumno";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
                         Comando.Parameters.AddWithValue("@Genero", txtModificacion.Text);
                         try
@@ -561,7 +562,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                         Sql = "";
                         Sql = "UPDATE DatosGenerales set EstadoCivil = @EstadoCivil WHERE Id_Alumno = @Id_Alumno";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
                         Comando.Parameters.AddWithValue("@EstadoCivil", txtModificacion.Text);
                         try
@@ -583,7 +584,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                         Sql = "";
                         Sql = "UPDATE DatosContacto set Domicilio = @Domicilio WHERE Id_DatosContacto = @Id_DatosContacto";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
                         Comando.Parameters.AddWithValue("@Domicilio", txtModificacion.Text);
                         try
@@ -605,7 +606,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                         Sql = "";
                         Sql = "UPDATE DatosContacto set CodigoPostal = @CodigoPostal WHERE Id_DatosContacto = @Id_DatosContacto";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
                         Comando.Parameters.AddWithValue("@CodigoPostal", txtModificacion.Text);
                         try
@@ -628,7 +629,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                         Sql = "";
                         Sql = "UPDATE DatosContacto set Nacionalidad = @Nacionalidad WHERE Id_DatosContacto = @Id_DatosContacto";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
                         Comando.Parameters.AddWithValue("@Nacionalidad", txtModificacion.Text);
                         try
@@ -650,7 +651,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                         Sql = "";
                         Sql = "UPDATE DatosContacto set EstadoNacimiento = @EstadoNacimiento WHERE Id_DatosContacto = @Id_DatosContacto";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
 
                         Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
                         Comando.Parameters.AddWithValue("@EstadoNacimiento", txtModificacion.Text);
@@ -671,7 +672,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                         Sql = "";
                         Sql = "UPDATE DatosContacto set Municipio = @Municipio WHERE Id_DatosContacto = @Id_DatosContacto";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
                         Comando.Parameters.AddWithValue("@Municipio", txtModificacion.Text);
                         try
@@ -690,7 +691,7 @@ namespace Proyecto_AdministracionOrgDatos
                     {
                         Sql = "";
                         Sql = "UPDATE DatosContacto set Correo = @Correo WHERE Id_DatosContacto = @Id_DatosContacto";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
                         Comando.Parameters.AddWithValue("@Correo", txtModificacion.Text);
                         try
@@ -710,7 +711,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                         Sql = "";
                         Sql = "UPDATE DatosContacto set Telefono = @Telefono WHERE Id_DatosContacto = @Id_DatosContacto";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_DatosContacto", dgv_Agregar.Rows[seleccion].Cells[9].Value);
                         Comando.Parameters.AddWithValue("@Telefono", txtModificacion.Text);
                         try
@@ -729,7 +730,7 @@ namespace Proyecto_AdministracionOrgDatos
                     {
                         Sql = "";
                         Sql = "UPDATE DatosAcademicos set Carrera = @Carrera WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
                         Comando.Parameters.AddWithValue("@Carrera", txtModificacion.Text);
                         try
@@ -748,7 +749,7 @@ namespace Proyecto_AdministracionOrgDatos
                     {
                         Sql = "";
                         Sql = "UPDATE DatosAcademicos set Periodo = @Periodo WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
 
                         Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
                         Comando.Parameters.AddWithValue("@Periodo", txtModificacion.Text);
@@ -767,7 +768,7 @@ namespace Proyecto_AdministracionOrgDatos
                     {
                         Sql = "";
                         Sql = "UPDATE DatosAcademicos set Promedio = @Promedio WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
 
                         Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
                         Comando.Parameters.AddWithValue("@Promedio", txtModificacion.Text);
@@ -787,7 +788,7 @@ namespace Proyecto_AdministracionOrgDatos
                     {
                         Sql = "";
                         Sql = "UPDATE DatosAcademicos set CCT = @CCT WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
 
                         Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
                         Comando.Parameters.AddWithValue("@CCT", txtModificacion.Text);
@@ -806,7 +807,7 @@ namespace Proyecto_AdministracionOrgDatos
                     {
                         Sql = "";
                         Sql = "UPDATE DatosAcademicos set Modelo = @Modelo WHERE Id_DatosAcademicos = @Id_DatosAcademicos";
-                        Comando = new SqlCommand(Sql, Conexion);
+                        Comando = new SqlCommand(Sql, con);
 
                         Comando.Parameters.AddWithValue("@Id_DatosAcademicos", dgv_Agregar.Rows[seleccion].Cells[17].Value);
                         Comando.Parameters.AddWithValue("@Modelo", txtModificacion.Text);
@@ -821,7 +822,9 @@ namespace Proyecto_AdministracionOrgDatos
                             MessageBox.Show("Error tabla general: " + ex.Message);
                         }
                     }
-                    Conexion.Close();
+                }
+                   
+                    
                     //Se limpian los campos para mayor comodidad del usuario
                     txtModificacion.Text = "";
                     cmbFiltroModificar.Text = "";
@@ -1141,99 +1144,178 @@ namespace Proyecto_AdministracionOrgDatos
                 int Id_DatosContacto;
                 int Id_DatosGenerales;
                
-                Conectar();
+                //Conectar();
                 /*Seleccionar id de escuela, le asigno una variable para guardar el valor*/
                
               
 
                 /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
 
-
-                /*Insercion de tabla Datos academicos*/
-                Sql = "";
-                Sql = "insert into DatosAcademicos (Carrera, Periodo, Promedio, Modelo, CCT) values (@Carrera, @Periodo, @Promedio, @Modelo, @CCT)";
-                Comando = new SqlCommand(Sql, Conexion);
-                /*Tercera tabla*/
-
-                Comando.Parameters.AddWithValue("@Carrera", txtCarrera.Text);
-                Comando.Parameters.AddWithValue("@Periodo", txtPeriodo.Text);
-                Comando.Parameters.AddWithValue("@Promedio", txtPromedio.Text);
-                Comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
-                Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
-                try
+                using(SqlConnection con = DB_Conexion.GetConnection())
                 {
+                    /*Insercion en tabla de datos academicos*/
+                    Sql = "";
+                    Sql = "insert into DatosAcademicos (Carrera, Periodo, Promedio, Modelo, CCT) values (@Carrera, @Periodo, @Promedio, @Modelo, @CCT)";
+                    Comando = new SqlCommand(Sql, con);
 
-                    Comando.ExecuteNonQuery();
+                    Comando.Parameters.AddWithValue("@Carrera", txtCarrera.Text);
+                    Comando.Parameters.AddWithValue("@Periodo", txtPeriodo.Text);
+                    Comando.Parameters.AddWithValue("@Promedio", txtPromedio.Text);
+                    Comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
+                    Comando.Parameters.AddWithValue("@CCT", cmbCCT.Text);
+                    try
+                    {
 
-                    MessageBox.Show("Registro Academicos Insertados");
+                        Comando.ExecuteNonQuery();
+
+                        MessageBox.Show("Registro Academicos Insertados");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error " + ex.Message);
+                    }
+
+                    /*Insercion de tabla Datos Contacto*/
+                    Sql = "";
+                    Sql = "insert into DatosContacto (Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono) values (@Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio, @Correo, @Telefono)";
+                    Comando = new SqlCommand(Sql, con);
+                    //Insercion de segunda tabla
+                    Comando.Parameters.AddWithValue("@Domicilio", txtDomicilio.Text);
+                    Comando.Parameters.AddWithValue("@CodigoPostal", txtCodigoPostal.Text);
+                    Comando.Parameters.AddWithValue("@Nacionalidad", cmbNacionalidad.Text);
+                    Comando.Parameters.AddWithValue("@EstadoNacimiento", cmbEstadoNac.Text);
+                    Comando.Parameters.AddWithValue("@Municipio", txtMunicipio.Text);
+                    Comando.Parameters.AddWithValue("@Correo", txtCorreoElectronico.Text);
+                    Comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+                    try
+                    {
+
+                        Comando.ExecuteNonQuery();
+
+                        MessageBox.Show("Registro Contacto Insertado");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error " + ex.Message);
+                    }
+
+                    /*Insercion de tabla Datos generales*/
+                    Sql = "";
+                    Sql = "insert into DatosGenerales(ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Estado) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Estado)";
+                    Comando = new SqlCommand(Sql, con);
+                    //Insercion de la primera tabla
+                    Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
+                    Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
+                    Comando.Parameters.AddWithValue("@Nombres", txtNombres.Text);
+                    Comando.Parameters.AddWithValue("@FechaNacimiento", txtFechanac.Value);
+                    Comando.Parameters.AddWithValue("@Edad", txtEdad.Text);
+                    Comando.Parameters.AddWithValue("@Curp", GeneracionCURP());
+                    Comando.Parameters.AddWithValue("@EstadoCivil", cmbEstCivil.Text);
+                    Comando.Parameters.AddWithValue("@Genero", CBGenero.Text);
+                    Comando.Parameters.AddWithValue("@Estado", 1);
+                    try
+                    {
+
+                        Comando.ExecuteNonQuery();
+
+                        MessageBox.Show("Registro General Insertado");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error " + ex.Message);
+                    }
+
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message);
-                }
-
-
-                /*Insercion de tabla Datos Contacto*/
-                Sql = "";
-                Sql = "insert into DatosContacto (Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono) values (@Domicilio, @CodigoPostal, @Nacionalidad, @EstadoNacimiento, @Municipio, @Correo, @Telefono)";
-                Comando = new SqlCommand(Sql, Conexion);
-                //Insercion de segunda tabla
-                Comando.Parameters.AddWithValue("@Domicilio", txtDomicilio.Text);
-                Comando.Parameters.AddWithValue("@CodigoPostal", txtCodigoPostal.Text);
-                Comando.Parameters.AddWithValue("@Nacionalidad", cmbNacionalidad.Text);
-                Comando.Parameters.AddWithValue("@EstadoNacimiento", cmbEstadoNac.Text);
-                Comando.Parameters.AddWithValue("@Municipio", txtMunicipio.Text);
-                Comando.Parameters.AddWithValue("@Correo", txtCorreoElectronico.Text);
-                Comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-                try
-                {
-
-                    Comando.ExecuteNonQuery();
-
-                    MessageBox.Show("Registro Contacto Insertado");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message);
-                }
-                /*Insercion de tabla Datos generales*/
-                Sql = "";
-                Sql = "insert into DatosGenerales(ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Estado) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Estado)";
-                Comando = new SqlCommand(Sql, Conexion);
-                //Insercion de la primera tabla
-                Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
-                Comando.Parameters.AddWithValue("@ApellidoMaterno", txtAmaterno.Text);
-                Comando.Parameters.AddWithValue("@Nombres", txtNombres.Text);
-                Comando.Parameters.AddWithValue("@FechaNacimiento", txtFechanac.Value);
-                Comando.Parameters.AddWithValue("@Edad", txtEdad.Text);
-                Comando.Parameters.AddWithValue("@Curp", GeneracionCURP());
-                Comando.Parameters.AddWithValue("@EstadoCivil", cmbEstCivil.Text);
-                Comando.Parameters.AddWithValue("@Genero", CBGenero.Text);
-                Comando.Parameters.AddWithValue("@Estado", 1);
-                try
-                {
-
-                    Comando.ExecuteNonQuery();
-
-                    MessageBox.Show("Registro General Insertado");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message);
-                }
-
 
 
                 /*-----------------------------------Fin de metodo con base de datos-------------------------------------*/
 
 
                 //Se terminan de guardar los datos y se cierra el archivo
-                Conexion.Close();
+                //Conexion.Close();
 
-                /*--------------------------------------Insertar los id datos academicos-------------------------------------*/
-                Conectar();
+                /*--------------------------------------Insertar los id datos academicos CLASE-------------------------------------*/
+               // Conectar();
+
+                using(SqlConnection con = DB_Conexion.GetConnection())
+                {
+                    //ID DATOS ACADEMICOS
+                    Sql = "";
+                    //Consulta
+                    Sql = "SELECT MAX(Id_DatosAcademicos) From DatosAcademicos";
+
+                    Comando = new SqlCommand(Sql, con);
+                    Id_DatosAcademicos = Convert.ToInt32(Comando.ExecuteScalar());
+
+                    //Seleccion del id mas reciente de Datos generales
+                    Sql = "";
+
+                    Sql = "SELECT MAX(Id_Alumno) From DatosGenerales";
+
+                    Comando = new SqlCommand(Sql, con);
+                    Id_DatosGenerales = Convert.ToInt32(Comando.ExecuteScalar());
+                    //Insercion
+
+                    Sql = "update DatosGenerales set Id_DatosAcademicos = @Id_DatosAcademicos WHERE Id_Alumno = @Id_Alumno";
+                    Comando = new SqlCommand(Sql, con);
+                    Comando.Parameters.AddWithValue("@Id_Alumno", Id_DatosGenerales);
+                    Comando.Parameters.AddWithValue("@Id_DatosAcademicos", Id_DatosAcademicos);
+
+                    //Comando Try
+                    try
+                    {
+                        Comando.ExecuteNonQuery();
+
+                        MessageBox.Show("Registro ID academicos");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error " + ex.Message);
+                    }
+                  
+                    /*Terminacion de insericon de id datos academicos*/
+
+                    //ID DATOS CONTACTO
+                 
+                    Sql = "";
+                    Sql = "SELECT MAX(Id_DatosContacto) From DatosContacto";
+
+                    Comando = new SqlCommand(Sql, con);
+                    Id_DatosContacto = Convert.ToInt32(Comando.ExecuteScalar());
+
+                    //Seleccion del id mas reciente de Datos generales
+                    Sql = "";
+
+                    Sql = "SELECT MAX(Id_Alumno) From DatosGenerales";
+
+                    Comando = new SqlCommand(Sql, con);
+                    Id_DatosGenerales = Convert.ToInt32(Comando.ExecuteScalar());
+                    //Insercion
+                    Sql = "update DatosGenerales set Id_DatosContacto = @Id_DatosContacto WHERE Id_Alumno = @Id_Alumno";
+                    Comando = new SqlCommand(Sql, con);
+                    Comando.Parameters.AddWithValue("@Id_Alumno", Id_DatosGenerales);
+                    Comando.Parameters.AddWithValue("@Id_DatosContacto", Id_DatosContacto);
+
+                    //Comando Try
+                    try
+                    {
+                        Comando.ExecuteNonQuery();
+                        MessageBox.Show("Registro ID contacto");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error " + ex.Message);
+                    }
+
+
+                  
+                    /*Teminacion de insercion de datos de contacto*/
+
+                    /*-----------------------------------------------------------------------------------------------*/
+                }
+                /*--------------------------------------FIN los id datos academicos CLASE-------------------------------------*/
                 //ID DATOS ACADEMICOS
-                Sql = "";
+               /* Sql = "";
                 //Consulta
                 Sql = "SELECT MAX(Id_DatosAcademicos) From DatosAcademicos";
 
@@ -1266,7 +1348,7 @@ namespace Proyecto_AdministracionOrgDatos
                     MessageBox.Show("Error " + ex.Message);
                 }
                 Conexion.Close();
-                /*Terminacion de insericon de id datos academicos*/
+                /*Terminacion de insericon de id datos academicos
 
                 //ID DATOS CONTACTO
                 Conectar();
@@ -1301,7 +1383,7 @@ namespace Proyecto_AdministracionOrgDatos
                 }
 
 
-                Conexion.Close();
+                Conexion.Close();*/
                 /*Teminacion de insercion de datos de contacto*/
 
                 /*-----------------------------------------------------------------------------------------------*/
@@ -1323,37 +1405,37 @@ namespace Proyecto_AdministracionOrgDatos
 
         public void LlenarDGV()
         {
-            Conectar();
+          
             //Query Primera Tabla
+            using(SqlConnection con = DB_Conexion.GetConnection())
+            {
+                Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
+               "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
+               "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 1 ";
+                // Sql = "SELECT * from DatosGenerales, DatosAcademicos, DatosContacto";
+                Adaptador = new SqlDataAdapter(Sql, con);
+                Adaptador.Fill(Tabla);
+                dgv_Agregar.DataSource = Tabla;
+            }
 
-            Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
-                "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
-                "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 1 ";
-           // Sql = "SELECT * from DatosGenerales, DatosAcademicos, DatosContacto";
-            Adaptador = new SqlDataAdapter(Sql, Conexion);
-            Adaptador.Fill(Tabla);
-            dgv_Agregar.DataSource = Tabla;
-
-
-            Conexion.Close();
         }
         public void RefrescarDatos()
         {
-            Conectar();
-            Tabla.Clear();
-            dgv_Agregar.ClearSelection();
+          
+            using(SqlConnection con = DB_Conexion.GetConnection())
+            {
+                Tabla.Clear();
+                dgv_Agregar.ClearSelection();
 
-            // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
-            Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
-              "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
-              "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 1 ";
-            Adaptador = new SqlDataAdapter(Sql, Conexion);
-            Adaptador.Fill(Tabla);
-            dgv_Agregar.DataSource = Tabla;
-
-
-
-            Conexion.Close();
+                // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
+                Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
+                  "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
+                  "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 1 ";
+                Adaptador = new SqlDataAdapter(Sql, con);
+                Adaptador.Fill(Tabla);
+                dgv_Agregar.DataSource = Tabla;
+            }
+           
 
         }
 
