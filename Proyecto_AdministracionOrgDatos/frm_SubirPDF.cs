@@ -13,9 +13,11 @@ namespace Proyecto_AdministracionOrgDatos
 {
     public partial class frm_SubirPDF : Form
     {
+        private FuentePersonalizada fontPers;
         public frm_SubirPDF()
         {
             InitializeComponent();
+            fontPers = new FuentePersonalizada();
         }
 
         private void btnSubir_Click(object sender, EventArgs e)
@@ -44,6 +46,20 @@ namespace Proyecto_AdministracionOrgDatos
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void frm_SubirPDF_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void CargarFuentes()
+        {
+            // Cargar las fuente desde el archivo TTF
+            string nombreFuente = "coolveticaRG.otf";
+            fontPers.CargarFuentePersonalizada(nombreFuente);
+            // Aplicar la fuente a la etiqueta en lblTitulo_ESA
+            fontPers.AplicarFuente(lblTitulo_ESA, 28, FontStyle.Regular);
         }
     }
 }
