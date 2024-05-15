@@ -41,6 +41,8 @@
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnAbrir = new System.Windows.Forms.Button();
+            this.listBoxPdf = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,7 +56,7 @@
             this.dgvMostrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMostrar.GridColor = System.Drawing.Color.Silver;
-            this.dgvMostrar.Location = new System.Drawing.Point(381, 285);
+            this.dgvMostrar.Location = new System.Drawing.Point(381, 269);
             this.dgvMostrar.Name = "dgvMostrar";
             this.dgvMostrar.ReadOnly = true;
             this.dgvMostrar.RowHeadersWidth = 51;
@@ -185,11 +187,35 @@
             this.pictureBox2.TabIndex = 99;
             this.pictureBox2.TabStop = false;
             // 
+            // btnAbrir
+            // 
+            this.btnAbrir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
+            this.btnAbrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrir.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnAbrir.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAbrir.Location = new System.Drawing.Point(507, 546);
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(113, 37);
+            this.btnAbrir.TabIndex = 100;
+            this.btnAbrir.Text = "Abrir PDF";
+            this.btnAbrir.UseVisualStyleBackColor = false;
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
+            // 
+            // listBoxPdf
+            // 
+            this.listBoxPdf.FormattingEnabled = true;
+            this.listBoxPdf.Location = new System.Drawing.Point(866, 120);
+            this.listBoxPdf.Name = "listBoxPdf";
+            this.listBoxPdf.Size = new System.Drawing.Size(295, 134);
+            this.listBoxPdf.TabIndex = 101;
+            // 
             // frm_SubirPDF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1214, 651);
+            this.Controls.Add(this.listBoxPdf);
+            this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox11);
@@ -235,5 +261,7 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnAbrir;
+        private System.Windows.Forms.ListBox listBoxPdf;
     }
 }
