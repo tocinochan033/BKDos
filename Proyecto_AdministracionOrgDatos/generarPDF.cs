@@ -152,9 +152,10 @@ namespace Proyecto_AdministracionOrgDatos
                 case 3:
                     paginahtml_texto = Properties.Resources.plantillaAcademica.ToString();
                     break;
+                    /*
                 case 4:
-                    paginahtml_texto = Properties.Resources.PlantillaIndividual.ToString();
-                    break;
+                    paginahtml_texto = Properties.Resources.PlantillaGeneral.ToString();
+                    break;*/
             }
 
             //Se reemplaza el texto "@FECHA" para colocar la fecha actual
