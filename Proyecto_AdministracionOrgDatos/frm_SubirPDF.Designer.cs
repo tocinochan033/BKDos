@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_SubirPDF));
-            this.dgvMostrar = new System.Windows.Forms.DataGridView();
+            this.dgvPDF = new System.Windows.Forms.DataGridView();
             this.btnSubir = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -42,26 +42,25 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnAbrir = new System.Windows.Forms.Button();
-            this.listBoxPdf = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvMostrar
+            // dgvPDF
             // 
-            this.dgvMostrar.AllowUserToAddRows = false;
-            this.dgvMostrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMostrar.GridColor = System.Drawing.Color.Silver;
-            this.dgvMostrar.Location = new System.Drawing.Point(381, 269);
-            this.dgvMostrar.Name = "dgvMostrar";
-            this.dgvMostrar.ReadOnly = true;
-            this.dgvMostrar.RowHeadersWidth = 51;
-            this.dgvMostrar.Size = new System.Drawing.Size(780, 237);
-            this.dgvMostrar.TabIndex = 74;
+            this.dgvPDF.AllowUserToAddRows = false;
+            this.dgvPDF.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvPDF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPDF.GridColor = System.Drawing.Color.Silver;
+            this.dgvPDF.Location = new System.Drawing.Point(381, 269);
+            this.dgvPDF.Name = "dgvPDF";
+            this.dgvPDF.ReadOnly = true;
+            this.dgvPDF.RowHeadersWidth = 51;
+            this.dgvPDF.Size = new System.Drawing.Size(780, 237);
+            this.dgvPDF.TabIndex = 74;
             // 
             // btnSubir
             // 
@@ -201,20 +200,11 @@
             this.btnAbrir.UseVisualStyleBackColor = false;
             this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
-            // listBoxPdf
-            // 
-            this.listBoxPdf.FormattingEnabled = true;
-            this.listBoxPdf.Location = new System.Drawing.Point(866, 120);
-            this.listBoxPdf.Name = "listBoxPdf";
-            this.listBoxPdf.Size = new System.Drawing.Size(295, 134);
-            this.listBoxPdf.TabIndex = 101;
-            // 
             // frm_SubirPDF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1214, 651);
-            this.Controls.Add(this.listBoxPdf);
             this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.textBox1);
@@ -227,7 +217,7 @@
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnSubir);
-            this.Controls.Add(this.dgvMostrar);
+            this.Controls.Add(this.dgvPDF);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1214, 651);
@@ -237,7 +227,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_SubirPDF_FormClosing);
             this.Load += new System.EventHandler(this.frm_SubirPDF_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPDF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
@@ -249,7 +239,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvMostrar;
+        private System.Windows.Forms.DataGridView dgvPDF;
         private System.Windows.Forms.Button btnSubir;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.PictureBox pictureBox9;
@@ -262,6 +252,5 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnAbrir;
-        private System.Windows.Forms.ListBox listBoxPdf;
     }
 }

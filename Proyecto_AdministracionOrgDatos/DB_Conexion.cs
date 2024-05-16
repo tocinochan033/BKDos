@@ -9,7 +9,7 @@ namespace Proyecto_AdministracionOrgDatos
 {
     internal class DB_Conexion
     {
-        private static string Conexion = "Data Source =DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true";
+        private static string Conexion = "Data Source =DESKTOP-XXXXXXX; Initial Catalog = BKDOS; integrated security=true";
 
         public static SqlConnection GetConnection()
         {

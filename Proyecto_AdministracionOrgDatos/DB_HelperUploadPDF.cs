@@ -10,12 +10,14 @@ namespace Proyecto_AdministracionOrgDatos
     {
         //Adaptador objeto del tipo sqlDataAdapter para intercambiar datos entre una
         //fuente de datos (en este caso sql server) y un almacen de datos
-        SqlDataAdapter Adaptador = null;
+        //SqlDataAdapter Adaptador = null;
 
         //Tabla objeto del tipo DATATABLE respresenta una coleccion de registros en memoria del cliente
-        DataTable Tabla = new DataTable();
+        //DataTable Tabla = new DataTable();
+
+
         // Cadena de conexión para conectarse a la base de datos SQL Server.
-        private string connectionString = "Data Source =DESKTOP-28QI84Q; Initial Catalog = BKDOS; integrated security=true";
+        private string connectionString = "Data Source =DESKTOP-XXXXXXX; Initial Catalog = BKDOS; integrated security=true";
 
         public void InsertPdf(string fileName, string originalFilePath)
         {
@@ -46,30 +48,6 @@ namespace Proyecto_AdministracionOrgDatos
                 }
             }
         }
-
-        // Método para obtener todos los archivos PDF registrados en la base de datos.
-        public List<string> GetAllPdfFiles()
-        {
-            List<string> files = new List<string>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT FilePath FROM DatosArchivos";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            // Añadir la ruta de cada archivo PDF a la lista.
-                            files.Add(reader["FilePath"].ToString());
-                        }
-                    }
-                }
-            }
-            return files;
-        }
-
 
     }
 }

@@ -124,6 +124,8 @@ namespace Proyecto_AdministracionOrgDatos
                             //Creacion de objeto para realizar la lectura del HTML para pasarlo al PDF
                             using (StringReader reader = new StringReader(WriterHTMLfiltro()))
                             { XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, reader); }
+
+                            validarFiltro = false;//Reinicio del indicador 
                         }
                         pdfDoc.Close();
                         stream.Close();

@@ -19,9 +19,9 @@ namespace Proyecto_AdministracionOrgDatos
 
         //Adaptador objeto del tipo sqlDataAdapter para intercambiar datos entre una
         //fuente de datos (en este caso sql server) y un almacen de datos
-        //SqlDataAdapter Adaptador = null;
+        SqlDataAdapter Adaptador = null;
         //Tabla objeto del tipo DATATABLE respresenta una coleccion de registros en memoria del cliente
-        //DataTable Tabla = new DataTable();
+        DataTable Tabla = new DataTable();
 
         // Creación de una instancia de DB_HelperUploadPDF para interactuar con la base de datos.
         private DB_HelperUploadPDF dbHelper = new DB_HelperUploadPDF();
@@ -30,7 +30,7 @@ namespace Proyecto_AdministracionOrgDatos
         {
             InitializeComponent();
             fontPers = new FuentePersonalizada();
-            LoadPdfList(); // Método para cargar la lista de archivos PDF.
+            GetPDF(); //Método para cargar los archivos PDF.
         }
 
         private void btnSubir_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace Proyecto_AdministracionOrgDatos
                     // Inserción de la información del archivo en la base de datos.
                     dbHelper.InsertPdf(fileName, originalFilePath);
                     // Recarga de la lista de archivos PDF.
-                    LoadPdfList();
+                    GetPDF();
                 }
             }
         }
@@ -99,24 +99,14 @@ namespace Proyecto_AdministracionOrgDatos
             fontPers.AplicarFuente(lblTitulo_ESA, 28, FontStyle.Regular);
         }
 
-        private void LoadPdfList()
-        {
-            // Limpiar la lista actual de archivos PDF.
-            listBoxPdf.Items.Clear();
-            // Obtención de todos los archivos PDF de la base de datos.
-            var files = dbHelper.GetAllPdfFiles();
-            // Agregar cada archivo obtenido a la lista en el formulario.
-            foreach (var file in files)
-            { listBoxPdf.Items.Add(file); }
-        }
-
         private void btnAbrir_Click(object sender, EventArgs e)
         {
-            // Comprobación de que haya un archivo seleccionado en la lista.
-            if (listBoxPdf.SelectedItem != null)
+            //Verificamos si hay una celda seleccionada
+            if (dgvPDF.CurrentRow.Index > -1)
             {
-                // Obtención de la ruta del archivo seleccionado.
-                string filePath = listBoxPdf.SelectedItem.ToString();
+                // Obtención de la ruta del archivo seleccionado por el datagridview
+                string filePath = dgvPDF.CurrentRow.Index.ToString();
+                filePath = dgvPDF.Rows[Convert.ToInt32(filePath)].Cells[1].Value.ToString();
 
                 // Mostrar un mensaje indicando que se intentará abrir el archivo.
                 MessageBox.Show("Intentando abrir el archivo en: " + filePath);
@@ -154,7 +144,6 @@ namespace Proyecto_AdministracionOrgDatos
         }
 
 
-        /*
         public void GetPDF()
         {
             //Query Primera Tabla
@@ -167,7 +156,6 @@ namespace Proyecto_AdministracionOrgDatos
                 dgvPDF.DataSource = Tabla;
             }
         }
-        */
 
     }
 }
