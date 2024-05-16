@@ -46,7 +46,6 @@ namespace Proyecto_AdministracionOrgDatos
         String Base_Datos = "BKDOS";
         int indice = 0;
 
-       
 
 
         /*------------------------METODO PARA CARGAR DATOS--------------------*/
@@ -55,6 +54,11 @@ namespace Proyecto_AdministracionOrgDatos
         {
             InitializeComponent();
             LlenarDGV();
+
+            //Se iniciliazan los elementos del combo box
+            cmbFiltro.Items.Add("Nombre");
+            cmbFiltro.Items.Add("CCT");
+            cmbFiltro.Items.Add("Promedio");
             fontPers = new FuentePersonalizada();
         }
 
@@ -317,6 +321,95 @@ namespace Proyecto_AdministracionOrgDatos
             }
 
            
-        }      
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnResetFiltro_Click(object sender, EventArgs e)
+        {
+            txtFiltro.Text = "";
+            cmbFiltro.Text = null;
+            RefrescarDatos();
+        }
+        public void RefrescarDatos()
+        {
+            Tabla.Clear();
+            dgvMostrar.ClearSelection();
+
+            using (SqlConnection con = DB_Conexion.GetConnection())
+            {
+                // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
+                Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
+                  "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
+                  "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 1 ";
+                Adaptador = new SqlDataAdapter(Sql, con);
+                Adaptador.Fill(Tabla);
+                dgvMostrar.DataSource = Tabla;
+
+            }
+        }
+
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            //Si hay algo entonces se ejecuta
+            if (txtFiltro.Text != "")
+            {
+                if (cmbFiltro.Text != "")
+                {
+                    //Asignacion de celda
+                    string auxiliar = cmbFiltro.Text;
+                    switch (auxiliar)
+                    {
+                        case "Nombre":
+                            auxiliar = "3";
+                            break;
+                        case "CCT":
+                            auxiliar = "22";
+                            break;
+                        case "Promedio":
+                            auxiliar = "20";
+                            break;
+                    }
+
+                    dgvMostrar.CurrentCell = null;
+
+                    //Recorrer filas para desaparecer todas
+                    foreach (DataGridViewRow row in dgvMostrar.Rows)
+                    { row.Visible = false; }
+
+                    //Se recorren las filas para buscar el valor
+                    foreach (DataGridViewRow row in dgvMostrar.Rows)
+                    {
+                        //Se recorre de celda en celda la fila del foreach anterior
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            //Comparar celda con el textbox de busqueda
+                            if (row.Cells[Int32.Parse(auxiliar)].Value.ToString().ToUpper().IndexOf(txtFiltro.Text.ToUpper()) == 0)
+                            {
+                                row.Visible = true;
+                                validarFiltro = true;//Indicador de imprimir el pdf con los filtros
+                                break;
+                            }
+                        }
+                    }
+                }
+
+            }
+            else
+            { MessageBox.Show("Faltan datos por colocar"); }
+        }
     }
 }

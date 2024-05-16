@@ -144,6 +144,7 @@
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(200, 29);
             this.cmbFiltro.TabIndex = 80;
+            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
             // btnResetFiltro
             // 
@@ -172,6 +173,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(810, 61);
             this.panel1.TabIndex = 82;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox4
             // 

@@ -244,5 +244,15 @@ namespace Proyecto_AdministracionOrgDatos
 
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
