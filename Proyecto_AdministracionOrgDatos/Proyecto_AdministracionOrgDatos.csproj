@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -189,12 +189,12 @@
     <None Include="Resources\Ajolote.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\BK222.png" />
     <Content Include="Resources\Sombrero.png" />
     <None Include="Resources\PlantillaGeneral.html" />
     <None Include="Resources\plantillaAcademica.html" />
     <None Include="Resources\5bbd9abb-5618-4750-ad86-7379fc3a08a0.png" />
     <None Include="Resources\AddAdminImagen.png" />
-    <Content Include="Resources\BK222.png" />
     <Content Include="Resources\plantillaContacto.html" />
   </ItemGroup>
   <ItemGroup>

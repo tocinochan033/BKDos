@@ -106,11 +106,14 @@ namespace Proyecto_AdministracionOrgDatos
                         pdfDoc.Add(new Phrase(""));
 
                         //Almacenar la imagen del logo en la variable img
-                        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.Ajolote, System.Drawing.Imaging.ImageFormat.Png);
-                        img.ScaleToFit(80, 60); //Tamaño
-                        img.Alignment = iTextSharp.text.Image.UNDERLYING; //Alineacion en el documento
+                        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.Sombrero, System.Drawing.Imaging.ImageFormat.Png);
+                        img.ScaleToFit(60,40); //Tamaño
+                        img.Alignment = iTextSharp.text.Image.ALIGN_LEFT; //Alineacion en el documento
                         img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60); //Posicion
                         pdfDoc.Add(img);//Agregar imagen al PDF
+
+                        iTextSharp.text.Image img2 = iTextSharp.text.Image.GetInstance(Properties.Resources.BK222, System.Drawing.Imaging.ImageFormat.Png);
+                        pdfDoc.Add(img2);//Agregar imagen al PDF
 
                         //Se evalua la aplicacion del filtro como tipo de reporte al pdf
                         if (validarFiltro == false)    //Sin filtro
