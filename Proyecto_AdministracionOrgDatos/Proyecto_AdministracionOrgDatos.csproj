@@ -189,6 +189,7 @@
     <None Include="Resources\Ajolote.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\PlantillaGeneral.html" />
     <None Include="Resources\plantillaAcademica.html" />
     <None Include="Resources\5bbd9abb-5618-4750-ad86-7379fc3a08a0.png" />
     <None Include="Resources\AddAdminImagen.png" />
