@@ -117,6 +117,11 @@ namespace Proyecto_AdministracionOrgDatos.Properties {
         ///&lt;head&gt;
         ///    &lt;title&gt;Title of the document&lt;/title&gt;
         ///    &lt;style&gt;
+        ///        body {
+        ///            margin: 20px;
+        ///            font-family: Trebuchet MS;
+        ///        }
+        ///
         ///        table.border {
         ///            border-collapse: collapse;
         ///        }
@@ -124,19 +129,12 @@ namespace Proyecto_AdministracionOrgDatos.Properties {
         ///            table.border th {
         ///                padding: 5px;
         ///                border: 1px solid black;
+        ///                color: white;
         ///            }
         ///
         ///            table.border td {
         ///                padding: 5px;
-        ///                border: 1px solid black;
-        ///            }
-        ///    &lt;/style&gt;
-        ///&lt;/head&gt;
-        ///
-        ///&lt;body&gt;
-        ///    &lt;table style=&quot;width:100%&quot;&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td style=&quot;wid [resto de la cadena truncado]&quot;;.
+        ///                border: 1px solid g [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string plantilla {
             get {
@@ -151,6 +149,11 @@ namespace Proyecto_AdministracionOrgDatos.Properties {
         ///&lt;head&gt;
         ///    &lt;title&gt;Title of the document&lt;/title&gt;
         ///    &lt;style&gt;
+        ///        body {
+        ///            margin: 20px;
+        ///            font-family: Trebuchet MS;
+        ///        }
+        ///
         ///        table.border {
         ///            border-collapse: collapse;
         ///        }
@@ -158,19 +161,12 @@ namespace Proyecto_AdministracionOrgDatos.Properties {
         ///            table.border th {
         ///                padding: 5px;
         ///                border: 1px solid black;
+        ///                color: white;
         ///            }
         ///
         ///            table.border td {
         ///                padding: 5px;
-        ///                border: 1px solid black;
-        ///            }
-        ///    &lt;/style&gt;
-        ///&lt;/head&gt;
-        ///
-        ///&lt;body&gt;
-        ///    &lt;table style=&quot;width:100%&quot;&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td style=&quot;wid [resto de la cadena truncado]&quot;;.
+        ///                border: 1px solid g [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string plantillaAcademica {
             get {
@@ -206,6 +202,41 @@ namespace Proyecto_AdministracionOrgDatos.Properties {
         internal static string plantillacontacto {
             get {
                 return ResourceManager.GetString("plantillacontacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;style&gt;
+        ///        body {
+        ///            margin: 20px;
+        ///            font-family: Trebuchet MS;
+        ///        }
+        ///
+        ///        h3 {
+        ///            background-color: #6063C6;
+        ///            color: white;
+        ///            font-size: 20px;
+        ///        }
+        ///
+        ///        table {
+        ///            font-size: 15px;
+        ///        }
+        ///
+        ///            table.border {
+        ///                border-collapse: collapse;
+        ///            }
+        ///
+        ///                table.border td {
+        ///                    border: 1px solid gray;
+        ///      [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string PlantillaGeneral {
+            get {
+                return ResourceManager.GetString("PlantillaGeneral", resourceCulture);
             }
         }
         

@@ -79,6 +79,7 @@ namespace Proyecto_AdministracionOrgDatos
                 if (cmbPDFeleccion.Text == "Informacion Personal") { tipoReporte = 1; }
                 else if (cmbPDFeleccion.Text == "Informacion de Contacto") { tipoReporte = 2; }
                 else if (cmbPDFeleccion.Text == "Informacion Academica") { tipoReporte = 3; }
+                else if (cmbPDFeleccion.Text == "Informe Individual") { tipoReporte = 4; } 
 
                 //Empleo de clase para guardar el archivo mediante ubicacion
                 SaveFileDialog guardar = new SaveFileDialog();
@@ -93,46 +94,96 @@ namespace Proyecto_AdministracionOrgDatos
                 //iniciar con la configuracion de guardado del PDF
                 if (guardar.ShowDialog() == DialogResult.OK)
                 {
-                    //Creacion del documento para leer o escribir
-                    using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
+                    if(tipoReporte == 1 | tipoReporte == 2 | tipoReporte == 3)
                     {
-                        //Creacion del documento PDF especificando tipo de hoja y margenes
-                        Document pdfDoc = new Document(PageSize.A4.Rotate(), 10, 10, 10, 10);
-
-                        //Guardado de los cambios del PDF al documento
-                        PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
-
-                        pdfDoc.Open();
-                        pdfDoc.Add(new Phrase(""));
-
-                        //Almacenar la imagen del logo en la variable img
-                        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.Sombrero, System.Drawing.Imaging.ImageFormat.Png);
-                        img.ScaleToFit(60,40); //Tamaño
-                        img.Alignment = iTextSharp.text.Image.ALIGN_LEFT; //Alineacion en el documento
-                        img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60); //Posicion
-                        pdfDoc.Add(img);//Agregar imagen al PDF
-
-                        iTextSharp.text.Image img2 = iTextSharp.text.Image.GetInstance(Properties.Resources.BK222, System.Drawing.Imaging.ImageFormat.Png);
-                        pdfDoc.Add(img2);//Agregar imagen al PDF
-
-                        //Se evalua la aplicacion del filtro como tipo de reporte al pdf
-                        if (validarFiltro == false)    //Sin filtro
+                        //Creacion del documento para leer o escribir
+                        using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
                         {
-                            //Creacion de objeto para realizar la lectura del HTML para pasarlo al PDF
-                            using (StringReader reader = new StringReader(WriterHTML()))
-                            { XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, reader); }
-                        }
-                        else    //Con filtro
-                        {
-                            //Creacion de objeto para realizar la lectura del HTML para pasarlo al PDF
-                            using (StringReader reader = new StringReader(WriterHTMLfiltro()))
-                            { XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, reader); }
 
-                            validarFiltro = false;//Reinicio del indicador 
+                            //Creacion del documento PDF especificando tipo de hoja y margenes
+                            Document pdfDoc = new Document(PageSize.A4.Rotate(), 10, 10, 10, 10);
+
+                            //Guardado de los cambios del PDF al documento
+                            PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+
+                            pdfDoc.Open();
+                            pdfDoc.Add(new Phrase(""));
+
+                            //Almacenar la imagen del logo en la variable img
+                            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.Sombrero, System.Drawing.Imaging.ImageFormat.Png);
+                            img.ScaleToFit(60, 40); //Tamaño
+                            img.Alignment = iTextSharp.text.Image.ALIGN_LEFT; //Alineacion en el documento
+                            img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60); //Posicion
+                            pdfDoc.Add(img);//Agregar imagen al PDF
+
+                            iTextSharp.text.Image img2 = iTextSharp.text.Image.GetInstance(Properties.Resources.BK222, System.Drawing.Imaging.ImageFormat.Png);
+                            pdfDoc.Add(img2);//Agregar imagen al PDF
+
+                            //Se evalua la aplicacion del filtro como tipo de reporte al pdf
+                            if (validarFiltro == false)    //Sin filtro
+                            {
+                                //Creacion de objeto para realizar la lectura del HTML para pasarlo al PDF
+                                using (StringReader reader = new StringReader(WriterHTML()))
+                                { XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, reader); }
+                            }
+                            else    //Con filtro
+                            {
+                                //Creacion de objeto para realizar la lectura del HTML para pasarlo al PDF
+                                using (StringReader reader = new StringReader(WriterHTMLfiltro()))
+                                { XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, reader); }
+
+                                validarFiltro = false;//Reinicio del indicador 
+                            }
+                            pdfDoc.Close();
+                            stream.Close();
                         }
-                        pdfDoc.Close();
-                        stream.Close();
                     }
+                    else
+                    {
+                        //Creacion del documento para leer o escribir
+                        using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
+                        {
+
+                            //Creacion del documento PDF especificando tipo de hoja y margenes
+                            Document pdfDoc = new Document(PageSize.A4, 10, 10, 10, 10);
+
+                            //Guardado de los cambios del PDF al documento
+                            PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+
+                            pdfDoc.Open();
+                            pdfDoc.Add(new Phrase(""));
+
+                            //Almacenar la imagen del logo en la variable img
+                            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.Sombrero, System.Drawing.Imaging.ImageFormat.Png);
+                            img.ScaleToFit(60, 40); //Tamaño
+                            img.Alignment = iTextSharp.text.Image.ALIGN_LEFT; //Alineacion en el documento
+                            img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60); //Posicion
+                            pdfDoc.Add(img);//Agregar imagen al PDF
+
+                            iTextSharp.text.Image img2 = iTextSharp.text.Image.GetInstance(Properties.Resources.BK222, System.Drawing.Imaging.ImageFormat.Png);
+                            img2.Alignment = iTextSharp.text.Image.ALIGN_CENTER;
+                            pdfDoc.Add(img2);//Agregar imagen al PDF
+
+                            //Se evalua la aplicacion del filtro como tipo de reporte al pdf
+                            if (validarFiltro == false)    //Sin filtro
+                            {
+                                //Creacion de objeto para realizar la lectura del HTML para pasarlo al PDF
+                                using (StringReader reader = new StringReader(WriterHTML()))
+                                { XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, reader); }
+                            }
+                            else    //Con filtro
+                            {
+                                //Creacion de objeto para realizar la lectura del HTML para pasarlo al PDF
+                                using (StringReader reader = new StringReader(WriterHTMLfiltro()))
+                                { XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, reader); }
+
+                                validarFiltro = false;//Reinicio del indicador 
+                            }
+                            pdfDoc.Close();
+                            stream.Close();
+                        }
+                    }
+                    
                 }
             }
 
@@ -143,6 +194,13 @@ namespace Proyecto_AdministracionOrgDatos
         {
             string paginahtml_texto = null, filas = string.Empty; ;//Inicializacion
 
+            //Declaracion de variables necesarias para el formato individual
+            string nombres = string.Empty, apellidoMaterno = string.Empty, apellidoPaterno = string.Empty,
+                edad = string.Empty, curp = string.Empty, genero = string.Empty, estadoCivil = string.Empty,
+                domicilio = string.Empty, codigoPostal = string.Empty, nacionalidad = string.Empty, estadoNacimiento = string.Empty,
+                municipio = string.Empty, correo = string.Empty, telefono = string.Empty, carrera = string.Empty, periodo = string.Empty,
+                promedio = string.Empty, cct = string.Empty, modelo = string.Empty, fechaNacimiento = string.Empty;
+
             //Empleo de switch para obtener el tipo de reporte seleccionado y cargar el formato HTML como texto
             switch (tipoReporte)
             {
@@ -155,100 +213,22 @@ namespace Proyecto_AdministracionOrgDatos
                 case 3:
                     paginahtml_texto = Properties.Resources.plantillaAcademica.ToString();
                     break;
-                    /*
                 case 4:
                     paginahtml_texto = Properties.Resources.PlantillaGeneral.ToString();
-                    break;*/
+                    break;
             }
 
-            //Se reemplaza el texto "@FECHA" para colocar la fecha actual
-            paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
-
-            //Se recorre el DataGridViewRow por filas
-            foreach (DataGridViewRow row in dgvMostrar.Rows)
+            if (tipoReporte == 1 | tipoReporte == 2 || tipoReporte == 3)
             {
-                //Se guarda en formato HTML el valor de las columnas del DataGridViewRow
-                filas += "<tr>";
-
+                //Se reemplaza el texto "@FECHA" para colocar la fecha actual
+                paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
             
-                //Condicional para colocar la info correspodiente de acuerdo al tipo de reporte
-                if (tipoReporte == 1)
-                {
-                    filas += "<td>" + row.Cells["ApellidoPaterno"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["ApellidoMaterno"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Nombres"].Value.ToString() + "</td>";
-                    filas += "<td>" + ((DateTime)(row.Cells["FechaNacimiento"].Value)).ToString("dd/MM/yyyy") + "</td>";
-                    filas += "<td>" + row.Cells["Edad"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Curp"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Genero"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Estadocivil"].Value.ToString() + "</td>";
-                }
-                if (tipoReporte == 2)
-                {
-                    filas += "<td>" + row.Cells["ApellidoPaterno"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["ApellidoMaterno"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Nombres"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Domicilio"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["CodigoPostal"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Nacionalidad"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["EstadoNacimiento"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Municipio"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Correo"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Telefono"].Value.ToString() + "</td>";
-                }
-                if (tipoReporte == 3)
-                {
-                    filas += "<td>" + row.Cells["ApellidoPaterno"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["ApellidoMaterno"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Nombres"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Carrera"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Periodo"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Promedio"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["CCT"].Value.ToString() + "</td>";
-                    filas += "<td>" + row.Cells["Modelo"].Value.ToString() + "</td>";
-                }
-            
-
-                filas += "</tr>";
-            }
-
-            //Se reemplaza el texto "@FILAS" del HTML para colocar las filas obtenidas del DataGridViewRow
-            paginahtml_texto = paginahtml_texto.Replace("@FILAS", filas);
-
-            return paginahtml_texto;
-        }
-
-       
-
-        public string WriterHTMLfiltro()
-        {
-            string paginahtml_texto = null, filas = string.Empty; ;//Inicializacion
-
-            //Empleo de switch para obtener el tipo de reporte seleccionado y cargar el formato HTML como texto
-            switch (tipoReporte)
-            {
-                case 1:
-                    paginahtml_texto = Properties.Resources.plantilla.ToString();
-                    break;
-                case 2:
-                    paginahtml_texto = Properties.Resources.plantillacontacto.ToString();
-                    break;
-                case 3:
-                    paginahtml_texto = Properties.Resources.plantillaAcademica.ToString();
-                    break;
-            }
-
-            //Se reemplaza el texto "@FECHA" para colocar la fecha actual
-            paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
-
-            //Se recorre el DataGridViewRow por filas
-            foreach (DataGridViewRow row in dgvMostrar.Rows)
-            {   //Si en el DataGrid las filas son visibles(contienen el filtro de la busqueda)
-                //entonces se pasan al HTML para imprimir
-                if (row.Visible == true)
+                //Se recorre el DataGridViewRow por filas
+                foreach (DataGridViewRow row in dgvMostrar.Rows)
                 {
                     //Se guarda en formato HTML el valor de las columnas del DataGridViewRow
                     filas += "<tr>";
+
 
                     //Condicional para colocar la info correspodiente de acuerdo al tipo de reporte
                     if (tipoReporte == 1)
@@ -285,13 +265,235 @@ namespace Proyecto_AdministracionOrgDatos
                         filas += "<td>" + row.Cells["Promedio"].Value.ToString() + "</td>";
                         filas += "<td>" + row.Cells["CCT"].Value.ToString() + "</td>";
                         filas += "<td>" + row.Cells["Modelo"].Value.ToString() + "</td>";
-
                     }
+
+
+
                     filas += "</tr>";
                 }
+
+                //Se reemplaza el texto "@FILAS" del HTML para colocar las filas obtenidas del DataGridViewRow
+                paginahtml_texto = paginahtml_texto.Replace("@FILAS", filas);
+
+                return paginahtml_texto;
             }
-            //Se reemplaza el texto "@FILAS" del HTML para colocar las filas obtenidas del DataGridViewRow
-            paginahtml_texto = paginahtml_texto.Replace("@FILAS", filas);
+            else if(tipoReporte == 4)
+            {
+                if (dgvMostrar.CurrentRow.Index > -1)
+                {
+                    //Se asignan todos los valores individuales a las respectivas variables que se representaran en el formato html
+
+                    /*IMPORTANTE: "this.dgvMostrar.CurrentRow.Cells[1].Value.ToString()" hace referencia  los datos de la fila
+                     * seleccionada en el datagridview, el indice que esta dentro del espacio cell, es la posicion (columna) en la
+                     * que se encuentra el dato deseado, se tiene que saber el indice de dicho dato para poder asignarselo a la variable
+                     * en caso de querer agregar otro,  es el mismo codigo solo se modifica ese indice*/
+
+                    apellidoPaterno = this.dgvMostrar.CurrentRow.Cells[1].Value.ToString();
+                    apellidoMaterno = this.dgvMostrar.CurrentRow.Cells[2].Value.ToString();
+                    nombres = this.dgvMostrar.CurrentRow.Cells[3].Value.ToString();
+                    fechaNacimiento = this.dgvMostrar.CurrentRow.Cells[4].Value.ToString();
+                    edad = this.dgvMostrar.CurrentRow.Cells[5].Value.ToString();
+                    curp = this.dgvMostrar.CurrentRow.Cells[6].Value.ToString();
+                    genero = this.dgvMostrar.CurrentRow.Cells[8].Value.ToString();
+                    estadoCivil = this.dgvMostrar.CurrentRow.Cells[7].Value.ToString();
+                    domicilio = this.dgvMostrar.CurrentRow.Cells[10].Value.ToString();
+                    codigoPostal = this.dgvMostrar.CurrentRow.Cells[11].Value.ToString();
+                    nacionalidad = this.dgvMostrar.CurrentRow.Cells[12].Value.ToString();
+                    estadoNacimiento = this.dgvMostrar.CurrentRow.Cells[13].Value.ToString();
+                    municipio = this.dgvMostrar.CurrentRow.Cells[14].Value.ToString();
+                    correo = this.dgvMostrar.CurrentRow.Cells[15].Value.ToString();
+                    telefono = this.dgvMostrar.CurrentRow.Cells[16].Value.ToString();
+                    carrera = this.dgvMostrar.CurrentRow.Cells[18].Value.ToString();
+                    periodo = this.dgvMostrar.CurrentRow.Cells[19].Value.ToString();
+                    promedio = this.dgvMostrar.CurrentRow.Cells[20].Value.ToString();
+                    cct = this.dgvMostrar.CurrentRow.Cells[22].Value.ToString();
+                    modelo = this.dgvMostrar.CurrentRow.Cells[21].Value.ToString();
+                }
+                
+                //Remplazando fecha en el reporte individual
+                paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
+
+                //Remplazando los datos del alumno en el reporte individual
+                paginahtml_texto = paginahtml_texto.Replace("@APATERNO", apellidoPaterno);
+                paginahtml_texto = paginahtml_texto.Replace("@AMATERNO", apellidoMaterno);
+                paginahtml_texto = paginahtml_texto.Replace("@NOMBRES", nombres);
+                paginahtml_texto = paginahtml_texto.Replace("@EDAD", edad);
+                paginahtml_texto = paginahtml_texto.Replace("@FECHANAC", fechaNacimiento);
+                paginahtml_texto = paginahtml_texto.Replace("@CURP", curp);
+                paginahtml_texto = paginahtml_texto.Replace("@GENERO", genero);
+                paginahtml_texto = paginahtml_texto.Replace("@ESTCIVIL", estadoCivil);
+                paginahtml_texto = paginahtml_texto.Replace("@CORREO", correo);
+                paginahtml_texto = paginahtml_texto.Replace("@CELULAR", telefono);
+                paginahtml_texto = paginahtml_texto.Replace("@DOMICILIO", domicilio);
+                paginahtml_texto = paginahtml_texto.Replace("@CODIGOPOS", codigoPostal);
+                paginahtml_texto = paginahtml_texto.Replace("@ESTNAC", estadoNacimiento);
+                paginahtml_texto = paginahtml_texto.Replace("@MUNICIPIO", municipio);
+                paginahtml_texto = paginahtml_texto.Replace("@NACIONALIDAD", nacionalidad);
+                paginahtml_texto = paginahtml_texto.Replace("@UNI", cct);
+                paginahtml_texto = paginahtml_texto.Replace("@MODELO", modelo);
+                paginahtml_texto = paginahtml_texto.Replace("@CARRERA", carrera);
+                paginahtml_texto = paginahtml_texto.Replace("@PROMEDIO", promedio);
+                paginahtml_texto = paginahtml_texto.Replace("@PERIODO", periodo);
+
+
+
+                return paginahtml_texto;
+            }
+
+            return paginahtml_texto;
+        }
+
+       
+
+        public string WriterHTMLfiltro()
+        {
+            string paginahtml_texto = null, filas = string.Empty; ;//Inicializacion
+
+            //Declaracion de variables necesarias para el formato individual
+            string nombres = string.Empty, apellidoMaterno = string.Empty, apellidoPaterno = string.Empty,
+                edad = string.Empty, curp = string.Empty, genero = string.Empty, estadoCivil = string.Empty,
+                domicilio = string.Empty, codigoPostal = string.Empty, nacionalidad = string.Empty, estadoNacimiento = string.Empty,
+                municipio = string.Empty, correo = string.Empty, telefono = string.Empty, carrera = string.Empty, periodo = string.Empty,
+                promedio = string.Empty, cct = string.Empty, modelo = string.Empty, fechaNacimiento = string.Empty;
+
+            //Empleo de switch para obtener el tipo de reporte seleccionado y cargar el formato HTML como texto
+            switch (tipoReporte)
+            {
+                case 1:
+                    paginahtml_texto = Properties.Resources.plantilla.ToString();
+                    break;
+                case 2:
+                    paginahtml_texto = Properties.Resources.plantillacontacto.ToString();
+                    break;
+                case 3:
+                    paginahtml_texto = Properties.Resources.plantillaAcademica.ToString();
+                    break;
+                case 4:
+                    paginahtml_texto = Properties.Resources.PlantillaGeneral.ToString();
+                    break;
+            }
+
+            if (tipoReporte == 1 | tipoReporte == 2 || tipoReporte == 3)
+            {
+                //Se reemplaza el texto "@FECHA" para colocar la fecha actual
+                paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
+
+                //Se recorre el DataGridViewRow por filas
+                foreach (DataGridViewRow row in dgvMostrar.Rows)
+                {   //Si en el DataGrid las filas son visibles(contienen el filtro de la busqueda)
+                    //entonces se pasan al HTML para imprimir
+                    if (row.Visible == true)
+                    {
+                        //Se guarda en formato HTML el valor de las columnas del DataGridViewRow
+                        filas += "<tr>";
+
+                        //Condicional para colocar la info correspodiente de acuerdo al tipo de reporte
+                        if (tipoReporte == 1)
+                        {
+                            filas += "<td>" + row.Cells["ApellidoPaterno"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["ApellidoMaterno"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Nombres"].Value.ToString() + "</td>";
+                            filas += "<td>" + ((DateTime)(row.Cells["FechaNacimiento"].Value)).ToString("dd/MM/yyyy") + "</td>";
+                            filas += "<td>" + row.Cells["Edad"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Curp"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Genero"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Estadocivil"].Value.ToString() + "</td>";
+                        }
+                        if (tipoReporte == 2)
+                        {
+                            filas += "<td>" + row.Cells["ApellidoPaterno"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["ApellidoMaterno"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Nombres"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Domicilio"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["CodigoPostal"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Nacionalidad"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["EstadoNacimiento"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Municipio"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Correo"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Telefono"].Value.ToString() + "</td>";
+                        }
+                        if (tipoReporte == 3)
+                        {
+                            filas += "<td>" + row.Cells["ApellidoPaterno"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["ApellidoMaterno"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Nombres"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Carrera"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Periodo"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Promedio"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["CCT"].Value.ToString() + "</td>";
+                            filas += "<td>" + row.Cells["Modelo"].Value.ToString() + "</td>";
+
+                        }
+                        filas += "</tr>";
+                    }
+                }
+                //Se reemplaza el texto "@FILAS" del HTML para colocar las filas obtenidas del DataGridViewRow
+                paginahtml_texto = paginahtml_texto.Replace("@FILAS", filas);
+
+                return paginahtml_texto;
+            }
+            else if (tipoReporte == 4)
+            {
+                if (dgvMostrar.CurrentRow.Index > -1)
+                {
+                    //Se asignan todos los valores individuales a las respectivas variables que se representaran en el formato html
+
+                    /*IMPORTANTE: "this.dgvMostrar.CurrentRow.Cells[1].Value.ToString()" hace referencia  los datos de la fila
+                     * seleccionada en el datagridview, el indice que esta dentro del espacio cell, es la posicion (columna) en la
+                     * que se encuentra el dato deseado, se tiene que saber el indice de dicho dato para poder asignarselo a la variable
+                     * en caso de querer agregar otro,  es el mismo codigo solo se modifica ese indice*/
+
+                    apellidoPaterno = this.dgvMostrar.CurrentRow.Cells[1].Value.ToString();
+                    apellidoMaterno = this.dgvMostrar.CurrentRow.Cells[2].Value.ToString();
+                    nombres = this.dgvMostrar.CurrentRow.Cells[3].Value.ToString();
+                    fechaNacimiento = this.dgvMostrar.CurrentRow.Cells[4].Value.ToString();
+                    edad = this.dgvMostrar.CurrentRow.Cells[5].Value.ToString();
+                    curp = this.dgvMostrar.CurrentRow.Cells[6].Value.ToString();
+                    genero = this.dgvMostrar.CurrentRow.Cells[8].Value.ToString();
+                    estadoCivil = this.dgvMostrar.CurrentRow.Cells[7].Value.ToString();
+                    domicilio = this.dgvMostrar.CurrentRow.Cells[10].Value.ToString();
+                    codigoPostal = this.dgvMostrar.CurrentRow.Cells[11].Value.ToString();
+                    nacionalidad = this.dgvMostrar.CurrentRow.Cells[12].Value.ToString();
+                    estadoNacimiento = this.dgvMostrar.CurrentRow.Cells[13].Value.ToString();
+                    municipio = this.dgvMostrar.CurrentRow.Cells[14].Value.ToString();
+                    correo = this.dgvMostrar.CurrentRow.Cells[15].Value.ToString();
+                    telefono = this.dgvMostrar.CurrentRow.Cells[16].Value.ToString();
+                    carrera = this.dgvMostrar.CurrentRow.Cells[18].Value.ToString();
+                    periodo = this.dgvMostrar.CurrentRow.Cells[19].Value.ToString();
+                    promedio = this.dgvMostrar.CurrentRow.Cells[20].Value.ToString();
+                    cct = this.dgvMostrar.CurrentRow.Cells[22].Value.ToString();
+                    modelo = this.dgvMostrar.CurrentRow.Cells[21].Value.ToString();
+                }
+
+                //Remplazando fecha en el reporte individual
+                paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
+
+                //Remplazando los datos del alumno en el reporte individual
+                paginahtml_texto = paginahtml_texto.Replace("@APATERNO", apellidoPaterno);
+                paginahtml_texto = paginahtml_texto.Replace("@AMATERNO", apellidoMaterno);
+                paginahtml_texto = paginahtml_texto.Replace("@NOMBRES", nombres);
+                paginahtml_texto = paginahtml_texto.Replace("@EDAD", edad);
+                paginahtml_texto = paginahtml_texto.Replace("@FECHANAC", fechaNacimiento);
+                paginahtml_texto = paginahtml_texto.Replace("@CURP", curp);
+                paginahtml_texto = paginahtml_texto.Replace("@GENERO", genero);
+                paginahtml_texto = paginahtml_texto.Replace("@ESTCIVIL", estadoCivil);
+                paginahtml_texto = paginahtml_texto.Replace("@CORREO", correo);
+                paginahtml_texto = paginahtml_texto.Replace("@CELULAR", telefono);
+                paginahtml_texto = paginahtml_texto.Replace("@DOMICILIO", domicilio);
+                paginahtml_texto = paginahtml_texto.Replace("@CODIGOPOS", codigoPostal);
+                paginahtml_texto = paginahtml_texto.Replace("@ESTNAC", estadoNacimiento);
+                paginahtml_texto = paginahtml_texto.Replace("@MUNICIPIO", municipio);
+                paginahtml_texto = paginahtml_texto.Replace("@NACIONALIDAD", nacionalidad);
+                paginahtml_texto = paginahtml_texto.Replace("@UNI", cct);
+                paginahtml_texto = paginahtml_texto.Replace("@MODELO", modelo);
+                paginahtml_texto = paginahtml_texto.Replace("@CARRERA", carrera);
+                paginahtml_texto = paginahtml_texto.Replace("@PROMEDIO", promedio);
+                paginahtml_texto = paginahtml_texto.Replace("@PERIODO", periodo);
+
+
+
+                return paginahtml_texto;
+            }
 
             return paginahtml_texto;
         }
