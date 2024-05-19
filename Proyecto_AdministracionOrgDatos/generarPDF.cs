@@ -56,9 +56,13 @@ namespace Proyecto_AdministracionOrgDatos
             LlenarDGV();
 
             //Se iniciliazan los elementos del combo box
+            cmbFiltro.Items.Add("Apellido");
             cmbFiltro.Items.Add("Nombre");
             cmbFiltro.Items.Add("CCT");
             cmbFiltro.Items.Add("Promedio");
+            cmbFiltro.Items.Add("Carrera");
+            cmbFiltro.Items.Add("Periodo");
+            cmbFiltro.Items.Add("Modalidad");
             fontPers = new FuentePersonalizada();
         }
 
@@ -578,10 +582,13 @@ namespace Proyecto_AdministracionOrgDatos
             {
                 if (cmbFiltro.Text != "")
                 {
-                    //Asignacion de celda
+                    //Asignacion de celda mediante indices
                     string auxiliar = cmbFiltro.Text;
                     switch (auxiliar)
                     {
+                        case "Apellido":
+                            auxiliar = "1";
+                            break;
                         case "Nombre":
                             auxiliar = "3";
                             break;
@@ -590,6 +597,15 @@ namespace Proyecto_AdministracionOrgDatos
                             break;
                         case "Promedio":
                             auxiliar = "20";
+                            break;
+                        case "Carrera":
+                            auxiliar = "18";
+                            break;
+                        case "Periodo":
+                            auxiliar = "19";
+                            break;
+                        case "Modalidad":
+                            auxiliar = "21";
                             break;
                     }
 
@@ -619,6 +635,11 @@ namespace Proyecto_AdministracionOrgDatos
             }
             else
             { MessageBox.Show("Faltan datos por colocar"); }
+        }
+
+        private void lblFiltro_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
