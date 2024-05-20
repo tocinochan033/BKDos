@@ -64,8 +64,12 @@ namespace Proyecto_AdministracionOrgDatos
             cmbFiltro.Items.Add("Carrera");
             cmbFiltro.Items.Add("Periodo");
             cmbFiltro.Items.Add("Modalidad");
-            
-            fontPers = new FuentePersonalizada();
+
+            cmbVista.Items.Add("Becarios Activos");
+            cmbVista.Items.Add("Becarios Suspendidos");
+            cmbVista.Items.Add("Becarios Totales");
+
+        fontPers = new FuentePersonalizada();
         }
 
         private void generarPDF_Load(object sender, EventArgs e)
@@ -571,6 +575,42 @@ namespace Proyecto_AdministracionOrgDatos
 
             }
         }
+        //Metodo para ver el query 
+        public void BecariosSuspendidos()
+        {
+            Tabla.Clear();
+            dgvMostrar.ClearSelection();
+
+            using (SqlConnection con = DB_Conexion.GetConnection())
+            {
+                // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
+                Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
+                  "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
+                  "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 2 ";
+                Adaptador = new SqlDataAdapter(Sql, con);
+                Adaptador.Fill(Tabla);
+                dgvMostrar.DataSource = Tabla;
+
+            }
+        }
+
+        public void TodosBecarios()
+        {
+            Tabla.Clear();
+            dgvMostrar.ClearSelection();
+
+            using (SqlConnection con = DB_Conexion.GetConnection())
+            {
+                // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
+                Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
+                  "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
+                  "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos ";
+                Adaptador = new SqlDataAdapter(Sql, con);
+                Adaptador.Fill(Tabla);
+                dgvMostrar.DataSource = Tabla;
+
+            }
+        }
 
         private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -579,7 +619,12 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
+            string criterio = cmbVista.Text;
+            SeleccionBecarios(criterio);
+
             //Si hay algo entonces se ejecuta
+          
+            
             if (txtFiltro.Text != "")
             {
                 if (cmbFiltro.Text != "")
@@ -640,6 +685,20 @@ namespace Proyecto_AdministracionOrgDatos
             }
             else
             { MessageBox.Show("Faltan datos por colocar"); }
+        }
+        public void SeleccionBecarios(string filtro)
+        {
+            switch()
+            {
+                case "Becarios Activos":
+                    break;
+                case "":
+                    break;
+                case "":
+                    break;
+                default:
+                    break
+            }
         }
 
         private void lblFiltro_Click(object sender, EventArgs e)
