@@ -149,7 +149,7 @@ namespace Proyecto_AdministracionOrgDatos
             //Query Primera Tabla
             using (SqlConnection con = DB_Conexion.GetConnection())
             {
-                string Sql = "SELECT FileName , FilePath FROM DatosArchivos ";
+                string Sql = "SELECT FileName , FilePath FROM ArchivosBecarios ";
                 // Sql = "SELECT * from DatosGenerales, DatosAcademicos, DatosContacto";
                 Adaptador = new SqlDataAdapter(Sql, con);
                 Adaptador.Fill(Tabla);

@@ -56,13 +56,15 @@ namespace Proyecto_AdministracionOrgDatos
             LlenarDGV();
 
             //Se iniciliazan los elementos del combo box
-            cmbFiltro.Items.Add("Apellido");
+            cmbFiltro.Items.Add("Apellido Paterno");
+            cmbFiltro.Items.Add("Apellido Materno");
             cmbFiltro.Items.Add("Nombre");
             cmbFiltro.Items.Add("CCT");
             cmbFiltro.Items.Add("Promedio");
             cmbFiltro.Items.Add("Carrera");
             cmbFiltro.Items.Add("Periodo");
             cmbFiltro.Items.Add("Modalidad");
+            
             fontPers = new FuentePersonalizada();
         }
 
@@ -586,8 +588,11 @@ namespace Proyecto_AdministracionOrgDatos
                     string auxiliar = cmbFiltro.Text;
                     switch (auxiliar)
                     {
-                        case "Apellido":
+                        case "Apellido Paterno":
                             auxiliar = "1";
+                            break;
+                        case "Apellido Materno":
+                            auxiliar = "2";
                             break;
                         case "Nombre":
                             auxiliar = "3";

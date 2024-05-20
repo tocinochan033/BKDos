@@ -34,7 +34,6 @@
             this.btnRegistrarUsuarios_ESA = new System.Windows.Forms.Button();
             this.btnCerrarSesion_ESA = new System.Windows.Forms.Button();
             this.btnGenerarPDF_ESA = new System.Windows.Forms.Button();
-            this.btnConsultar_ESA = new System.Windows.Forms.Button();
             this.FechaHora1 = new System.Windows.Forms.Timer(this.components);
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -100,7 +99,7 @@
             this.btnCerrarSesion_ESA.ForeColor = System.Drawing.Color.Snow;
             this.btnCerrarSesion_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion_ESA.Image")));
             this.btnCerrarSesion_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion_ESA.Location = new System.Drawing.Point(2, 339);
+            this.btnCerrarSesion_ESA.Location = new System.Drawing.Point(2, 279);
             this.btnCerrarSesion_ESA.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarSesion_ESA.Name = "btnCerrarSesion_ESA";
             this.btnCerrarSesion_ESA.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
@@ -131,26 +130,6 @@
             this.btnGenerarPDF_ESA.UseVisualStyleBackColor = false;
             this.btnGenerarPDF_ESA.Click += new System.EventHandler(this.btnGenerarPDF_ESA_Click);
             // 
-            // btnConsultar_ESA
-            // 
-            this.btnConsultar_ESA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.btnConsultar_ESA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsultar_ESA.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.btnConsultar_ESA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar_ESA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar_ESA.ForeColor = System.Drawing.Color.Snow;
-            this.btnConsultar_ESA.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar_ESA.Image")));
-            this.btnConsultar_ESA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultar_ESA.Location = new System.Drawing.Point(2, 279);
-            this.btnConsultar_ESA.Margin = new System.Windows.Forms.Padding(2);
-            this.btnConsultar_ESA.Name = "btnConsultar_ESA";
-            this.btnConsultar_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
-            this.btnConsultar_ESA.Size = new System.Drawing.Size(193, 56);
-            this.btnConsultar_ESA.TabIndex = 27;
-            this.btnConsultar_ESA.Text = "       Consultar";
-            this.btnConsultar_ESA.UseVisualStyleBackColor = false;
-            this.btnConsultar_ESA.Click += new System.EventHandler(this.btnConsultar_ESA_Click);
-            // 
             // FechaHora1
             // 
             this.FechaHora1.Enabled = true;
@@ -163,7 +142,6 @@
             this.sidebar.Controls.Add(this.btnRegistrarUsuarios_ESA);
             this.sidebar.Controls.Add(this.btnSubirDocumentos_ESA);
             this.sidebar.Controls.Add(this.btnGenerarPDF_ESA);
-            this.sidebar.Controls.Add(this.btnConsultar_ESA);
             this.sidebar.Controls.Add(this.btnCerrarSesion_ESA);
             this.sidebar.Controls.Add(this.panel2);
             this.sidebar.Location = new System.Drawing.Point(-1, 1);
@@ -195,7 +173,7 @@
             // 
             this.panel2.Controls.Add(this.FechaC);
             this.panel2.Controls.Add(this.HoraC);
-            this.panel2.Location = new System.Drawing.Point(3, 400);
+            this.panel2.Location = new System.Drawing.Point(3, 340);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(192, 211);
             this.panel2.TabIndex = 37;
@@ -261,7 +239,6 @@
         private System.Windows.Forms.Button btnRegistrarUsuarios_ESA;
         private System.Windows.Forms.Button btnCerrarSesion_ESA;
         private System.Windows.Forms.Button btnGenerarPDF_ESA;
-        private System.Windows.Forms.Button btnConsultar_ESA;
         private System.Windows.Forms.Timer FechaHora1;
         private System.Windows.Forms.FlowLayoutPanel sidebar;
         private System.Windows.Forms.Panel panel1;

@@ -20,7 +20,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         //Variables para las diferentes pantallas
         frmRegistrarBecarios_ESA PantallaRegistro;
-        Mostrar_datos PantallaConsulta;
+       
         generarPDF PantallaPDF;
         frm_SubirPDF PantallaSubir;
        
@@ -88,7 +88,7 @@ namespace Proyecto_AdministracionOrgDatos
         private void PantallasCerradas (object sender, FormClosedEventArgs e)
         {
             PantallaRegistro = null;
-            PantallaConsulta = null;
+           
         }
 
 
@@ -110,10 +110,10 @@ namespace Proyecto_AdministracionOrgDatos
             //Se comprueba si ese formulario existe para mostrarlo o crearlo
             if (formIsOpen("Mostrar_datos") == false)
             {
-                PantallaConsulta = new Mostrar_datos();
+               /* PantallaConsulta = new Mostrar_datos();
                 PantallaConsulta.FormClosed += PantallasCerradas;
                 PantallaConsulta.MdiParent = this;
-                PantallaConsulta.Show();
+                PantallaConsulta.Show();*/
             }
             DatosInactividad.control = true; //Indicador
             timerInactividad.Enabled = false; //Detener temporizador(aplica solo al menu)
