@@ -36,9 +36,11 @@ namespace Proyecto_AdministracionOrgDatos
             // Usar la conexión a SQL para ejecutar una instrucción de inserción.
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO DatosArchivos (FileName, FilePath) VALUES (@FileName, @FilePath)";
+                
+                string query = "INSERT INTO ArchivosBecarios (FileName, FilePath) VALUES (@FileName, @FilePath)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    
                     // Añadir los parámetros para evitar inyección SQL.
                     command.Parameters.AddWithValue("@FileName", fileName);
                     command.Parameters.AddWithValue("@FilePath", newFilePath);
@@ -46,8 +48,33 @@ namespace Proyecto_AdministracionOrgDatos
                     connection.Open();
                     command.ExecuteNonQuery();
                 }
+                
             }
         }
+     /*   public List<string> GetAllPDFiles()
+        {
+            List<string> files = new List<string>();
+
+            using (SqlConnection connection = new SqlConnection (connectionString))
+            {
+                string query = "SELECT FilePath FROM ArchivosBecarios";
+                using (SqlCommand command = new SqlCommand(query, connection) )
+                {
+                    connection.Open();
+                    using(SqlDataReader reader = command.ExecuteReader() )
+                    { 
+                        while(reader.Read())
+                        {
+                            //Añadimos los archivos a la lista
+                            files.Add(reader["FilePath"].ToString());
+
+                        }
+                    }
+                }
+            }
+            return files;
+        }
+     */
 
     }
 }

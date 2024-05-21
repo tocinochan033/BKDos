@@ -56,14 +56,20 @@ namespace Proyecto_AdministracionOrgDatos
             LlenarDGV();
 
             //Se iniciliazan los elementos del combo box
-            cmbFiltro.Items.Add("Apellido");
+            cmbFiltro.Items.Add("Apellido Paterno");
+            cmbFiltro.Items.Add("Apellido Materno");
             cmbFiltro.Items.Add("Nombre");
             cmbFiltro.Items.Add("CCT");
             cmbFiltro.Items.Add("Promedio");
             cmbFiltro.Items.Add("Carrera");
             cmbFiltro.Items.Add("Periodo");
             cmbFiltro.Items.Add("Modalidad");
-            fontPers = new FuentePersonalizada();
+
+            cmbVista.Items.Add("Becarios Activos");
+            cmbVista.Items.Add("Becarios Suspendidos");
+            cmbVista.Items.Add("Becarios Totales");
+
+        fontPers = new FuentePersonalizada();
         }
 
         private void generarPDF_Load(object sender, EventArgs e)
@@ -551,6 +557,7 @@ namespace Proyecto_AdministracionOrgDatos
             txtFiltro.Text = "";
             cmbFiltro.Text = null;
             RefrescarDatos();
+            cmbVista.Text = null;
         }
         public void RefrescarDatos()
         {
@@ -569,6 +576,60 @@ namespace Proyecto_AdministracionOrgDatos
 
             }
         }
+        //Metodo para ver el query 
+        public void BecariosSuspendidos()
+        {
+            Tabla.Clear();
+            dgvMostrar.ClearSelection();
+
+            using (SqlConnection con = DB_Conexion.GetConnection())
+            {
+                // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
+                Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
+                  "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
+                  "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 2 ";
+                Adaptador = new SqlDataAdapter(Sql, con);
+                Adaptador.Fill(Tabla);
+                dgvMostrar.DataSource = Tabla;
+
+            }
+        }
+
+        public void BecariosTotales()
+        {
+            Tabla.Clear();
+            dgvMostrar.ClearSelection();
+
+            using (SqlConnection con = DB_Conexion.GetConnection())
+            {
+                // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
+                Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
+                  "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
+                  "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos";
+                Adaptador = new SqlDataAdapter(Sql, con);
+                Adaptador.Fill(Tabla);
+                dgvMostrar.DataSource = Tabla;
+
+            }
+        }
+
+        public void TodosBecarios()
+        {
+            Tabla.Clear();
+            dgvMostrar.ClearSelection();
+
+            using (SqlConnection con = DB_Conexion.GetConnection())
+            {
+                // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
+                Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
+                  "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
+                  "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos ";
+                Adaptador = new SqlDataAdapter(Sql, con);
+                Adaptador.Fill(Tabla);
+                dgvMostrar.DataSource = Tabla;
+
+            }
+        }
 
         private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -577,7 +638,12 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
+            string criterio = cmbVista.Text;
+            SeleccionBecarios(criterio);
+
             //Si hay algo entonces se ejecuta
+          
+            
             if (txtFiltro.Text != "")
             {
                 if (cmbFiltro.Text != "")
@@ -586,8 +652,11 @@ namespace Proyecto_AdministracionOrgDatos
                     string auxiliar = cmbFiltro.Text;
                     switch (auxiliar)
                     {
-                        case "Apellido":
+                        case "Apellido Paterno":
                             auxiliar = "1";
+                            break;
+                        case "Apellido Materno":
+                            auxiliar = "2";
                             break;
                         case "Nombre":
                             auxiliar = "3";
@@ -636,6 +705,25 @@ namespace Proyecto_AdministracionOrgDatos
             else
             { MessageBox.Show("Faltan datos por colocar"); }
         }
+        public void SeleccionBecarios(string filtro)
+        {
+            switch(filtro)
+            {
+                case "Becarios Activos":
+                    RefrescarDatos();
+                    break;
+                case "Becarios Suspendidos":
+                    BecariosSuspendidos();
+                    break;
+                case "Becarios Totales":
+                    BecariosTotales();
+                    break;
+                default:
+                    RefrescarDatos();
+                    break;
+            }
+        }
+      
 
         private void lblFiltro_Click(object sender, EventArgs e)
         {

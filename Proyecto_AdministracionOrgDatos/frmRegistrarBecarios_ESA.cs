@@ -381,6 +381,8 @@ namespace Proyecto_AdministracionOrgDatos
                     if (cmbFiltroModificar.Text == "A.Paterno")
                     {
                         Sql = "";
+
+                        //UPDATE Nombre Tabla SET campo = @variable WHERE valor de referencias
                         Sql = "UPDATE DatosGenerales set ApellidoPaterno = @ApellidoPaterno WHERE Id_Alumno = @Id_Alumno";
                         Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);
@@ -1436,6 +1438,18 @@ namespace Proyecto_AdministracionOrgDatos
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnImg_Click(object sender, EventArgs e)
+        {
+            //Abre ventana para seleccionar archivo
+            OpenFileDialog foto = new OpenFileDialog();
+            //Dialogo para confirmar seleccion
+            DialogResult result = foto.ShowDialog();
+            if(result == DialogResult.OK)
+            {
+                btnImg.Image = Image.FromFile(foto.FileName);
+            }
         }
 
         /*
