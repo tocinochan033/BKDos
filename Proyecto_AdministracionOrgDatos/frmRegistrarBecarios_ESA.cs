@@ -1052,6 +1052,12 @@ namespace Proyecto_AdministracionOrgDatos
             }
         }
 
+        void correoVerificacion()
+        {
+            MessageBox.Show("Por favor, ingrese una dirección de correo electrónico válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            txtCorreoElectronico.Focus();
+            return;
+        }
 
         private bool HayCamposVacios()
         {
@@ -1106,17 +1112,15 @@ namespace Proyecto_AdministracionOrgDatos
                 //int indiceNuevaFila;
                 // Validar que el campo "Correo Electrónico" contenga "@" y termine con ".com"
                 string correoElectronico = txtCorreoElectronico.Text;
-                if (!correoElectronico.Contains("@") || !correoElectronico.EndsWith(".com"))
-                {
-                    MessageBox.Show("Por favor, ingrese una dirección de correo electrónico válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtCorreoElectronico.Focus();
-                    return;//Detener la ejecucion del metodo si el correo electronico no es valido
-                }
+
+                if (!correoElectronico.Contains("yahoo") && !correoElectronico.Contains("gmail") && !correoElectronico.Contains("hotmail"))
+                    correoVerificacion();
+
                 if (txtEdad.Text.Length != 2)//Vaidar rango de edad
                 {
                     MessageBox.Show("Por favor, ingrese una edad dentro del rango válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtEdad.Focus();
-                    return;//Detener la ejecucion del metodo si el correo electronico no es valido
+                    return;
                 }
 
                 txtEdad.BorderStyle = BorderStyle.None;             
@@ -1124,15 +1128,15 @@ namespace Proyecto_AdministracionOrgDatos
                 int Id_DatosAcademicos;
                 int Id_DatosContacto;
                 int Id_DatosGenerales;
-               
+
                 //Conectar();
                 /*Seleccionar id de escuela, le asigno una variable para guardar el valor*/
-               
-              
+
+                
 
                 /*-----------------------------------Inicio de metodo con base de datos-------------------------------------*/
 
-                using(SqlConnection con = DB_Conexion.GetConnection())
+                using (SqlConnection con = DB_Conexion.GetConnection())
                 {
                     /*Insercion en tabla de datos academicos*/
                     Sql = "";
@@ -1207,8 +1211,6 @@ namespace Proyecto_AdministracionOrgDatos
                     }
 
                 }
-
-
                 /*-----------------------------------Fin de metodo con base de datos-------------------------------------*/
 
 
@@ -1369,7 +1371,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                 /*-----------------------------------------------------------------------------------------------*/
 
-                camposLimpieza();
+                //camposLimpieza();
                 RefrescarDatos();
                 //Regresar el "cursor" al textbox del nombre
                 txtApaterno.Focus();
