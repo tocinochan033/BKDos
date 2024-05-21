@@ -381,6 +381,8 @@ namespace Proyecto_AdministracionOrgDatos
                     if (cmbFiltroModificar.Text == "A.Paterno")
                     {
                         Sql = "";
+
+                        //UPDATE Nombre Tabla SET campo = @variable WHERE valor de referencias
                         Sql = "UPDATE DatosGenerales set ApellidoPaterno = @ApellidoPaterno WHERE Id_Alumno = @Id_Alumno";
                         Comando = new SqlCommand(Sql, con);
                         Comando.Parameters.AddWithValue("@Id_Alumno", dgv_Agregar.Rows[seleccion].Cells[0].Value);

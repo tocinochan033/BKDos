@@ -557,6 +557,7 @@ namespace Proyecto_AdministracionOrgDatos
             txtFiltro.Text = "";
             cmbFiltro.Text = null;
             RefrescarDatos();
+            cmbVista.Text = null;
         }
         public void RefrescarDatos()
         {
@@ -587,6 +588,24 @@ namespace Proyecto_AdministracionOrgDatos
                 Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
                   "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
                   "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 2 ";
+                Adaptador = new SqlDataAdapter(Sql, con);
+                Adaptador.Fill(Tabla);
+                dgvMostrar.DataSource = Tabla;
+
+            }
+        }
+
+        public void BecariosTotales()
+        {
+            Tabla.Clear();
+            dgvMostrar.ClearSelection();
+
+            using (SqlConnection con = DB_Conexion.GetConnection())
+            {
+                // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
+                Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
+                  "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
+                  "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos";
                 Adaptador = new SqlDataAdapter(Sql, con);
                 Adaptador.Fill(Tabla);
                 dgvMostrar.DataSource = Tabla;
@@ -688,18 +707,23 @@ namespace Proyecto_AdministracionOrgDatos
         }
         public void SeleccionBecarios(string filtro)
         {
-            switch()
+            switch(filtro)
             {
                 case "Becarios Activos":
+                    RefrescarDatos();
                     break;
-                case "":
+                case "Becarios Suspendidos":
+                    BecariosSuspendidos();
                     break;
-                case "":
+                case "Becarios Totales":
+                    BecariosTotales();
                     break;
                 default:
-                    break
+                    RefrescarDatos();
+                    break;
             }
         }
+      
 
         private void lblFiltro_Click(object sender, EventArgs e)
         {
