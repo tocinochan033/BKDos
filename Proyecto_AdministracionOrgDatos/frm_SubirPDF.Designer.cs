@@ -71,7 +71,7 @@
             this.btnSubir.Location = new System.Drawing.Point(381, 546);
             this.btnSubir.Name = "btnSubir";
             this.btnSubir.Size = new System.Drawing.Size(113, 37);
-            this.btnSubir.TabIndex = 77;
+            this.btnSubir.TabIndex = 3;
             this.btnSubir.Text = "Subir PDF";
             this.btnSubir.UseVisualStyleBackColor = false;
             this.btnSubir.Click += new System.EventHandler(this.btnSubir_Click);
@@ -85,7 +85,7 @@
             this.btnSalir.Location = new System.Drawing.Point(1048, 546);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(113, 37);
-            this.btnSalir.TabIndex = 78;
+            this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -154,7 +154,7 @@
             this.txtNombres.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(391, 22);
-            this.txtNombres.TabIndex = 96;
+            this.txtNombres.TabIndex = 1;
             // 
             // pictureBox11
             // 
@@ -175,7 +175,7 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(239, 22);
-            this.textBox1.TabIndex = 98;
+            this.textBox1.TabIndex = 2;
             // 
             // pictureBox2
             // 
@@ -196,7 +196,7 @@
             this.btnAbrir.Location = new System.Drawing.Point(507, 546);
             this.btnAbrir.Name = "btnAbrir";
             this.btnAbrir.Size = new System.Drawing.Size(113, 37);
-            this.btnAbrir.TabIndex = 100;
+            this.btnAbrir.TabIndex = 4;
             this.btnAbrir.Text = "Abrir PDF";
             this.btnAbrir.UseVisualStyleBackColor = false;
             this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
@@ -224,7 +224,7 @@
             this.MaximumSize = new System.Drawing.Size(1214, 651);
             this.MinimumSize = new System.Drawing.Size(1214, 651);
             this.Name = "frm_SubirPDF";
-            this.Text = "frm_SubirPDF";
+            this.Text = "Reportes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_SubirPDF_FormClosing);
             this.Load += new System.EventHandler(this.frm_SubirPDF_Load);

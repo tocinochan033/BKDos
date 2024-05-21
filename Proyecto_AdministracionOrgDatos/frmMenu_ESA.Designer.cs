@@ -62,7 +62,7 @@
             this.btnSubirDocumentos_ESA.Name = "btnSubirDocumentos_ESA";
             this.btnSubirDocumentos_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
             this.btnSubirDocumentos_ESA.Size = new System.Drawing.Size(193, 56);
-            this.btnSubirDocumentos_ESA.TabIndex = 24;
+            this.btnSubirDocumentos_ESA.TabIndex = 3;
             this.btnSubirDocumentos_ESA.Text = "Subir documentos";
             this.btnSubirDocumentos_ESA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSubirDocumentos_ESA.UseVisualStyleBackColor = false;
@@ -83,7 +83,7 @@
             this.btnRegistrarUsuarios_ESA.Name = "btnRegistrarUsuarios_ESA";
             this.btnRegistrarUsuarios_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
             this.btnRegistrarUsuarios_ESA.Size = new System.Drawing.Size(193, 56);
-            this.btnRegistrarUsuarios_ESA.TabIndex = 22;
+            this.btnRegistrarUsuarios_ESA.TabIndex = 1;
             this.btnRegistrarUsuarios_ESA.Text = "Registrar y Modificar";
             this.btnRegistrarUsuarios_ESA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistrarUsuarios_ESA.UseVisualStyleBackColor = false;
@@ -104,7 +104,7 @@
             this.btnCerrarSesion_ESA.Name = "btnCerrarSesion_ESA";
             this.btnCerrarSesion_ESA.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
             this.btnCerrarSesion_ESA.Size = new System.Drawing.Size(193, 56);
-            this.btnCerrarSesion_ESA.TabIndex = 21;
+            this.btnCerrarSesion_ESA.TabIndex = 5;
             this.btnCerrarSesion_ESA.Text = "        Cerrar Sesión";
             this.btnCerrarSesion_ESA.UseVisualStyleBackColor = false;
             this.btnCerrarSesion_ESA.Click += new System.EventHandler(this.btnCerrarSesion_ESA_Click);
@@ -124,7 +124,7 @@
             this.btnGenerarPDF_ESA.Name = "btnGenerarPDF_ESA";
             this.btnGenerarPDF_ESA.Padding = new System.Windows.Forms.Padding(5, 0, 35, 0);
             this.btnGenerarPDF_ESA.Size = new System.Drawing.Size(193, 56);
-            this.btnGenerarPDF_ESA.TabIndex = 26;
+            this.btnGenerarPDF_ESA.TabIndex = 4;
             this.btnGenerarPDF_ESA.Text = "Generar PDF";
             this.btnGenerarPDF_ESA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGenerarPDF_ESA.UseVisualStyleBackColor = false;

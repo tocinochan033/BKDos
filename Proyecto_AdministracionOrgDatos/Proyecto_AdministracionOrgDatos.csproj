@@ -181,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BK222.png" />
+    <None Include="Resources\BK2223.png" />
     <Content Include="Resources\Sombrero.png" />
     <None Include="Resources\PlantillaGeneral.html" />
     <None Include="Resources\plantillaAcademica.html" />

@@ -37,6 +37,7 @@
             this.lblTitulo_ESA = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbVista = new System.Windows.Forms.ComboBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.lblFiltro = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.btnResetFiltro = new System.Windows.Forms.Button();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbVista = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel1.SuspendLayout();
@@ -60,8 +60,8 @@
             this.dgvMostrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMostrar.GridColor = System.Drawing.Color.Silver;
-            this.dgvMostrar.Location = new System.Drawing.Point(237, 168);
-            this.dgvMostrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvMostrar.Location = new System.Drawing.Point(222, 156);
+            this.dgvMostrar.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMostrar.Name = "dgvMostrar";
             this.dgvMostrar.ReadOnly = true;
             this.dgvMostrar.RowHeadersWidth = 51;
@@ -79,10 +79,10 @@
             "Informacion Personal",
             "Informacion de Contacto",
             "Informacion Academica"});
-            this.cmbPDFeleccion.Location = new System.Drawing.Point(256, 575);
+            this.cmbPDFeleccion.Location = new System.Drawing.Point(234, 549);
             this.cmbPDFeleccion.Name = "cmbPDFeleccion";
             this.cmbPDFeleccion.Size = new System.Drawing.Size(145, 23);
-            this.cmbPDFeleccion.TabIndex = 90;
+            this.cmbPDFeleccion.TabIndex = 5;
             // 
             // btnImprimirPDF
             // 
@@ -90,11 +90,11 @@
             this.btnImprimirPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimirPDF.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnImprimirPDF.ForeColor = System.Drawing.Color.Snow;
-            this.btnImprimirPDF.Location = new System.Drawing.Point(434, 567);
+            this.btnImprimirPDF.Location = new System.Drawing.Point(395, 549);
             this.btnImprimirPDF.Name = "btnImprimirPDF";
             this.btnImprimirPDF.Size = new System.Drawing.Size(127, 31);
-            this.btnImprimirPDF.TabIndex = 91;
-            this.btnImprimirPDF.Text = "Imprimir PDF";
+            this.btnImprimirPDF.TabIndex = 6;
+            this.btnImprimirPDF.Text = "Guardar PDF";
             this.btnImprimirPDF.UseVisualStyleBackColor = false;
             this.btnImprimirPDF.Click += new System.EventHandler(this.btnImprimirPDF_Click);
             // 
@@ -104,10 +104,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button1.ForeColor = System.Drawing.Color.Snow;
-            this.button1.Location = new System.Drawing.Point(582, 567);
+            this.button1.Location = new System.Drawing.Point(543, 549);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(152, 30);
-            this.button1.TabIndex = 92;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Firma Electronica";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -139,10 +139,10 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnSalir.ForeColor = System.Drawing.Color.Snow;
-            this.btnSalir.Location = new System.Drawing.Point(1109, 567);
+            this.btnSalir.Location = new System.Drawing.Point(1102, 555);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(65, 31);
-            this.btnSalir.TabIndex = 95;
+            this.btnSalir.TabIndex = 9;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -157,18 +157,30 @@
             this.panel1.Controls.Add(this.txtFiltro);
             this.panel1.Controls.Add(this.cmbFiltro);
             this.panel1.Controls.Add(this.lblCategoria);
-            this.panel1.Location = new System.Drawing.Point(237, 113);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(222, 101);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(861, 43);
-            this.panel1.TabIndex = 96;
+            this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // cmbVista
+            // 
+            this.cmbVista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVista.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cmbVista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.cmbVista.FormattingEnabled = true;
+            this.cmbVista.Location = new System.Drawing.Point(630, 7);
+            this.cmbVista.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbVista.Name = "cmbVista";
+            this.cmbVista.Size = new System.Drawing.Size(220, 29);
+            this.cmbVista.TabIndex = 3;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(406, 11);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(22, 24);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -179,7 +191,7 @@
             // 
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
             this.pictureBox11.Location = new System.Drawing.Point(70, 32);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(325, 8);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -205,11 +217,11 @@
             this.txtFiltro.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.txtFiltro.Location = new System.Drawing.Point(70, 10);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(2);
             this.txtFiltro.Multiline = true;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(325, 23);
-            this.txtFiltro.TabIndex = 78;
+            this.txtFiltro.TabIndex = 1;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // cmbFiltro
@@ -219,10 +231,10 @@
             this.cmbFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.cmbFiltro.FormattingEnabled = true;
             this.cmbFiltro.Location = new System.Drawing.Point(475, 7);
-            this.cmbFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbFiltro.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(151, 29);
-            this.cmbFiltro.TabIndex = 80;
+            this.cmbFiltro.TabIndex = 2;
             this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
             // lblCategoria
@@ -243,11 +255,11 @@
             this.btnResetFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResetFiltro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetFiltro.ForeColor = System.Drawing.Color.Transparent;
-            this.btnResetFiltro.Location = new System.Drawing.Point(1004, 567);
-            this.btnResetFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetFiltro.Location = new System.Drawing.Point(997, 555);
+            this.btnResetFiltro.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetFiltro.Name = "btnResetFiltro";
             this.btnResetFiltro.Size = new System.Drawing.Size(100, 33);
-            this.btnResetFiltro.TabIndex = 97;
+            this.btnResetFiltro.TabIndex = 8;
             this.btnResetFiltro.Text = "Reiniciar filtros";
             this.btnResetFiltro.UseVisualStyleBackColor = false;
             this.btnResetFiltro.Click += new System.EventHandler(this.btnResetFiltro_Click);
@@ -258,11 +270,11 @@
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnFiltrar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFiltrar.Location = new System.Drawing.Point(1102, 117);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFiltrar.Location = new System.Drawing.Point(1087, 105);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(101, 34);
-            this.btnFiltrar.TabIndex = 98;
+            this.btnFiltrar.TabIndex = 4;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
@@ -272,25 +284,13 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.label1.Location = new System.Drawing.Point(419, 611);
+            this.label1.Location = new System.Drawing.Point(391, 583);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(529, 19);
             this.label1.TabIndex = 99;
             this.label1.Text = "(Nota: Si desea elaborar un reporte individual, seleccione la fila del elemento d" +
     "eseado)";
-            // 
-            // cmbVista
-            // 
-            this.cmbVista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbVista.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmbVista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.cmbVista.FormattingEnabled = true;
-            this.cmbVista.Location = new System.Drawing.Point(630, 7);
-            this.cmbVista.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbVista.Name = "cmbVista";
-            this.cmbVista.Size = new System.Drawing.Size(220, 29);
-            this.cmbVista.TabIndex = 89;
             // 
             // generarPDF
             // 
