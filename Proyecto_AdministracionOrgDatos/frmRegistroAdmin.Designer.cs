@@ -81,7 +81,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(379, 323);
-            this.tabControl1.TabIndex = 2;
+            this.tabControl1.TabIndex = 8;
             // 
             // tabPage1
             // 
@@ -102,7 +102,7 @@
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(371, 297);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nuevo Admin...";
@@ -174,7 +174,7 @@
             this.newAdminButton.Location = new System.Drawing.Point(54, 259);
             this.newAdminButton.Name = "newAdminButton";
             this.newAdminButton.Size = new System.Drawing.Size(258, 32);
-            this.newAdminButton.TabIndex = 8;
+            this.newAdminButton.TabIndex = 7;
             this.newAdminButton.Text = "Nuevo Administrador";
             this.newAdminButton.UseVisualStyleBackColor = false;
             this.newAdminButton.Click += new System.EventHandler(this.newAdminButton_Click);
@@ -261,7 +261,7 @@
             this.tabPage2.Controls.Add(this.administradoresDataGrid);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(371, 297);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Borrar Admin...";
@@ -272,7 +272,7 @@
             this.eliminarAdminButton.Location = new System.Drawing.Point(12, 16);
             this.eliminarAdminButton.Name = "eliminarAdminButton";
             this.eliminarAdminButton.Size = new System.Drawing.Size(158, 33);
-            this.eliminarAdminButton.TabIndex = 1;
+            this.eliminarAdminButton.TabIndex = 9;
             this.eliminarAdminButton.Text = "Eliminar Administrador";
             this.eliminarAdminButton.UseVisualStyleBackColor = true;
             this.eliminarAdminButton.Click += new System.EventHandler(this.eliminarAdminButton_Click);

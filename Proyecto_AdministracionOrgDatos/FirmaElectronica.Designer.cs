@@ -106,7 +106,7 @@
             this.button_Guardar.Name = "button_Guardar";
             this.button_Guardar.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
             this.button_Guardar.Size = new System.Drawing.Size(118, 56);
-            this.button_Guardar.TabIndex = 54;
+            this.button_Guardar.TabIndex = 4;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_Guardar.UseVisualStyleBackColor = false;
@@ -127,7 +127,7 @@
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
             this.button_Limpiar.Size = new System.Drawing.Size(118, 56);
-            this.button_Limpiar.TabIndex = 53;
+            this.button_Limpiar.TabIndex = 3;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_Limpiar.UseVisualStyleBackColor = false;
@@ -148,7 +148,7 @@
             this.button_Borrador.Name = "button_Borrador";
             this.button_Borrador.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
             this.button_Borrador.Size = new System.Drawing.Size(120, 56);
-            this.button_Borrador.TabIndex = 52;
+            this.button_Borrador.TabIndex = 2;
             this.button_Borrador.Text = "Borrador";
             this.button_Borrador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_Borrador.UseVisualStyleBackColor = false;
@@ -169,7 +169,7 @@
             this.button_Pluma.Name = "button_Pluma";
             this.button_Pluma.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
             this.button_Pluma.Size = new System.Drawing.Size(120, 56);
-            this.button_Pluma.TabIndex = 51;
+            this.button_Pluma.TabIndex = 1;
             this.button_Pluma.Text = "Pluma";
             this.button_Pluma.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_Pluma.UseVisualStyleBackColor = false;

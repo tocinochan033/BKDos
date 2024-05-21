@@ -174,9 +174,9 @@ namespace Proyecto_AdministracionOrgDatos
                             img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 60); //Posicion
                             pdfDoc.Add(img);//Agregar imagen al PDF
 
-                            iTextSharp.text.Image img2 = iTextSharp.text.Image.GetInstance(Properties.Resources.BK222, System.Drawing.Imaging.ImageFormat.Png);
-                            img2.Alignment = iTextSharp.text.Image.ALIGN_CENTER;
-                            pdfDoc.Add(img2);//Agregar imagen al PDF
+                            iTextSharp.text.Image img3 = iTextSharp.text.Image.GetInstance(Properties.Resources.BK2223, System.Drawing.Imaging.ImageFormat.Png);
+                            img3.Alignment = iTextSharp.text.Image.ALIGN_CENTER;
+                            pdfDoc.Add(img3);//Agregar imagen al PDF
 
                             //Se evalua la aplicacion del filtro como tipo de reporte al pdf
                             if (validarFiltro == false)    //Sin filtro
