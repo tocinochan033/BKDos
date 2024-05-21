@@ -283,6 +283,7 @@ namespace Proyecto_AdministracionOrgDatos
         {
             if(txtUsuario_ESA.Text == " Ejemplo: Gerente")
             {
+                txtUsuario_ESA.ForeColor = Color.Black;
                 txtUsuario_ESA.Text = "";
             }
         }
@@ -299,6 +300,7 @@ namespace Proyecto_AdministracionOrgDatos
         {
             if (txtContraseña_ESA.Text == " Ejemplo: 2024")
             {
+                txtContraseña_ESA.ForeColor = Color.Black;
                 txtContraseña_ESA.Text = "";
             }
         }

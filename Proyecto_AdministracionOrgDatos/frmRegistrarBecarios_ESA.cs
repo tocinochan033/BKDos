@@ -1427,7 +1427,7 @@ namespace Proyecto_AdministracionOrgDatos
 
         private void txtCorreoElectronico_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void cmbEstadoNac_SelectedIndexChanged(object sender, EventArgs e)

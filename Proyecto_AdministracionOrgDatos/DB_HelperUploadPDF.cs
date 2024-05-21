@@ -17,7 +17,7 @@ namespace Proyecto_AdministracionOrgDatos
 
 
         // Cadena de conexión para conectarse a la base de datos SQL Server.
-        private string connectionString = "Data Source =DESKTOP--1M2HN6J; Initial Catalog = BKDOS; integrated security=true";
+        private string connectionString = "Data Source =DESKTOP-1M2HN6J; Initial Catalog = BKDOS; integrated security=true";
 
         public void InsertPdf(string fileName, string originalFilePath)
         {
