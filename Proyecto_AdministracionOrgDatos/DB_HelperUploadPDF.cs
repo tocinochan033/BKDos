@@ -37,7 +37,7 @@ namespace Proyecto_AdministracionOrgDatos
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 
-                string query = "INSERT INTO DatosArchivos (FileName, FilePath) VALUES (@FileName, @FilePath)";
+                string query = "INSERT INTO ArchivosBecarios (FileName, FilePath) VALUES (@FileName, @FilePath)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     
@@ -51,7 +51,7 @@ namespace Proyecto_AdministracionOrgDatos
                 
             }
         }
-        public List<string> GetAllPDFiles()
+     /*   public List<string> GetAllPDFiles()
         {
             List<string> files = new List<string>();
 
@@ -74,6 +74,7 @@ namespace Proyecto_AdministracionOrgDatos
             }
             return files;
         }
+     */
 
     }
 }

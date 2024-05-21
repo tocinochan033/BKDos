@@ -62,7 +62,7 @@ namespace Proyecto_AdministracionOrgDatos
                     // Inserción de la información del archivo en la base de datos.
                     dbHelper.InsertPdf(fileName, originalFilePath);
                     // Recarga de la lista de archivos PDF.
-                    GetPDF();
+                    LimpiarPDF();
                 }
             }
         }
@@ -106,7 +106,7 @@ namespace Proyecto_AdministracionOrgDatos
             {
                 // Obtención de la ruta del archivo seleccionado por el datagridview
                 string filePath = dgvPDF.CurrentRow.Index.ToString();
-                filePath = dgvPDF.Rows[Convert.ToInt32(filePath)].Cells[1].Value.ToString();
+                filePath = dgvPDF.Rows[Convert.ToInt32(filePath)].Cells[2].Value.ToString();
 
                 // Mostrar un mensaje indicando que se intentará abrir el archivo.
                 MessageBox.Show("Intentando abrir el archivo en: " + filePath);
@@ -157,5 +157,25 @@ namespace Proyecto_AdministracionOrgDatos
             }
         }
 
+
+        public void LimpiarPDF()
+        {
+            Tabla.Clear();
+            dgvPDF.ClearSelection();
+            using (SqlConnection con = DB_Conexion.GetConnection())
+            {
+                string Sql = "SELECT * FROM ArchivosBecarios";
+                Adaptador = new SqlDataAdapter(Sql, con);
+                Adaptador.Fill(Tabla);
+                dgvPDF.DataSource = Tabla;
+
+            }
+        }
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            DatosInactividad.control = false; //Indicador al cerrar este formulario
+        }
     }
 }

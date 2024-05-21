@@ -42,7 +42,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnAbrir = new System.Windows.Forms.Button();
-            this.lbxPDF = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,6 +88,7 @@
             this.btnSalir.TabIndex = 78;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // pictureBox9
             // 
@@ -201,20 +201,11 @@
             this.btnAbrir.UseVisualStyleBackColor = false;
             this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
-            // lbxPDF
-            // 
-            this.lbxPDF.FormattingEnabled = true;
-            this.lbxPDF.Location = new System.Drawing.Point(381, 269);
-            this.lbxPDF.Name = "lbxPDF";
-            this.lbxPDF.Size = new System.Drawing.Size(675, 238);
-            this.lbxPDF.TabIndex = 101;
-            // 
             // frm_SubirPDF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1214, 651);
-            this.Controls.Add(this.lbxPDF);
             this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.textBox1);
@@ -262,6 +253,5 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnAbrir;
-        private System.Windows.Forms.ListBox lbxPDF;
     }
 }

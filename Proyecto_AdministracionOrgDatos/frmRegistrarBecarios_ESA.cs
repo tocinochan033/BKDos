@@ -1440,6 +1440,18 @@ namespace Proyecto_AdministracionOrgDatos
 
         }
 
+        private void btnImg_Click(object sender, EventArgs e)
+        {
+            //Abre ventana para seleccionar archivo
+            OpenFileDialog foto = new OpenFileDialog();
+            //Dialogo para confirmar seleccion
+            DialogResult result = foto.ShowDialog();
+            if(result == DialogResult.OK)
+            {
+                btnImg.Image = Image.FromFile(foto.FileName);
+            }
+        }
+
         /*
          openFileDialog
          */
