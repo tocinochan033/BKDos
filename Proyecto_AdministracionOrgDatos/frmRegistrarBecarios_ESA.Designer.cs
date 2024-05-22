@@ -213,6 +213,7 @@
             this.dgv_Agregar.RowHeadersWidth = 51;
             this.dgv_Agregar.Size = new System.Drawing.Size(884, 206);
             this.dgv_Agregar.TabIndex = 60;
+            this.dgv_Agregar.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Agregar_CellDoubleClick);
             // 
             // btnModificar
             // 

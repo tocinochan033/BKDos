@@ -34,19 +34,9 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.lblTitulo_ESA = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblNombres = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNombres = new System.Windows.Forms.TextBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnAbrir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPDF
@@ -55,11 +45,11 @@
             this.dgvPDF.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvPDF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPDF.GridColor = System.Drawing.Color.Silver;
-            this.dgvPDF.Location = new System.Drawing.Point(381, 269);
+            this.dgvPDF.Location = new System.Drawing.Point(381, 128);
             this.dgvPDF.Name = "dgvPDF";
             this.dgvPDF.ReadOnly = true;
             this.dgvPDF.RowHeadersWidth = 51;
-            this.dgvPDF.Size = new System.Drawing.Size(780, 237);
+            this.dgvPDF.Size = new System.Drawing.Size(780, 378);
             this.dgvPDF.TabIndex = 74;
             // 
             // btnSubir
@@ -111,82 +101,6 @@
             this.lblTitulo_ESA.TabIndex = 92;
             this.lblTitulo_ESA.Text = "Subir archivos PDF";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(227, 123);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 93;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblNombres
-            // 
-            this.lblNombres.AutoSize = true;
-            this.lblNombres.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNombres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.lblNombres.Location = new System.Drawing.Point(377, 123);
-            this.lblNombres.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNombres.Name = "lblNombres";
-            this.lblNombres.Size = new System.Drawing.Size(156, 21);
-            this.lblNombres.TabIndex = 94;
-            this.lblNombres.Text = "Nombre Completo :";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
-            this.label1.Location = new System.Drawing.Point(377, 194);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 21);
-            this.label1.TabIndex = 95;
-            this.label1.Text = "Carrera :";
-            // 
-            // txtNombres
-            // 
-            this.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombres.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.txtNombres.Location = new System.Drawing.Point(381, 146);
-            this.txtNombres.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(391, 22);
-            this.txtNombres.TabIndex = 1;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(381, 169);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(391, 10);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 97;
-            this.pictureBox11.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.textBox1.Location = new System.Drawing.Point(381, 217);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(239, 22);
-            this.textBox1.TabIndex = 2;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(381, 240);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(239, 10);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 99;
-            this.pictureBox2.TabStop = false;
-            // 
             // btnAbrir
             // 
             this.btnAbrir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(99)))), ((int)(((byte)(198)))));
@@ -207,13 +121,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1214, 651);
             this.Controls.Add(this.btnAbrir);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.txtNombres);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblNombres);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTitulo_ESA);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.btnSalir);
@@ -230,9 +137,6 @@
             this.Load += new System.EventHandler(this.frm_SubirPDF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPDF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,13 +149,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label lblTitulo_ESA;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblNombres;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNombres;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnAbrir;
     }
 }

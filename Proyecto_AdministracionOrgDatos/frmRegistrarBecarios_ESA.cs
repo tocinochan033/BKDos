@@ -1320,7 +1320,7 @@ namespace Proyecto_AdministracionOrgDatos
                
                 /*-----------------------------------------------------------------------------------------------*/
 
-                //camposLimpieza();
+                camposLimpieza();
                 RefrescarDatos();
                 //Regresar el "cursor" al textbox del nombre
                 txtApaterno.Focus();
@@ -1341,7 +1341,7 @@ namespace Proyecto_AdministracionOrgDatos
             //Query Primera Tabla
             using(SqlConnection con = DB_Conexion.GetConnection())
             {
-                Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
+                Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Imagen,DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
                "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
                "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 1 ";
                 // Sql = "SELECT * from DatosGenerales, DatosAcademicos, DatosContacto";
@@ -1360,7 +1360,7 @@ namespace Proyecto_AdministracionOrgDatos
                 dgv_Agregar.ClearSelection();
 
                 // Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, Carrera, Periodo, Promedio, Modelo, CCT FROM DatosGenerales, DatosContacto, DatosAcademicos";
-                Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
+                Sql = "SELECT Id_Alumno, ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Imagen, DatosContacto.Id_DatosContacto, Domicilio, CodigoPostal, Nacionalidad, EstadoNacimiento, Municipio, Correo, Telefono, DatosAcademicos.Id_DatosAcademicos,Carrera, Periodo, Promedio, Modelo, CCT " +
                   "FROM DatosGenerales JOIN DatosContacto ON DatosContacto.Id_DatosContacto = DatosGenerales.Id_DatosContacto " +
                   "JOIN DatosAcademicos ON DatosAcademicos.Id_DatosAcademicos = DatosGenerales.Id_DatosAcademicos WHERE Estado = 1 ";
                 Adaptador = new SqlDataAdapter(Sql, con);
@@ -1402,7 +1402,26 @@ namespace Proyecto_AdministracionOrgDatos
                 pbxImagen.Image = Image.FromFile(foto.FileName);
             }
         }
-   
+
+        private void dgv_Agregar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int seleccion = e.RowIndex;
+            var imageData = dgv_Agregar.Rows[seleccion].Cells[9].Value as byte[];
+
+            if (imageData != null)
+            {
+                using (var ms = new System.IO.MemoryStream(imageData))
+                {
+                    pbxImagen.Image = Image.FromStream(ms);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay datos de imagen válidos en la celda.");
+            }
+
+        }
+
         /*
          openFileDialog
          */
