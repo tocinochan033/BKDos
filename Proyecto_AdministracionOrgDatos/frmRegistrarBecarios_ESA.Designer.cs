@@ -301,7 +301,7 @@
             this.btnImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImg.ForeColor = System.Drawing.Color.Snow;
-            this.btnImg.Location = new System.Drawing.Point(6, 166);
+            this.btnImg.Location = new System.Drawing.Point(6, 143);
             this.btnImg.Margin = new System.Windows.Forms.Padding(2);
             this.btnImg.Name = "btnImg";
             this.btnImg.Size = new System.Drawing.Size(128, 40);

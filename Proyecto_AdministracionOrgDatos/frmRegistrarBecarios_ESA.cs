@@ -43,10 +43,7 @@ namespace Proyecto_AdministracionOrgDatos
         //Variable de tipo string para almacenar el nombre de la base de datos
         String Base_Datos = "BKDOS";
         int indice = 0;
-
-        
-
-
+ 
         /*------------------------METODO PARA CARGAR DATOS--------------------*/
         private FuentePersonalizada fontPers;
 
@@ -96,6 +93,7 @@ namespace Proyecto_AdministracionOrgDatos
             cmbFiltroModificar.Items.Add("Promedio");
             cmbFiltroModificar.Items.Add("CCT");
             cmbFiltroModificar.Items.Add("Modelo");
+            cmbFiltroModificar.Items.Add("Imagen");
            
             LlenarDGV();
         }
@@ -155,6 +153,7 @@ namespace Proyecto_AdministracionOrgDatos
             cmbEstadoNac.Text = "";
             txtMunicipio.Text = "";
             cmbNacionalidad.Text = "";
+            pbxImagen.Image= null;
         }
 
         private void btnAgregar_ESA_Click(object sender, EventArgs e)
@@ -799,6 +798,20 @@ namespace Proyecto_AdministracionOrgDatos
                             MessageBox.Show("Error tabla general: " + ex.Message);
                         }
                     }
+                    else if (cmbFiltroModificar.Text == "Imagen")
+                    {
+                        // Obtener datos de la fila seleccionada
+                        var SelecID = dgv_Agregar.Rows[seleccion].Cells[0].Value;
+                        var SelectPater = dgv_Agregar.Rows[seleccion].Cells[1].Value;
+                        var SelectApe = dgv_Agregar.Rows[seleccion].Cells[2].Value;
+                        var SelectNom = dgv_Agregar.Rows[seleccion].Cells[3].Value;
+
+
+                        // Crear instancia de Editar foto y pasar los datos seleccionados
+                        FrmEditarFoto formeditar = new FrmEditarFoto(SelecID, SelectPater, SelectApe, SelectNom);
+                       
+                        formeditar.Show();
+                    }
                 }
                    
                     
@@ -1186,7 +1199,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                     /*Insercion de tabla Datos generales*/
                     Sql = "";
-                    Sql = "insert into DatosGenerales(ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Estado) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Estado)";
+                    Sql = "insert into DatosGenerales(ApellidoPaterno, ApellidoMaterno, Nombres, FechaNacimiento, Edad, Curp, EstadoCivil, Genero, Estado,Imagen) values (@ApellidoPaterno, @ApellidoMaterno, @Nombres, @FechaNacimiento, @Edad, @Curp, @EstadoCivil, @Genero, @Estado,@Imagen)";
                     Comando = new SqlCommand(Sql, con);
                     //Insercion de la primera tabla
                     Comando.Parameters.AddWithValue("@ApellidoPaterno", txtApaterno.Text);
@@ -1198,6 +1211,14 @@ namespace Proyecto_AdministracionOrgDatos
                     Comando.Parameters.AddWithValue("@EstadoCivil", cmbEstCivil.Text);
                     Comando.Parameters.AddWithValue("@Genero", CBGenero.Text);
                     Comando.Parameters.AddWithValue("@Estado", 1);
+
+                    byte[] imageBytes;
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        pbxImagen.Image.Save(ms, pbxImagen.Image.RawFormat);
+                        imageBytes = ms.ToArray();
+                    }
+                    Comando.Parameters.AddWithValue("@Imagen", imageBytes);
                     try
                     {
 
@@ -1296,79 +1317,7 @@ namespace Proyecto_AdministracionOrgDatos
 
                     /*-----------------------------------------------------------------------------------------------*/
                 }
-                /*--------------------------------------FIN los id datos academicos CLASE-------------------------------------*/
-                //ID DATOS ACADEMICOS
-               /* Sql = "";
-                //Consulta
-                Sql = "SELECT MAX(Id_DatosAcademicos) From DatosAcademicos";
-
-                Comando = new SqlCommand(Sql, Conexion);
-                Id_DatosAcademicos = Convert.ToInt32(Comando.ExecuteScalar());
-
-                //Seleccion del id mas reciente de Datos generales
-                Sql = "";
-                
-                Sql = "SELECT MAX(Id_Alumno) From DatosGenerales";
-
-                Comando = new SqlCommand(Sql, Conexion);
-                Id_DatosGenerales = Convert.ToInt32(Comando.ExecuteScalar());
-                //Insercion
-
-                Sql = "update DatosGenerales set Id_DatosAcademicos = @Id_DatosAcademicos WHERE Id_Alumno = @Id_Alumno";
-                Comando = new SqlCommand(Sql, Conexion);
-                Comando.Parameters.AddWithValue("@Id_Alumno", Id_DatosGenerales);
-                Comando.Parameters.AddWithValue("@Id_DatosAcademicos", Id_DatosAcademicos);
-
-                //Comando Try
-                try
-                {
-                    Comando.ExecuteNonQuery();
-
-                    MessageBox.Show("Registro ID academicos");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message);
-                }
-                Conexion.Close();
-                /*Terminacion de insericon de id datos academicos
-
-                //ID DATOS CONTACTO
-                Conectar();
-                Sql = "";
-                Sql = "SELECT MAX(Id_DatosContacto) From DatosContacto";
-
-                Comando = new SqlCommand(Sql, Conexion);
-                Id_DatosContacto = Convert.ToInt32(Comando.ExecuteScalar());
-
-                //Seleccion del id mas reciente de Datos generales
-                Sql = "";
-
-                Sql = "SELECT MAX(Id_Alumno) From DatosGenerales";
-
-                Comando = new SqlCommand(Sql, Conexion);
-                Id_DatosGenerales = Convert.ToInt32(Comando.ExecuteScalar());
-                //Insercion
-                Sql = "update DatosGenerales set Id_DatosContacto = @Id_DatosContacto WHERE Id_Alumno = @Id_Alumno";
-                Comando = new SqlCommand(Sql, Conexion);
-                Comando.Parameters.AddWithValue("@Id_Alumno", Id_DatosGenerales);
-                Comando.Parameters.AddWithValue("@Id_DatosContacto", Id_DatosContacto);
-
-                //Comando Try
-                try
-                {
-                    Comando.ExecuteNonQuery();
-                    MessageBox.Show("Registro ID contacto");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message);
-                }
-
-
-                Conexion.Close();*/
-                /*Teminacion de insercion de datos de contacto*/
-
+               
                 /*-----------------------------------------------------------------------------------------------*/
 
                 //camposLimpieza();
@@ -1450,10 +1399,10 @@ namespace Proyecto_AdministracionOrgDatos
             DialogResult result = foto.ShowDialog();
             if(result == DialogResult.OK)
             {
-                btnImg.Image = Image.FromFile(foto.FileName);
+                pbxImagen.Image = Image.FromFile(foto.FileName);
             }
         }
-
+   
         /*
          openFileDialog
          */

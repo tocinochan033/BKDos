@@ -17,7 +17,7 @@ namespace Proyecto_AdministracionOrgDatos
 
 
         // Cadena de conexión para conectarse a la base de datos SQL Server.
-        private string connectionString = "Data Source =DESKTOP-1M2HN6J; Initial Catalog = BKDOS; integrated security=true";
+        private string connectionString = "Data Source =DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true";
 
         public void InsertPdf(string fileName, string originalFilePath)
         {
@@ -51,30 +51,7 @@ namespace Proyecto_AdministracionOrgDatos
                 
             }
         }
-     /*   public List<string> GetAllPDFiles()
-        {
-            List<string> files = new List<string>();
-
-            using (SqlConnection connection = new SqlConnection (connectionString))
-            {
-                string query = "SELECT FilePath FROM ArchivosBecarios";
-                using (SqlCommand command = new SqlCommand(query, connection) )
-                {
-                    connection.Open();
-                    using(SqlDataReader reader = command.ExecuteReader() )
-                    { 
-                        while(reader.Read())
-                        {
-                            //Añadimos los archivos a la lista
-                            files.Add(reader["FilePath"].ToString());
-
-                        }
-                    }
-                }
-            }
-            return files;
-        }
-     */
+     
 
     }
 }

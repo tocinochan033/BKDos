@@ -77,6 +77,12 @@
     <Compile Include="DatosInactividad.cs" />
     <Compile Include="DB_Conexion.cs" />
     <Compile Include="DB_HelperUploadPDF.cs" />
+    <Compile Include="FrmEditarFoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarFoto.Designer.cs">
+      <DependentUpon>FrmEditarFoto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FirmaElectronica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     <Compile Include="Servidores.cs" />
     <EmbeddedResource Include="FirmaElectronica.resx">
       <DependentUpon>FirmaElectronica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarFoto.resx">
+      <DependentUpon>FrmEditarFoto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
